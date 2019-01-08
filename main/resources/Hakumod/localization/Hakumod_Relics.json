@@ -1,0 +1,81 @@
+{
+  "Haku_Susanoo": {
+    "NAME": "SUSANO'OH",
+    "FLAVOR": "When this theme was released, 6B was a low.",
+    "DESCRIPTIONS": [
+      "Every time you play 3 cards, gain 1 #ymagatama."
+    ]
+  }, "Haku_Susanoo2": {
+    "NAME": "SUSANO'OH II",
+    "FLAVOR": "And people though he was gonna be low tier in CP1.0.",
+    "DESCRIPTIONS": [
+      "Gain 1 [R] and lose 1 #ymagatama at the start of each turn."
+    ]
+  }, "Haku__BlackAndWhite": {
+    "NAME": "Black & White",
+    "FLAVOR": "It doesn't matter if you are black or white~",
+    "DESCRIPTIONS": [
+      "Okizeme always activate."
+    ]
+  }, "Haku__SixHeroes": {
+    "NAME": "SIX HEROES",
+    "FLAVOR": "This is legit the only enjoyable thing about the Nine match-up.",
+    "DESCRIPTIONS": [
+      "Every time you play 6 #yparry, gain 1 #yIntangible."
+    ]
+  }, "Haku__InJustice": {
+    "NAME": "In Justice",
+    "FLAVOR": "Remember when Izayoi was mid tier?",
+    "DESCRIPTIONS": [
+      "Every time you play 5 #yGatling, gain 1 #yenergy."
+    ]
+  }, "Haku_BurstIcon": {
+    "NAME": "Burst icon",
+    "FLAVOR": "Unit cookie dough!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add one #yBurst to your draw pile and change its cost to 0 this combat."
+    ]
+  }, "Haku_BarrierGauge": {
+    "NAME": "BarrierGauge",
+    "FLAVOR": "It is a good thing Amane isn't in this game.",
+    "DESCRIPTIONS": [
+      "Right-click on it to gain 8 blocks, recharge every 5 turns."
+    ]
+  }, "Haku_Timer": {
+    "NAME": "Timer",
+    "FLAVOR": "And time, time, is not on your side!",
+    "DESCRIPTIONS": [
+      "On the 10th turn of each battle, kill all non-boss enemies whose current hp/max hp ratio is lower than yours."
+    ]
+  }, "Haku_Roundstart": {
+    "NAME": "Roundstart",
+    "FLAVOR": "Heaven or Hell... wait wrong game.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain 1 random buff between 1 #yStrength, 1 #yDexterity, 4 #yPlated #yArmor, 3 #yThorns, 1 #yIntangible."
+    ]
+  }, "Haku_ContinuumShift": {
+    "NAME": "Continuum Shift",
+    "FLAVOR": "5C > 623AA > J.2C > 2C > 9jc > J.2A > IAD > J.2A > J.C",
+    "DESCRIPTIONS": [
+      "Every time you #ySmith, upgrade an additional random card."
+    ]
+  }, "Haku_CalamityTrigger": {
+    "NAME": "Calamity Trigger",
+    "FLAVOR": "5C > 623AA > J.C > 2C > 9jc > J.2C > IAD > J.2C",
+    "DESCRIPTIONS": [
+      "Every time you play a card whose cost has been modified, gain 4 #yBlocks."
+    ]
+  }, "Haku_ChronoPhantasma": {
+    "NAME": "Chrono Phantasma",
+    "FLAVOR": "5C > 623AA > J.2C > 2C > 9jc > J.2A > 9jc > Delay J.2C > 5A > 5B > 9jc > J.B2A > 9jc > J.B2A > J.214A",
+    "DESCRIPTIONS": [
+      "At the start of each battle, gain #yStrength for every 15HP missing."
+    ]
+  }, "Haku_CentralFiction": {
+    "NAME": "Central Fiction",
+    "FLAVOR": "5C > 214A > 2C > 9hjc > J.B2A > 9jc > J.B2A > J.214A",
+    "DESCRIPTIONS": [
+      "Draw 1 more card at the start of each turn."
+    ]
+  }
+}

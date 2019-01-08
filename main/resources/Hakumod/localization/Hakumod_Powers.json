@@ -1,0 +1,70 @@
+{
+  "Haku_MagatamaPower": {
+    "NAME": "Magatama",
+    "DESCRIPTIONS": ["Magatama: #b", " (max: 8)."]
+  },
+  "Haku_WhiteVoidPower": {
+    "NAME": "White Void",
+    "DESCRIPTIONS": ["Counter: #b", " Next bonus: "]
+  }, 
+  "Haku_DefensePower": {
+    "NAME": "Defense",
+    "DESCRIPTIONS": ["Receive 15% less damage from #yAttacks for ", " turns. This buff is removed when #yOffense is applied." ]
+  },
+  "Haku_OffensePower": {
+    "NAME": "Offense",
+    "DESCRIPTIONS": ["Deal 25% more damage with #yAttacks for ", " turns. This buff is removed when #yDefense is applied."]
+  },
+  "Haku_NeutralPower": {
+    "NAME": "Neutral",
+    "DESCRIPTIONS": ["Increase block gained by 25% for ", " turns."]
+  },
+  "Haku_ActiveFlowPower": {
+    "NAME": "Active Flow",
+    "DESCRIPTIONS": ["Deal 10% more damage with #yAttacks for ", " turns. Once #yActive #yflow ends, add one Overdrive to your hand."]
+  },
+  "Haku_OverdrivePower": {
+    "NAME": "Overdrive",
+    "DESCRIPTIONS": ["Double the amount of #ymagatama gained for #b", " turn(s)."]
+  },
+  "Haku_MugenPower": {
+    "NAME": "Mugen",
+    "DESCRIPTIONS": ["#ySpecials cost #b0 #yenergy and #b0 #ymagatama this turn."]
+  },
+  "Haku_PassiveMeterPower": {
+    "NAME": "Passive Meter",
+    "DESCRIPTIONS": ["At the start of each turn, gain #b", " #ymagatama(s)"]
+  },
+  "Haku_AwakeningPower": {
+    "NAME": "Awakening The Chaos",
+    "DESCRIPTIONS": ["#yParry always activate. Increase damage and Blocks from #yParry by #b", "."]
+  },
+  "Haku_ScienceFictionPower": {
+    "NAME": "Science Fiction",
+    "DESCRIPTIONS": ["#yEnder always activate. Increase the effects from #yEnder by #b", "."]
+  },
+  "Haku_YomotsuhirasakaPower": {
+    "NAME": "Yomotsuhirasaka",
+    "DESCRIPTIONS": ["#yGatling applies to cards in the draw pile if you don't have the card in your hand."]
+  },
+  "Haku_EmptySkyPower": {
+    "NAME": "Empty Sky",
+    "DESCRIPTIONS": ["Everytime you play a #yStarter, #yGatling, #ySpecial or #yEnder, draw #b", " card(s)."]
+  },
+  "Haku_TheTyrantPower":{
+  "NAME": "The Tyrant",
+  "DESCRIPTIONS": ["Every time you play a Special gain #b", "#yThorn(s)."]
+  },
+  "Haku_CutPower": {
+    "NAME": "Cut",
+    "DESCRIPTIONS": ["Every time you play one 4C, channel 1 #yFuumajin."]
+  },
+  "Haku_GatePower": {
+    "NAME": "Gate",
+    "DESCRIPTIONS": ["The firsts #b", " #yParry, #yStarter or #yGatling played each turn is played twice."]
+  },
+  "Haku_SwordOfDoomPower": {
+    "NAME": "Sword of Doom",
+    "DESCRIPTIONS": ["At the start of your turn add #b", " #yParry into your hand and give it #yExhaust and #yEthereal."]
+  }
+}
