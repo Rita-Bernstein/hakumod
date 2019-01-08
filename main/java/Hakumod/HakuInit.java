@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 //import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -122,8 +123,7 @@ final float CARDS_SPACE_STEP = -40.0f;
 
 final float MUSIC_TOGGLE_START_X = 350.0f;
 final float MUSIC_TOGGLE_START_Y = 300.0f;
-final String TOGGLE_MUSIC_LABEL = "Enable custom boss music (Requires a restart to take effect, may be incompatible with other mods.)";
-
+final String TOGGLE_MUSIC_LABEL = "Enable custom boss music (Will be available in the final version.)";
 
 private ArrayList<ModLabeledToggleButton> toggleCardSelection = new ArrayList<ModLabeledToggleButton >();
 

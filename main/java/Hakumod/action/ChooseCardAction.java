@@ -42,6 +42,7 @@ public class ChooseCardAction extends AbstractGameAction{
 		CardGroup choiceOfCards;
 		if (this.duration == Settings.ACTION_DUR_MED){
 			choiceOfCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+			choiceOfCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 			
 			for (AbstractCard card : cards) {
 				choiceOfCards.addToTop(card);
