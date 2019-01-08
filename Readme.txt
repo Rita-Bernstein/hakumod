@@ -13,8 +13,13 @@ This mod is still in its early stages. If you find any bug, please contact me on
 
 More contents will come in the following weeks.
 #=======================#
+Progress:
+#=======================#
+Cards: 33
+Relics: 7
+#=======================#
 Coming next
 #=======================#
-New cards (6 are in progress)
+New cards (8 are in progress)
 New relics (5 are in progress)
  
