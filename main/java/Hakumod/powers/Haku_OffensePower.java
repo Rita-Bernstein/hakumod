@@ -25,8 +25,8 @@ public class Haku_OffensePower extends AbstractPower {
 			this.img = new Texture("Hakumod/img/powers/doubleTap.png");
 			updateDescription();
 			
-			if (this.owner.hasPower("Haku_DefensePower") ){
-				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, "Haku_DefensePower"));
+			if (this.owner.hasPower(Haku_DefensePower.POWER_ID) ){
+				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, Haku_DefensePower.POWER_ID));
 			}
 	}
 	
@@ -52,9 +52,9 @@ public class Haku_OffensePower extends AbstractPower {
 	{
 
 		if (this.amount <= 1 ) {
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, "Haku_OffensePower"));
+			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, Haku_OffensePower.POWER_ID));
 		} else {
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, "Haku_OffensePower", 1));
+			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, Haku_OffensePower.POWER_ID, 1));
 		}
 	}
 }

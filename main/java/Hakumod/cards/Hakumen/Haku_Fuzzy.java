@@ -58,7 +58,7 @@ public class Haku_Fuzzy extends CustomCard{
 						new OffensePower(AbstractDungeon.player,this.magicNumber, false),this.magicNumber)); 	
 		*/
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber), -this.magicNumber));
-		if (!m.hasPower("ArtifactPower")) {
+		if (!m.hasPower("Artifact")) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, this.magicNumber), this.magicNumber));
 		}
 	}

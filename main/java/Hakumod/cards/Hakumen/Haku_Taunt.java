@@ -49,7 +49,7 @@ public class Haku_Taunt extends CustomCard{
 		// TODO Auto-generated constructor stub
 		this.magicNumber = DEBUFF;
 		this.baseMagicNumber = DEBUFF;
-		this.exhaust = true;
+		//this.exhaust = true;
 	}
 
 	@Override
@@ -67,9 +67,9 @@ public class Haku_Taunt extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-    	/*AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
-				new OffensePower(m, this.magicNumber, false), 1));
-    	*/
+    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+				new VulnerablePower(p, this.magicNumber, false), (this.upgraded) ? 1 : this.magicNumber));
+    
 		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			if ((mo != null) && (!mo.isDeadOrEscaped())) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,

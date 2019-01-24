@@ -86,14 +86,16 @@ public class Haku_Shippu extends CustomCard{
 			}
 			
 	    	
-	    	int ShippuDamage =  this.damage*energyConsumed;
+	    	//int ShippuDamage =  this.damage*energyConsumed;
 	       
 			
     		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
     			if ((mo != null) && (!mo.isDeadOrEscaped())) {
-    				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(mo,
-    						new DamageInfo(p, ShippuDamage, this.damageTypeForTurn),
-    						AbstractGameAction.AttackEffect.SLASH_HEAVY));
+    				for (int i=0;i<energyConsumed;i++) {
+	    				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(mo,
+	    						new DamageInfo(p, this.damage, this.damageTypeForTurn),
+	    						AbstractGameAction.AttackEffect.SLASH_HEAVY));
+    				}	
     			}
     		}
     		

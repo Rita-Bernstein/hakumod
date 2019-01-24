@@ -82,8 +82,10 @@ public class Haku_ChronoPhantasma extends CustomRelic{
 		int hpMissing = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
 		int StrengthBonus = (int) ( (float) hpMissing / (float) HP_STACK);
 		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, 
-				new StrengthPower(AbstractDungeon.player, StrengthBonus), StrengthBonus));
+		if (StrengthBonus > 0) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, 
+					new StrengthPower(AbstractDungeon.player, StrengthBonus), StrengthBonus));
+		}
 	}
     
     

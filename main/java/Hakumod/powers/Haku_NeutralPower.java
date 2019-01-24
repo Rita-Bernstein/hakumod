@@ -42,12 +42,12 @@ public class Haku_NeutralPower extends AbstractPower {
 	
 	public void atEndOfRound()
 	{
-		if (!AbstractDungeon.player.hasPower("PoropicchoPower")) {
+		//if (!AbstractDungeon.player.hasPower("PoropicchoPower")) {
 			if (this.amount <= 1 ) {
-				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, "NeutralPower"));
+				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
 			} else {
-				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, "NeutralPower", 1));
+				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
 			}
-		}
+		//}
 	}
 }

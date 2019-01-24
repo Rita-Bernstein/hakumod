@@ -14,6 +14,11 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import Hakumod.cards.Hakumen.Haku_ChildishMemories;
 import Hakumod.cards.Hakumen.Haku_InJustice;
+import Hakumod.characters.Hakumen;
+import Hakumod.powers.Haku_MagatamaPower;
+import Hakumod.powers.Haku_MugenPower;
+import Hakumod.powers.Haku_TheTyrantPower;
+import Hakumod.relics.Haku_ContinuumShift;
 
 public class UsingSpecialAction extends AbstractGameAction{
 	
@@ -30,8 +35,8 @@ public class UsingSpecialAction extends AbstractGameAction{
 	public boolean canUseSpecialAction()
 	{
 		boolean canUse = false;
-		if ( ((this.source.hasPower("Haku_MagatamaPower") && this.source.getPower("Haku_MagatamaPower").amount >= this.cost)) 
-				|| this.source.hasPower("Haku_MugenPower"))
+		if ( ((this.source.hasPower(Haku_MagatamaPower.POWER_ID) && this.source.getPower(Haku_MagatamaPower.POWER_ID).amount >= this.cost)) 
+				|| this.source.hasPower(Haku_MugenPower.POWER_ID) || !(AbstractDungeon.player instanceof Hakumen))
 		{
 			canUse = true;
 		}
@@ -52,20 +57,20 @@ public class UsingSpecialAction extends AbstractGameAction{
 		// TODO Auto-generated method stub
 		if (this.canUseSpecialAction())
 		{
-			if (!this.source.hasPower("Haku_MugenPower")) {
-				this.source.getPower("Haku_MagatamaPower").reducePower(this.cost);
-				this.source.getPower("Haku_MagatamaPower").updateDescription();
-				if (this.source.getPower("Haku_MagatamaPower").amount == 0) 
+			if (!this.source.hasPower(Haku_MugenPower.POWER_ID)) {
+				this.source.getPower(Haku_MagatamaPower.POWER_ID).reducePower(this.cost);
+				this.source.getPower(Haku_MagatamaPower.POWER_ID).updateDescription();
+				if (this.source.getPower(Haku_MagatamaPower.POWER_ID).amount == 0) 
 				{
-					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.source, this.source, "Haku_MagatamaPower"));
+					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.source, this.source, Haku_MagatamaPower.POWER_ID));
 				}
 			}
-			if (AbstractDungeon.player.hasRelic("Haku_ContinuumShift") && this.cost > 2) {
+			if (AbstractDungeon.player.hasRelic(Haku_ContinuumShift.RELIC_ID) && this.cost > 2) {
 				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 			}
 			
-			if (this.source.hasPower("Haku_TheTyrantPower")) {
-				int SparkAmount = this.source.getPower("Haku_TheTyrantPower").amount;
+			if (this.source.hasPower(Haku_TheTyrantPower.POWER_ID)) {
+				int SparkAmount = this.source.getPower(Haku_TheTyrantPower.POWER_ID).amount;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source,
 						new ThornsPower(this.source, SparkAmount), SparkAmount));
 			}

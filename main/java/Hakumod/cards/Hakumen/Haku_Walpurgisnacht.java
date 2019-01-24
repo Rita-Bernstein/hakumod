@@ -39,8 +39,8 @@ public class Haku_Walpurgisnacht extends CustomCard{
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Walpurgisnacht.png";
 	private static final int BUFF = 3;
-	private static final int COST = 9;
-	private static final int UPGRADED_COST = 8;
+	private static final int COST = 3;
+	private static final int UPGRADED_COST = 2;
 	    
 	public Haku_Walpurgisnacht() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -86,8 +86,15 @@ public class Haku_Walpurgisnacht extends CustomCard{
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, i), i));
     	*/
     	
-    	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));	
-    	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
+    	int energyGained = 0;
+    	if (p.hasPower("Haku_MagatamaPower")) {
+    		energyGained = p.getPower("Haku_MagatamaPower").amount;
+    	}
+    	
+    	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Haku_MagatamaPower"));
+    	
+    	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(energyGained));	
+    	//AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
     	
     }
 	

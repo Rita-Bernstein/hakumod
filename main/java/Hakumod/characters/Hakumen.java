@@ -44,8 +44,8 @@ import basemod.abstracts.CustomPlayer;
 public class Hakumen extends CustomPlayer {
 	//public static final Logger logger = LogManager.getLogger(HakuInit.class.getName());
 	
-    public static final int STARTING_HP = 76;
-    public static final int MAX_HP = 76;
+    public static final int STARTING_HP = 72;
+    public static final int MAX_HP = 72;
     public static final int STARTING_GOLD = 99;
     public static final int HAND_SIZE = 5;
     
@@ -55,9 +55,9 @@ public class Hakumen extends CustomPlayer {
     public static final String HAKUMEN_SHOULDER_1 = "Hakumod/img/char/shoulder1.png"; 
 	public static final String HAKUMEN_CORPSE = "Hakumod/img/char/fallen.png"; 
 	
-    public static final String HAKUMEN_SKELETON_ATLAS = "Hakumod/img/char/HakuAnim.atlas";// Marisa_v0 / MarisaModel_v02
+    public static final String HAKUMEN_SKELETON_ATLAS = "Hakumod/img/char/HakuAnim.atlas";
     public static final String HAKUMEN_SKELETON_JSON = "Hakumod/img/char/HakuAnim.json";
-    public static final String HAKUMEN_ANIMATION = "Sprite";// Sprite / Idle
+    public static final String HAKUMEN_ANIMATION = "Sprite";
     
     public final String[][] STARTING_CARDS = 
     	{
@@ -112,14 +112,14 @@ public class Hakumen extends CustomPlayer {
 		//public CustomPlayer(String name, PlayerClass playerClass, String[] orbTextures, String orbVfxPath, float[] layerSpeeds, AbstractAnimation animation)
 		super(name, HakuEnum.HAKUMEN, orbTextures, "Hakumod/img/orb/vfx.png", layerSpeeds, null, null);
 		//super(name, HakuEnum.HAKUMEN, null, name, name, name)
-		this.masterMaxOrbs = 2;
-		this.maxOrbs = 2;
 		this.startingCards = startingCards;
 		
 		this.dialogX = (this.drawX + 20.0F * Settings.scale); // set location for text bubbles
 		this.dialogY = (this.drawY + 240.0F * Settings.scale); // you can just copy these values
 		
 		//logger.info("Hakumod: Init character class");
+		this.masterMaxOrbs = 2;
+		this.maxOrbs = 2;
 		
 		initializeClass(null,
 						HAKUMEN_SHOULDER_2, 
@@ -129,6 +129,7 @@ public class Hakumen extends CustomPlayer {
 						20.0F, -10.0F, 220.0F, 290.0F,
 						new EnergyManager(ENERGY_PER_TURN)
 						);
+		
 		
 		loadAnimation(HAKUMEN_SKELETON_ATLAS, HAKUMEN_SKELETON_JSON, 1.0F); 
 		// if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
@@ -234,7 +235,7 @@ public class Hakumen extends CustomPlayer {
 		
 		try {
 	        final Properties defaults = new Properties();
-	        defaults.setProperty("starting-cards", "1");
+	        defaults.setProperty("starting-cards", "0");
 	        final SpireConfig config = new SpireConfig("HakuMod", "Common", defaults);
 	        startingCards = config.getInt("starting-cards");
 	    } catch (IOException e) {

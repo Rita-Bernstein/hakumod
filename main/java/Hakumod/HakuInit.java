@@ -99,19 +99,21 @@ private static boolean useMusic = false;
 
 final String MODNAME = "HakuMod";
 final String AUTHOR = "The_undercover_beret";
-final String DESCRIPTION = "Add Haku-men as a playable character.";
+final String DESCRIPTION = "Adds Haku-men as a playable character.";
+
+private static Properties DEFAULTS_CONFIG = new Properties();
 
 final String[] CARDS = 
 {	
-	"Guren / 3C (recommended)", 
-	"6A / 6B", 
-	"2B / Renka", 
-	"5C / Zantetsu", 
+	"Guren / Sweep (recommended)", 
+	"Blitz Attack / Clash Assault", 
+	"Smart Steer / Renka", 
+	"Divide / Zantetsu", 
 	"Kishuu / Enma",
-	"2D / J.D",
-	"2A / 2A",
+	"Alpha Counter / Reject Guard",
+	"Claw Grip / Claw Grip",
 	"Exceed Accel / Active Flow",
-	"6C / Fatal Counter"
+	"Command Order / Fatal Counter"
 };
 
 final float LABEL_START_X = 350.0f;
@@ -398,10 +400,10 @@ public void receiveEditCards() {
 
 public static void HakuConfig() {
 	try {
-        final Properties defaults = new Properties();
-        defaults.setProperty("starting-cards", "0");
-        defaults.setProperty("use-music", "false");
-        final SpireConfig config = new SpireConfig("HakuMod", "Common", defaults);
+
+		DEFAULTS_CONFIG.setProperty("starting-cards", "0");
+		DEFAULTS_CONFIG.setProperty("use-music", "false");
+        final SpireConfig config = new SpireConfig("HakuMod", "Common", DEFAULTS_CONFIG);
         setStartingCards(config.getInt("starting-cards"));
         setUseMusic(config.getBool("use-music"));
     } catch (IOException e) {
@@ -441,7 +443,7 @@ public void receiveEditKeywords() {
 	logger.info("Hakumod: Adding keywords.");
 	
 	
-	String stringKeyMagatama = "Energy used for special moves.";
+	String stringKeyMagatama = "Resource used by #ySpecial moves.";
 	String stringKeySpecial = "#ySpecials consume #yMagatama(s) to activate their effect.";
 	String stringKeyGatling = "- If you have that card in your hand, reduce its cost by 1 this turn. NL - If you don't, add that card into your hand but lose 2 #yStrengths until the end of the turn."; 
 	String stringKeyStarter = "Apply the effect if your energy is at its maximum.";
@@ -452,7 +454,7 @@ public void receiveEditKeywords() {
 	String stringKeyDefense = "Creatures with Defense receive 15% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied.";
 	String stringKeyOffense = "Creatures with Offense deal 25% more damage with #yAttacks #b1 turn. NL Remove it if #yDefense is applied.";
 	String stringKeyNeutral = "Creatures with Neutral gain 25% more blocks.";
-	String stringKeyOverdrive = "Double the amount of #yMagatama gained for #1 turn.";
+	String stringKeyOverdrive = "Double the amount of #yMagatama gained for #b1 turn.";
 	String stringKeyActiveFlow = "Creatures with #yActive #yFlow deal 10% more damage with #yAttacks for #b1 turn. Add one #yOverdrive into your hand once you run out of #yActive #yFlow.";
 	
 
@@ -461,7 +463,7 @@ public void receiveEditKeywords() {
 	
 	String stringKeyFuumajin = "Gain 2 Blocks at the end of each turn. #yEvoke after 2 turns. NL #yEvoke: Gain 1 #ymagatama.";
 	
-	String stringKeyStaircase = "Attack - Cost 0 NL Deal 1 damage 4 times. NL Add 1 J.C or Agito to your hand, it costs 0 this turn. NL #yExhaust";
+	String stringKeyStaircase = "Attack - Cost 0 NL Deal 1 damage 4 times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn. NL #yExhaust";
 	String stringKey3C = "Attack - Cost 1 NL Deal 8 damage. NL Ender: Inflict 1 #yWeak.";
 	String stringKey6B = "Attack - Cost 1 NL Deal 4 damage twice. NL Ender: Inflict 2 #yVulnerable.";
 	String stringKeyEnma = "Attack - Cost 1 NL #ySpecial: 1 NL Deal 7 damage. NL Gain 7 #yBlock.";
@@ -490,8 +492,8 @@ public void receiveEditKeywords() {
 	BaseMod.addKeyword(new String[] {"Fuumajin","fuumajin"}, stringKeyFuumajin);
 	BaseMod.addKeyword(new String[] {"Staircase","staircase"}, stringKeyStaircase);
 	
-	BaseMod.addKeyword(new String[] {"3C","3c"}, stringKey3C);
-	BaseMod.addKeyword(new String[] {"6B","6b"}, stringKey6B);
+	BaseMod.addKeyword(new String[] {"Sweep","sweep"}, stringKey3C);
+	BaseMod.addKeyword(new String[] {"C.Assault","c.assault"}, stringKey6B);
 	BaseMod.addKeyword(new String[] {"Enma","enma"}, stringKeyEnma);
 	BaseMod.addKeyword(new String[] {"Renka","renka"}, stringKeyRenka);
 	BaseMod.addKeyword(new String[] {"Zantetsu","zantetsu"}, stringKeyZantetsu);
@@ -554,7 +556,7 @@ public void receivePostInitialize() {
     	final int index = i;
     	toggleCardSelection.add(new ModLabeledToggleButton(CARDS[i], CARDS_TOGGLE_START_X, CARDS_TOGGLE_START_Y + i*CARDS_SPACE_STEP, Settings.CREAM_COLOR, FontHelper.charDescFont, useMusic, settingsPanel, label -> {}, button -> {
     		try {
-    			SpireConfig config = new SpireConfig(MODNAME, "Common");
+    			SpireConfig config = new SpireConfig(MODNAME, "Common", DEFAULTS_CONFIG);
     			setStartingCards(index);
     			config.setInt("starting-cards", index);
                 config.save();
@@ -573,7 +575,7 @@ public void receivePostInitialize() {
     
     final ModLabeledToggleButton toggleMusic = new ModLabeledToggleButton(TOGGLE_MUSIC_LABEL, MUSIC_TOGGLE_START_X, MUSIC_TOGGLE_START_Y , Settings.CREAM_COLOR, FontHelper.charDescFont, useMusic, settingsPanel, label -> {}, button -> {
 		try {
-			SpireConfig config = new SpireConfig(MODNAME, "Common");
+			SpireConfig config = new SpireConfig(MODNAME, "Common", DEFAULTS_CONFIG);
 			setUseMusic(button.enabled);
 			config.setBool("use-music", button.enabled);
 			config.save();

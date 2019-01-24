@@ -33,14 +33,14 @@ public class Haku_Airdash extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Airdash.png";
 	private static final int COST = 1;
 	//private static final int UPGRADED_COST = 0;
 	//private static final int ATTACK_DMG = 7;
 	//private static final int UPGRADE_PLUS_DMG = 2;
-	private static int DRAW = 1;
+	private static int DRAW = 0;
 	private static int UPGRADE_DRAW = 1;
 	    
 	public Haku_Airdash() {
@@ -53,7 +53,7 @@ public class Haku_Airdash extends CustomCard{
 		//this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = DRAW;
 		this.tags.add(CustomTags.AIR);
-		this.exhaust = true;
+		//this.exhaust = true;
 	}
 
 	@Override
@@ -61,20 +61,21 @@ public class Haku_Airdash extends CustomCard{
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			this.exhaust = false;
+			//this.exhaust = false;
 			//upgradeBaseCost(UPGRADED_COST);
 			//upgradeDamage(UPGRADE_PLUS_DMG);
 			upgradeMagicNumber(UPGRADE_DRAW);
-			//this.rawDescription = UPG_DESCRIPTION;
+			this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
 	}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	/*int cardsToDraw = p.hand.getAttacks().size();
-    	Abst.ractDungeon.actionManager.addToBottom(new DrawCardAction(p, cardsToDraw));*/
-    	AbstractCard card = null;
+    	int cardsToDraw = p.hand.getAttacks().size();
+    	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, cardsToDraw + this.magicNumber));
+    	
+    	/*AbstractCard card = null;
     	for (int i=0; i<this.magicNumber; i++) {
     		 card = p.drawPile.getTopCard();
     		 
@@ -89,7 +90,7 @@ public class Haku_Airdash extends CustomCard{
     		 }
     		
     		 p.draw(1);
-    	}
+    	}*/
     }
 	
 	public AbstractCard makeCopy() {

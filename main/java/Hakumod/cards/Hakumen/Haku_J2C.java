@@ -78,7 +78,7 @@ public class Haku_J2C extends CustomCard{
     	AbstractCard card5A = new Haku_5A().makeCopy();
     	AbstractCard card3C = new Haku_3C().makeCopy();
     	AbstractCard cardAgito = new Haku_Agito().makeCopy();
-    	
+    
     	ArrayList<AbstractCard> cardChoice = new ArrayList<AbstractCard>();
     	cardChoice.add(card5A);
     	cardChoice.add(card3C);

@@ -44,14 +44,14 @@ public class Haku_ActiveFlowPower extends AbstractPower {
 	public void atEndOfRound()
 	{
 		if (this.amount <= 1) {
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, "Haku_ActiveFlowPower"));
+			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, Haku_ActiveFlowPower.POWER_ID));
 			
 			AbstractCard cardOD = new Haku_Overdrive();
 			//cardOD.setCostForTurn(0);
 			AbstractDungeon.player.hand.addToHand(cardOD);
 			
 		} else {
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, "Haku_ActiveFlowPower", 1));
+			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, Haku_ActiveFlowPower.POWER_ID, 1));
 		}
 	}
 	

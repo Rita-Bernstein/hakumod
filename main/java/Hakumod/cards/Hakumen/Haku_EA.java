@@ -67,7 +67,7 @@ public class Haku_EA extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
     	
     	//int EAdamage = p.hasPower("ActiveFlowPower") ? this.damage*2 : this.damage ;
-    	if (p.hasPower("Haku_ActiveFlowPower")) {
+    	if (p.hasPower(Haku_ActiveFlowPower.POWER_ID)) {
 	    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
 					new DamageInfo(p, this.damage*2, this.damageTypeForTurn),
 					AbstractGameAction.AttackEffect.BLUNT_HEAVY));

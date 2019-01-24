@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import Hakumod.HakuInit;
 import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomRelic;
 
@@ -39,7 +38,7 @@ public class Haku_Susanoo extends CustomRelic{
     	if (this.counter >= intCardsRequired) {
     		this.counter = 0;
     		flash();
-    		HakuInit.logger.info("Hakumod: Charging 1 Magatama");
+    		//HakuInit.logger.info("Hakumod: Charging 1 Magatama");
     		AbstractDungeon.actionManager.addToTop(
     				new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new Haku_MagatamaPower(AbstractDungeon.player,1),1));
     		AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));

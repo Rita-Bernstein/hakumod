@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 //import com.megacrit.cardcrawl.powers.WeakPower;
-
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import Hakumod.cards.Hakumen.Haku_ChildishMemories;
 import Hakumod.cards.Hakumen.Haku_InJustice;
 import Hakumod.cards.Hakumen.Haku_Walpurgisnacht;
+import Hakumod.powers.Haku_YomotsuhirasakaPower;
 import basemod.BaseMod;
 
 public class ComboAction extends AbstractGameAction{
@@ -52,7 +53,7 @@ public class ComboAction extends AbstractGameAction{
 			}
 		}
 		
-		if (this.p.hasPower("Haku_YomotsuhirasakaPower") && !boolHasInHand){
+		if (this.p.hasPower(Haku_YomotsuhirasakaPower.POWER_ID) && !boolHasInHand){
 			for (AbstractCard cardInDeck:p.drawPile.group) {
 				if (cardInDeck.cardID == this.c.cardID){
 					cardInDeck.setCostForTurn(0);
@@ -75,13 +76,21 @@ public class ComboAction extends AbstractGameAction{
 			if (this.p.cardInUse!=null){
 				if (this.p.cardInUse.upgraded){c.upgrade();}}
 			AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c, false));
-			if (p.hasPower("Artifact")) { if (p.getPower("Artifact").amount >= 2) {AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));}}
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -2), -2));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainStrengthPower(p, 2), 2));
+			
+			if (p.hasPower(ArtifactPower.POWER_ID)) {
+				if (p.getPower(ArtifactPower.POWER_ID).amount >= 2) {
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_DEBUFF), STRENGTH_DEBUFF));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -STRENGTH_DEBUFF), -STRENGTH_DEBUFF));
+				}
+			}
+			else {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_DEBUFF), STRENGTH_DEBUFF));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainStrengthPower(p, -STRENGTH_DEBUFF), STRENGTH_DEBUFF));
+			}
 				//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, -2), -2));
 		}
 		
-		for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+		/*for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
 			updateCard(c);	
 		}
 		
@@ -91,7 +100,7 @@ public class ComboAction extends AbstractGameAction{
 		
 		for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
 			updateCard(c);	
-		}
+		}*/
 		
 		
 	this.isDone = true;

@@ -29,7 +29,7 @@ public class Haku_MagatamaPower extends AbstractPower{
 		this.priority = 0;
 		this.img = new Texture("Hakumod/img/powers/magatama.png");
 		
-		if (this.owner.hasPower("Haku_OverdrivePower")) {
+		if (this.owner.hasPower(Haku_OverdrivePower.POWER_ID)) {
 			this.amount += amount;
 		}
 		updateDescription();
@@ -38,7 +38,7 @@ public class Haku_MagatamaPower extends AbstractPower{
 	public void stackPower(int stackAmount)
 	{
 		this.amount += stackAmount;
-		if (this.owner.hasPower("Haku_OverdrivePower")) {
+		if (this.owner.hasPower(Haku_OverdrivePower.POWER_ID)) {
 			this.amount += stackAmount;
 		}
 		

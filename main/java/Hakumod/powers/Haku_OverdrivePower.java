@@ -34,9 +34,9 @@ public class Haku_OverdrivePower extends AbstractPower {
 	public void atEndOfRound()
 	{
 		if (this.amount <= 1) {
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, "Haku_OverdrivePower"));
+			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
 		} else {
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, "Haku_OverdrivePower", 1));
+			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
 		}
 	}
 }

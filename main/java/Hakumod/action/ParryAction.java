@@ -19,6 +19,7 @@ import Hakumod.powers.Haku_NeutralPower;
 import Hakumod.cards.Hakumen.Haku_BlackAndWhite;
 import Hakumod.cards.Hakumen.Haku_ChildishMemories;
 import Hakumod.cards.Hakumen.Haku_InJustice;
+import Hakumod.powers.Haku_AwakeningPower;
 import Hakumod.powers.Haku_DefensePower;
 
 import Hakumod.relics.SixHeroes;
@@ -48,9 +49,9 @@ public class ParryAction extends AbstractGameAction{
 	{
 		AbstractMonster.Intent[] arrayAttackIntents = {AbstractMonster.Intent.ATTACK, AbstractMonster.Intent.ATTACK_BUFF, AbstractMonster.Intent.ATTACK_DEBUFF, AbstractMonster.Intent.ATTACK_DEFEND};
 		
-		if (Arrays.asList(arrayAttackIntents).contains(this.target.intent) || player.hasPower("Haku_AwakeningPower")){
+		if (Arrays.asList(arrayAttackIntents).contains(this.target.intent) || player.hasPower(Haku_AwakeningPower.POWER_ID)){
 			int bonus = 0;
-			if (player.hasPower("Haku_AwakeningPower") && (this.effect == "attack" || this.effect == "block") ) {bonus = player.getPower("Haku_AwakeningPower").amount;}
+			if (player.hasPower(Haku_AwakeningPower.POWER_ID) && (this.effect == "attack" || this.effect == "block") ) {bonus = player.getPower(Haku_AwakeningPower.POWER_ID).amount;}
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude+bonus);
 			
 			/*if (this.player.hasRelic("SixHeroes")){

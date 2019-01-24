@@ -1,6 +1,6 @@
 {
 	"Haku_4C": {
-		"NAME": "4C",
+		"NAME": "Strike",
 		"DESCRIPTION": "Deal !D! damage.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Starter: Channel !M! Fuumajin."
 	},
@@ -11,30 +11,30 @@
 	},
 	"Haku_Guren": {
 		"NAME": "Guren",
-		"DESCRIPTION": "Special: 1  NL Deal !D! damage. NL Gatling: 3C",
-		"UPGRADE_DESCRIPTION": "Special: 1  NL Deal !D! damage. NL Gatling: 3C"
+		"DESCRIPTION": "Special: 1  NL Deal !D! damage. NL Gatling: Sweep",
+		"UPGRADE_DESCRIPTION": "Special: 1  NL Deal !D! damage. NL Gatling: Sweep"
 	},
 	"Haku_3C": {
-		"NAME": "3C",
+		"NAME": "Sweep",
 		"DESCRIPTION": "Deal !D! damage. NL Ender: Inflict !M! Weak."
 	},
 	"Haku_2B": {
-		"NAME": "2B",
+		"NAME": "Smart Steer",
 		"DESCRIPTION": "Deal !D! damage. NL Gatling: Renka.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add one special from your draw pile to your hand."
 	},
 	"Haku_5C": {
-		"NAME": "5C",
+		"NAME": "Divide",
 		"DESCRIPTION": "Deal !D! damage. NL Gatling: Zantetsu",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. Starter: Set the cost of all specials in your hand to 0 this turn."
 	},
 	"Haku_6A": {
-		"NAME": "6A",
-		"DESCRIPTION": "Deal !D! damage. NL Gatling: 6B",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gatling: 6B"
+		"NAME": "Blitz Attack",
+		"DESCRIPTION": "Deal !D! damage. NL Gatling: C.Assault",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gatling: C.Assault"
 	},
 	"Haku_6B": {
-		"NAME": "6B",
+		"NAME": "Clash Assault",
 		"DESCRIPTION": "Deal !D! damage twice. Ender: Inflict !M! Vulnerable."
 	},
 	"Haku_Enma": {
@@ -52,19 +52,19 @@
 		
 	},
 	"Haku_5D": {
-		"NAME": "5D",
+		"NAME": "Dead Angle",
 		"DESCRIPTION": "Parry: Gain !B! Block and deal !D! damage times X."
 	},
 	"Haku_2D": {
-		"NAME": "2D",
+		"NAME": "Alpha Counter",
 		"DESCRIPTION": "Parry: Gain !B! Block, gain !B! blocks next turn. deal !D! damage."
 	},
 	"Haku_6D": {
-		"NAME": "6D",
+		"NAME": "Guard Thrust",
 		"DESCRIPTION": "Parry: Gain !B! Block, gain 1 magatama, deal !D! damage."
 	},
 	"Haku_JD": {
-		"NAME": "J.D",
+		"NAME": "Reject Guard",
 		"DESCRIPTION": "Parry: Gain !B! Block, draw 1 card, deal !D! damage."
 	},
 	"Haku_Yanagi": {
@@ -77,7 +77,7 @@
 	},
 	"Haku_Shippu": {
 		"NAME": "Shippu",
-		"DESCRIPTION": "Special: 4 NL Deal !D! times X to all enemies. NL Retain"
+		"DESCRIPTION": "Special: 4 NL Deal !D! X times to all enemies. NL Retain"
 	},
 	"Haku_ActiveFlow": {
 		"NAME": "Active Flow",
@@ -90,35 +90,35 @@
 	},
 	"Haku_Overdrive": {
 		"NAME": "Overdrive",
-		"DESCRIPTION": "Gain !M! Overdrive. NL Shuffle one EA into your draw pile.",
-	"UPGRADE_DESCRIPTION": "Innate NL Gain !M! Overdrive. NL Shuffle one EA into your draw pile."
+		"DESCRIPTION": "Gain !M! Overdrive. NL Shuffle one Exceed Accel into your draw pile.",
+	"UPGRADE_DESCRIPTION": "Innate NL Gain !M! Overdrive. NL Shuffle one Exceed Accel into your draw pile."
 	},
 	"Haku_5A": {
-		"NAME": "5A",
+		"NAME": "God Fist",
 		"DESCRIPTION": "Deal !D! damage. NL Add the bottom card from your discard pile to you hand. NL Exhaust"
 	},
 	"Haku_5B": {
-		"NAME": "5B",
+		"NAME": "Tiger Knee",
 		"DESCRIPTION": "Deal !D! damage. If you have played 3 or more cards this turn, Add one Staircase to your hand.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. If you have played 3 cards this turn, Add one upgraded Staircase to your hand."
 	},
 	"Haku_2A": {
-		"NAME": "2A",
+		"NAME": "Claw Grip",
 		"DESCRIPTION": "Deal !D! damage. NL Add 1 2A from your draw pile to your hand.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 2A from your draw pile to your hand, then add 1 2A into your discard pile."
 	},
 	"Haku_2C": {
-		"NAME": "2C",
+		"NAME": "Negative Edge",
 		"DESCRIPTION": "Deal !D! damage. NL Add one Staircase to your hand.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add one upgraded Staircase to your hand."
 	},
 	"Haku_Staircase": {
 		"NAME": "Staircase",
-		"DESCRIPTION": "Deal !D! damage 4 times. NL Add 1 J.C or Agito to your hand, it costs 0 this turn.. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage 4 times. NL Add 1 upgraded J.C or Agito to your hand, it costs 0 this turn.. NL Exhaust"
+		"DESCRIPTION": "Deal !D! damage 4 times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn.. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage 4 times. NL Add 1 upgraded Crusade Seraphim or Agito to your hand, it costs 0 this turn.. NL Exhaust"
 	},
 	"Haku_JC": {
-		"NAME": "J.C",
+		"NAME": "Crusade Seraphim",
 		"DESCRIPTION": "Deal !D! damage. NL Ender: Gain !M! Defense."
 	},
 	"Haku_Agito": {
@@ -126,22 +126,22 @@
 		"DESCRIPTION": "Special: 1 NL Deal !D! damage. NL Ender: Gain !M! Offense."
 	},
 	"Haku_JA": {
-		"NAME": "J.A",
+		"NAME": "Light Punch",
 		"DESCRIPTION": "Deal !D! damage. NL Copy a random 0 cost card in your hand. NL Exhaust"
 	},
 	"Haku_JB": {
-		"NAME": "J.B",
+		"NAME": "Cross-up",
 		"DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to all enemies.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to all enemies."
 	},
 	"Haku_J2A": {
-		"NAME": "J.2A",
+		"NAME": "Crystal Wall",
 		"DESCRIPTION": "Deal !D! damage. NL Channel !M! Fuumajin."
 	},
 	"Haku_J2C": {
-		"NAME": "J.2C",
-		"DESCRIPTION": "Deal !D! damage. NL Choose one card between 5A, 3C and Agito, add it to your hand, it costs 0 this turn.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Choose one upgraded card between 5A, 3C and Agito, add it to your hand, it costs 0 this turn."
+		"NAME": "Heavy Slash",
+		"DESCRIPTION": "Deal !D! damage. NL Choose one card between God Fist, Sweep and Agito, add it to your hand, it costs 0 this turn.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Choose one upgraded card between God Fist, Sweep and Agito, add it to your hand, it costs 0 this turn."
 	},
 	"Haku_Hotaru": {
 		"NAME": "Hotaru",
@@ -190,7 +190,7 @@
 		"DESCRIPTION": "Gain !B! Block. NL Target one enemy, it loses !M! strength this turn."
 	},
 	"Haku_OS": {
-		"NAME": "Tech throw OS",
+		"NAME": "Option Select",
 		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust",
 		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact."
 	},
@@ -200,8 +200,8 @@
 	},
 	"Haku_Taunt": {
 		"NAME": "Taunt",
-		"DESCRIPTION": "Inflict !M! Vulnerable on all enemies. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Inflict !M! Vulnerable on all enemies. NL Exhaust"
+		"DESCRIPTION": "Gain !M! Vulnerable. NL Inflict !M! Vulnerable on all enemies.",
+		"UPGRADE_DESCRIPTION": "Gain 1 Vulnerable. Inflict !M! Vulnerable on all enemies."
 	},
 	"Haku_RC": {
 		"NAME": "Rapid Cancel",
@@ -219,7 +219,7 @@
 		"UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, gain 1 magatama."
 	},
 	"Haku_6C": {
-		"NAME": "6C",
+		"NAME": "Command Order",
 		"DESCRIPTION": "6C. NL Deal !D! damage. Can be upgraded any number of times. NL Gain additional effects with each upgrade.",
 		"EXTENDED_DESCRIPTION": 
 			["Deal !D! damage. Can be upgraded any number of times", 
@@ -265,7 +265,8 @@
 	},
 	"Haku_Airdash": {
 		"NAME": "Air dash",
-		"DESCRIPTION": "Draw !M! cards. NL Decrease their cost by 1 if they are Attacks and increase their cost by 1 if they are Skills."
+		"DESCRIPTION": "Draw 1 card for every Attacks in your hand.",
+		"UPGRADE_DESCRIPTION": "Draw 1 card for every Attacks in your hand + 1."
 	},
 	"Haku_InstantBarrier": {
 		"NAME": "Instant Barrier",
@@ -279,13 +280,13 @@
 	},
 	"Haku_Forwardhop": {
 		"NAME": "Forward Hop",
-		"DESCRIPTION": "Copy a random attack in your hand. NL Shuffle one Back Hop into your draw pile. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Copy a random attack in your hand and upgrade it. NL Shuffle one Back Hop into your draw pile. NL Exhaust"
+		"DESCRIPTION": "Gain !M! offense. NL Add one Back Hop into your discard pile. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Gain !M! offense. NL Add one Back Hop into your discard pile. NL Exhaust"
 	},
 	"Haku_Backhop": {
 		"NAME": "Back Hop",
-		"DESCRIPTION": "Copy a random skill in your hand. NL Shuffle one Forward Hop into your draw pile. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Copy a random skill in your hand and upgrade it. NL Shuffle one Forward Hop into your draw pile. NL Exhaust"
+		"DESCRIPTION": "Gain !M! defense. NL Add one Forward Hop into your discard pile. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Gain !M! defense. NL Add one upgraded Back Hop into your discard pile. NL Exhaust"
 	},
 	"Haku_Round2": {
 		"NAME": "Round 2!",
@@ -342,12 +343,12 @@
 	},
 	"Haku_Walpurgisnacht":{
 		"NAME": "Walpurgisnacht",
-		"DESCRIPTION": "Gain [G] [G] [G]. NL Draw 3 cards. NL Reduce this card cost 1 by every time you play a Gatling."
+		"DESCRIPTION": "Gain [G] equal to your amount of magatamas. NL Lose all your magatamas."
 	},
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
-		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. NL Shuffle a copy of this card into the draw pile.",
-		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. NL Shuffle a copy of this card into the draw pile."
+		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile.",
+		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile."
 
 	},
 	"Haku_Timekiller":{

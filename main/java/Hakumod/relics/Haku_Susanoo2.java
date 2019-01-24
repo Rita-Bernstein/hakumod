@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomRelic;
 
 public class Haku_Susanoo2 extends CustomRelic{
@@ -38,10 +39,14 @@ public class Haku_Susanoo2 extends CustomRelic{
     
 	public void atTurnStart() {
 		
-		if (AbstractDungeon.player.hasPower("Haku_MagatamaPower")) 
+		if (AbstractDungeon.player.hasPower(Haku_MagatamaPower.POWER_ID)) 
 		{
-			AbstractDungeon.player.getPower("Haku_MagatamaPower").reducePower(this.MAGATAMA_LOSS);
-			AbstractDungeon.player.getPower("Haku_MagatamaPower").updateDescription();
+			AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).reducePower(this.MAGATAMA_LOSS);
+			AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).updateDescription();
+			if (AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).amount == 0) 
+			{
+				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, Haku_MagatamaPower.POWER_ID));
+			}
 		}
 	}
 	

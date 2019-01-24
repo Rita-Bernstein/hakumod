@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.cards.Hakumen.Haku_Renka;
 import Hakumod.powers.Haku_NeutralPower;
 import Hakumod.powers.Haku_OffensePower;
+import Hakumod.powers.Haku_ScienceFictionPower;
 import Hakumod.powers.Haku_DefensePower;
 
 import Hakumod.action.UtilsApplyEffect;
@@ -59,8 +60,8 @@ public class OkizemeAction extends AbstractGameAction{
 			}
 			//AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.player.energy.energy));
 		}*/
-		if (this.player.hasPower("Haku_ScienceFictionPower")) {
-			this.magnitude = this.magnitude + this.player.getPower("Haku_ScienceFictionPower").amount;	
+		if (this.player.hasPower(Haku_ScienceFictionPower.POWER_ID)) {
+			this.magnitude = this.magnitude + this.player.getPower(Haku_ScienceFictionPower.POWER_ID).amount;	
 		}
 		if ( (this.card.energyOnUse - this.card.costForTurn <= 0) ||  this.player.hand.getAttacks().size() == 0 || this.player.hasPower("Haku_ScienceFictionPower")) {
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude);

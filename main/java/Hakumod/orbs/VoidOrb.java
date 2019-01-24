@@ -12,7 +12,7 @@ import basemod.abstracts.CustomOrb;
 public class VoidOrb extends CustomOrb{
 	private static final String ID = "VoidOrb";
 	private static final String NAME = "Void";
-	private static final int basePassiveAmount = 3;
+	private static final int basePassiveAmount = 2;
 	private static final int baseEvokeAmount = 1;
 	private static final String passiveDescription = "Gain 2 Blocks at the end of each turn. Evoke after 2 turns.";
 	private static final String evokeDescription = "Gain 1 Magatama";

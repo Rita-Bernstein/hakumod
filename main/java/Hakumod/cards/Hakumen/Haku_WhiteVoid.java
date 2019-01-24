@@ -75,7 +75,7 @@ public class Haku_WhiteVoid extends CustomCard{
     	if (this.upgraded) {
     		copy.upgrade();
     	}
-    	p.drawPile.moveToDeck(copy, true);
+    	p.drawPile.addToTop(copy);
     }
 	
 	public AbstractCard makeCopy() {

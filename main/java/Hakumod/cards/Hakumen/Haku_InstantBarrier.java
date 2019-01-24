@@ -72,6 +72,7 @@ public class Haku_InstantBarrier extends CustomCard{
     		cardToAdd[i].updateCost(-1);
     		//cardToAdd[i].isCostModified = true;
     		cardToAdd[i].exhaust = true;
+    		//cardToAdd[i].purgeOnUse = true;
     		//cardToAdd[i].exhaustOnUseOnce = true;
     		//cardToAdd[i].exhaustOnFire = true;
    			//AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(cardToAdd[i], 1, true, false));

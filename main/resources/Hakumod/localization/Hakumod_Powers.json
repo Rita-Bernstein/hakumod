@@ -1,7 +1,7 @@
 {
   "Haku_MagatamaPower": {
     "NAME": "Magatama",
-    "DESCRIPTIONS": ["Magatama: #b", " (max: 8)."]
+    "DESCRIPTIONS": ["Magatama: #b", " (max: 8). Magatamas are consumed by #ySpecials."]
   },
   "Haku_WhiteVoidPower": {
     "NAME": "White Void",

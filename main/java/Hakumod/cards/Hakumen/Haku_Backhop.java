@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -18,13 +19,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import Hakumod.action.AddToHandAction;
 import Hakumod.action.ChooseCardAction;
 import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
+import Hakumod.powers.Haku_DefensePower;
 import Hakumod.powers.Haku_MagatamaPower;
+import Hakumod.powers.Haku_OffensePower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
 //import basemod.helpers.BaseModTags;
@@ -46,8 +50,8 @@ public class Haku_Backhop extends CustomCard{
 	//private static final int UPG_COST = 1;
 	//private static final int ATTACK_DMG = 7;
 	//private static final int UPGRADE_PLUS_DMG = 2;
-	//private static int DRAW = 2;
-	//private static int UPGRADE_DEBUFF = 1;
+	private static int BUFF = 1;
+	private static int UPGRADE_BUFF = 1;
 	    
 	public Haku_Backhop() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -58,7 +62,7 @@ public class Haku_Backhop extends CustomCard{
 		// TODO Auto-generated constructor stub
 		this.exhaust = true;
 		//this.baseDamage = ATTACK_DMG;
-		//this.magicNumber = this.baseMagicNumber = DRAW;
+		this.magicNumber = this.baseMagicNumber = BUFF;
 		//CardTags.addTags(this, CustomTags.AIR);
 	}
 
@@ -69,7 +73,7 @@ public class Haku_Backhop extends CustomCard{
 			upgradeName();
 			//this.isInnate = true;
 			//upgradeDamage(UPGRADE_PLUS_DMG);
-			//upgradeMagicNumber(UPGRADE_DEBUFF);
+			upgradeMagicNumber(UPGRADE_BUFF);
 			this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
@@ -85,7 +89,7 @@ public class Haku_Backhop extends CustomCard{
 	}
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractCard randomCard = new Haku_Backhop().makeCopy();
+    	/*AbstractCard randomCard = new Haku_Backhop().makeCopy();
     	
     	CardGroup skillsInHand = p.hand.getSkills();
     		
@@ -102,7 +106,17 @@ public class Haku_Backhop extends CustomCard{
 	    	}
 	    	p.drawPile.addToRandomSpot(forwardHop);
 	    	p.hand.addToHand(copy);
+    	}*/
+    	
+    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+				new Haku_DefensePower(p, this.magicNumber, false), this.magicNumber));
+    	
+    	AbstractCard forwardHop = new Haku_Forwardhop().makeCopy();
+    	if (this.upgraded) {
+    		forwardHop.upgrade();
     	}
+    	//p.drawPile.addToRandomSpot(backHop);
+    	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(forwardHop, 1));
 	    	/*ArrayList<AbstractCard> array4CinDraw = new ArrayList<AbstractCard>();
     	AbstractCard card4C = new Haku_4C().makeCopy();
     	for (AbstractCard cardInDraw : p.drawPile.group) {
