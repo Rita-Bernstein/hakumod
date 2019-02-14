@@ -23,7 +23,7 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 import basemod.helpers.CardTags;
 
-public class Haku_Zantetsu extends CustomCard{
+public class Haku_Zantetsu extends Haku_Special{
 
 	public static final String ID = "Haku_Zantetsu";
 	
@@ -37,7 +37,7 @@ public class Haku_Zantetsu extends CustomCard{
 	private static final int ATTACK_DMG = 18;
 	private static final int UPGRADE_PLUS_DMG = 3;
 	
-	public final int MAGATAMA_COST = 3;
+	public final static int MAGATAMA_COST = 3;
 	public static final int ENERGY_BONUS = 1;
 	public static final int UPGRADE_ENERGY_BONUS = 1;
 	
@@ -46,7 +46,8 @@ public class Haku_Zantetsu extends CustomCard{
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR, 
 				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = ENERGY_BONUS;
@@ -67,16 +68,14 @@ public class Haku_Zantetsu extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
     		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-    		
-	    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-					new DamageInfo(p, this.damage, this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.SLASH_HEAVY));
-	    	
-	    	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
-    	}
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+		
+    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.SLASH_HEAVY));
+    	
+    	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
     }
 	
 	public AbstractCard makeCopy() {

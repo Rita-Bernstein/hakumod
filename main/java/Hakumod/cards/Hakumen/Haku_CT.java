@@ -28,7 +28,7 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_CT extends CustomCard{
+public class Haku_CT extends Haku_Special{
 
 	public static final String ID = "Haku_CT";
 	
@@ -44,14 +44,15 @@ public class Haku_CT extends CustomCard{
 	private static int BUFF = 1;
 	private static int UPGRADED_BUFF = 1;
 	
-	private int MAGATAMA_COST = 2;
+	private static int MAGATAMA_COST = 2;
 	
 	public Haku_CT() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = BUFF;
@@ -72,18 +73,16 @@ public class Haku_CT extends CustomCard{
 	}
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-		    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-	    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-					new DamageInfo(p, this.damage+this.magicNumber*p.hand.size(), this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-	    	
+    public void use(AbstractPlayer p, AbstractMonster m) {  		
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage+this.magicNumber*p.hand.size(), this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+    	
+
+		//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+		//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
 	
-			//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-			//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
-		}
     }
 	
 	public AbstractCard makeCopy() {

@@ -77,15 +77,13 @@ public class ComboAction extends AbstractGameAction{
 				if (this.p.cardInUse.upgraded){c.upgrade();}}
 			AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c, false));
 			
-			if (p.hasPower(ArtifactPower.POWER_ID)) {
-				if (p.getPower(ArtifactPower.POWER_ID).amount >= 2) {
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_DEBUFF), STRENGTH_DEBUFF));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -STRENGTH_DEBUFF), -STRENGTH_DEBUFF));
-				}
+			if (p.hasPower(ArtifactPower.POWER_ID) && (p.getPower(ArtifactPower.POWER_ID).amount >= 2)) {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_DEBUFF), STRENGTH_DEBUFF));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -STRENGTH_DEBUFF), -STRENGTH_DEBUFF));
 			}
 			else {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_DEBUFF), STRENGTH_DEBUFF));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainStrengthPower(p, -STRENGTH_DEBUFF), STRENGTH_DEBUFF));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainStrengthPower(p, -STRENGTH_DEBUFF), -STRENGTH_DEBUFF));
 			}
 				//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, -2), -2));
 		}

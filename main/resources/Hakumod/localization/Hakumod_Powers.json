@@ -61,7 +61,7 @@
   },
   "Haku_GatePower": {
     "NAME": "Gate",
-    "DESCRIPTIONS": ["The firsts #b", " #yParry, #yStarter or #yGatling played each turn is played twice."]
+    "DESCRIPTIONS": ["At the end of your turn, gain #b", " #yBlocks for every card in your hand."]
   },
   "Haku_SwordOfDoomPower": {
     "NAME": "Sword of Doom",

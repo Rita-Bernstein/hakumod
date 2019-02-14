@@ -82,7 +82,7 @@ public class UtilsApplyEffect {
     			if ((mo != null) && (!mo.isDeadOrEscaped())) {
 			  
 				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
-						this.target, new DamageInfo(this.player, this.magnitude),
+						mo, new DamageInfo(this.player, this.magnitude),
 						AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 				
     			}

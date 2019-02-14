@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -26,29 +27,45 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import Hakumod.HakuInit;
 import Hakumod.cards.Hakumen.Haku_2A;
+import Hakumod.cards.Hakumen.Haku_2B;
+import Hakumod.cards.Hakumen.Haku_2D;
 import Hakumod.cards.Hakumen.Haku_3C;
+import Hakumod.cards.Hakumen.Haku_4C;
 import Hakumod.cards.Hakumen.Haku_5B;
+import Hakumod.cards.Hakumen.Haku_5C;
+import Hakumod.cards.Hakumen.Haku_6A;
 import Hakumod.cards.Hakumen.Haku_6B;
 import Hakumod.cards.Hakumen.Haku_6C;
 import Hakumod.cards.Hakumen.Haku_6D;
+import Hakumod.cards.Hakumen.Haku_ActiveFlow;
+import Hakumod.cards.Hakumen.Haku_Blocking;
 import Hakumod.cards.Hakumen.Haku_EA;
 import Hakumod.cards.Hakumen.Haku_Enma;
+import Hakumod.cards.Hakumen.Haku_FC;
+import Hakumod.cards.Hakumen.Haku_Guren;
 import Hakumod.cards.Hakumen.Haku_JB;
 import Hakumod.cards.Hakumen.Haku_JD;
+import Hakumod.cards.Hakumen.Haku_Kishuu;
 import Hakumod.cards.Hakumen.Haku_Renka;
 import Hakumod.cards.Hakumen.Haku_Zantetsu;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.HakuEnum;
+import Hakumod.relics.Haku_Susanoo;
 import basemod.abstracts.CustomPlayer;
 
 public class Hakumen extends CustomPlayer {
-	//public static final Logger logger = LogManager.getLogger(HakuInit.class.getName());
+	
+	public static final String TITLE = "The White Void";
+	public static final String FLAVOR = "One of the \"Six Heroes\" who defeated the Black Beast. NL What could his goal possibly be?";
 	
     public static final int STARTING_HP = 72;
     public static final int MAX_HP = 72;
+    public static final int MAX_HP_LOSS = 4;
     public static final int STARTING_GOLD = 99;
     public static final int HAND_SIZE = 5;
-    
+    public static final int MAX_ORBS = 0;
+    public static final int MAX_ORBS_COMBAT = 2;
+
 	public static final int ENERGY_PER_TURN = 3; 
 	public static final String HAKUMEN_MAIN = "Hakumod/img/char/main.png";
 	public static final String HAKUMEN_SHOULDER_2 = "Hakumod/img/char/shoulder2.png"; 
@@ -61,15 +78,15 @@ public class Hakumen extends CustomPlayer {
     
     public final String[][] STARTING_CARDS = 
     	{
-    			{"Haku_Guren", "Haku_3C"},
-    			{"Haku_6A", "Haku_6B"},
-    			{"Haku_2B", "Haku_Renka"},
-    			{"Haku_5C", "Haku_Zantetsu"},
-    			{"Haku_Kishuu", "Haku_Enma"},
-    			{"Haku_2D", "Haku_JD"},
-    			{"Haku_2A", "Haku_2A"},
-    			{"Haku_EA", "Haku_ActiveFlow"},
-    			{"Haku_6C", "Haku_FC"},
+    			{Haku_Guren.ID, Haku_3C.ID},
+    			{Haku_6A.ID, Haku_6B.ID},
+    			{Haku_2B.ID, Haku_Renka.ID},
+    			{Haku_5C.ID, Haku_Zantetsu.ID},
+    			{Haku_Kishuu.ID, Haku_Enma.ID},
+    			{Haku_2D.ID, Haku_JD.ID},
+    			{Haku_2A.ID, Haku_2A.ID},
+    			{Haku_EA.ID, Haku_ActiveFlow.ID},
+    			{Haku_6C.ID, Haku_FC.ID},
     	};
     
     public final AbstractCard[] CARDS_COPY = 
@@ -79,8 +96,8 @@ public class Hakumen extends CustomPlayer {
     			new Haku_Renka().makeCopy(),
     			new Haku_Zantetsu().makeCopy(),
     			new Haku_Enma().makeCopy(),
-    			new Haku_2A().makeCopy(),
     			new Haku_JD().makeCopy(),
+    			new Haku_2A().makeCopy(),
     			new Haku_EA().makeCopy(),
     			new Haku_6C().makeCopy()
     	};	
@@ -105,21 +122,13 @@ public class Hakumen extends CustomPlayer {
 	};
 
 	private int startingCards;
-    //public boolean hasPlayedAnAttack;
+	
 	public Hakumen (String name, int startingCards) {
-		
-
-		//public CustomPlayer(String name, PlayerClass playerClass, String[] orbTextures, String orbVfxPath, float[] layerSpeeds, AbstractAnimation animation)
 		super(name, HakuEnum.HAKUMEN, orbTextures, "Hakumod/img/orb/vfx.png", layerSpeeds, null, null);
-		//super(name, HakuEnum.HAKUMEN, null, name, name, name)
 		this.startingCards = startingCards;
 		
 		this.dialogX = (this.drawX + 20.0F * Settings.scale); // set location for text bubbles
 		this.dialogY = (this.drawY + 240.0F * Settings.scale); // you can just copy these values
-		
-		//logger.info("Hakumod: Init character class");
-		this.masterMaxOrbs = 2;
-		this.maxOrbs = 2;
 		
 		initializeClass(null,
 						HAKUMEN_SHOULDER_2, 
@@ -137,17 +146,30 @@ public class Hakumen extends CustomPlayer {
 		e.setTime(e.getEndTime() * MathUtils.random());
 	    e.setTimeScale(0.9F);
 	}
+	
+	/* (non-Javadoc)
+	 * @see com.megacrit.cardcrawl.characters.AbstractPlayer#increaseMaxOrbSlots(int, boolean)
+	 */
+	
+	//Originally start with a max of 0 orb, then changed to 2 permanently once 1 is channeled.
+	@Override
+	public void increaseMaxOrbSlots(int arg0, boolean arg1) {
+		// TODO Auto-generated method stub
+		int increaseBy = arg0;
+		if (arg0 == 1 && this.maxOrbs==0 && arg1) {increaseBy = MAX_ORBS_COMBAT; this.masterMaxOrbs = MAX_ORBS_COMBAT;}
+		super.increaseMaxOrbSlots(increaseBy, arg1);
+	}
 
 	public ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Haku_4C");
-		retVal.add("Haku_4C");
-		retVal.add("Haku_4C");
-		retVal.add("Haku_4C");
-		retVal.add("Haku_Blocking");
-		retVal.add("Haku_Blocking");
-		retVal.add("Haku_Blocking");
-		retVal.add("Haku_Blocking");
+		retVal.add(Haku_4C.ID);
+		retVal.add(Haku_4C.ID);
+		retVal.add(Haku_4C.ID);
+		retVal.add(Haku_4C.ID);
+		retVal.add(Haku_Blocking.ID);
+		retVal.add(Haku_Blocking.ID);
+		retVal.add(Haku_Blocking.ID);
+		retVal.add(Haku_Blocking.ID);
 		
 		retVal.add(STARTING_CARDS[this.startingCards][0]);
 		retVal.add(STARTING_CARDS[this.startingCards][1]);
@@ -157,22 +179,13 @@ public class Hakumen extends CustomPlayer {
 	
 	public ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Haku_Susanoo");
-		UnlockTracker.markRelicAsSeen("Haku_Susanoo");
+		retVal.add(Haku_Susanoo.RELIC_ID);
+		UnlockTracker.markRelicAsSeen(Haku_Susanoo.RELIC_ID);
 		return retVal;
 	}
 	
-
-
 	public CharSelectInfo getLoadout() {
-		String stringTitle;
-		String stringFlavor;
-
-		stringTitle = "The White Void";
-		stringFlavor = "One of the \"Six Heroes\" who defeated the Black Beast. NL What could his goal possibly be?";
-		
-		return new CharSelectInfo(stringTitle, stringFlavor,
-								  STARTING_HP, MAX_HP, 0, STARTING_GOLD, HAND_SIZE,
+		return new CharSelectInfo(TITLE, FLAVOR, STARTING_HP, MAX_HP, MAX_ORBS, STARTING_GOLD, HAND_SIZE,
 								  this, getStartingRelics(), getStartingDeck(), false);
 	}
 
@@ -187,7 +200,7 @@ public class Hakumen extends CustomPlayer {
 	@Override
 	public int getAscensionMaxHPLoss() {
 		// TODO Auto-generated method stub
-		return 4;
+		return MAX_HP_LOSS;
 	}
 
 
@@ -241,8 +254,8 @@ public class Hakumen extends CustomPlayer {
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
-		AbstractPlayer haku = new Hakumen(this.name, startingCards);
-		return haku;
+		AbstractPlayer Haku = new Hakumen(this.name, startingCards);
+		return Haku;
 	}
 
 	@Override

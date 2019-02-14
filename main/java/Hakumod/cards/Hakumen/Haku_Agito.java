@@ -24,7 +24,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
 
-public class Haku_Agito extends CustomCard{
+public class Haku_Agito extends Haku_Special{
 
 	public static final String ID = "Haku_Agito";
 	
@@ -40,14 +40,15 @@ public class Haku_Agito extends CustomCard{
 	private static int BUFF = 2;
 	//private static int UPGRADE_BUFF = 1;
 	
-	public final int MAGATAMA_COST = 1;
+	public static final int MAGATAMA_COST = 1;
 	
 	public Haku_Agito() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = BUFF;
@@ -71,7 +72,6 @@ public class Haku_Agito extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
     		
     		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
     		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
@@ -86,7 +86,7 @@ public class Haku_Agito extends CustomCard{
         			new OkizemeAction(p, this, m, "dexterity", -this.magicNumber));*/
     		AbstractDungeon.actionManager.addToTop(
         			new OkizemeAction(p, this, m, "offense", this.magicNumber));
-    	}
+    	
     }
 	
 	public AbstractCard makeCopy() {

@@ -38,10 +38,11 @@ public class Haku_Gate extends CustomCard{
 	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Gate.png";
-	private static final int COST = 2;
-	private static final int UPGRADED_COST = 1;
+	private static final int COST = 1;
+	private static final int UPGRADED_COST = 0;
 	
-	private static int MAGNITUDE = 1;
+	private static int MAGNITUDE = 2;
+	//private static int UPGRADED_MAGNITUDE = 1;
     
 	public Haku_Gate() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 

@@ -64,7 +64,6 @@ public class VoidOrb extends CustomOrb{
 	 * @see com.megacrit.cardcrawl.orbs.AbstractOrb#onEndOfTurn()
 	 */
 
-
 	@Override
 	public void playChannelSFX() {
 		// TODO Auto-generated method stub

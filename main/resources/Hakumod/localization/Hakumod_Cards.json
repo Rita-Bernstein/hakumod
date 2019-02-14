@@ -286,7 +286,7 @@
 	"Haku_Backhop": {
 		"NAME": "Back Hop",
 		"DESCRIPTION": "Gain !M! defense. NL Add one Forward Hop into your discard pile. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Gain !M! defense. NL Add one upgraded Back Hop into your discard pile. NL Exhaust"
+		"UPGRADE_DESCRIPTION": "Gain !M! defense. NL Add one upgraded Forward Hop into your discard pile. NL Exhaust"
 	},
 	"Haku_Round2": {
 		"NAME": "Round 2!",
@@ -381,8 +381,8 @@
 	},
 	"Haku_Gate":{
 		"NAME": "The Gate",
-		"DESCRIPTION": "The first Parry, Starter or Gatling played each turn is played twice.",
-		"UPGRADE_DESCRIPTION": "Innate. NL The first Parry, Starter or Gatling played each turn is played twice."
+		"DESCRIPTION": "At the end of your turn, gain !M! Blocks for every card in your hand.",
+		"UPGRADE_DESCRIPTION": "At the end of your turn, gain !M! Blocks for every card in your hand."
 	},
 	"Haku_InJustice":{
 		"NAME": "IN Justice",

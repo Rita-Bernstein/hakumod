@@ -20,7 +20,7 @@ import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
-public class Haku_Yukikaze extends CustomCard{
+public class Haku_Yukikaze extends Haku_Special{
 	public static final String ID = "Haku_Yukikaze";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -41,14 +41,15 @@ public class Haku_Yukikaze extends CustomCard{
 	private static int BUFF = 1;
 	//private static int UPGRADE_BUFF = 1;
 	 
-	public final int MAGATAMA_COST = 4;
+	public final static int MAGATAMA_COST = 4;
 	
 	public Haku_Yukikaze() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION,
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		
 		this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK;
@@ -59,13 +60,12 @@ public class Haku_Yukikaze extends CustomCard{
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-			//AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", baseBlock));
-			AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "attack", baseDamage	));
-			AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "buffer", magicNumber));
-		}
+			
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+		//AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", baseBlock));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "attack", baseDamage	));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "buffer", magicNumber));
+	
 	}
 	
 	public AbstractCard makeCopy() {

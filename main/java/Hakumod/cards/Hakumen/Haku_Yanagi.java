@@ -21,7 +21,7 @@ import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
-public class Haku_Yanagi extends CustomCard{
+public class Haku_Yanagi extends Haku_Special{
 	public static final String ID = "Haku_Yanagi";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -42,14 +42,15 @@ public class Haku_Yanagi extends CustomCard{
 	private static int BUFF = 1;
 	private static int UPGRADE_BUFF = 1;
 	 
-	public final int MAGATAMA_COST = 2;
+	public final static int MAGATAMA_COST = 2;
 	
 	public Haku_Yanagi() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		
 		this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK;
@@ -59,17 +60,16 @@ public class Haku_Yanagi extends CustomCard{
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-		    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-			
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-					new DamageInfo(p, this.damage, this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.SHIELD));
-			
-			AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
-			AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "thorn", magicNumber));
-		}
+	   		
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+		
+		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.SHIELD));
+		
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "thorn", magicNumber));
+	
 	}
 	
 	public AbstractCard makeCopy() {

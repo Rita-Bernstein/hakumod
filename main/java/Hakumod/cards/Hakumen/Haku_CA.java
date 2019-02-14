@@ -18,7 +18,7 @@ import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
-public class Haku_CA extends CustomCard{
+public class Haku_CA extends Haku_Special{
 	public static final String ID = "Haku_CA";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -42,7 +42,8 @@ public class Haku_CA extends CustomCard{
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 
 		this.baseBlock = BLOCK;
 		//this.magicNumber = this.baseMagicNumber = BUFF;
@@ -52,12 +53,9 @@ public class Haku_CA extends CustomCard{
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-    		
-    		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-    		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
-    		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "cure_all", 1));
-		}
+    	AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "cure_all", 1));
 	}
 	
 	public AbstractCard makeCopy() {

@@ -23,7 +23,7 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 import basemod.helpers.CardTags;
 
-public class Haku_Kishuu extends CustomCard{
+public class Haku_Kishuu extends Haku_Special{
 
 	public static final String ID = "Haku_Kishuu";
 	
@@ -37,7 +37,7 @@ public class Haku_Kishuu extends CustomCard{
 	//private static final int ATTACK_DMG = 5;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	
-	public final int MAGATAMA_COST = 1;
+	public final static int MAGATAMA_COST = 1;
 	private static final int BLOCK = 4;
 	private static final int UPGRADE_PLUS_BLOCK = 2;
 	
@@ -49,7 +49,8 @@ public class Haku_Kishuu extends CustomCard{
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.SELF);
+				AbstractCard.CardTarget.SELF,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		//this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK;
@@ -71,15 +72,14 @@ public class Haku_Kishuu extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));	
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-    		
-			//new UtilsApplyEffect(p, this, m, "defense", this.magicNumber);
-    		AbstractCard c = new Haku_Enma().makeCopy();
-        	AbstractDungeon.actionManager.addToBottom(new ComboAction(c));
-    	}
+			
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));	
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+		
+		//new UtilsApplyEffect(p, this, m, "defense", this.magicNumber);
+		AbstractCard c = new Haku_Enma().makeCopy();
+    	AbstractDungeon.actionManager.addToBottom(new ComboAction(c));
+    	
     }
 	
 	public AbstractCard makeCopy() {

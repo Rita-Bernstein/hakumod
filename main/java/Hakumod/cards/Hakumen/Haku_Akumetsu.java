@@ -22,7 +22,7 @@ import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
-public class Haku_Akumetsu extends CustomCard{
+public class Haku_Akumetsu extends Haku_Special{
 	public static final String ID = "Haku_Akumetsu";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -38,14 +38,15 @@ public class Haku_Akumetsu extends CustomCard{
 	private static final int UPGRADE_PLUS_DMG = 5;
 	//private static final int UPG_COST = 2;
  
-	public final int MAGATAMA_COST = 8;
+	public static final int MAGATAMA_COST = 8;
 	
 	public Haku_Akumetsu() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION,
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.RARE,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		
 		this.tags.add(CustomTags.SPECIAL);
 		this.tags.add(CustomTags.PARRY);
@@ -53,26 +54,25 @@ public class Haku_Akumetsu extends CustomCard{
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-    		
-			int energyConsumed = this.energyOnUse;
-			if (p.hasRelic("Chemical X")) {
-				p.getRelic("Chemical X").flash();
-				energyConsumed += 2;
-			}
-			
-	    	
-	    	int AkumetsuDamage =  this.damage*energyConsumed;
-	    	
-	    	
-	    	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
-	    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "attack", AkumetsuDamage));
-	    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "intangible", 1));
-	    	
-	    	AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.energyOnUse));
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
 		
+		int energyConsumed = this.energyOnUse;
+		if (p.hasRelic("Chemical X")) {
+			p.getRelic("Chemical X").flash();
+			energyConsumed += 2;
 		}
+		
+    	
+    	int AkumetsuDamage =  this.damage*energyConsumed;
+    	
+    	
+    	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "attack", AkumetsuDamage));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "intangible", 1));
+    	
+    	AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.energyOnUse));
+	
+	
 	}
 	
 	public AbstractCard makeCopy() {

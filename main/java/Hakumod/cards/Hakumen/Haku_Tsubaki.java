@@ -22,7 +22,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
 
-public class Haku_Tsubaki extends CustomCard{
+public class Haku_Tsubaki extends Haku_Special{
 
 	public static final String ID = "Haku_Tsubaki";
 	
@@ -35,11 +35,15 @@ public class Haku_Tsubaki extends CustomCard{
 	private static final int COST = 0;
 	private static final int ATTACK_DMG = 20;
 	private static final int UPGRADE_PLUS_DMG = 3;
-	private int MAGATAMA_COST = 3;
+	private static int MAGATAMA_COST = 3;
 	
 	public Haku_Tsubaki() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.HAKUMEN_COLOR, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardType.ATTACK, 
+				AbstractCardEnum.HAKUMEN_COLOR, 
+				AbstractCard.CardRarity.UNCOMMON, 
+				AbstractCard.CardTarget.ENEMY, 
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.tags.add(CustomTags.SPECIAL);
@@ -61,17 +65,16 @@ public class Haku_Tsubaki extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-    		
-				AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-		    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-						new DamageInfo(p, this.damage, this.damageTypeForTurn),
-						AbstractGameAction.AttackEffect.SLASH_HEAVY));
-		    	
-		    	AbstractCard cardToAdd = new Haku_Tsubaki().makeCopy();
-		    	if (this.upgraded) {cardToAdd.upgrade();}
-		    	p.drawPile.addToTop(cardToAdd);
-    		}
+ 
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.SLASH_HEAVY));
+    	
+    	AbstractCard cardToAdd = new Haku_Tsubaki().makeCopy();
+    	if (this.upgraded) {cardToAdd.upgrade();}
+    	p.drawPile.addToTop(cardToAdd);
+	
     }
 	
 	public AbstractCard makeCopy() {

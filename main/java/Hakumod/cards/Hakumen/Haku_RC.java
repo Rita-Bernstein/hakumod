@@ -23,7 +23,7 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 import basemod.helpers.CardTags;
 
-public class Haku_RC extends CustomCard{
+public class Haku_RC extends Haku_Special{
 
 	public static final String ID = "Haku_RC";
 	
@@ -38,14 +38,15 @@ public class Haku_RC extends CustomCard{
 	public static final int ENERGY_BONUS = 2;
 	public static final int UPGRADE_ENERGY_BONUS = 1;
 	
-	public final int MAGATAMA_COST = 4;
+	public final static int MAGATAMA_COST = 4;
 	
 	public Haku_RC() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR, 
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.SELF);
+				AbstractCard.CardTarget.SELF,
+				MAGATAMA_COST);
 		this.magicNumber = this.baseMagicNumber = ENERGY_BONUS;
 		this.tags.add(CustomTags.SPECIAL);
 		this.exhaust = true;
@@ -66,13 +67,11 @@ public class Haku_RC extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
     		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));    
-			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));	
-			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));	
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));    
+		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));	
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));	
     
-    	}
     }
     
 	public AbstractCard makeCopy() {

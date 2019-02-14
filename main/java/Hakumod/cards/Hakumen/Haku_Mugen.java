@@ -31,7 +31,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
 
-public class Haku_Mugen extends CustomCard{
+public class Haku_Mugen extends Haku_Special{
 
 	public static final String ID = "Haku_Mugen";
 	
@@ -44,14 +44,15 @@ public class Haku_Mugen extends CustomCard{
 	private static final int COST = 3;
 
 	private static int CARD_TO_DRAW = 1;
-	private int MAGATAMA_COST = 8;
+	private static int MAGATAMA_COST = 8;
 	
 	public Haku_Mugen() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.POWER, 
 				AbstractCardEnum.HAKUMEN_COLOR, 
 				AbstractCard.CardRarity.RARE, 
-				AbstractCard.CardTarget.SELF);
+				AbstractCard.CardTarget.SELF,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.tags.add(CustomTags.SPECIAL);
 		this.magicNumber = this.baseMagicNumber = CARD_TO_DRAW;
@@ -69,54 +70,52 @@ public class Haku_Mugen extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-	    	int count = 0;
-	    	int randomCardNum;
-	    	AbstractCard cardSpecial;
-	    	
-	    	if (this.upgraded) {count++;}
-	    	AbstractCard [] randomSpecialPool = {
-	    			//new Haku_Kishuu().makeCopy(),
-	    			new Haku_Enma().makeCopy(),
-	    			new Haku_Guren().makeCopy(),
-	    			new Haku_Renka().makeCopy(),
-	    			new Haku_Zantetsu().makeCopy(),
-	    			new Haku_Yukikaze().makeCopy(),
-	    			new Haku_Shippu().makeCopy(),
-	    			new Haku_Agito().makeCopy(),
-	    			new Haku_Hotaru().makeCopy(),
-	    			new Haku_Tsubaki().makeCopy()}; 
-	    	
-	    	@SuppressWarnings("unchecked")
-			ArrayList<AbstractCard> cardsInHand = (ArrayList<AbstractCard>) p.hand.group.clone();
-	    	for (AbstractCard cardInHand : cardsInHand) {
-	    		if (! (cardInHand.hasTag(CustomTags.SPECIAL ))) {
-	    			cardInHand.moveToDiscardPile();
-	    			p.hand.removeCard(cardInHand);
-	    			count++;	
-	    			p.hand.refreshHandLayout();
-	    		}
-	    		else {
-	    			cardInHand.setCostForTurn(0);
-	    		}
-	    	}
-	    
-	    	for (int i=0; i<count; i++) {
-	    		if (p.hand.size() == 10) {break;}
-	    		randomCardNum = (int) Math.floor(Math.random()*randomSpecialPool.length);
-	    		cardSpecial = randomSpecialPool[randomCardNum].makeCopy();
-	    		cardSpecial.setCostForTurn(0);
-	    		p.hand.addToHand(cardSpecial);	
-	    		cardSpecial.lighten(false);
-	    		p.hand.refreshHandLayout();
-	    	}
-	    	
-	    	
-	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_MugenPower(p, 1, false), 1));
-	    	
-		}
+		
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+    	int count = 0;
+    	int randomCardNum;
+    	AbstractCard cardSpecial;
+    	
+    	if (this.upgraded) {count++;}
+    	AbstractCard [] randomSpecialPool = {
+    			//new Haku_Kishuu().makeCopy(),
+    			new Haku_Enma().makeCopy(),
+    			new Haku_Guren().makeCopy(),
+    			new Haku_Renka().makeCopy(),
+    			new Haku_Zantetsu().makeCopy(),
+    			new Haku_Yukikaze().makeCopy(),
+    			new Haku_Shippu().makeCopy(),
+    			new Haku_Agito().makeCopy(),
+    			new Haku_Hotaru().makeCopy(),
+    			new Haku_Tsubaki().makeCopy()}; 
+    	
+    	@SuppressWarnings("unchecked")
+		ArrayList<AbstractCard> cardsInHand = (ArrayList<AbstractCard>) p.hand.group.clone();
+    	for (AbstractCard cardInHand : cardsInHand) {
+    		if (! (cardInHand.hasTag(CustomTags.SPECIAL ))) {
+    			cardInHand.moveToDiscardPile();
+    			p.hand.removeCard(cardInHand);
+    			count++;	
+    			p.hand.refreshHandLayout();
+    		}
+    		else {
+    			cardInHand.setCostForTurn(0);
+    		}
+    	}
+    
+    	for (int i=0; i<count; i++) {
+    		if (p.hand.size() == 10) {break;}
+    		randomCardNum = (int) Math.floor(Math.random()*randomSpecialPool.length);
+    		cardSpecial = randomSpecialPool[randomCardNum].makeCopy();
+    		cardSpecial.setCostForTurn(0);
+    		p.hand.addToHand(cardSpecial);	
+    		cardSpecial.lighten(false);
+    		p.hand.refreshHandLayout();
+    	}
+    	
+    	
+    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_MugenPower(p, 1, false), 1));
+    	
     }
 	
 	public AbstractCard makeCopy() {

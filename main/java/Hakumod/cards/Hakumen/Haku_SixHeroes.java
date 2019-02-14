@@ -71,7 +71,7 @@ public class Haku_SixHeroes extends CustomCard{
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			this.isInnate = true;
+			//this.isInnate = true;
 			upgradeMagicNumber(UPGRADE_BUFF);
 			//upgradeBaseCost(UPGRADED_COST);
 			this.upgradeBlock(UPG_BLOCK);

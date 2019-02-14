@@ -24,7 +24,7 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 import basemod.helpers.CardTags;
 
-public class Haku_Shippu extends CustomCard{
+public class Haku_Shippu extends Haku_Special{
 
 	public static final String ID = "Haku_Shippu";
 	
@@ -38,7 +38,7 @@ public class Haku_Shippu extends CustomCard{
 	private static final int ATTACK_DMG = 10;
 	private static final int UPGRADE_PLUS_DMG = 2;
 	
-	public final int MAGATAMA_COST = 4;
+	public final static int MAGATAMA_COST = 4;
 	
 	/* (non-Javadoc)
 	 * @see com.megacrit.cardcrawl.cards.AbstractCard#atTurnStart()
@@ -55,7 +55,8 @@ public class Haku_Shippu extends CustomCard{
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ALL_ENEMY);
+				AbstractCard.CardTarget.ALL_ENEMY,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.tags.add(CustomTags.SPECIAL);
@@ -74,33 +75,30 @@ public class Haku_Shippu extends CustomCard{
 	}
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-    		
-			int energyConsumed = this.energyOnUse;
-			if (p.hasRelic("Chemical X")) {
-				p.getRelic("Chemical X").flash();
-				energyConsumed += 2;
+    public void use(AbstractPlayer p, AbstractMonster m) {		
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+		
+		int energyConsumed = this.energyOnUse;
+		if (p.hasRelic("Chemical X")) {
+			p.getRelic("Chemical X").flash();
+			energyConsumed += 2;
+		}
+		
+    	
+    	//int ShippuDamage =  this.damage*energyConsumed;
+       
+		
+		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			if ((mo != null) && (!mo.isDeadOrEscaped())) {
+				for (int i=0;i<energyConsumed;i++) {
+    				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(mo,
+    						new DamageInfo(p, this.damage, this.damageTypeForTurn),
+    						AbstractGameAction.AttackEffect.SLASH_HEAVY));
+				}	
 			}
-			
-	    	
-	    	//int ShippuDamage =  this.damage*energyConsumed;
-	       
-			
-    		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-    			if ((mo != null) && (!mo.isDeadOrEscaped())) {
-    				for (int i=0;i<energyConsumed;i++) {
-	    				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(mo,
-	    						new DamageInfo(p, this.damage, this.damageTypeForTurn),
-	    						AbstractGameAction.AttackEffect.SLASH_HEAVY));
-    				}	
-    			}
-    		}
-    		
-    		AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.energyOnUse));
-    	}
+		}
+		
+		AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.energyOnUse));
     }
 	
 	public AbstractCard makeCopy() {

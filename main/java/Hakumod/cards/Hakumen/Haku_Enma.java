@@ -21,7 +21,7 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 import basemod.helpers.CardTags;
 
-public class Haku_Enma extends CustomCard{
+public class Haku_Enma extends Haku_Special{
 
 	public static final String ID = "Haku_Enma";
 	
@@ -35,7 +35,7 @@ public class Haku_Enma extends CustomCard{
 	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADE_PLUS_DMG = 2;
 	
-	public int MAGATAMA_COST = 1;
+	public static int MAGATAMA_COST = 1;
 	public int UPG_MAGATAMA_COST = 0;
 	private static final int BLOCK = 7;
 	private static final int UPGRADE_PLUS_BLOCK = 2;
@@ -46,7 +46,8 @@ public class Haku_Enma extends CustomCard{
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK;
@@ -72,16 +73,13 @@ public class Haku_Enma extends CustomCard{
 	}
 	
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-			    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));	
-	    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-					new DamageInfo(p, this.damage, this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-	    	
-	    	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-    	}
+    public void use(AbstractPlayer p, AbstractMonster m) {	    		
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));	
+    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+    	
+    	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
     }
 	
 	public AbstractCard makeCopy() {

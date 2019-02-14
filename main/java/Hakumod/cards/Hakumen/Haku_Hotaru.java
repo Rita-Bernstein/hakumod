@@ -22,7 +22,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.CardTags;
 
 
-public class Haku_Hotaru extends CustomCard{
+public class Haku_Hotaru extends Haku_Special{
 
 	public static final String ID = "Haku_Hotaru";
 	
@@ -41,14 +41,15 @@ public class Haku_Hotaru extends CustomCard{
 	
 	private static int BUFF = 1;
 	private static int UPGRADE_BUFF = 1;
-	private int MAGATAMA_COST = 2;
+	private static int MAGATAMA_COST = 2;
 	
 	public Haku_Hotaru() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK;
@@ -72,17 +73,16 @@ public class Haku_Hotaru extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
     		
-    		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-    		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-				new DamageInfo(p, this.damage, this.damageTypeForTurn),
-				AbstractGameAction.AttackEffect.SHIELD));
-    	
-    		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
-    		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "plated", this.magicNumber)); 	
-    	}
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+			new DamageInfo(p, this.damage, this.damageTypeForTurn),
+			AbstractGameAction.AttackEffect.SHIELD));
+	
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "plated", this.magicNumber)); 	
     }
+    
 	public AbstractCard makeCopy() {
 		return new Haku_Hotaru();
 	}

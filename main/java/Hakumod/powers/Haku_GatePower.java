@@ -1,6 +1,7 @@
 package Hakumod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -20,7 +21,7 @@ public class Haku_GatePower extends AbstractPower {
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-	private int counter;
+	//private int counter;
 	
 	public Haku_GatePower(AbstractCreature owner, int amount) {
 			this.name = NAME;
@@ -29,7 +30,7 @@ public class Haku_GatePower extends AbstractPower {
 			this.amount = amount;
 			this.isTurnBased = true;
 			this.img = new Texture("Hakumod/img/powers/placeholder.png");
-			this.counter = 0;
+			//this.counter = 0;
 			updateDescription();
 	}
 	
@@ -37,7 +38,7 @@ public class Haku_GatePower extends AbstractPower {
 	/* (non-Javadoc)
 	 * @see com.megacrit.cardcrawl.powers.AbstractPower#onPlayCard(com.megacrit.cardcrawl.cards.AbstractCard, com.megacrit.cardcrawl.monsters.AbstractMonster)
 	 */
-	@Override
+	/*@Override
 	public void onPlayCard(AbstractCard card, AbstractMonster m) {
 		// TODO Auto-generated method stub
 		super.onPlayCard(card, m);
@@ -50,18 +51,18 @@ public class Haku_GatePower extends AbstractPower {
 		}
 		this.counter++;
 		
-	}
-	
-	
+	}*/
 
 	/* (non-Javadoc)
-	 * @see com.megacrit.cardcrawl.powers.AbstractPower#atEndOfRound()
+	 * @see com.megacrit.cardcrawl.powers.AbstractPower#atEndOfTurn(boolean)
 	 */
 	@Override
-	public void atEndOfRound() {
+	public void atEndOfTurn(boolean isPlayer) {
 		// TODO Auto-generated method stub
-		super.atEndOfRound();
-		this.counter = 0;
+		super.atEndOfTurn(isPlayer);
+		int amountBlocked = this.amount * AbstractDungeon.player.hand.size();
+		AbstractDungeon.actionManager.addToBottom(
+				new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amountBlocked));
 	}
 
 

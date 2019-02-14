@@ -459,7 +459,7 @@ public void receiveEditKeywords() {
 	
 
 	String stringKey6C = "1: Reduce this card's cost by 1. NL 2: Draw 1 card. NL 3: Gain 2 #yStrengths. NL 4: Upgrade all the cards in your hand.";
-	String stringKeySpeech = "1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 1 #yThorns. NL 5: All enemies lose 1 #yStrength. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???";
+	String stringKeySpeech = "1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 1 #yThorns. NL 5: All enemies lose 2 #yStrengths. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???";
 	
 	String stringKeyFuumajin = "Gain 2 Blocks at the end of each turn. #yEvoke after 2 turns. NL #yEvoke: Gain 1 #ymagatama.";
 	

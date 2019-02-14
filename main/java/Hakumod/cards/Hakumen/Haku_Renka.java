@@ -21,7 +21,7 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 import basemod.helpers.CardTags;
 
-public class Haku_Renka extends CustomCard{
+public class Haku_Renka extends Haku_Special{
 
 	public static final String ID = "Haku_Renka";
 	
@@ -35,7 +35,7 @@ public class Haku_Renka extends CustomCard{
 	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADE_PLUS_DMG = 2;
 	
-	public final int MAGATAMA_COST = 2;
+	public final static int MAGATAMA_COST = 2;
 	public static final int CARD_TO_DRAW = 1;
 	public static final int UPG_CARD_TO_DRAW = 1;
 	
@@ -46,7 +46,8 @@ public class Haku_Renka extends CustomCard{
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = CARD_TO_DRAW;
@@ -68,20 +69,18 @@ public class Haku_Renka extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-		if (new UsingSpecialAction(p, MAGATAMA_COST).canUseSpecialAction()) {
-    		
-			AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-    		
-	    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-					new DamageInfo(p, this.damage, this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-	    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-					new DamageInfo(p, this.damage, this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-	    	
-	    	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
-	    	
-    	}
+			
+		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
+		
+    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+    	
+    	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
+	    
     }
 	
 	public AbstractCard makeCopy() {

@@ -74,8 +74,8 @@ public class Haku_Timekiller extends CustomCard{
 				new DamageInfo(p, this.damage, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.FIRE));
    
-    	if (m.hasPower("FadingPower")) {
-    		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(m, p, "FadingPower", REDUCE));
+    	if (m.hasPower(FadingPower.POWER_ID)) {
+    		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(m, p, FadingPower.POWER_ID, REDUCE));
     	}
     	else {
     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
