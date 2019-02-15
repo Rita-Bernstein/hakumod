@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import Hakumod.cards.Hakumen.Haku_ChildishMemories;
 import Hakumod.cards.Hakumen.Haku_InJustice;
 import Hakumod.cards.Hakumen.Haku_Walpurgisnacht;
+import Hakumod.powers.Haku_TheTyrantPower;
 import Hakumod.powers.Haku_YomotsuhirasakaPower;
 import basemod.BaseMod;
 
@@ -32,11 +33,11 @@ public class ComboAction extends AbstractGameAction{
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
 	}
 	
-	public void updateCard(AbstractCard c) {
+	/*public void updateCard(AbstractCard c) {
 		if (c instanceof Haku_Walpurgisnacht) {
 			c.updateCost(-1);
 		}
-	}
+	}*/
 	
 	@Override
 	public void update() 
@@ -53,7 +54,7 @@ public class ComboAction extends AbstractGameAction{
 			}
 		}
 		
-		if (this.p.hasPower(Haku_YomotsuhirasakaPower.POWER_ID) && !boolHasInHand){
+		/*if (this.p.hasPower(Haku_YomotsuhirasakaPower.POWER_ID) && !boolHasInHand){
 			for (AbstractCard cardInDeck:p.drawPile.group) {
 				if (cardInDeck.cardID == this.c.cardID){
 					cardInDeck.setCostForTurn(0);
@@ -69,8 +70,13 @@ public class ComboAction extends AbstractGameAction{
 					break;
 				}
 			}
-		}
+		}*/
 		
+		/*if (this.source.hasPower(Haku_TheTyrantPower.POWER_ID)) {
+			int StrengthAmount = this.source.getPower(Haku_TheTyrantPower.POWER_ID).amount;
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source,
+					new StrengthPower(this.source, StrengthAmount), StrengthAmount));
+		}*/
 		
 		if (!boolHasInHand) {
 			if (this.p.cardInUse!=null){

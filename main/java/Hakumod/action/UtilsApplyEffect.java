@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -31,6 +32,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import Hakumod.cards.Hakumen.Haku_Renka;
 import Hakumod.cards.Hakumen.Haku_Tsubaki;
+import Hakumod.orbs.VoidOrb;
 import Hakumod.patches.CustomTags;
 import Hakumod.cards.Hakumen.Haku_Enma;
 import Hakumod.cards.Hakumen.Haku_J2A;
@@ -51,6 +53,7 @@ public class UtilsApplyEffect {
 
 	public UtilsApplyEffect(AbstractPlayer player, AbstractCard card, AbstractMonster target, String effect,
 			int magnitude) {
+		
 		this.player = player;
 		this.card = card;
 		this.target = target;
@@ -251,6 +254,9 @@ public class UtilsApplyEffect {
 		case "vulnerable":
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.player,
 					new VulnerablePower(this.target, this.magnitude, false), this.magnitude));
+			break;
+		case "fuumajin":
+			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
 			break;
 		default:
 			break;

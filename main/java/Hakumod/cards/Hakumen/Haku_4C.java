@@ -72,7 +72,9 @@ public class Haku_4C extends CustomCard{
     		//		new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new MagatamaPower(AbstractDungeon.player,1),1));
         	/*AbstractDungeon.actionManager.addToTop(
         			new StarterAction(p, this, m, "neutral", this.magicNumber));*/
-    		AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
+    		//AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
+    		AbstractDungeon.actionManager.addToTop(
+        			new StarterAction(p, this, m, "fuumajin", this.magicNumber));
     	}
     }
 	

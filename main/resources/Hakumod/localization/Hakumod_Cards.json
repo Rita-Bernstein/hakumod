@@ -61,7 +61,7 @@
 	},
 	"Haku_6D": {
 		"NAME": "Guard Thrust",
-		"DESCRIPTION": "Parry: Gain !B! Block, gain 1 magatama, deal !D! damage."
+		"DESCRIPTION": "Parry: Gain !B! Block, gain 1 Magatama, deal !D! damage."
 	},
 	"Haku_JD": {
 		"NAME": "Reject Guard",
@@ -77,7 +77,7 @@
 	},
 	"Haku_Shippu": {
 		"NAME": "Shippu",
-		"DESCRIPTION": "Special: 4 NL Deal !D! X times to all enemies. NL Retain"
+		"DESCRIPTION": "Special: 4 NL Deal !D! X times to ALL enemies. NL Retain"
 	},
 	"Haku_ActiveFlow": {
 		"NAME": "Active Flow",
@@ -104,8 +104,8 @@
 	},
 	"Haku_2A": {
 		"NAME": "Claw Grip",
-		"DESCRIPTION": "Deal !D! damage. NL Add 1 2A from your draw pile to your hand.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 2A from your draw pile to your hand, then add 1 2A into your discard pile."
+		"DESCRIPTION": "Deal !D! damage. NL Add 1 Claw Grip from your draw pile to your hand.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 Claw Grip from your draw pile to your hand, then add 1 Claw Grip into your discard pile."
 	},
 	"Haku_2C": {
 		"NAME": "Negative Edge",
@@ -131,8 +131,8 @@
 	},
 	"Haku_JB": {
 		"NAME": "Cross-up",
-		"DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to all enemies.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to all enemies."
+		"DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to ALL enemies."
 	},
 	"Haku_J2A": {
 		"NAME": "Crystal Wall",
@@ -179,7 +179,7 @@
 	},
 	"Haku_IB": {
 		"NAME": "Instant Block",
-		"DESCRIPTION": "Gain !B! Block. NL Gain 1 magatama."
+		"DESCRIPTION": "Gain !B! Block. NL Gain 1 Magatama."
 	},
 	"Haku_Barrier": {
 		"NAME": "Barrier",
@@ -210,13 +210,13 @@
 	},
 	"Haku_Mugen": {
 		"NAME": "Mugen",
-		"DESCRIPTION": "Special: 8 NL Discard all non special cards in your hand. Add the same amount of random specials to your hand. Special cost 0 energy and magatama this turn.",
-		"UPGRADE_DESCRIPTION": "Special: 8 NL Discard all non special cards in your hand. Add the same amount of random specials to your hand + 1. Special cost 0 energy and magatama this turn."
+		"DESCRIPTION": "Special: 8 NL Discard all non special cards in your hand. Add the same amount of random specials to your hand. Special cost 0 energy and Magatama this turn.",
+		"UPGRADE_DESCRIPTION": "Special: 8 NL Discard all non special cards in your hand. Add the same amount of random specials to your hand + 1. Special cost 0 energy and Magatama this turn."
 	},
 	"Haku_PassiveMeter": {
 		"NAME": "Passive meter gain",
-		"DESCRIPTION": "At the start of each turn, gain 1 magatama.",
-		"UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, gain 1 magatama."
+		"DESCRIPTION": "At the start of each turn, gain 1 Magatama.",
+		"UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, gain 1 Magatama."
 	},
 	"Haku_6C": {
 		"NAME": "Command Order",
@@ -247,12 +247,11 @@
 	},
 	"Haku_Yomotsuhirasaka": {
 		"NAME": "Yomotsuhirasaka",
-		"DESCRIPTION": "Gatling applies to cards in the draw pile if you don't have the card in your hand.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Gatling applies to cards in the draw pile if you don't have the card in your hand."
+		"DESCRIPTION": " Everytime you channel a Fuumajin, Deal 7 damage to ALL enemies. NL Channel !M! Fuumajin"
 	},
 	"Haku_TheTyrant": {
 		"NAME": "The Tyrant",
-		"DESCRIPTION": "Every time you play a Special gain !M! Thorns."
+		"DESCRIPTION": "Everytime you play a Gatling, inflict 1 Vulnerable. NL Everytime you play a Ender, inflict 1 Weak."
 	},
 	"Haku_EmptySky": {
 		"NAME": "Empty Sky",
@@ -265,8 +264,7 @@
 	},
 	"Haku_Airdash": {
 		"NAME": "Air dash",
-		"DESCRIPTION": "Draw 1 card for every Attacks in your hand.",
-		"UPGRADE_DESCRIPTION": "Draw 1 card for every Attacks in your hand + 1."
+		"DESCRIPTION": "Draw !M! Cards. NL Starter: Draw 1 more card."
 	},
 	"Haku_InstantBarrier": {
 		"NAME": "Instant Barrier",
@@ -280,18 +278,18 @@
 	},
 	"Haku_Forwardhop": {
 		"NAME": "Forward Hop",
-		"DESCRIPTION": "Gain !M! offense. NL Add one Back Hop into your discard pile. NL Exhaust",
+		"DESCRIPTION": "Gain !M! Offense. NL Add one Back Hop into your discard pile. NL Exhaust",
 		"UPGRADE_DESCRIPTION": "Gain !M! offense. NL Add one Back Hop into your discard pile. NL Exhaust"
 	},
 	"Haku_Backhop": {
 		"NAME": "Back Hop",
-		"DESCRIPTION": "Gain !M! defense. NL Add one Forward Hop into your discard pile. NL Exhaust",
+		"DESCRIPTION": "Gain !M! Defense. NL Add one Forward Hop into your discard pile. NL Exhaust",
 		"UPGRADE_DESCRIPTION": "Gain !M! defense. NL Add one upgraded Forward Hop into your discard pile. NL Exhaust"
 	},
 	"Haku_Round2": {
 		"NAME": "Round 2!",
-		"DESCRIPTION": "Set your magatama to 1, heal HP equal to the amount of magatama lost. Exhaust",
-		"UPGRADE_DESCRIPTION": "Set your magatama to 1, heal HP equal to the the amount of magatama lost. NL Draw 1 card. NL Exhaust."
+		"DESCRIPTION": "Set your Magatama to 1, heal HP equal to the amount of Magatama lost. Exhaust",
+		"UPGRADE_DESCRIPTION": "Set your Magatama to 1, heal HP equal to the the amount of Magatama lost. NL Draw 1 card. NL Exhaust."
 	},
 	"Haku_ODC": {
 		"NAME": "Overdrive Cancel",
@@ -343,7 +341,7 @@
 	},
 	"Haku_Walpurgisnacht":{
 		"NAME": "Walpurgisnacht",
-		"DESCRIPTION": "Gain [G] equal to your amount of magatamas. NL Lose all your magatamas."
+		"DESCRIPTION": "Gain [G] equal to your amount of Magatamas. NL Lose all your Magatamas."
 	},
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
@@ -357,8 +355,8 @@
 	},
 	"Haku_ChildishMemories":{
 		"NAME": "Childish Memories",
-		"DESCRIPTION": "Heal HP equal to the amount of Special played this fight (current: !M!, max: 8). NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Heal HP equal to the amount of Special played this fight + 2 (current: !M!, max: 8). NL Exhaust"
+		"DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust"
 	},
 	"Haku_SixHeroes":{
 		"NAME": "SIX HEROES",
@@ -367,8 +365,8 @@
 	},
 	"Haku_Spellbook":{
 		"NAME": "Stand Unrivaled",
-		"DESCRIPTION": "Add 3 random cards to your hand, they cost 0 this turn. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "NL Add 3 random upgraded cards to your hand, they cost 0 this turn. NL Exhaust"
+		"DESCRIPTION": "Add one special from your draw pile to your hand. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Add one special from your draw pile to your hand."
 	},
 	"Haku_GodOfWar":{
 		"NAME": "God of War",
@@ -386,11 +384,11 @@
 	},
 	"Haku_InJustice":{
 		"NAME": "IN Justice",
-		"DESCRIPTION": "Deal !D! damage. NL Gain 4 magatamas. NL Reduce this card cost by 1 every time you play a Special."
+		"DESCRIPTION": "Deal !D! damage. NL Gain 4 Magatamas. NL Reduce this card cost by 1 every time you play a Special."
 	},
 	"Haku_BlackAndWhite":{
 		"NAME": "Black And White",
-		"DESCRIPTION": "Deal 6 damage. NL Deals an additional !M! damage for each Parry in your hand.",
+		"DESCRIPTION": "Deal 6 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile.",
 		"UPGRADE_DESCRIPTION": "Deal 6 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile."
 
 	},

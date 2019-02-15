@@ -1,0 +1,25 @@
+{
+	"Haku_AbstractPowerPotion": {
+		"NAME": "25% Power",
+		"DESCRIPTIONS": [
+      			"Gain #b", " #yMagatamas."
+    		]	
+	},
+	"Haku_QuarterPowerPotion": {
+		"NAME": "25% Power",
+		"DESCRIPTIONS": [
+    		]	
+	},
+	"Haku_HalfPowerPotion": {
+		"NAME": "50% Power",
+		"DESCRIPTIONS": [
+    		]
+	},
+	"Haku_FullPowerPotion": {
+		"NAME": "Full Power",
+		"DESCRIPTIONS": [
+    		]
+	}
+}
+
+

@@ -36,7 +36,7 @@ public class Haku_BlackAndWhite extends CustomCard{
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 6;
 	//private static final int UPGRADE_PLUS_DMG = 2;
-	private static int DAMAGE_BOOST = 1;
+	private static int DAMAGE_BOOST = 2;
 	private static int UPGRADED_DAMAGE_BOOST = 1;
 	    
 	public Haku_BlackAndWhite() {

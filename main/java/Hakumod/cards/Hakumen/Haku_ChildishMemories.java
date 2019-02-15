@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,12 +39,14 @@ public class Haku_ChildishMemories extends CustomCard{
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_ChildishMemories.png";
 	private static final int COST = 0;
+
+	private static final int MAGATAMA_LOSS = 1;
 	//private static final int ATTACK_DMG = 4;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	//private static int CARD_TO_DRAW = 3;
-	private int BUFF = 0;
+	private int BUFF = 5;
 	private static int UPGRADE_BUFF = 2;
-	private int MAX_HEAL = 8;
+	//private int MAX_HEAL = 8;
 	//private static int UPGRADE_MAX = 10;
 	    
 	public Haku_ChildishMemories() {
@@ -84,8 +88,20 @@ public class Haku_ChildishMemories extends CustomCard{
 				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.magicNumber));
 			}
     	}*/
-    	int amountHealed = (this.baseMagicNumber > MAX_HEAL) ? MAX_HEAL : this.baseMagicNumber; 
-    	p.heal(amountHealed);
+    	/*int amountHealed = (this.baseMagicNumber > MAX_HEAL) ? MAX_HEAL : this.baseMagicNumber; 
+    	p.heal(amountHealed);*/
+    	
+    	AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
+		
+    	if (AbstractDungeon.player.hasPower(Haku_MagatamaPower.POWER_ID)) 
+		{
+			AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).reducePower(this.MAGATAMA_LOSS);
+			AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).updateDescription();
+			if (AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).amount == 0) 
+			{
+				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, Haku_MagatamaPower.POWER_ID));
+			}
+		}
     	
     }
 	

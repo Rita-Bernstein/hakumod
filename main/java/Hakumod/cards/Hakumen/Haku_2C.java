@@ -73,11 +73,8 @@ public class Haku_2C extends CustomCard{
 				AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     	
     	AbstractCard c = new Haku_Staircase().makeCopy();
-    	if (this.upgraded) {
-	    	c.update();
-    	}
     	c.exhaustOnUseOnce = true;
-    	if (this.upgraded) {c.update();}
+    	if (this.upgraded) {c.upgrade();}
     	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, false));
     	
     	

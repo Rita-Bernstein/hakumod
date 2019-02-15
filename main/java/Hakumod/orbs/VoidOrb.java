@@ -1,16 +1,22 @@
 package Hakumod.orbs;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 import Hakumod.powers.Haku_MagatamaPower;
+import Hakumod.powers.Haku_YomotsuhirasakaPower;
 import basemod.abstracts.CustomOrb;
 
 public class VoidOrb extends CustomOrb{
-	private static final String ID = "VoidOrb";
+	public static final String ID = "Haku_VoidOrb";
 	private static final String NAME = "Void";
 	private static final int basePassiveAmount = 2;
 	private static final int baseEvokeAmount = 1;

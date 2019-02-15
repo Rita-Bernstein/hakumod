@@ -1,13 +1,18 @@
 package Hakumod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 //import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import Hakumod.orbs.VoidOrb;
 
 
 public class Haku_YomotsuhirasakaPower extends AbstractPower {
@@ -27,8 +32,35 @@ public class Haku_YomotsuhirasakaPower extends AbstractPower {
 			updateDescription();
 	}
 	
+	
+	
+	/* (non-Javadoc)
+	 * @see com.megacrit.cardcrawl.powers.AbstractPower#onChannel(com.megacrit.cardcrawl.orbs.AbstractOrb)
+	 */
+	@Override
+	public void onChannel(AbstractOrb orb) {
+		// TODO Auto-generated method stub
+		super.onChannel(orb);
+		
+		if (orb.ID == VoidOrb.ID){
+			
+			for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+    			if ((mo != null) && (!mo.isDeadOrEscaped())) {
+			  
+				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
+						mo, new DamageInfo(AbstractDungeon.player, this.amount),
+						AbstractGameAction.AttackEffect.SHIELD));
+				
+    			}
+			}
+		}
+		
+	}
+
+
+
 	public void updateDescription() {
-		this.description = (DESCRIPTIONS[0]);
+		this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
 	}
 	
 }

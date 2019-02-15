@@ -45,7 +45,7 @@
   },
   "Haku_YomotsuhirasakaPower": {
     "NAME": "Yomotsuhirasaka",
-    "DESCRIPTIONS": ["#yGatling applies to cards in the draw pile if you don't have the card in your hand."]
+    "DESCRIPTIONS": ["Everytime you channel a #yFuumajin, Deal #b", " damage to ALL enemies"]
   },
   "Haku_EmptySkyPower": {
     "NAME": "Empty Sky",
@@ -53,7 +53,7 @@
   },
   "Haku_TheTyrantPower":{
   "NAME": "The Tyrant",
-  "DESCRIPTIONS": ["Every time you play a Special gain #b", "#yThorn(s)."]
+  "DESCRIPTIONS": ["Everytime you play a #yGatling, inflict #b", " #yVulnerable. Everytime you play a #yEnder, inflict #b", " Weak."]
   },
   "Haku_CutPower": {
     "NAME": "Cut",

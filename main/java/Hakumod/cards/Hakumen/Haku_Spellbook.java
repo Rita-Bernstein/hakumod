@@ -18,8 +18,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import Hakumod.action.AddToHandAction;
+import Hakumod.action.ChooseCardAction;
 import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
+import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
 import basemod.BaseMod;
 //import Hakumod.powers.MagatamaPower;
@@ -38,8 +41,8 @@ public class Haku_Spellbook extends CustomCard{
 	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Spellbook.png";
-	private static final int COST = 3;
-	private int CARD_TO_ADD = 2;
+	private static final int COST = 0;
+	//private int CARD_TO_ADD = 2;
 	//private static final int ATTACK_DMG = 4;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	//private static int CARD_TO_DRAW = 3;
@@ -65,7 +68,7 @@ public class Haku_Spellbook extends CustomCard{
 			//upgradeDamage(UPGRADE_PLUS_DMG);
 			//upgradeMagicNumber(UPGRADE_DEBUFF);
 			this.rawDescription = UPG_DESCRIPTION;
-			//this.exhaust = false;
+			this.exhaust = false;
 			initializeDescription();
 		}
 	}
@@ -91,7 +94,7 @@ public class Haku_Spellbook extends CustomCard{
     	}
 		p.hand.refreshHandLayout();*/
 		
-    	AbstractCard cardToAdd;
+    	/*AbstractCard cardToAdd;
     	for (int i=0; i<CARD_TO_ADD; i++) {
     		cardToAdd = AbstractDungeon.returnTrulyRandomCard().makeStatEquivalentCopy();
     		cardToAdd.setCostForTurn(0);
@@ -99,7 +102,29 @@ public class Haku_Spellbook extends CustomCard{
 	    		cardToAdd.upgrade();
 	    	}
 	    	p.hand.addToHand(cardToAdd);
+    	}*/
+    	
+    	ArrayList<AbstractCard> drawPile = p.drawPile.group;
+    	ArrayList<AbstractCard> arraySpecialinDraw = new ArrayList<AbstractCard>();
+    	for (AbstractCard cardInDraw : drawPile) {
+    		if (cardInDraw.hasTag(CustomTags.SPECIAL)) {
+    			arraySpecialinDraw.add(cardInDraw);
+    		}	
     	}
+    	
+    	if (arraySpecialinDraw.size() > 0) {
+    		if (arraySpecialinDraw.size() == 1) {
+    			AbstractDungeon.actionManager.addToBottom(
+    					new AddToHandAction(p.drawPile, arraySpecialinDraw.get(0), true, false, false, false, 0));
+    		}
+    		else {
+    			AbstractDungeon.actionManager.addToBottom(
+    					new ChooseCardAction(arraySpecialinDraw, false));
+    		}
+    		
+    	}
+    	
+    	
     }
 	
 	public AbstractCard makeCopy() {

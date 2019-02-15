@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.ComboAction;
+import Hakumod.action.ParryAction;
+import Hakumod.action.StarterAction;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -33,16 +35,18 @@ public class Haku_Airdash extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Airdash.png";
 	private static final int COST = 1;
 	//private static final int UPGRADED_COST = 0;
 	//private static final int ATTACK_DMG = 7;
 	//private static final int UPGRADE_PLUS_DMG = 2;
-	private static int DRAW = 0;
+	private static int DRAW = 2;
 	private static int UPGRADE_DRAW = 1;
-	    
+	
+	private static int STARTER_EFF = 1;
+	
 	public Haku_Airdash() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.SKILL,
@@ -65,16 +69,18 @@ public class Haku_Airdash extends CustomCard{
 			//upgradeBaseCost(UPGRADED_COST);
 			//upgradeDamage(UPGRADE_PLUS_DMG);
 			upgradeMagicNumber(UPGRADE_DRAW);
-			this.rawDescription = UPG_DESCRIPTION;
+			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
 	}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	int cardsToDraw = p.hand.getAttacks().size();
-    	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, cardsToDraw + this.magicNumber));
+    	//int cardsToDraw = p.hand.getAttacks().size();
+    	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     	
+    	AbstractDungeon.actionManager.addToBottom(new StarterAction(p, this, m, "draw", STARTER_EFF));
+		
     	/*AbstractCard card = null;
     	for (int i=0; i<this.magicNumber; i++) {
     		 card = p.drawPile.getTopCard();

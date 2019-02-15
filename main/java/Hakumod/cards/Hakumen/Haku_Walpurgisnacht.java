@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import Hakumod.patches.AbstractCardEnum;
+import Hakumod.powers.Haku_MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
@@ -87,8 +88,8 @@ public class Haku_Walpurgisnacht extends CustomCard{
     	*/
     	
     	int energyGained = 0;
-    	if (p.hasPower("Haku_MagatamaPower")) {
-    		energyGained = p.getPower("Haku_MagatamaPower").amount;
+    	if (p.hasPower(Haku_MagatamaPower.POWER_ID)) {
+    		energyGained = p.getPower(Haku_MagatamaPower.POWER_ID).amount;
     	}
     	
     	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Haku_MagatamaPower"));

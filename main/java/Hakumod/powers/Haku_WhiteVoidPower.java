@@ -40,7 +40,7 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 				"Gain 1 Dexterity.",
 				"Gain 2 Plated Armor.", 
 				"Gain 1 Strength.",
-				"Gain 1 Thorns.",
+				"Gain 2 Thorns.",
 				"All enemies lose 2 Strengths.",
 				"Draw 1 more card at the start of each turn.",
 				"Gain 1 additional [R] at the start of each turn.", 
@@ -50,7 +50,7 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 	private static final int DEXTERITY_BUFF = 1;
 	private static final int PLATED_BUFF = 2;
 	private static final int STRENGTH_BUFF = 1;
-	private static final int THORNS_BUFF = 1;
+	private static final int THORNS_BUFF = 2;
 	private static final int STRENGTH_DEBUFF = -2;
 	
 	private static final int DRAW_BUFF = 1;
@@ -65,7 +65,7 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 				"With blade in hand...",
 				"Shall I reap the sins from this world...",
 				"And cleanse it in the fires of destruction!",
-				"I am Haku-men",
+				"I am Haku-men.",
 				"The end has come!"
 		};
 
@@ -81,11 +81,12 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 		//AbstractDungeon.player.dialogX = (10.0F * Settings.scale); 
 		//AbstractDungeon.player.dialogY = (127.0F * Settings.scale);
 
-		if (!owner.hasPower(POWER_ID)) {
+		if (!owner.hasPower(POWER_ID) && this.amount < 2) {
+			AbstractDungeon.actionManager.addToBottom(new TalkAction(true, DIALOG[0], 1.0F, 2.0F));
+			
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
 					new DexterityPower(AbstractDungeon.player, DEXTERITY_BUFF), DEXTERITY_BUFF));
-			AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0f,
-					DIALOG[0], true));
+			
 		}
 	}
 
@@ -93,7 +94,10 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 		this.amount += stackAmount;
 		//AbstractDungeon.player.dialogX = (10.0F * Settings.scale); 
 		//AbstractDungeon.player.dialogY = (-27.0F * Settings.scale);
-
+		
+		if (this.amount<=DIALOG.length) {
+			AbstractDungeon.actionManager.addToBottom(new TalkAction(true, DIALOG[this.amount-1], 1.0F, 2.0F));
+		}
 		
 		switch (this.amount) {
 			
@@ -142,8 +146,6 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 				break;
 			default:
 				//GG well played, thanks for the matches.
-				AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0f,
-						DIALOG[0], true));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
 						new StrengthPower(AbstractDungeon.player, YOU_ARE_BROKEN), YOU_ARE_BROKEN));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
@@ -152,11 +154,6 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 				break;	
 			/*default:
 				break;*/
-		}
-		
-		if (this.amount<=DIALOG.length) {
-			AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0f,
-					DIALOG[this.amount-1], true));
 		}
 	}
 

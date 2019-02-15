@@ -9,13 +9,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-//import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
-import com.brashmonkey.spriter.Mainline.Key;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 //import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -25,23 +21,17 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 //import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.vfx.RestartForChangesEffect;
-
 import basemod.BaseMod;
-import basemod.DevConsole;
-import basemod.ModButton;
 import basemod.ModLabel;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.abstracts.CustomPlayer;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -59,15 +49,12 @@ import Hakumod.cards.Hakumen.*;
 import Hakumod.characters.Hakumen;
 
 import Hakumod.patches.HakuEnum;
-import Hakumod.patches.LibraryTypeEnum;
-import Hakumod.patches.CustomTags;
+import Hakumod.potions.*;
 import Hakumod.patches.AbstractCardEnum;
 
 import Hakumod.powers.Haku_MagatamaPower;
 import Hakumod.relics.*;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
 
 @SpireInitializer
@@ -93,7 +80,6 @@ private static final Color WHITE = CardHelper.getColor(125.0f, 125.05f, 125.0f);
 private static final String MY_CHARACTER_BUTTON = "charSelect/HakuButton.png";
 private static final String HAKUMEN_PORTRAIT = "charSelect/HakuPortraitBG.png";
 
-private InputProcessor oldInputProcessor;
 private static int startingCards = 0; 
 private static boolean useMusic = false;
 
@@ -209,193 +195,195 @@ public void receiveEditCards() {
 
 	//Starter:
 	BaseMod.addCard(new Haku_4C());
-	UnlockTracker.unlockCard("Haku_4C");
+	UnlockTracker.unlockCard(Haku_4C.ID);
 	BaseMod.addCard(new Haku_Blocking());
-	UnlockTracker.unlockCard("Haku_Blocking");
+	UnlockTracker.unlockCard(Haku_Blocking.ID);
 	BaseMod.addCard(new Haku_Guren());
-	UnlockTracker.unlockCard("Haku_Guren");
+	UnlockTracker.unlockCard(Haku_Guren.ID);
 	BaseMod.addCard(new Haku_3C());
-	UnlockTracker.unlockCard("Haku_3C");
+	UnlockTracker.unlockCard(Haku_3C.ID);
 	
 	BaseMod.addCard(new Haku_2B());
-	UnlockTracker.unlockCard("Haku_2B");
+	UnlockTracker.unlockCard(Haku_2B.ID);
 	BaseMod.addCard(new Haku_5C());
-	UnlockTracker.unlockCard("Haku_5C");
+	UnlockTracker.unlockCard(Haku_5C.ID);
 	BaseMod.addCard(new Haku_6A());
-	UnlockTracker.unlockCard("Haku_6A");
+	UnlockTracker.unlockCard(Haku_6A.ID);
 	BaseMod.addCard(new Haku_6B());
-	UnlockTracker.unlockCard("Haku_6B");
+	UnlockTracker.unlockCard(Haku_6B.ID);
 	BaseMod.addCard(new Haku_Enma());
-	UnlockTracker.unlockCard("Haku_Enma");
+	UnlockTracker.unlockCard(Haku_Enma.ID);
 	BaseMod.addCard(new Haku_Renka());
-	UnlockTracker.unlockCard("Haku_Renka");
+	UnlockTracker.unlockCard(Haku_Renka.ID);
 	BaseMod.addCard(new Haku_Zantetsu());
-	UnlockTracker.unlockCard("Haku_Zantetsu");
+	UnlockTracker.unlockCard(Haku_Zantetsu.ID);
 	BaseMod.addCard(new Haku_Shippu());
-	UnlockTracker.unlockCard("Haku_Shippu");
+	UnlockTracker.unlockCard(Haku_Shippu.ID);
 	
 	BaseMod.addCard(new Haku_5D());
-	UnlockTracker.unlockCard("Haku_5D");
+	UnlockTracker.unlockCard(Haku_5D.ID);
 	BaseMod.addCard(new Haku_2D());
-	UnlockTracker.unlockCard("Haku_2D");
+	UnlockTracker.unlockCard(Haku_2D.ID);
 	BaseMod.addCard(new Haku_6D());
-	UnlockTracker.unlockCard("Haku_6D");
+	UnlockTracker.unlockCard(Haku_6D.ID);
 	BaseMod.addCard(new Haku_JD());
-	UnlockTracker.unlockCard("Haku_JD");
+	UnlockTracker.unlockCard(Haku_JD.ID);
 	BaseMod.addCard(new Haku_Yanagi());
-	UnlockTracker.unlockCard("Haku_Yanagi");
+	UnlockTracker.unlockCard(Haku_Yanagi.ID);
 	BaseMod.addCard(new Haku_Yukikaze());
-	UnlockTracker.unlockCard("Haku_Yukikaze");
+	UnlockTracker.unlockCard(Haku_Yukikaze.ID);
 	
 	BaseMod.addCard(new Haku_ActiveFlow());
-	UnlockTracker.unlockCard("Haku_ActiveFlow");
+	UnlockTracker.unlockCard(Haku_ActiveFlow.ID);
 	BaseMod.addCard(new Haku_Overdrive());
-	UnlockTracker.unlockCard("Haku_Overdrive");
+	UnlockTracker.unlockCard(Haku_Overdrive.ID);
 	BaseMod.addCard(new Haku_Burst());
-	UnlockTracker.unlockCard("Haku_Burst");
+	UnlockTracker.unlockCard(Haku_Burst.ID);
 	
 	BaseMod.addCard(new Haku_5A());
-	UnlockTracker.unlockCard("Haku_5A");
+	UnlockTracker.unlockCard(Haku_5A.ID);
 	BaseMod.addCard(new Haku_5B());
-	UnlockTracker.unlockCard("Haku_5B");
+	UnlockTracker.unlockCard(Haku_5B.ID);
 	BaseMod.addCard(new Haku_2A());
-	UnlockTracker.unlockCard("Haku_2A");
+	UnlockTracker.unlockCard(Haku_2A.ID);
 	BaseMod.addCard(new Haku_2C());
-	UnlockTracker.unlockCard("Haku_2C");
+	UnlockTracker.unlockCard(Haku_2C.ID);
 	//BaseMod.addCard(new Haku_Staircase());
 	//UnlockTracker.unlockCard("Haku_Staircase");
 	BaseMod.addCard(new Haku_JC());
-	UnlockTracker.unlockCard("Haku_JC");
+	UnlockTracker.unlockCard(Haku_JC.ID);
 	BaseMod.addCard(new Haku_Agito());
-	UnlockTracker.unlockCard("Haku_Agito");
+	UnlockTracker.unlockCard(Haku_Agito.ID);
 	
 	BaseMod.addCard(new Haku_Barrier());
-	UnlockTracker.unlockCard("Haku_Barrier");
+	UnlockTracker.unlockCard(Haku_Barrier.ID);
 	BaseMod.addCard(new Haku_IB());
-	UnlockTracker.unlockCard("Haku_IB");
+	UnlockTracker.unlockCard(Haku_IB.ID);
 	BaseMod.addCard(new Haku_OS());
-	UnlockTracker.unlockCard("Haku_OS");
+	UnlockTracker.unlockCard(Haku_OS.ID);
 	BaseMod.addCard(new Haku_Fuzzy());
-	UnlockTracker.unlockCard("Haku_Fuzzy");
+	UnlockTracker.unlockCard(Haku_Fuzzy.ID);
 	
 	BaseMod.addCard(new Haku_Kishuu());
-	UnlockTracker.unlockCard("Haku_Kishuu");
+	UnlockTracker.unlockCard(Haku_Kishuu.ID);
 	BaseMod.addCard(new Haku_CT());
-	UnlockTracker.unlockCard("Haku_CT");
+	UnlockTracker.unlockCard(Haku_CT.ID);
 	
 	BaseMod.addCard(new Haku_JA());
-	UnlockTracker.unlockCard("Haku_JA");
+	UnlockTracker.unlockCard(Haku_JA.ID);
 	BaseMod.addCard(new Haku_JB());
-	UnlockTracker.unlockCard("Haku_JB");
+	UnlockTracker.unlockCard(Haku_JB.ID);
 	BaseMod.addCard(new Haku_J2C());
-	UnlockTracker.unlockCard("Haku_J2A");
+	UnlockTracker.unlockCard(Haku_J2A.ID);
 	BaseMod.addCard(new Haku_J2A());
-	UnlockTracker.unlockCard("Haku_J2C");
+	UnlockTracker.unlockCard(Haku_J2C.ID);
 	BaseMod.addCard(new Haku_Hotaru());
-	UnlockTracker.unlockCard("Haku_Hotaru");
+	UnlockTracker.unlockCard(Haku_Hotaru.ID);
 	BaseMod.addCard(new Haku_Tsubaki());
-	UnlockTracker.unlockCard("Haku_Tsubaki");
+	UnlockTracker.unlockCard(Haku_Tsubaki.ID);
 	BaseMod.addCard(new Haku_Mugen());
-	UnlockTracker.unlockCard("Haku_Mugen");
+	UnlockTracker.unlockCard(Haku_Mugen.ID);
 	
 	BaseMod.addCard(new Haku_CA());
-	UnlockTracker.unlockCard("Haku_CA");
+	UnlockTracker.unlockCard(Haku_CA.ID);
 	BaseMod.addCard(new Haku_RC());
-	UnlockTracker.unlockCard("Haku_RC");
+	UnlockTracker.unlockCard(Haku_RC.ID);
 	BaseMod.addCard(new Haku_Taunt());
-	UnlockTracker.unlockCard("Haku_Taunt");
+	UnlockTracker.unlockCard(Haku_Taunt.ID);
 	
 	BaseMod.addCard(new Haku_PassiveMeter());
-	UnlockTracker.unlockCard("Haku_PassiveMeter");
+	UnlockTracker.unlockCard(Haku_PassiveMeter.ID);
 	BaseMod.addCard(new Haku_EA());
-	UnlockTracker.unlockCard("Haku_EA");
+	UnlockTracker.unlockCard(Haku_EA.ID);
 	BaseMod.addCard(new Haku_6C());
-	UnlockTracker.unlockCard("Haku_6C");
+	UnlockTracker.unlockCard(Haku_6C.ID);
 	
 
 	BaseMod.addCard(new Haku_Awakening());
-	UnlockTracker.unlockCard("Haku_Awakening");
+	UnlockTracker.unlockCard(Haku_Awakening.ID);
 	BaseMod.addCard(new Haku_ScienceFiction());
-	UnlockTracker.unlockCard("Haku_ScienceFiction");
+	UnlockTracker.unlockCard(Haku_ScienceFiction.ID);
 	BaseMod.addCard(new Haku_Yomotsuhirasaka());
-	UnlockTracker.unlockCard("Haku_Yomotsuhirasaka");
+	UnlockTracker.unlockCard(Haku_Yomotsuhirasaka.ID);
 	BaseMod.addCard(new Haku_EmptySky());
-	UnlockTracker.unlockCard("Haku_EmptySky");
+	UnlockTracker.unlockCard(Haku_EmptySky.ID);
 	BaseMod.addCard(new Haku_TheTyrant());
-	UnlockTracker.unlockCard("Haku_TheTyrant");
+	UnlockTracker.unlockCard(Haku_TheTyrant.ID);
 	
 	BaseMod.addCard(new Haku_Akumetsu());
-	UnlockTracker.unlockCard("Haku_Akumetsu");
+	UnlockTracker.unlockCard(Haku_Akumetsu.ID);
 	
 	BaseMod.addCard(new Haku_HighJump());
-	UnlockTracker.unlockCard("Haku_HighJump");
+	UnlockTracker.unlockCard(Haku_HighJump.ID);
 	BaseMod.addCard(new Haku_Grab());
-	UnlockTracker.unlockCard("Haku_Grab");
+	UnlockTracker.unlockCard(Haku_Grab.ID);
 	BaseMod.addCard(new Haku_Airgrab());
-	UnlockTracker.unlockCard("Haku_Airgrab");
+	UnlockTracker.unlockCard(Haku_Airgrab.ID);
 	BaseMod.addCard(new Haku_Airdash());
-	UnlockTracker.unlockCard("Haku_Airdash");
+	UnlockTracker.unlockCard(Haku_Airdash.ID);
 	
 	BaseMod.addCard(new Haku_GCOD());
-	UnlockTracker.unlockCard("Haku_GCOD");
+	UnlockTracker.unlockCard(Haku_GCOD.ID);
 	BaseMod.addCard(new Haku_ODC());
-	UnlockTracker.unlockCard("Haku_ODC");
+	UnlockTracker.unlockCard(Haku_ODC.ID);
 	BaseMod.addCard(new Haku_InstantBarrier());
-	UnlockTracker.unlockCard("Haku_InstantBarrier");
+	UnlockTracker.unlockCard(Haku_InstantBarrier.ID);
 	//BaseMod.addCard(new Haku_Round2());
 	//UnlockTracker.unlockCard("Haku_Round2");
 	
 	BaseMod.addCard(new Haku_Void());
-	UnlockTracker.unlockCard("Haku_Void");
+	UnlockTracker.unlockCard(Haku_Void.ID);
 	/*BaseMod.addCard(new Haku_Backgrab());
 	UnlockTracker.unlockCard("Haku_Backgrab");
 	BaseMod.addCard(new Haku_Pinkgrab());
 	UnlockTracker.unlockCard("Haku_Pinkgrab");*/
 	
 	BaseMod.addCard(new Haku_Backhop());
-	UnlockTracker.unlockCard("Haku_Backhop");
+	UnlockTracker.unlockCard(Haku_Backhop.ID);
 	BaseMod.addCard(new Haku_Forwardhop());
-	UnlockTracker.unlockCard("Haku_Forwardhop");
+	UnlockTracker.unlockCard(Haku_Forwardhop.ID);
 	
 	/*BaseMod.addCard(new Haku_Clash());
 	UnlockTracker.unlockCard("Haku_Clash");
 	BaseMod.addCard(new Haku_Cut());
 	UnlockTracker.unlockCard("Haku_Cut");*/
 	BaseMod.addCard(new Haku_Walpurgisnacht());
-	UnlockTracker.unlockCard("Haku_Walpurgisnacht");
+	UnlockTracker.unlockCard(Haku_Walpurgisnacht.ID);
 	
 	BaseMod.addCard(new Haku_FC());
-	UnlockTracker.unlockCard("Haku_FC");
+	UnlockTracker.unlockCard(Haku_FC.ID);
 	BaseMod.addCard(new Haku_FatalJudge());
-	UnlockTracker.unlockCard("Haku_FatalJudge");
+	UnlockTracker.unlockCard(Haku_FatalJudge.ID);
 	
 	BaseMod.addCard(new Haku_Timekiller());
-	UnlockTracker.unlockCard("Haku_Timekiller");
+	UnlockTracker.unlockCard(Haku_Timekiller.ID);
 	BaseMod.addCard(new Haku_WhiteVoid());
-	UnlockTracker.unlockCard("Haku_WhiteVoid");
+	UnlockTracker.unlockCard(Haku_WhiteVoid.ID);
 	BaseMod.addCard(new Haku_ChildishMemories());
-	UnlockTracker.unlockCard("Haku_ChildishMemories");
+	UnlockTracker.unlockCard(Haku_ChildishMemories.ID);
 	BaseMod.addCard(new Haku_SixHeroes());
-	UnlockTracker.unlockCard("Haku_SixHeroes");
+	UnlockTracker.unlockCard(Haku_SixHeroes.ID);
 	BaseMod.addCard(new Haku_Spellbook());
-	UnlockTracker.unlockCard("Haku_Spellbook");
+	UnlockTracker.unlockCard(Haku_Spellbook.ID);
 	BaseMod.addCard(new Haku_GodOfWar());
-	UnlockTracker.unlockCard("Haku_GodOfWar");
+	UnlockTracker.unlockCard(Haku_GodOfWar.ID);
 	BaseMod.addCard(new Haku_Gate());
-	UnlockTracker.unlockCard("Haku_Gate");
+	UnlockTracker.unlockCard(Haku_Gate.ID);
 	BaseMod.addCard(new Haku_InJustice());
-	UnlockTracker.unlockCard("Haku_InJustice");
+	UnlockTracker.unlockCard(Haku_InJustice.ID);
 	
 	BaseMod.addCard(new Haku_BlackAndWhite());
-	UnlockTracker.unlockCard("Haku_BlackAndWhite");
+	UnlockTracker.unlockCard(Haku_BlackAndWhite.ID);
 	BaseMod.addCard(new Haku_SwordOfDoom());
-	UnlockTracker.unlockCard("Haku_SwordOfDoom");
+	UnlockTracker.unlockCard(Haku_SwordOfDoom.ID);
 	
-	/*BaseMod.addCard(new Haku_NegativePenality());
-	UnlockTracker.unlockCard("Haku_NegativePenality");
-	BaseMod.addCard(new Haku_Timeout());
-	UnlockTracker.unlockCard("Haku_Timeout");*/
-	
+	receiveEditPotions();
+}
+
+public void receiveEditPotions() {
+	 BaseMod.addPotion(Haku_QuarterPowerPotion.class, Color.BLUE.cpy(), Color.BLUE.cpy(), null, Haku_QuarterPowerPotion.POTION_ID, HakuEnum.HAKUMEN);
+	 BaseMod.addPotion(Haku_HalfPowerPotion.class, Color.WHITE.cpy(), Color.WHITE.cpy(), null, Haku_HalfPowerPotion.POTION_ID, HakuEnum.HAKUMEN);
+	 BaseMod.addPotion(Haku_FullPowerPotion.class, Color.RED.cpy(), Color.RED.cpy(), null, Haku_FullPowerPotion.POTION_ID, HakuEnum.HAKUMEN);
 }
 
 public static void HakuConfig() {
@@ -459,7 +447,7 @@ public void receiveEditKeywords() {
 	
 
 	String stringKey6C = "1: Reduce this card's cost by 1. NL 2: Draw 1 card. NL 3: Gain 2 #yStrengths. NL 4: Upgrade all the cards in your hand.";
-	String stringKeySpeech = "1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 1 #yThorns. NL 5: All enemies lose 2 #yStrengths. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???";
+	String stringKeySpeech = "1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 2 #yThorns. NL 5: All enemies lose 2 #yStrengths. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???";
 	
 	String stringKeyFuumajin = "Gain 2 Blocks at the end of each turn. #yEvoke after 2 turns. NL #yEvoke: Gain 1 #ymagatama.";
 	
@@ -530,7 +518,7 @@ public void receiveEditStrings() {
 	// TODO Auto-generated method stublogger.info("begin editing strings");
 	logger.info("Hakumod: Editing strings.");
 	
-	String relicStrings,cardStrings,powerStrings;
+	String relicStrings,cardStrings,powerStrings, potionStrings;
     	
     relicStrings = Gdx.files.internal("Hakumod/localization/Hakumod_Relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
     BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
@@ -541,6 +529,8 @@ public void receiveEditStrings() {
     powerStrings = Gdx.files.internal("Hakumod/localization/Hakumod_Powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
     BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
 
+    potionStrings = Gdx.files.internal("Hakumod/localization/Hakumod_Potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
+    BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
 }
 
 @Override

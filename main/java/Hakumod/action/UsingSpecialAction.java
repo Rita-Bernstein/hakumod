@@ -43,14 +43,14 @@ public class UsingSpecialAction extends AbstractGameAction{
 		return canUse;
 	}
 	
-	public void updateCard(AbstractCard c) {
+	/*public void updateCard(AbstractCard c) {
 		if (c instanceof Haku_ChildishMemories) {
 			c.baseMagicNumber++;
 		}
 		else if (c instanceof Haku_InJustice) {
 			c.updateCost(-1);
 		}
-	}
+	}*/
 	
 	public void update() 
 	{
@@ -68,14 +68,14 @@ public class UsingSpecialAction extends AbstractGameAction{
 			if (AbstractDungeon.player.hasRelic(Haku_ContinuumShift.RELIC_ID) && this.cost > 2) {
 				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 			}
-			
+			/*
 			if (this.source.hasPower(Haku_TheTyrantPower.POWER_ID)) {
 				int SparkAmount = this.source.getPower(Haku_TheTyrantPower.POWER_ID).amount;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source,
 						new ThornsPower(this.source, SparkAmount), SparkAmount));
-			}
+			}*/
 			
-			for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+			/*for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
 				updateCard(c);	
 			}
 			
@@ -85,7 +85,7 @@ public class UsingSpecialAction extends AbstractGameAction{
 			
 			for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
 				updateCard(c);	
-			}
+			}*/
 			
 		}
 	
