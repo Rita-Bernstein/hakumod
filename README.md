@@ -31,8 +31,10 @@ Gatling are cards which reduce a specific card's cost in your hand to 0 or add i
 ## Progress:
 
 Cards: 75
+
 Relics: 7
-Pottions
+
+Pottions: 3
 
 ## Additional features:
 
