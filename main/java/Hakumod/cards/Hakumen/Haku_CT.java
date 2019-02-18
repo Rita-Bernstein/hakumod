@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -35,14 +36,14 @@ public class Haku_CT extends Haku_Special{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_CT.png";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 10;
 	private static final int UPGRADE_PLUS_DMG = 2;
 	private static int BUFF = 1;
-	private static int UPGRADED_BUFF = 1;
+	//private static int UPGRADED_BUFF = 1;
 	
 	private static int MAGATAMA_COST = 2;
 	
@@ -50,13 +51,13 @@ public class Haku_CT extends Haku_Special{
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.COMMON,
+				AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.ENEMY,
 				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = BUFF;
-		//this.exhaust = true;
+		this.exhaust = true;
 		this.tags.add(CustomTags.SPECIAL);
 	}
 
@@ -66,9 +67,10 @@ public class Haku_CT extends Haku_Special{
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			upgradeMagicNumber(UPGRADED_BUFF);
-			//this.rawDescription = UPG_DESCRIPTION;
-			//initializeDescription();
+			this.exhaust = false;
+			//upgradeMagicNumber(UPGRADED_BUFF);
+			this.rawDescription = UPG_DESCRIPTION;
+			initializeDescription();
 		}
 	}
 
@@ -76,12 +78,10 @@ public class Haku_CT extends Haku_Special{
     public void use(AbstractPlayer p, AbstractMonster m) {  		
 		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
     	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-				new DamageInfo(p, this.damage+this.magicNumber*p.hand.size(), this.damageTypeForTurn),
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-    	
-
-		//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-		//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(
+    			new ApplyPowerAction(p, p, new ArtifactPower(p, this.magicNumber), this.magicNumber));
 	
     }
 	

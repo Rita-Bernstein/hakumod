@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.OkizemeAction;
 import Hakumod.action.StarterAction;
-import Hakumod.orbs.VoidOrb;
+import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;

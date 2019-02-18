@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.NegateAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -64,8 +65,8 @@ public class Haku_5D extends CustomCard{
     	int totalDamage =  this.damage*energyConsumed;
     	int totalBlock =  this.block*energyConsumed;
 
-    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "attack", totalDamage));
-		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", totalBlock));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.ATTACK, totalDamage));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.BLOCK, totalBlock));
 		
 		AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.energyOnUse));
 	}

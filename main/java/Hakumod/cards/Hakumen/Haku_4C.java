@@ -15,7 +15,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.OkizemeAction;
 import Hakumod.action.StarterAction;
-import Hakumod.orbs.VoidOrb;
+import Hakumod.action.UtilsApplyEffect;
+import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -74,7 +75,7 @@ public class Haku_4C extends CustomCard{
         			new StarterAction(p, this, m, "neutral", this.magicNumber));*/
     		//AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
     		AbstractDungeon.actionManager.addToTop(
-        			new StarterAction(p, this, m, "fuumajin", this.magicNumber));
+        			new StarterAction(p, this, m, UtilsApplyEffect.FUUMAJIN, this.magicNumber));
     	}
     }
 	

@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.ComboAction;
 import Hakumod.action.ParryAction;
-import Hakumod.orbs.VoidOrb;
+import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -77,7 +77,7 @@ public class Haku_J2A extends CustomCard{
 				AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     	
     	for (int i = 0; i< this.magicNumber; i++) {
-    		AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
+    		AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
     	}
     }
     

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.NegateAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -54,8 +55,8 @@ public class Haku_CA extends Haku_Special{
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
-    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
-    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "cure_all", 1));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.BLOCK, this.block));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.CURE_ALL, 1));
 	}
 	
 	public AbstractCard makeCopy() {

@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.ComboAction;
 import Hakumod.action.StarterAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -76,7 +77,7 @@ public class Haku_JB extends CustomCard{
 
 	    //int amtEnemies = AbstractDungeon.getCurrRoom().monsters.monsters.size();			
     	AbstractDungeon.actionManager.addToTop(
-    			new StarterAction(p, this, m, "attack_all", this.damage));
+    			new StarterAction(p, this, m, UtilsApplyEffect.ATTACK_ALL, this.damage));
 	    //AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, amtEnemies));	
     }
 	

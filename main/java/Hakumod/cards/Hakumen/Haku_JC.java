@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.OkizemeAction;
 import Hakumod.action.StarterAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 //import Hakumod.powers.MagatamaPower;
@@ -79,7 +80,10 @@ public class Haku_JC extends CustomCard{
     			new OkizemeAction(p, this, m, "strength", -this.magicNumber));*/
     	
     	AbstractDungeon.actionManager.addToTop(
-    			new OkizemeAction(p, this, m, "defense", this.magicNumber));
+    			new StarterAction(p, this, m, UtilsApplyEffect.DEFENSE, this.magicNumber));
+    	
+    	AbstractDungeon.actionManager.addToTop(
+    			new OkizemeAction(p, this, m, UtilsApplyEffect.DEFENSE, this.magicNumber));
     	
     }
 	

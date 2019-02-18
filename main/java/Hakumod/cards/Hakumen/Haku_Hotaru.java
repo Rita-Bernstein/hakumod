@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.OkizemeAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 //import Hakumod.powers.MagatamaPower;
@@ -79,8 +80,8 @@ public class Haku_Hotaru extends Haku_Special{
 			new DamageInfo(p, this.damage, this.damageTypeForTurn),
 			AbstractGameAction.AttackEffect.SHIELD));
 	
-		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", this.block));
-		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "plated", this.magicNumber)); 	
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.BLOCK, this.block));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.PLATED, this.magicNumber)); 	
     }
     
 	public AbstractCard makeCopy() {

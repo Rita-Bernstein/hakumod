@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
+import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_ActiveFlowPower;
 import Hakumod.powers.Haku_DefensePower;
 import Hakumod.powers.Haku_NeutralPower;
@@ -38,10 +39,14 @@ public class Haku_GodOfWar extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_GodOfWar.png";
-	private static final int COST = 2;
+	
+	private static final int ATTACK_DMG = 10;
+	private static final int UPGRADE_PLUS_DMG = 3;
+	
+	private static final int COST = 1;
 	//private static final int UPGRADED_COST = 0;
 	
 
@@ -50,13 +55,14 @@ public class Haku_GodOfWar extends CustomCard{
     
 	public Haku_GodOfWar() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
-				AbstractCard.CardType.POWER,
+				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.RARE,
-				AbstractCard.CardTarget.SELF);
+				AbstractCard.CardTarget.ENEMY);
 		// TODO Auto-generated constructor stub
-		
+		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = BUFF;
+		this.exhaust = true;
 	}
 
 	@Override
@@ -65,21 +71,33 @@ public class Haku_GodOfWar extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			//upgradeBaseCost(UPGRADED_COST);
+			upgradeDamage(UPGRADE_PLUS_DMG);
 			upgradeMagicNumber(UPGRADED_BUFF);
+			this.exhaust = false;
 			//this.isInnate = true;
-			//this.rawDescription = UPG_DESCRIPTION;
+			this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
 	}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_EmptySkyPower(p, this.magicNumber), this.magicNumber));
+    	/*AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_EmptySkyPower(p, this.magicNumber), this.magicNumber));
     
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
 				new StrengthPower(p, this.magicNumber), this.magicNumber));
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-				new DexterityPower(p, -3), -3));
+				new DexterityPower(p, -3), -3));*/
+    	
+    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    	
+		for (AbstractCard cardIsSpecial: p.hand.group) {
+			if (cardIsSpecial.hasTag(CustomTags.SPECIAL)) {
+				cardIsSpecial.setCostForTurn(0);
+			}
+		}
     	
     }
 	

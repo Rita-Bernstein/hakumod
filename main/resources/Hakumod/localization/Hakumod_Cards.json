@@ -30,8 +30,8 @@
 	},
 	"Haku_6A": {
 		"NAME": "Blitz Attack",
-		"DESCRIPTION": "Deal !D! damage. NL Gatling: C.Assault",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gatling: C.Assault"
+		"DESCRIPTION": "Deal !D! damage. NL Gatling: Clash_Assault",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gatling: Clash_Assault"
 	},
 	"Haku_6B": {
 		"NAME": "Clash Assault",
@@ -43,7 +43,7 @@
 	},
 	"Haku_Renka": {
 		"NAME": "Renka",
-		"DESCRIPTION": "Special: 2 NL Deal !D! damage two times. NL Draw !M! card."
+		"DESCRIPTION": "Special: 2 NL Deal !D! damage twice. NL Draw !M! card."
 	},
 	"Haku_Zantetsu": {
 		"NAME": "Zantetsu",
@@ -57,7 +57,7 @@
 	},
 	"Haku_2D": {
 		"NAME": "Alpha Counter",
-		"DESCRIPTION": "Parry: Gain !B! Block, gain !B! blocks next turn. deal !D! damage."
+		"DESCRIPTION": "Parry: Gain !B! Block, gain !B! Block next turn, deal !D! damage."
 	},
 	"Haku_6D": {
 		"NAME": "Guard Thrust",
@@ -77,12 +77,12 @@
 	},
 	"Haku_Shippu": {
 		"NAME": "Shippu",
-		"DESCRIPTION": "Special: 4 NL Deal !D! X times to ALL enemies. NL Retain"
+		"DESCRIPTION": "Special: 4 NL Deal !D! damage times X to ALL enemies. NL Retain"
 	},
 	"Haku_ActiveFlow": {
 		"NAME": "Active Flow",
-		"DESCRIPTION": "Gain !M! AF. NL Draw 2 card.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Gain !M! AF. NL Draw 2 card."	
+		"DESCRIPTION": "Gain !M! Active_Flow. NL Draw 2 card.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Active_Flow. NL Draw 2 card."	
 	},
 	"Haku_Burst": {
 		"NAME": "Burst",
@@ -119,11 +119,11 @@
 	},
 	"Haku_JC": {
 		"NAME": "Crusade Seraphim",
-		"DESCRIPTION": "Deal !D! damage. NL Ender: Gain !M! Defense."
+		"DESCRIPTION": "Deal !D! damage. NL Starter and Ender: Gain !M! Defense."
 	},
 	"Haku_Agito": {
 		"NAME": "Agito",
-		"DESCRIPTION": "Special: 1 NL Deal !D! damage. NL Ender: Gain !M! Offense."
+		"DESCRIPTION": "Special: 1 NL Deal !D! damage. NL Starter and Ender: Gain !M! Offense."
 	},
 	"Haku_JA": {
 		"NAME": "Light Punch",
@@ -145,7 +145,7 @@
 	},
 	"Haku_Hotaru": {
 		"NAME": "Hotaru",
-		"DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Parry: Gain !B! Block and !M! plated armor."
+		"DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Parry: Gain !B! Block and !M! Plated Armor."
 	},
 	"Haku_Tsubaki": {
 		"NAME": "Tsubaki",
@@ -162,8 +162,8 @@
 	},
 	"Haku_Airgrab": {
 		"NAME": "Air grab",
-		"DESCRIPTION": "Deal !D! damage. Starter: Gain [G] [G] next turn.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. Starter: Gain [G] [G] [G] next turn."
+		"DESCRIPTION": "Deal !D! damage. Starter: Gain [G] next turn.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. Starter: Gain [G] [G] next turn."
 	},
 	"Haku_Pinkgrab": {
 		"NAME": "Pink grab",
@@ -175,7 +175,8 @@
 	},
 	"Haku_CT": {
 		"NAME": "Crush Trigger",
-		"DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Deal !M! more damage for every card in your hand." 
+		"DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Gain !M! Artifact. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Gain !M! Artifact." 
 	},
 	"Haku_IB": {
 		"NAME": "Instant Block",
@@ -187,7 +188,7 @@
 	},
 	"Haku_Fuzzy": {
 		"NAME": "Fuzzy jump",
-		"DESCRIPTION": "Gain !B! Block. NL Target one enemy, it loses !M! strength this turn."
+		"DESCRIPTION": "Gain !B! Block. NL Target one enemy, it loses !M! Strength this turn."
 	},
 	"Haku_OS": {
 		"NAME": "Option Select",
@@ -196,7 +197,7 @@
 	},
 	"Haku_CA": {
 		"NAME": "Counter Assault",
-		"DESCRIPTION": "Special: 4 NL Parry: Gain !B! Block. NL Cure all debuffs. NL Exhaust"
+		"DESCRIPTION": "Special: 4 NL Parry: Gain !B! Block. NL Remove all debuffs. NL Exhaust"
 	},
 	"Haku_Taunt": {
 		"NAME": "Taunt",
@@ -210,8 +211,8 @@
 	},
 	"Haku_Mugen": {
 		"NAME": "Mugen",
-		"DESCRIPTION": "Special: 8 NL Discard all non special cards in your hand. Add the same amount of random specials to your hand. Special cost 0 energy and Magatama this turn.",
-		"UPGRADE_DESCRIPTION": "Special: 8 NL Discard all non special cards in your hand. Add the same amount of random specials to your hand + 1. Special cost 0 energy and Magatama this turn."
+		"DESCRIPTION": "Special: 8 NL Discard all non Special cards in your hand. Add the same amount of random Special to your hand. Special cost 0 Energy and Magatama this turn.",
+		"UPGRADE_DESCRIPTION": "Special: 8 NL Discard all non Special cards in your hand. Add the same amount of random Special to your hand + 1. Special cost 0 Energy and Magatama this turn."
 	},
 	"Haku_PassiveMeter": {
 		"NAME": "Passive meter gain",
@@ -230,11 +231,11 @@
 	},
 	"Haku_EA": {
 		"NAME": "Exceed Accel",
-		"DESCRIPTION": "Deal !D! damage. NL If AF is applied, deal double damage, if not apply 3 AF."
+		"DESCRIPTION": "Deal !D! damage. NL If Active_Flow is applied, deal double damage, if not apply 3 Active_Flow."
 	},
 	"Haku_Akumetsu": {
 		"NAME": "Akumetsu",
-		"DESCRIPTION": "Special: 8 NL Parry: Deal !D! damage X times. NL Gain 1 Intangible."
+		"DESCRIPTION": "Special: 8 NL Parry: Deal !D! damage X times and gain 1 Intangible."
 	},
 	"Haku_Awakening": {
 		"NAME": "Awakening The Chaos",
@@ -243,7 +244,7 @@
 	},
 	"Haku_ScienceFiction": {
 		"NAME": "Science Fiction",
-		"DESCRIPTION": "Ender always activate. NL Increase the effects from Ender by 1."
+		"DESCRIPTION": "Gain [R] and draw a card for every Fuumajin channeled. NL Exhaust"
 	},
 	"Haku_Yomotsuhirasaka": {
 		"NAME": "Yomotsuhirasaka",
@@ -341,7 +342,7 @@
 	},
 	"Haku_Walpurgisnacht":{
 		"NAME": "Walpurgisnacht",
-		"DESCRIPTION": "Gain [G] equal to your amount of Magatamas. NL Lose all your Magatamas."
+		"DESCRIPTION": "Deal damage equal to your Magatama count times !M!. (Total: !D!)"
 	},
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
@@ -351,7 +352,7 @@
 	},
 	"Haku_Timekiller":{
 		"NAME": "Time Killer",
-		"DESCRIPTION": "Apply !M! Fading, if Fading is already applied, remove 2 Fading."
+		"DESCRIPTION": "Apply !M! Timekiller, if Timekiller is already applied, remove 2 Timekiller."
 	},
 	"Haku_ChildishMemories":{
 		"NAME": "Childish Memories",
@@ -365,12 +366,14 @@
 	},
 	"Haku_Spellbook":{
 		"NAME": "Stand Unrivaled",
-		"DESCRIPTION": "Add one special from your draw pile to your hand. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Add one special from your draw pile to your hand."
+		"DESCRIPTION": "Add one Special from your draw pile to your hand. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Add one Special from your draw pile to your hand."
 	},
 	"Haku_GodOfWar":{
 		"NAME": "God of War",
-		"DESCRIPTION": "Gain !M! Strength. NL Lose 3 Dexterity."
+		"DESCRIPTION": " Deal !D! damage. NL Change the cost of all Specials in your hand to 0 this turn. NL Exhaust",
+		"UPGRADE_DESCRIPTION": " Deal !D! damage. NL Change the cost of all Specials in your hand to 0 this turn."
+
 	},
 	"Haku_Brother":{
 		"NAME": "Brother...",
@@ -384,7 +387,7 @@
 	},
 	"Haku_InJustice":{
 		"NAME": "IN Justice",
-		"DESCRIPTION": "Deal !D! damage. NL Gain 4 Magatamas. NL Reduce this card cost by 1 every time you play a Special."
+		"DESCRIPTION": "Deal !D! damage. NL Gain 4 Magatama. NL Reduce this card cost by 1 every time you play a Special."
 	},
 	"Haku_BlackAndWhite":{
 		"NAME": "Black And White",
@@ -395,6 +398,10 @@
 	"Haku_SwordOfDoom":{
 		"NAME": "Sword of Doom",
 		"DESCRIPTION": "At the start of your turn add one Parry into your hand and give it Exhaust and Ethereal."
+	},
+	"Haku_QueenOfRose":{
+		"NAME": "Queen of Rose",
+		"DESCRIPTION": "Lose 1 Strength. NL Gain !M! Strength at the end of the turn."
 	},
 	"Haku_Pakumen":{
 		"NAME": "Pakumen",

@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import Hakumod.action.ChooseCardAction;
 import Hakumod.action.ComboAction;
 import Hakumod.action.StarterAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -42,7 +43,7 @@ public class Haku_Airgrab extends CustomCard{
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADE_PLUS_DMG = 2;
-	private static int BUFF = 2;
+	private static int BUFF = 1;
 	private static int UPGRADE_BUFF = 1;
 	    
 	public Haku_Airgrab() {
@@ -77,7 +78,7 @@ public class Haku_Airgrab extends CustomCard{
 				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     	
     	AbstractDungeon.actionManager.addToTop(
-    			new StarterAction(p, this, m, "next_energy", this.magicNumber));
+    			new StarterAction(p, this, m, UtilsApplyEffect.NEXT_TURN_ENERGY, this.magicNumber));
     	
     	/*AbstractCard cardJB = new Haku_JB().makeCopy();
     	AbstractCard cardJ2A = new Haku_J2A().makeCopy();

@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import Hakumod.action.NegateAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -67,8 +68,8 @@ public class Haku_Akumetsu extends Haku_Special{
     	
     	
     	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
-    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "attack", AkumetsuDamage));
-    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "intangible", 1));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.ATTACK, AkumetsuDamage));
+    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.INTANGIBLE, 1));
     	
     	AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.energyOnUse));
 	

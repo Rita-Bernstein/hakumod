@@ -2,6 +2,8 @@ package Hakumod.cards.Hakumen;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -13,8 +15,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 import Hakumod.action.ComboAction;
+import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_ActiveFlowPower;
 import Hakumod.powers.Haku_ScienceFictionPower;
@@ -34,7 +38,7 @@ public class Haku_ScienceFiction extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_ScienceFiction.png";
 	private static final int COST = 1;
@@ -44,13 +48,14 @@ public class Haku_ScienceFiction extends CustomCard{
     
 	public Haku_ScienceFiction() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
-				AbstractCard.CardType.POWER,
+				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.RARE,
 				AbstractCard.CardTarget.SELF);
 		// TODO Auto-generated constructor stub
 		
 		this.magicNumber = this.baseMagicNumber = MAGNITUDE;
+		this.exhaust = true;
 	}
 
 	@Override
@@ -66,7 +71,17 @@ public class Haku_ScienceFiction extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_ScienceFictionPower(p, this.magicNumber), this.magicNumber));
+    	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_ScienceFictionPower(p, this.magicNumber), this.magicNumber));
+    	int amountOfFuumajin = 0;
+    	for (AbstractOrb orb : p.orbs) {
+    		if (orb.ID == Haku_VoidOrb.ID) {
+    			amountOfFuumajin++;
+    		}
+    	}
+    	
+		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(amountOfFuumajin));	
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, amountOfFuumajin));	
+     	
     }
 	
 	public AbstractCard makeCopy() {

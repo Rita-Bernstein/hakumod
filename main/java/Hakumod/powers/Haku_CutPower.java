@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import Hakumod.cards.Hakumen.Haku_4C;
-import Hakumod.orbs.VoidOrb;
+import Hakumod.orbs.Haku_VoidOrb;
 
 
 public class Haku_CutPower extends AbstractPower {
@@ -44,7 +44,7 @@ public class Haku_CutPower extends AbstractPower {
 		// TODO Auto-generated method stub
 		AbstractCard card4C = new Haku_4C().makeCopy();
 		if (card.cardID == card4C.cardID) {
-			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
+			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
 		}
 	}
 	

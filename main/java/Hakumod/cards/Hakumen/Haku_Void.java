@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.NegateAction;
 import Hakumod.action.ParryAction;
-import Hakumod.orbs.VoidOrb;
+import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -47,7 +47,7 @@ public class Haku_Void extends CustomCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		//if (p.maxOrbs == 0) {AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(1));}
 		for (int i=0;i<this.magicNumber;i++) {
-			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
+			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
 		}
 	}
 	public AbstractCard makeCopy() {

@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.ComboAction;
-import Hakumod.orbs.VoidOrb;
+import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_ActiveFlowPower;
 import Hakumod.powers.Haku_AwakeningPower;
@@ -77,7 +77,7 @@ public class Haku_Yomotsuhirasaka extends CustomCard{
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new Haku_YomotsuhirasakaPower(p, STACK), STACK));
 		
 		for (int i=0;i<this.magicNumber;i++) {
-			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
+			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
 		}
     }
 	

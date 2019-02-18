@@ -1,26 +1,21 @@
 package Hakumod.cards.Hakumen;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import Hakumod.action.ComboAction;
-import Hakumod.action.ParryAction;
-import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_ActiveFlowPower;
-import Hakumod.powers.Haku_OverdrivePower;
 //import Hakumod.powers.MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
@@ -28,31 +23,34 @@ import basemod.abstracts.CustomCard;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_GCOD extends CustomCard{
+public class Haku_QueenOfRose extends CustomCard{
 
-	public static final String ID = "Haku_GCOD";
+	public static final String ID = "Haku_QueenOfRose";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
-	public static final String IMG_PATH = "Hakumod/img/cards/Haku_GCOD.png";
+	public static final String IMG_PATH = "Hakumod/img/cards/Haku_QueenOfRose.png";
 	private static final int COST = 1;
-	private static final int BLOCK = 6;
-	private static final int UPGRADE_PLUS_BLOCK = 2;
-	private static int MAGNITUDE = 1;
-	//private static int UPGRADED_MAGNITUDE = 1;
-	    
-	public Haku_GCOD() {
+	//private static final int UPGRADED_COST = 0;
+
+	private static int DEBUFF = -1;
+	
+	private static int BUFF = 3;
+	private static int UPGRADED_BUFF = 1;
+    
+	
+	public Haku_QueenOfRose() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
-				AbstractCard.CardType.SKILL,
+				AbstractCard.CardType.POWER,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardTarget.SELF);
 		// TODO Auto-generated constructor stub
-		this.baseBlock = BLOCK;
-		this.magicNumber = this.baseMagicNumber = MAGNITUDE;
+		
+		this.magicNumber = this.baseMagicNumber = BUFF;
 	}
 
 	@Override
@@ -60,21 +58,32 @@ public class Haku_GCOD extends CustomCard{
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeBlock(UPGRADE_PLUS_BLOCK);
-			//this.isInnate = true;
-			//this.rawDescription = UPG_DESCRIPTION;
-			//upgradeMagicNumber(UPGRADED_MAGNITUDE);
+			//upgradeBaseCost(UPGRADED_COST);
+			upgradeMagicNumber(UPGRADED_BUFF);
 			initializeDescription();
 		}
 	}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.BLOCK, this.block));
-    	AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.OD, this.magicNumber));	
+    	
+    	
+		if (p.hasPower(ArtifactPower.POWER_ID) && (p.getPower(ArtifactPower.POWER_ID).amount >= 2)) {
+			AbstractDungeon.actionManager.addToBottom(
+					new ApplyPowerAction(p, p, new StrengthPower(p, DEBUFF), DEBUFF));
+			AbstractDungeon.actionManager.addToBottom(
+					new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+		}
+		else {
+			AbstractDungeon.actionManager.addToBottom(
+					new ApplyPowerAction(p, p, new StrengthPower(p, DEBUFF), DEBUFF));
+			AbstractDungeon.actionManager.addToBottom(
+					new ApplyPowerAction(p, p, new GainStrengthPower(p, this.magicNumber), this.magicNumber));
+		}
+		
     }
 	
 	public AbstractCard makeCopy() {
-		return new Haku_GCOD();
+		return new Haku_QueenOfRose();
 	}
 }

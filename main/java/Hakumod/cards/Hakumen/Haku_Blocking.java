@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.StarterAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
@@ -47,7 +48,7 @@ public class Haku_Blocking extends CustomCard{
     		//AbstractDungeon.actionManager.addToTop(
     		//		new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new MagatamaPower(AbstractDungeon.player,1),1));    		
         	AbstractDungeon.actionManager.addToTop(
-        			new StarterAction(p, this, m, "blocking", this.magicNumber));
+        			new StarterAction(p, this, m, UtilsApplyEffect.TEMP_DEXTERITY, this.magicNumber));
 		}
 	}
 	

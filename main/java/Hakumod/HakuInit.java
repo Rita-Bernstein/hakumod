@@ -15,14 +15,18 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 //import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 //import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -47,7 +51,7 @@ import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import Hakumod.cards.Hakumen.*;
 import Hakumod.characters.Hakumen;
-
+import Hakumod.monsters.Nu13;
 import Hakumod.patches.HakuEnum;
 import Hakumod.potions.*;
 import Hakumod.patches.AbstractCardEnum;
@@ -88,6 +92,13 @@ final String AUTHOR = "The_undercover_beret";
 final String DESCRIPTION = "Adds Haku-men as a playable character.";
 
 private static Properties DEFAULTS_CONFIG = new Properties();
+
+public class Keyword
+{
+    public String PROPER_NAME;
+    public String[] NAMES;
+    public String DESCRIPTION;
+}
 
 final String[] CARDS = 
 {	
@@ -237,8 +248,8 @@ public void receiveEditCards() {
 	UnlockTracker.unlockCard(Haku_ActiveFlow.ID);
 	BaseMod.addCard(new Haku_Overdrive());
 	UnlockTracker.unlockCard(Haku_Overdrive.ID);
-	BaseMod.addCard(new Haku_Burst());
-	UnlockTracker.unlockCard(Haku_Burst.ID);
+	/*BaseMod.addCard(new Haku_Burst());
+	UnlockTracker.unlockCard(Haku_Burst.ID);*/
 	
 	BaseMod.addCard(new Haku_5A());
 	UnlockTracker.unlockCard(Haku_5A.ID);
@@ -377,13 +388,24 @@ public void receiveEditCards() {
 	BaseMod.addCard(new Haku_SwordOfDoom());
 	UnlockTracker.unlockCard(Haku_SwordOfDoom.ID);
 	
-	receiveEditPotions();
+	BaseMod.addCard(new Haku_QueenOfRose());
+	UnlockTracker.unlockCard(Haku_QueenOfRose.ID);
+	
+
 }
 
 public void receiveEditPotions() {
 	 BaseMod.addPotion(Haku_QuarterPowerPotion.class, Color.BLUE.cpy(), Color.BLUE.cpy(), null, Haku_QuarterPowerPotion.POTION_ID, HakuEnum.HAKUMEN);
 	 BaseMod.addPotion(Haku_HalfPowerPotion.class, Color.WHITE.cpy(), Color.WHITE.cpy(), null, Haku_HalfPowerPotion.POTION_ID, HakuEnum.HAKUMEN);
 	 BaseMod.addPotion(Haku_FullPowerPotion.class, Color.RED.cpy(), Color.RED.cpy(), null, Haku_FullPowerPotion.POTION_ID, HakuEnum.HAKUMEN);
+}
+
+public void receiveEditMonsters() {
+	BaseMod.addMonster(Nu13.ID, () -> new Nu13(Nu13.OFFSET_X, Nu13.OFFSET_Y));
+
+    BaseMod.addBoss(Exordium.ID, Nu13.ID,
+            Nu13.MAP_IMAGE,
+            Nu13.MAP_OUT);
 }
 
 public static void HakuConfig() {
@@ -431,17 +453,17 @@ public void receiveEditKeywords() {
 	logger.info("Hakumod: Adding keywords.");
 	
 	
-	String stringKeyMagatama = "Resource used by #ySpecial moves.";
+	/*String stringKeyMagatama = "Resource used by #ySpecial moves.";
 	String stringKeySpecial = "#ySpecials consume #yMagatama(s) to activate their effect.";
 	String stringKeyGatling = "- If you have that card in your hand, reduce its cost by 1 this turn. NL - If you don't, add that card into your hand but lose 2 #yStrengths until the end of the turn."; 
 	String stringKeyStarter = "Apply the effect if your energy is at its maximum.";
 	String stringKeyEnder = "Apply the effect if either: NL - You have 0 energy after playing that card. NL - You have 0 #yAttacks left in your hand.";
 	String stringKeyParry = "Apply the effect if the enemy intends to attack.";
-	String stringKeyNegate = "Apply the effect if the enemy intends to inflict a debuff.";
+	//String stringKeyNegate = "Apply the effect if the enemy intends to inflict a debuff.";
 	
 	String stringKeyDefense = "Creatures with Defense receive 15% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied.";
 	String stringKeyOffense = "Creatures with Offense deal 25% more damage with #yAttacks #b1 turn. NL Remove it if #yDefense is applied.";
-	String stringKeyNeutral = "Creatures with Neutral gain 25% more blocks.";
+	//String stringKeyNeutral = "Creatures with Neutral gain 25% more blocks.";
 	String stringKeyOverdrive = "Double the amount of #yMagatama gained for #b1 turn.";
 	String stringKeyActiveFlow = "Creatures with #yActive #yFlow deal 10% more damage with #yAttacks for #b1 turn. Add one #yOverdrive into your hand once you run out of #yActive #yFlow.";
 	
@@ -466,11 +488,11 @@ public void receiveEditKeywords() {
 	BaseMod.addKeyword(new String[] {"Ender", "ender"}, stringKeyEnder);
 	
 	BaseMod.addKeyword(new String[] {"Parry", "parry"}, stringKeyParry);
-	BaseMod.addKeyword(new String[] {"Negate", "negate"}, stringKeyNegate);
+	//BaseMod.addKeyword(new String[] {"Negate", "negate"}, stringKeyNegate);
 	
 	BaseMod.addKeyword(new String[] {"Defense", "defense"}, stringKeyDefense);
 	BaseMod.addKeyword(new String[] {"Offense", "offense"}, stringKeyOffense);
-	BaseMod.addKeyword(new String[] {"Neutral", "neutral"}, stringKeyNeutral);
+	//BaseMod.addKeyword(new String[] {"Neutral", "neutral"}, stringKeyNeutral);
 	BaseMod.addKeyword(new String[] {"Overdrive", "overdrive", "OD", "od"}, stringKeyOverdrive);
 	BaseMod.addKeyword(new String[] {"AF", "af"}, stringKeyActiveFlow);
 	//BaseMod.addKeyword(new String[] {"g.special","g.specials"}, stringKeyGroundSpecials);
@@ -487,17 +509,21 @@ public void receiveEditKeywords() {
 	BaseMod.addKeyword(new String[] {"Zantetsu","zantetsu"}, stringKeyZantetsu);
 	
 	BaseMod.addKeyword(new String[] {"6c","6C"}, stringKey6C);
-	BaseMod.addKeyword(new String[] {"Speech","speech"}, stringKeySpeech);
-};
-/*
-public boolean hasPlayedAnAttack() {
-	return hasPlayedAnAttack;
-}
+	BaseMod.addKeyword(new String[] {"Speech","speech"}, stringKeySpeech);*/
 
-public void setHasPlayedAnAttack(boolean hasPlayedAnAttack) {
-	this.hasPlayedAnAttack = hasPlayedAnAttack;
+	
+    Gson gson = new Gson();
+    String json = Gdx.files.internal("Hakumod/localization/Hakumod_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+    Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+
+    if (keywords != null) {
+        for (Keyword keyword : keywords) {
+            BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+        }
 }
-*/
+    
+};
+
 @Override
 public void receivePowersModified() {
 	// TODO Auto-generated method stub
@@ -518,8 +544,8 @@ public void receiveEditStrings() {
 	// TODO Auto-generated method stublogger.info("begin editing strings");
 	logger.info("Hakumod: Editing strings.");
 	
-	String relicStrings,cardStrings,powerStrings, potionStrings;
-    	
+	String relicStrings,cardStrings,powerStrings, potionStrings, monsterStrings, orbStrings;
+  	
     relicStrings = Gdx.files.internal("Hakumod/localization/Hakumod_Relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
     BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
         
@@ -531,6 +557,12 @@ public void receiveEditStrings() {
 
     potionStrings = Gdx.files.internal("Hakumod/localization/Hakumod_Potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
     BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
+    
+    orbStrings = Gdx.files.internal("Hakumod/localization/Hakumod_Orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
+    BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
+    
+    monsterStrings = Gdx.files.internal("Hakumod/localization/Hakumod_Monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
+    BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
 }
 
 @Override
@@ -580,6 +612,8 @@ public void receivePostInitialize() {
 	Texture badgeTexture = new Texture(Gdx.files.internal(makePath("HakuModBadge.png")));
 	BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 	
+	receiveEditPotions();
+	receiveEditMonsters();
 }
 
 public void updateCardsToggle(int index) {

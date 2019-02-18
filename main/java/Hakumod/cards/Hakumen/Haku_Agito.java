@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.OkizemeAction;
 import Hakumod.action.StarterAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 //import Hakumod.powers.MagatamaPower;
@@ -85,7 +86,10 @@ public class Haku_Agito extends Haku_Special{
         	/*AbstractDungeon.actionManager.addToTop(
         			new OkizemeAction(p, this, m, "dexterity", -this.magicNumber));*/
     		AbstractDungeon.actionManager.addToTop(
-        			new OkizemeAction(p, this, m, "offense", this.magicNumber));
+        			new StarterAction(p, this, m, UtilsApplyEffect.OFFENSE, this.magicNumber));
+    	
+    		AbstractDungeon.actionManager.addToTop(
+        			new OkizemeAction(p, this, m, UtilsApplyEffect.OFFENSE, this.magicNumber));
     	
     }
 	

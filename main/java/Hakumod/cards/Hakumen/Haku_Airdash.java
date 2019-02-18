@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.ComboAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.StarterAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -79,7 +80,7 @@ public class Haku_Airdash extends CustomCard{
     	//int cardsToDraw = p.hand.getAttacks().size();
     	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     	
-    	AbstractDungeon.actionManager.addToBottom(new StarterAction(p, this, m, "draw", STARTER_EFF));
+    	AbstractDungeon.actionManager.addToBottom(new StarterAction(p, this, m, UtilsApplyEffect.DRAW, STARTER_EFF));
 		
     	/*AbstractCard card = null;
     	for (int i=0; i<this.magicNumber; i++) {

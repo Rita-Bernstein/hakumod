@@ -1,0 +1,153 @@
+[
+	{
+    		"NAMES": [
+      			"Magatama",
+      			"magatama"
+    		],
+    		"DESCRIPTION": "Resource used by #ySpecial moves."
+  	},
+	{
+	    	"NAMES": [
+	      		"Special",
+	     	 	"special",
+			"Specials",
+	     	 	"specials"
+	    	],
+	    	"DESCRIPTION": "#ySpecials consume #yMagatama(s) to activate their effect."
+	 },
+	 {
+	    	"NAMES": [
+	      		"Gatling",
+	     	 	"gatling"
+	    	],
+	    	"DESCRIPTION": "- If you have that card in your hand, reduce its cost by 1 this turn. NL - If you don't, add that card into your hand but lose 2 #yStrengths until the end of the turn."
+	 },
+	 {
+	    	"NAMES": [
+	      		"Starter",
+	     	 	"starter"
+	    	],
+	    	"DESCRIPTION": "Apply the effect if your energy is at its maximum."
+	 },
+	 {
+	    	"NAMES": [
+	      		"Ender",
+	     	 	"ender"
+	    	],
+	    	"DESCRIPTION": "Apply the effect if either: NL - You have 0 energy after playing that card. NL - You have 0 #yAttacks left in your hand."
+	 },
+	 {
+	    	"NAMES": [
+	      		"Parry",
+	     	 	"parry"
+	    	],
+	    	"DESCRIPTION": "Apply the effect if the enemy intends to attack."
+	 },
+	 {
+	    	"NAMES": [
+	      		"Defense",
+	     	 	"defense"
+	    	],
+	    	"DESCRIPTION": "Creatures with Defense receive 15% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied."
+	 },
+	 {
+	    	"NAMES": [
+	      		"Offense",
+	     	 	"offense"
+	    	],
+	    	"DESCRIPTION":"Creatures with Offense deal 25% more damage with #yAttacks #b1 turn. NL Remove it if #yDefense is applied."
+	 },
+	 {
+	    	"NAMES": [
+	      		"Overdrive",
+	     	 	"overdrive"
+	    	],
+	    	"DESCRIPTION":"Double the amount of #yMagatama gained for #b1 turn."
+	 },
+	 {
+		"PROPER_NAME": "Active Flow",
+	    	"NAMES": [
+	      		"Active Flow",
+	     	 	"active flow",
+			"Active_Flow",
+			"active_flow"
+	    	],
+	    	"DESCRIPTION":"Creatures with #yActive #yFlow deal 10% more damage with #yAttacks for #b1 turn. Add one #yOverdrive into your hand once you run out of #yActive #yFlow."
+	 },
+	 {
+		"NAMES": [
+	      		"6C",
+			"6c"
+	    	],
+	    	"DESCRIPTION":"1: Reduce this card's cost by 1. NL 2: Draw 1 card. NL 3: Gain 2 #yStrengths. NL 4: Upgrade all the cards in your hand."
+	 },
+	 {
+		"NAMES": [
+	      		"Speech",
+			"speech"
+	    	],
+	    	"DESCRIPTION":"1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 2 #yThorns. NL 5: All enemies lose 2 #yStrengths. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???"
+	 },
+	 {
+	    	"NAMES": [
+	      		"Fuumajin",
+	     	 	"fuumajin"
+	    	],
+	    	"DESCRIPTION":"Gain 2 Blocks at the end of each turn. #yEvoke after 2 turns. NL #yEvoke: Gain 1 #ymagatama."
+	 },
+	 {
+		"NAMES": [
+	      		"Staircase",
+	     	 	"staircase"
+	    	],
+	    	"DESCRIPTION":"Attack - Cost 0 NL Deal 1 damage 4 times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn. NL #yExhaust"
+	 },
+	 {
+		"NAMES": [
+	      		"Sweep",
+	     	 	"sweep"
+	    	],
+	    	"DESCRIPTION":"Attack - Cost 1 NL Deal 8 damage. NL Ender: Inflict 1 #yWeak."
+
+	 },
+	 {
+		"PROPER_NAME": "Clash Assault",
+	    	"NAMES": [
+	      		"Clash Assault",
+			"clash assault",
+			"Clash_Assault",			
+			"clash_assault"
+	    	],
+	    	"DESCRIPTION":"Attack - Cost 1 NL Deal 4 damage twice. NL Ender: Inflict 2 #yVulnerable."
+
+	 },
+	 {
+		"NAMES": [
+	      		"Enma",
+			"enma"
+	    	],
+	    	"DESCRIPTION":"Attack - Cost 1 NL #ySpecial: 1 NL Deal 7 damage. NL Gain 7 #yBlock."
+
+	 },
+	 {
+		"NAMES": [
+	      		"Renka",
+			"renka"
+	    	],
+	    	"DESCRIPTION":"Attack - Cost 1 NL #ySpecial: 2 NL Deal 7 damage twice. NL Draw 1 card."
+	 },
+	 {
+		"NAMES": [
+	      		"Zantetsu",
+			"zantetsu"
+	    	],
+	    	"DESCRIPTION":"Attack - Cost 1 NL #ySpecial: 3 NL Deal 18 damage. NL Gain 1 #yEnergy."
+	 },
+	 {
+		"NAMES": [
+	      		"Timekiller",
+			"timekiller"
+	    	],
+	    	"DESCRIPTION":"Lose #b999 HP when it reaches #b0. Decrease total amount by #b1 at the end of each turn."
+	 }
+]

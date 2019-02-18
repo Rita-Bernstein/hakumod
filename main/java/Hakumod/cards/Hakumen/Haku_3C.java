@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.OkizemeAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 //import Hakumod.powers.MagatamaPower;
@@ -70,7 +71,7 @@ public class Haku_3C extends CustomCard{
     	
    
     	AbstractDungeon.actionManager.addToTop(
-    			new OkizemeAction(p, this, m, "weak", this.magicNumber));
+    			new OkizemeAction(p, this, m, UtilsApplyEffect.WEAK, this.magicNumber));
     		
     	
     }

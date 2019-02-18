@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.NegateAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MagatamaPower;
@@ -63,8 +64,8 @@ public class Haku_Yukikaze extends Haku_Special{
 			
 		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
 		//AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "block", baseBlock));
-		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "attack", baseDamage	));
-		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, "buffer", magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.ATTACK, baseDamage	));
+		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.BUFFER, magicNumber));
 	
 	}
 	
