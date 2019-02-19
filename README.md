@@ -1,10 +1,7 @@
 # Hakumod
 
-<<<<<<< HEAD
-## Introduction:
-=======
 ## Introduction:
->>>>>>> 2cbb5aa6fc431745cc90e6209419122f45146278
+
 
 Adds Haku-men from Blazblue as a playable character in Slay the Spire.
 
@@ -12,14 +9,8 @@ This mod is still in prerelease. If you find any bug, please contact me on Disco
 
 It will be uploaded on steam once a the mod is judged stable and balanced enough.
 
-<<<<<<< HEAD
-
 ## Releases:
 
-=======
-## Releases:
-
->>>>>>> 2cbb5aa6fc431745cc90e6209419122f45146278
 The latest version of the mod can be found here: 
 https://github.com/celebo/hakumod/releases
 
@@ -38,30 +29,16 @@ Gatling are cards which reduce a specific card's cost in your hand to 0 or add i
 **Starter / Ender:**
  Starter and Ender are cards which focus on the order the cards are played. Starters gain additional effects when played when the energy it maxed, whereas Ender gain effects if the player has no attacks left in his hand or 0 energy.
 
-<<<<<<< HEAD
-##Progress:
-=======
 ## Progress:
->>>>>>> 2cbb5aa6fc431745cc90e6209419122f45146278
 
 Cards: 75
-
 Relics: 7
-Pottions
-
-<<<<<<< HEAD
-##Additional features:
-=======
 Pottions: 3
->>>>>>> 2cbb5aa6fc431745cc90e6209419122f45146278
 
 ## Additional features:
 
-<<<<<<< HEAD
-=======
 - The 2 starting cards can be selected from a list.
 
->>>>>>> 2cbb5aa6fc431745cc90e6209419122f45146278
 To access those features:
 - Open the main Menu.
 - Open the "Mods" menu.
@@ -69,11 +46,7 @@ To access those features:
 - Press config.
 - Click on the checkboxes.
 
-<<<<<<< HEAD
-##Coming soon:
-=======
 ## Coming soon:
->>>>>>> 2cbb5aa6fc431745cc90e6209419122f45146278
 
 - Bug fix & Balance
 - Custom Bosses
