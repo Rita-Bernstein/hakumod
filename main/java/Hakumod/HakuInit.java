@@ -9,7 +9,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
@@ -19,6 +18,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 //import com.megacrit.cardcrawl.core.Settings;
@@ -32,11 +32,101 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
+import Hakumod.cards.Hakumen.Haku_2A;
+import Hakumod.cards.Hakumen.Haku_2B;
+import Hakumod.cards.Hakumen.Haku_2C;
+import Hakumod.cards.Hakumen.Haku_2D;
+import Hakumod.cards.Hakumen.Haku_3C;
+import Hakumod.cards.Hakumen.Haku_4C;
+import Hakumod.cards.Hakumen.Haku_5A;
+import Hakumod.cards.Hakumen.Haku_5B;
+import Hakumod.cards.Hakumen.Haku_5C;
+import Hakumod.cards.Hakumen.Haku_5D;
+import Hakumod.cards.Hakumen.Haku_6A;
+import Hakumod.cards.Hakumen.Haku_6B;
+import Hakumod.cards.Hakumen.Haku_6C;
+import Hakumod.cards.Hakumen.Haku_6D;
+import Hakumod.cards.Hakumen.Haku_ActiveFlow;
+import Hakumod.cards.Hakumen.Haku_Agito;
+import Hakumod.cards.Hakumen.Haku_Airdash;
+import Hakumod.cards.Hakumen.Haku_Airgrab;
+import Hakumod.cards.Hakumen.Haku_Akumetsu;
+import Hakumod.cards.Hakumen.Haku_Awakening;
+import Hakumod.cards.Hakumen.Haku_Backhop;
+import Hakumod.cards.Hakumen.Haku_Barrier;
+import Hakumod.cards.Hakumen.Haku_BlackAndWhite;
+import Hakumod.cards.Hakumen.Haku_Blocking;
+import Hakumod.cards.Hakumen.Haku_CA;
+import Hakumod.cards.Hakumen.Haku_CT;
+import Hakumod.cards.Hakumen.Haku_ChildishMemories;
+import Hakumod.cards.Hakumen.Haku_EA;
+import Hakumod.cards.Hakumen.Haku_EmptySky;
+import Hakumod.cards.Hakumen.Haku_Enma;
+import Hakumod.cards.Hakumen.Haku_FC;
+import Hakumod.cards.Hakumen.Haku_FatalJudge;
+import Hakumod.cards.Hakumen.Haku_Forwardhop;
+import Hakumod.cards.Hakumen.Haku_Fuzzy;
+import Hakumod.cards.Hakumen.Haku_GCOD;
+import Hakumod.cards.Hakumen.Haku_Gate;
+import Hakumod.cards.Hakumen.Haku_GodOfWar;
+import Hakumod.cards.Hakumen.Haku_Grab;
+import Hakumod.cards.Hakumen.Haku_Guren;
+import Hakumod.cards.Hakumen.Haku_HighJump;
+import Hakumod.cards.Hakumen.Haku_Hotaru;
+import Hakumod.cards.Hakumen.Haku_IB;
+import Hakumod.cards.Hakumen.Haku_InJustice;
+import Hakumod.cards.Hakumen.Haku_InstantBarrier;
+import Hakumod.cards.Hakumen.Haku_J2A;
+import Hakumod.cards.Hakumen.Haku_J2C;
+import Hakumod.cards.Hakumen.Haku_JA;
+import Hakumod.cards.Hakumen.Haku_JB;
+import Hakumod.cards.Hakumen.Haku_JC;
+import Hakumod.cards.Hakumen.Haku_JD;
+import Hakumod.cards.Hakumen.Haku_Kishuu;
+import Hakumod.cards.Hakumen.Haku_Mugen;
+import Hakumod.cards.Hakumen.Haku_ODC;
+import Hakumod.cards.Hakumen.Haku_OS;
+import Hakumod.cards.Hakumen.Haku_Overdrive;
+import Hakumod.cards.Hakumen.Haku_PassiveMeter;
+import Hakumod.cards.Hakumen.Haku_QueenOfRose;
+import Hakumod.cards.Hakumen.Haku_RC;
+import Hakumod.cards.Hakumen.Haku_Renka;
+import Hakumod.cards.Hakumen.Haku_ScienceFiction;
+import Hakumod.cards.Hakumen.Haku_Shippu;
+import Hakumod.cards.Hakumen.Haku_SixHeroes;
+import Hakumod.cards.Hakumen.Haku_Spellbook;
+import Hakumod.cards.Hakumen.Haku_SwordOfDoom;
+import Hakumod.cards.Hakumen.Haku_Taunt;
+import Hakumod.cards.Hakumen.Haku_TheTyrant;
+import Hakumod.cards.Hakumen.Haku_Timekiller;
+import Hakumod.cards.Hakumen.Haku_Tsubaki;
+import Hakumod.cards.Hakumen.Haku_Void;
+import Hakumod.cards.Hakumen.Haku_Walpurgisnacht;
+import Hakumod.cards.Hakumen.Haku_WhiteVoid;
+import Hakumod.cards.Hakumen.Haku_Yanagi;
+import Hakumod.cards.Hakumen.Haku_Yomotsuhirasaka;
+import Hakumod.cards.Hakumen.Haku_Yukikaze;
+import Hakumod.cards.Hakumen.Haku_Zantetsu;
+import Hakumod.characters.Hakumen;
+import Hakumod.monsters.Nu13;
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.patches.HakuEnum;
+import Hakumod.potions.Haku_FullPowerPotion;
+import Hakumod.potions.Haku_HalfPowerPotion;
+import Hakumod.potions.Haku_QuarterPowerPotion;
+import Hakumod.powers.Haku_MagatamaPower;
+import Hakumod.relics.Haku_BurstIcon;
+import Hakumod.relics.Haku_CalamityTrigger;
+import Hakumod.relics.Haku_CentralFiction;
+import Hakumod.relics.Haku_ChronoPhantasma;
+import Hakumod.relics.Haku_ContinuumShift;
+import Hakumod.relics.Haku_Susanoo;
+import Hakumod.relics.Haku_Susanoo2;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
@@ -44,22 +134,12 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
+import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import Hakumod.cards.Hakumen.*;
-import Hakumod.characters.Hakumen;
-import Hakumod.monsters.Nu13;
-import Hakumod.patches.HakuEnum;
-import Hakumod.potions.*;
-import Hakumod.patches.AbstractCardEnum;
-
-import Hakumod.powers.Haku_MagatamaPower;
-import Hakumod.relics.*;
-
-import com.megacrit.cardcrawl.core.Settings;
 
 @SpireInitializer
 public class HakuInit implements PostExhaustSubscriber,
@@ -85,44 +165,13 @@ private static final String MY_CHARACTER_BUTTON = "charSelect/HakuButton.png";
 private static final String HAKUMEN_PORTRAIT = "charSelect/HakuPortraitBG.png";
 
 private static int startingCards = 0; 
-private static boolean useMusic = false;
+private static boolean useBosses = false;
 
 final String MODNAME = "HakuMod";
 final String AUTHOR = "The_undercover_beret";
 final String DESCRIPTION = "Adds Haku-men as a playable character.";
 
 private static Properties DEFAULTS_CONFIG = new Properties();
-
-public class Keyword
-{
-    public String PROPER_NAME;
-    public String[] NAMES;
-    public String DESCRIPTION;
-}
-
-final String[] CARDS = 
-{	
-	"Guren / Sweep (recommended)", 
-	"Blitz Attack / Clash Assault", 
-	"Smart Steer / Renka", 
-	"Divide / Zantetsu", 
-	"Kishuu / Enma",
-	"Alpha Counter / Reject Guard",
-	"Claw Grip / Claw Grip",
-	"Exceed Accel / Active Flow",
-	"Command Order / Fatal Counter"
-};
-
-final float LABEL_START_X = 350.0f;
-final float LABEL_START_Y = 750.0f;
-
-final float CARDS_TOGGLE_START_X = 400.0f;
-final float CARDS_TOGGLE_START_Y = 700.0f;
-final float CARDS_SPACE_STEP = -40.0f;
-
-final float MUSIC_TOGGLE_START_X = 350.0f;
-final float MUSIC_TOGGLE_START_Y = 300.0f;
-final String TOGGLE_MUSIC_LABEL = "Enable custom boss music (Will be available in the final version.)";
 
 private ArrayList<ModLabeledToggleButton> toggleCardSelection = new ArrayList<ModLabeledToggleButton >();
 
@@ -138,15 +187,15 @@ public static void setStartingCards(int startingCards) {
 /**
  * @return the useMusic
  */
-public static boolean getUseMusic() {
-	return useMusic;
+public static boolean getUseBosses() {
+	return useBosses;
 }
 
 /**
  * @param useMusic the useMusic to set
  */
-public static void setUseMusic(boolean useMusic) {
-	HakuInit.useMusic = useMusic;
+public static void setUseBosses(boolean useBosses) {
+	HakuInit.useBosses = useBosses;
 }
 
 //private boolean hasPlayedAnAttack = false;
@@ -401,21 +450,24 @@ public void receiveEditPotions() {
 }
 
 public void receiveEditMonsters() {
-	BaseMod.addMonster(Nu13.ID, () -> new Nu13(Nu13.OFFSET_X, Nu13.OFFSET_Y));
 
-    BaseMod.addBoss(Exordium.ID, Nu13.ID,
-            Nu13.MAP_IMAGE,
-            Nu13.MAP_OUT);
+		if (HakuInit.getUseBosses()) {
+			BaseMod.addMonster(Nu13.ID, () -> new Nu13(Nu13.OFFSET_X, Nu13.OFFSET_Y));
+		
+		    BaseMod.addBoss(Exordium.ID, Nu13.ID,
+		            Nu13.MAP_IMAGE,
+		            Nu13.MAP_OUT);    
+		}
 }
 
 public static void HakuConfig() {
 	try {
 
-		DEFAULTS_CONFIG.setProperty("starting-cards", "0");
-		DEFAULTS_CONFIG.setProperty("use-music", "false");
+		DEFAULTS_CONFIG.setProperty(Config.STARTING_CARDS, "0");
+		DEFAULTS_CONFIG.setProperty(Config.USE_BOSSES, "false");
         final SpireConfig config = new SpireConfig("HakuMod", "Common", DEFAULTS_CONFIG);
-        setStartingCards(config.getInt("starting-cards"));
-        setUseMusic(config.getBool("use-music"));
+        setStartingCards(config.getInt(Config.STARTING_CARDS));
+        setUseBosses(config.getBool(Config.USE_BOSSES));
     } catch (IOException e) {
         e.printStackTrace();
     }
@@ -451,66 +503,6 @@ public void receivePostDraw(AbstractCard arg0) {
 @Override
 public void receiveEditKeywords() {
 	logger.info("Hakumod: Adding keywords.");
-	
-	
-	/*String stringKeyMagatama = "Resource used by #ySpecial moves.";
-	String stringKeySpecial = "#ySpecials consume #yMagatama(s) to activate their effect.";
-	String stringKeyGatling = "- If you have that card in your hand, reduce its cost by 1 this turn. NL - If you don't, add that card into your hand but lose 2 #yStrengths until the end of the turn."; 
-	String stringKeyStarter = "Apply the effect if your energy is at its maximum.";
-	String stringKeyEnder = "Apply the effect if either: NL - You have 0 energy after playing that card. NL - You have 0 #yAttacks left in your hand.";
-	String stringKeyParry = "Apply the effect if the enemy intends to attack.";
-	//String stringKeyNegate = "Apply the effect if the enemy intends to inflict a debuff.";
-	
-	String stringKeyDefense = "Creatures with Defense receive 15% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied.";
-	String stringKeyOffense = "Creatures with Offense deal 25% more damage with #yAttacks #b1 turn. NL Remove it if #yDefense is applied.";
-	//String stringKeyNeutral = "Creatures with Neutral gain 25% more blocks.";
-	String stringKeyOverdrive = "Double the amount of #yMagatama gained for #b1 turn.";
-	String stringKeyActiveFlow = "Creatures with #yActive #yFlow deal 10% more damage with #yAttacks for #b1 turn. Add one #yOverdrive into your hand once you run out of #yActive #yFlow.";
-	
-
-	String stringKey6C = "1: Reduce this card's cost by 1. NL 2: Draw 1 card. NL 3: Gain 2 #yStrengths. NL 4: Upgrade all the cards in your hand.";
-	String stringKeySpeech = "1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 2 #yThorns. NL 5: All enemies lose 2 #yStrengths. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???";
-	
-	String stringKeyFuumajin = "Gain 2 Blocks at the end of each turn. #yEvoke after 2 turns. NL #yEvoke: Gain 1 #ymagatama.";
-	
-	String stringKeyStaircase = "Attack - Cost 0 NL Deal 1 damage 4 times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn. NL #yExhaust";
-	String stringKey3C = "Attack - Cost 1 NL Deal 8 damage. NL Ender: Inflict 1 #yWeak.";
-	String stringKey6B = "Attack - Cost 1 NL Deal 4 damage twice. NL Ender: Inflict 2 #yVulnerable.";
-	String stringKeyEnma = "Attack - Cost 1 NL #ySpecial: 1 NL Deal 7 damage. NL Gain 7 #yBlock.";
-	String stringKeyRenka = "Attack - Cost 1 NL #ySpecial: 2 NL Deal 7 damage two times. NL Draw 1 card.";
-	String stringKeyZantetsu = "Attack - Cost 1 NL #ySpecial: 3 NL Deal 18 damage. NL Gain 1 #yEnergy."; 		
-	
-	BaseMod.addKeyword(new String[] {"Magatama", "magatama"}, stringKeyMagatama);
-	BaseMod.addKeyword(new String[] {"Special", "special"}, stringKeySpecial);
-	BaseMod.addKeyword(new String[] {"Gatling", "gatling"}, stringKeyGatling);
-	
-	BaseMod.addKeyword(new String[] {"Starter","starter"}, stringKeyStarter);
-	BaseMod.addKeyword(new String[] {"Ender", "ender"}, stringKeyEnder);
-	
-	BaseMod.addKeyword(new String[] {"Parry", "parry"}, stringKeyParry);
-	//BaseMod.addKeyword(new String[] {"Negate", "negate"}, stringKeyNegate);
-	
-	BaseMod.addKeyword(new String[] {"Defense", "defense"}, stringKeyDefense);
-	BaseMod.addKeyword(new String[] {"Offense", "offense"}, stringKeyOffense);
-	//BaseMod.addKeyword(new String[] {"Neutral", "neutral"}, stringKeyNeutral);
-	BaseMod.addKeyword(new String[] {"Overdrive", "overdrive", "OD", "od"}, stringKeyOverdrive);
-	BaseMod.addKeyword(new String[] {"AF", "af"}, stringKeyActiveFlow);
-	//BaseMod.addKeyword(new String[] {"g.special","g.specials"}, stringKeyGroundSpecials);
-	//BaseMod.addKeyword(new String[] {"a.attack","a.attacks"}, stringKeyAirAttacks);
-	//BaseMod.addKeyword(new String[] {"Ground","ground"}, stringKeyGroundSpecials);
-	//BaseMod.addKeyword(new String[] {"Air","air"}, stringKeyAirAttacks);
-	BaseMod.addKeyword(new String[] {"Fuumajin","fuumajin"}, stringKeyFuumajin);
-	BaseMod.addKeyword(new String[] {"Staircase","staircase"}, stringKeyStaircase);
-	
-	BaseMod.addKeyword(new String[] {"Sweep","sweep"}, stringKey3C);
-	BaseMod.addKeyword(new String[] {"C.Assault","c.assault"}, stringKey6B);
-	BaseMod.addKeyword(new String[] {"Enma","enma"}, stringKeyEnma);
-	BaseMod.addKeyword(new String[] {"Renka","renka"}, stringKeyRenka);
-	BaseMod.addKeyword(new String[] {"Zantetsu","zantetsu"}, stringKeyZantetsu);
-	
-	BaseMod.addKeyword(new String[] {"6c","6C"}, stringKey6C);
-	BaseMod.addKeyword(new String[] {"Speech","speech"}, stringKeySpeech);*/
-
 	
     Gson gson = new Gson();
     String json = Gdx.files.internal("Hakumod/localization/Hakumod_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
@@ -571,16 +563,16 @@ public void receivePostInitialize() {
 	
 	ModPanel settingsPanel = new ModPanel();
 
-	final ModLabel labelStartingCards = new ModLabel("Select your 2 starting cards:", LABEL_START_X, LABEL_START_Y, settingsPanel, (me) -> {});
+	final ModLabel labelStartingCards = new ModLabel("Select your 2 starting cards:", Config.LABEL_START_X, Config.LABEL_START_Y, settingsPanel, (me) -> {});
 	settingsPanel.addUIElement(labelStartingCards);
     
-    for (int i=0;i<CARDS.length;i++) {
+    for (int i=0;i<Config.LIST_STARTING_CARDS.length;i++) {
     	final int index = i;
-    	toggleCardSelection.add(new ModLabeledToggleButton(CARDS[i], CARDS_TOGGLE_START_X, CARDS_TOGGLE_START_Y + i*CARDS_SPACE_STEP, Settings.CREAM_COLOR, FontHelper.charDescFont, useMusic, settingsPanel, label -> {}, button -> {
+    	toggleCardSelection.add(new ModLabeledToggleButton(Config.CARDS_DESC[i], Config.CARDS_TOGGLE_START_X, Config.CARDS_TOGGLE_START_Y + i*Config.CARDS_SPACE_STEP, Settings.CREAM_COLOR, FontHelper.charDescFont, useBosses, settingsPanel, label -> {}, button -> {
     		try {
     			SpireConfig config = new SpireConfig(MODNAME, "Common", DEFAULTS_CONFIG);
     			setStartingCards(index);
-    			config.setInt("starting-cards", index);
+    			config.setInt(Config.STARTING_CARDS, index);
                 config.save();
                 updateCardsToggle(index);
             }
@@ -595,11 +587,11 @@ public void receivePostInitialize() {
     //Initially, load the previous saved configuration.
 	updateCardsToggle(getStartingCards());
     
-    final ModLabeledToggleButton toggleMusic = new ModLabeledToggleButton(TOGGLE_MUSIC_LABEL, MUSIC_TOGGLE_START_X, MUSIC_TOGGLE_START_Y , Settings.CREAM_COLOR, FontHelper.charDescFont, useMusic, settingsPanel, label -> {}, button -> {
+    final ModLabeledToggleButton toggleMusic = new ModLabeledToggleButton(Config.TOGGLE_BOSSES_LABEL, Config.BOSSES_TOGGLE_START_X, Config.BOSSES_TOGGLE_START_Y , Settings.CREAM_COLOR, FontHelper.charDescFont, useBosses, settingsPanel, label -> {}, button -> {
 		try {
 			SpireConfig config = new SpireConfig(MODNAME, "Common", DEFAULTS_CONFIG);
-			setUseMusic(button.enabled);
-			config.setBool("use-music", button.enabled);
+			setUseBosses(button.enabled);
+			config.setBool(Config.USE_BOSSES, button.enabled);
 			config.save();
         }
         catch (IOException e) {
@@ -617,7 +609,7 @@ public void receivePostInitialize() {
 }
 
 public void updateCardsToggle(int index) {
-	for (int i=0;i<CARDS.length;i++) {
+	for (int i=0;i<Config.CARDS_DESC.length;i++) {
 		if (index != i) {
 			toggleCardSelection.get(i).toggle.enabled = false;
 		}

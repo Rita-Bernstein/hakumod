@@ -1,16 +1,10 @@
 package Hakumod.cards.Hakumen;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,14 +12,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
-import Hakumod.patches.CustomTags;
-//import basemod.helpers.BaseModTags;
-//import basemod.helpers.CardTags;
 
 
 public class Haku_ChildishMemories extends CustomCard{
@@ -40,7 +30,7 @@ public class Haku_ChildishMemories extends CustomCard{
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_ChildishMemories.png";
 	private static final int COST = 0;
 
-	private static final int MAGATAMA_LOSS = 1;
+	private final int MAGATAMA_LOSS = 1;
 	//private static final int ATTACK_DMG = 4;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	//private static int CARD_TO_DRAW = 3;
@@ -95,7 +85,7 @@ public class Haku_ChildishMemories extends CustomCard{
 		
     	if (AbstractDungeon.player.hasPower(Haku_MagatamaPower.POWER_ID)) 
 		{
-			AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).reducePower(this.MAGATAMA_LOSS);
+			AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).reducePower(MAGATAMA_LOSS);
 			AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).updateDescription();
 			if (AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).amount == 0) 
 			{

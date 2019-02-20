@@ -1,16 +1,9 @@
 package Hakumod.relics;
 
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import Hakumod.patches.CustomTags;
 import basemod.abstracts.CustomRelic;
-import basemod.helpers.CardTags;
 
 public class BlackAndWhite extends CustomRelic{
     public static final String RELIC_ID = "BlackAndWhite";

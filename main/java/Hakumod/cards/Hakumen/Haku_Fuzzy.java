@@ -11,15 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import Hakumod.action.NegateAction;
-import Hakumod.action.ParryAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_DefensePower;
-import Hakumod.powers.Haku_MagatamaPower;
-import Hakumod.powers.Haku_OffensePower;
 import basemod.abstracts.CustomCard;
-import basemod.helpers.CardTags;
 
 public class Haku_Fuzzy extends CustomCard{
 	public static final String ID = "Haku_Fuzzy";

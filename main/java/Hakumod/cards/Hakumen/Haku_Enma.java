@@ -16,10 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.UsingSpecialAction;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
-import basemod.abstracts.CustomCard;
-//import basemod.helpers.BaseModTags;
-//import basemod.helpers.CardTags;
-import basemod.helpers.CardTags;
 
 public class Haku_Enma extends Haku_Special{
 

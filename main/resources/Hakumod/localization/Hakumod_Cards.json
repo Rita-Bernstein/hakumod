@@ -90,8 +90,8 @@
 	},
 	"Haku_Overdrive": {
 		"NAME": "Overdrive",
-		"DESCRIPTION": "Gain !M! Overdrive. NL Shuffle one Exceed Accel into your draw pile.",
-	"UPGRADE_DESCRIPTION": "Innate NL Gain !M! Overdrive. NL Shuffle one Exceed Accel into your draw pile."
+		"DESCRIPTION": "Gain !M! Overdrive. NL Shuffle one Exceed_Accel into your draw pile.",
+	"UPGRADE_DESCRIPTION": "Innate NL Gain !M! Overdrive. NL Shuffle one Exceed_Accel into your draw pile."
 	},
 	"Haku_5A": {
 		"NAME": "God Fist",
@@ -184,7 +184,7 @@
 	},
 	"Haku_Barrier": {
 		"NAME": "Barrier",
-		"DESCRIPTION": "Gain !B! Block for every enemy in play."
+		"DESCRIPTION": "Gain !B! Block for every enemy."
 	},
 	"Haku_Fuzzy": {
 		"NAME": "Fuzzy jump",
@@ -231,7 +231,7 @@
 	},
 	"Haku_EA": {
 		"NAME": "Exceed Accel",
-		"DESCRIPTION": "Deal !D! damage. NL If Active_Flow is applied, deal double damage, if not apply 3 Active_Flow."
+		"DESCRIPTION": "Deal !D! damage. NL If Active_Flow is applied, deal double damage, if not Gain 3 Active_Flow."
 	},
 	"Haku_Akumetsu": {
 		"NAME": "Akumetsu",
@@ -248,7 +248,7 @@
 	},
 	"Haku_Yomotsuhirasaka": {
 		"NAME": "Yomotsuhirasaka",
-		"DESCRIPTION": " Everytime you channel a Fuumajin, Deal 7 damage to ALL enemies. NL Channel !M! Fuumajin"
+		"DESCRIPTION": " Everytime you channel a Fuumajin, Deal 5 damage to ALL enemies. NL Channel !M! Fuumajin"
 	},
 	"Haku_TheTyrant": {
 		"NAME": "The Tyrant",
@@ -269,8 +269,8 @@
 	},
 	"Haku_InstantBarrier": {
 		"NAME": "Instant Barrier",
-		"DESCRIPTION": "Gain !B! Block. NL Add 1 Instant Block to your draw pile, change its cost to 0 and give it Exhaust. ",
-		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add 1 Instant Block and 1 Barrier to your draw pile, change their cost to 0 and give them Exhaust."
+		"DESCRIPTION": "Gain !B! Block. NL Add 1 Instant_Block to your draw pile, change its cost to 0 and give it Exhaust. ",
+		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add 1 Instant_Block and 1 Barrier to your draw pile, change their cost to 0 and give them Exhaust."
 	
 	},
 	"Haku_GCOD": {

@@ -1,20 +1,14 @@
 package Hakumod.orbs;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 import Hakumod.powers.Haku_MagatamaPower;
-import Hakumod.powers.Haku_YomotsuhirasakaPower;
 import basemod.abstracts.CustomOrb;
 
 public class Haku_VoidOrb extends CustomOrb{
@@ -56,10 +50,10 @@ public class Haku_VoidOrb extends CustomOrb{
 		// TODO Auto-generated method stub
 		super.onStartOfTurn();
 		 
-		 this.passiveAmount--;
-		 if (this.passiveAmount == 0) {
-			 AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
-		 }
+		this.passiveAmount--;
+		if (this.passiveAmount == 0) {
+			AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
+		}
 	}
 	
 	@Override

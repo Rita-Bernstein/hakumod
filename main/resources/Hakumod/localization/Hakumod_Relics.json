@@ -3,13 +3,13 @@
     "NAME": "SUSANO'OH",
     "FLAVOR": "When this theme was released, 6B was a low.",
     "DESCRIPTIONS": [
-      "Every time you play 3 cards, gain 1 #ymagatama."
+      "Every time you play #b3 cards, gain #b1 #yMagatama."
     ]
   }, "Haku_Susanoo2": {
     "NAME": "SUSANO'OH II",
     "FLAVOR": "And people though he was gonna be low tier in CP1.0.",
     "DESCRIPTIONS": [
-      "Gain 1 [R] and lose 1 #ymagatama at the start of each turn."
+      "Gain [R] and lose #b1 #yMagatama at the start of each turn."
     ]
   }, "Haku__BlackAndWhite": {
     "NAME": "Black & White",
@@ -33,7 +33,7 @@
     "NAME": "Burst icon",
     "FLAVOR": "Unit cookie dough!",
     "DESCRIPTIONS": [
-      "At the start of each combat, add one #yBurst to your draw pile and change its cost to 0 this combat."
+      "At the start of each combat, add one #yBurst to your draw pile. NL Burst: NL #yPower - Cost #b0 - NL Gain #b1 #yIntangible."
     ]
   }, "Haku_BarrierGauge": {
     "NAME": "BarrierGauge",
@@ -69,13 +69,13 @@
     "NAME": "Chrono Phantasma",
     "FLAVOR": "5C > 623AA > J.2C > 2C > 9jc > J.2A > 9jc > Delay J.2C > 5A > 5B > 9jc > J.B2A > 9jc > J.B2A > J.214A",
     "DESCRIPTIONS": [
-      "At the start of each battle, gain #yStrength for every 15HP missing."
+      "At the start of each battle, gain #yStrength for every #b15HP missing."
     ]
   }, "Haku_CentralFiction": {
     "NAME": "Central Fiction",
     "FLAVOR": "5C > 214A > 2C > 9hjc > J.B2A > 9jc > J.B2A > J.214A",
     "DESCRIPTIONS": [
-      "Draw 1 more card at the start of each turn."
+      "Draw #b1 more card at the start of each turn."
     ]
   }
 }

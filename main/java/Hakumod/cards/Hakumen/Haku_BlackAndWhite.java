@@ -1,8 +1,6 @@
 package Hakumod.cards.Hakumen;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,12 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.OkizemeAction;
-import Hakumod.action.StarterAction;
-import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
 //import basemod.helpers.BaseModTags;
 //import basemod.helpers.CardTags;

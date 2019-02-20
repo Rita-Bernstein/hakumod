@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 
 
 
@@ -46,6 +46,20 @@ public class Haku_TimekillerPower extends AbstractPower {
 							this.owner,
 							this.owner,
 							Haku_TimekillerPower.POWER_ID));
+			
+			//For Nemesis on Act 3.
+			if (this.owner.hasPower(IntangiblePower.POWER_ID)) {   
+	            AbstractDungeon.actionManager.addToBottom(
+	            		new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, IntangiblePower.POWER_ID)
+	            );
+			}
+			
+			//For the other cases of Intangible
+			if (this.owner.hasPower(IntangiblePlayerPower.POWER_ID)) {
+	            AbstractDungeon.actionManager.addToBottom(
+	            		new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, IntangiblePlayerPower.POWER_ID)
+	            );
+			}
 			
 			AbstractDungeon.actionManager.addToBottom(
 					new com.megacrit.cardcrawl.actions.common.DamageAction(

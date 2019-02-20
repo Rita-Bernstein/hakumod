@@ -19,35 +19,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-import Hakumod.HakuInit;
-import Hakumod.cards.Hakumen.Haku_2A;
-import Hakumod.cards.Hakumen.Haku_2B;
-import Hakumod.cards.Hakumen.Haku_2D;
-import Hakumod.cards.Hakumen.Haku_3C;
+import Hakumod.Config;
 import Hakumod.cards.Hakumen.Haku_4C;
-import Hakumod.cards.Hakumen.Haku_5B;
-import Hakumod.cards.Hakumen.Haku_5C;
-import Hakumod.cards.Hakumen.Haku_6A;
-import Hakumod.cards.Hakumen.Haku_6B;
-import Hakumod.cards.Hakumen.Haku_6C;
-import Hakumod.cards.Hakumen.Haku_6D;
-import Hakumod.cards.Hakumen.Haku_ActiveFlow;
 import Hakumod.cards.Hakumen.Haku_Blocking;
-import Hakumod.cards.Hakumen.Haku_EA;
-import Hakumod.cards.Hakumen.Haku_Enma;
-import Hakumod.cards.Hakumen.Haku_FC;
-import Hakumod.cards.Hakumen.Haku_Guren;
-import Hakumod.cards.Hakumen.Haku_JB;
-import Hakumod.cards.Hakumen.Haku_JD;
-import Hakumod.cards.Hakumen.Haku_Kishuu;
-import Hakumod.cards.Hakumen.Haku_Renka;
-import Hakumod.cards.Hakumen.Haku_Zantetsu;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.HakuEnum;
 import Hakumod.relics.Haku_Susanoo;
@@ -74,33 +52,7 @@ public class Hakumen extends CustomPlayer {
 	
     public static final String HAKUMEN_SKELETON_ATLAS = "Hakumod/img/char/HakuAnim.atlas";
     public static final String HAKUMEN_SKELETON_JSON = "Hakumod/img/char/HakuAnim.json";
-    public static final String HAKUMEN_ANIMATION = "Sprite";
-    
-    public final String[][] STARTING_CARDS = 
-    	{
-    			{Haku_Guren.ID, Haku_3C.ID},
-    			{Haku_6A.ID, Haku_6B.ID},
-    			{Haku_2B.ID, Haku_Renka.ID},
-    			{Haku_5C.ID, Haku_Zantetsu.ID},
-    			{Haku_Kishuu.ID, Haku_Enma.ID},
-    			{Haku_2D.ID, Haku_JD.ID},
-    			{Haku_2A.ID, Haku_2A.ID},
-    			{Haku_EA.ID, Haku_ActiveFlow.ID},
-    			{Haku_6C.ID, Haku_FC.ID},
-    	};
-    
-    public final AbstractCard[] CARDS_COPY = 
-    	{
-    			new Haku_3C().makeCopy(),
-    			new Haku_6B().makeCopy(),
-    			new Haku_Renka().makeCopy(),
-    			new Haku_Zantetsu().makeCopy(),
-    			new Haku_Enma().makeCopy(),
-    			new Haku_JD().makeCopy(),
-    			new Haku_2A().makeCopy(),
-    			new Haku_EA().makeCopy(),
-    			new Haku_6C().makeCopy()
-    	};	
+    public static final String HAKUMEN_ANIMATION = "Sprite";	
     
 	public static final String[] orbTextures = {
 			"Hakumod/img/orb/layer1.png",
@@ -171,8 +123,8 @@ public class Hakumen extends CustomPlayer {
 		retVal.add(Haku_Blocking.ID);
 		retVal.add(Haku_Blocking.ID);
 		
-		retVal.add(STARTING_CARDS[this.startingCards][0]);
-		retVal.add(STARTING_CARDS[this.startingCards][1]);
+		retVal.add(Config.LIST_STARTING_CARDS[this.startingCards][0]);
+		retVal.add(Config.LIST_STARTING_CARDS[this.startingCards][1]);
 		
 		return retVal;
 	}
@@ -231,7 +183,7 @@ public class Hakumen extends CustomPlayer {
 	@Override
 	public AbstractCard getStartCardForEvent() {
 		// TODO Auto-generated method stub
-		AbstractCard startCard = CARDS_COPY[this.startingCards];
+		AbstractCard startCard = Config.CARDS_COPY[this.startingCards];
 		return startCard;
 	}
 
@@ -248,9 +200,9 @@ public class Hakumen extends CustomPlayer {
 		
 		try {
 	        final Properties defaults = new Properties();
-	        defaults.setProperty("starting-cards", "0");
+	        defaults.setProperty(Config.STARTING_CARDS, "0");
 	        final SpireConfig config = new SpireConfig("HakuMod", "Common", defaults);
-	        startingCards = config.getInt("starting-cards");
+	        startingCards = config.getInt(Config.STARTING_CARDS);
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }

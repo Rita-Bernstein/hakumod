@@ -16,10 +16,6 @@ import Hakumod.action.ComboAction;
 import Hakumod.action.UsingSpecialAction;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
-import basemod.abstracts.CustomCard;
-//import basemod.helpers.BaseModTags;
-//import basemod.helpers.CardTags;
-import basemod.helpers.CardTags;
 
 public class Haku_Guren extends Haku_Special{
 

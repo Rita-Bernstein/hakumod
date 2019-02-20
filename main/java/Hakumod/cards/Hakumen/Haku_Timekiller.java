@@ -12,12 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FadingPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
-import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_MagatamaPower;
 import Hakumod.powers.Haku_TimekillerPower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;

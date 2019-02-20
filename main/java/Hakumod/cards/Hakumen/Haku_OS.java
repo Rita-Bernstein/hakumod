@@ -10,14 +10,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 
-import Hakumod.action.NegateAction;
-import Hakumod.action.ParryAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_DefensePower;
-import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
-import basemod.helpers.CardTags;
 
 public class Haku_OS extends CustomCard{
 	public static final String ID = "Haku_OS";
@@ -34,7 +28,7 @@ public class Haku_OS extends CustomCard{
 	private static final int UPGRADE_PLUS_BLOCK = 3;
 	
 	private static int BUFF = 1;
-	private static int UPGRADE_BUFF = 1;
+	//private static int UPGRADE_BUFF = 1;
 	 
 	
 	public Haku_OS() {

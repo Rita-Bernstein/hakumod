@@ -24,6 +24,7 @@ public class Haku_PassiveMeterPower extends AbstractPower{
 			
 	
 	public void atStartOfTurn() {
+		super.atStartOfTurn();
 		AbstractDungeon.actionManager.addToTop(
 				new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new Haku_MagatamaPower(AbstractDungeon.player,1),1));	
 	}

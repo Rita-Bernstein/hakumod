@@ -28,11 +28,11 @@ public class Haku_Burst extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Burst.png";
-	private static final int COST = 3;
-	private static final int UPGRADED_COST = 2;
+	private static final int COST = 0;
+	//private static final int UPGRADED_COST = 0;
 	    
 	public Haku_Burst() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -49,7 +49,7 @@ public class Haku_Burst extends CustomCard{
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeBaseCost(UPGRADED_COST);
+			//upgradeBaseCost(UPGRADED_COST);
 			initializeDescription();
 		}
 	}

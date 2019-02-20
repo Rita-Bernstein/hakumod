@@ -1,9 +1,6 @@
 package Hakumod.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -13,13 +10,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import Hakumod.HakuInit;
-import Hakumod.powers.Haku_ActiveFlowPower;
-import Hakumod.powers.Haku_DefensePower;
-import Hakumod.powers.Haku_MagatamaPower;
-import Hakumod.powers.Haku_NeutralPower;
-import Hakumod.powers.Haku_OffensePower;
-import Hakumod.powers.Haku_OverdrivePower;
 import basemod.abstracts.CustomRelic;
 
 public class Haku_Roundstart extends CustomRelic{

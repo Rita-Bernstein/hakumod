@@ -1,6 +1,5 @@
 package Hakumod.cards.Hakumen;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Hakumod.action.StarterAction;
 import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
 
 public class Haku_Blocking extends CustomCard{

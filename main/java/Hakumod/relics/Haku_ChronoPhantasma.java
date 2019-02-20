@@ -1,42 +1,12 @@
 package Hakumod.relics;
 
-import java.util.ArrayList;
-
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import Hakumod.HakuInit;
-import Hakumod.action.ChooseCardAction;
-import Hakumod.cards.Hakumen.Haku_3C;
-import Hakumod.cards.Hakumen.Haku_5A;
-import Hakumod.cards.Hakumen.Haku_Agito;
-import Hakumod.cards.Hakumen.Haku_Akumetsu;
-import Hakumod.cards.Hakumen.Haku_CA;
-import Hakumod.cards.Hakumen.Haku_CT;
-import Hakumod.cards.Hakumen.Haku_Enma;
-import Hakumod.cards.Hakumen.Haku_Guren;
-import Hakumod.cards.Hakumen.Haku_Hotaru;
-import Hakumod.cards.Hakumen.Haku_Kishuu;
-import Hakumod.cards.Hakumen.Haku_Mugen;
-import Hakumod.cards.Hakumen.Haku_RC;
-import Hakumod.cards.Hakumen.Haku_Renka;
-import Hakumod.cards.Hakumen.Haku_Shippu;
-import Hakumod.cards.Hakumen.Haku_Tsubaki;
-import Hakumod.cards.Hakumen.Haku_Yukikaze;
-import Hakumod.cards.Hakumen.Haku_Zantetsu;
-import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomRelic;
-import basemod.helpers.CardTags;
 
 public class Haku_ChronoPhantasma extends CustomRelic{
     public static final String RELIC_ID = "Haku_ChronoPhantasma";

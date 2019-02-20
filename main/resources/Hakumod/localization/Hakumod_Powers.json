@@ -9,11 +9,11 @@
   }, 
   "Haku_DefensePower": {
     "NAME": "Defense",
-    "DESCRIPTIONS": ["Receive 15% less damage from #yAttacks for ", " turns. This buff is removed when #yOffense is applied." ]
+    "DESCRIPTIONS": ["Receive #b15% less damage from #yAttacks for ", " turns. This buff is removed when #yOffense is applied." ]
   },
   "Haku_OffensePower": {
     "NAME": "Offense",
-    "DESCRIPTIONS": ["Deal 25% more damage with #yAttacks for ", " turns. This buff is removed when #yDefense is applied."]
+    "DESCRIPTIONS": ["Deal #b25% more damage with #yAttacks for ", " turns. This buff is removed when #yDefense is applied."]
   },
   "Haku_NeutralPower": {
     "NAME": "Neutral",
@@ -21,7 +21,7 @@
   },
   "Haku_ActiveFlowPower": {
     "NAME": "Active Flow",
-    "DESCRIPTIONS": ["Deal 10% more damage with #yAttacks for ", " turns. Once #yActive #yflow ends, add one Overdrive to your hand."]
+    "DESCRIPTIONS": ["Deal #b10% more damage with #yAttacks for ", " turns. Once #yActive #yflow ends, add one Overdrive to your hand."]
   },
   "Haku_OverdrivePower": {
     "NAME": "Overdrive",
@@ -29,11 +29,11 @@
   },
   "Haku_MugenPower": {
     "NAME": "Mugen",
-    "DESCRIPTIONS": ["#ySpecials cost #b0 #yenergy and #b0 #ymagatama this turn."]
+    "DESCRIPTIONS": ["#ySpecials cost #b0 #yenergy and #b0 #yMagatama this turn."]
   },
   "Haku_PassiveMeterPower": {
     "NAME": "Passive Meter",
-    "DESCRIPTIONS": ["At the start of each turn, gain #b", " #ymagatama(s)"]
+    "DESCRIPTIONS": ["At the start of each turn, gain #b", " #yMagatama(s)"]
   },
   "Haku_AwakeningPower": {
     "NAME": "Awakening The Chaos",

@@ -12,15 +12,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.OkizemeAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UsingSpecialAction;
 import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
-//import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
-import basemod.helpers.CardTags;
 
 
 public class Haku_Hotaru extends Haku_Special{

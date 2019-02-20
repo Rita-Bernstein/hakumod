@@ -1,18 +1,12 @@
 package Hakumod.relics;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import Hakumod.HakuInit;
-import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomRelic;
 
 public class Haku_CalamityTrigger extends CustomRelic{
@@ -20,8 +14,6 @@ public class Haku_CalamityTrigger extends CustomRelic{
     private static final String IMG = "Hakumod/img/relics/CalamityTrigger.png";
     private static final String IMG_OTL = "Hakumod/img/relics/outline/CalamityTrigger_outline.png";
 
-    private int CARDS_RANDOMNIZED = 1;
-    private boolean hasDrawnCard = false;
     private int BLOCK = 4;
 	public Haku_CalamityTrigger() {
 		super(RELIC_ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.UNCOMMON, LandingSound.MAGICAL);

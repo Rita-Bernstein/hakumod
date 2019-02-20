@@ -12,19 +12,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
-//import basemod.helpers.BaseModTags;
-//import basemod.helpers.CardTags;
-import basemod.helpers.CardTags;
 
 
 public class Haku_Backgrab extends CustomCard{

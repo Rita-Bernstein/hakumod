@@ -1,23 +1,16 @@
 package Hakumod.action;
 
-import java.util.ArrayList;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 
-import Hakumod.cards.Hakumen.Haku_ChildishMemories;
 import Hakumod.cards.Hakumen.Haku_InJustice;
 import Hakumod.characters.Hakumen;
 import Hakumod.powers.Haku_MagatamaPower;
 import Hakumod.powers.Haku_MugenPower;
-import Hakumod.powers.Haku_TheTyrantPower;
 import Hakumod.relics.Haku_ContinuumShift;
 
 public class UsingSpecialAction extends AbstractGameAction{
@@ -43,14 +36,11 @@ public class UsingSpecialAction extends AbstractGameAction{
 		return canUse;
 	}
 	
-	/*public void updateCard(AbstractCard c) {
-		if (c instanceof Haku_ChildishMemories) {
-			c.baseMagicNumber++;
-		}
-		else if (c instanceof Haku_InJustice) {
+	public void updateCard(AbstractCard c) {
+		if (c instanceof Haku_InJustice) {
 			c.updateCost(-1);
 		}
-	}*/
+	}
 	
 	public void update() 
 	{
@@ -75,7 +65,7 @@ public class UsingSpecialAction extends AbstractGameAction{
 						new ThornsPower(this.source, SparkAmount), SparkAmount));
 			}*/
 			
-			/*for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+			for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
 				updateCard(c);	
 			}
 			
@@ -85,7 +75,7 @@ public class UsingSpecialAction extends AbstractGameAction{
 			
 			for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
 				updateCard(c);	
-			}*/
+			}
 			
 		}
 	

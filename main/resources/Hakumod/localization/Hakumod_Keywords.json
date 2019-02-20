@@ -20,21 +20,21 @@
 	      		"Gatling",
 	     	 	"gatling"
 	    	],
-	    	"DESCRIPTION": "- If you have that card in your hand, reduce its cost by 1 this turn. NL - If you don't, add that card into your hand but lose 2 #yStrengths until the end of the turn."
+	    	"DESCRIPTION": "- If you have that card in your hand, reduce its cost by #b1 this turn. NL - If you don't, add that card into your hand but lose #b2 #yStrengths until the end of the turn."
 	 },
 	 {
 	    	"NAMES": [
 	      		"Starter",
 	     	 	"starter"
 	    	],
-	    	"DESCRIPTION": "Apply the effect if your energy is at its maximum."
+	    	"DESCRIPTION": "Apply the effect if your Energy is at its maximum."
 	 },
 	 {
 	    	"NAMES": [
 	      		"Ender",
 	     	 	"ender"
 	    	],
-	    	"DESCRIPTION": "Apply the effect if either: NL - You have 0 energy after playing that card. NL - You have 0 #yAttacks left in your hand."
+	    	"DESCRIPTION": "Apply the effect if either: NL - You have #b0 Energy after playing that card. NL - You have #b0 #yAttacks left in your hand."
 	 },
 	 {
 	    	"NAMES": [
@@ -48,14 +48,14 @@
 	      		"Defense",
 	     	 	"defense"
 	    	],
-	    	"DESCRIPTION": "Creatures with Defense receive 15% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied."
+	    	"DESCRIPTION": "Creatures with #yDefense receive #b15% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied."
 	 },
 	 {
 	    	"NAMES": [
 	      		"Offense",
 	     	 	"offense"
 	    	],
-	    	"DESCRIPTION":"Creatures with Offense deal 25% more damage with #yAttacks #b1 turn. NL Remove it if #yDefense is applied."
+	    	"DESCRIPTION":"Creatures with #yOffense deal #b25% more damage with #yAttacks #b1 turn. NL Remove it if #yDefense is applied."
 	 },
 	 {
 	    	"NAMES": [
@@ -75,11 +75,21 @@
 	    	"DESCRIPTION":"Creatures with #yActive #yFlow deal 10% more damage with #yAttacks for #b1 turn. Add one #yOverdrive into your hand once you run out of #yActive #yFlow."
 	 },
 	 {
+		"PROPER_NAME": "Exceed Accel",
+	    	"NAMES": [
+	      		"Exceed Accel",
+	     	 	"exceed accel",
+			"Exceed_Accel",
+			"exceed_accel"
+	    	],
+	    	"DESCRIPTION":"#yAttack - Cost #b1 NL Deal #b10 damage. NL If #yActive #yFlow is applied, deal double damage, if not Gain #b3 #yActive #yFlow."
+	 },
+	 {
 		"NAMES": [
 	      		"6C",
 			"6c"
 	    	],
-	    	"DESCRIPTION":"1: Reduce this card's cost by 1. NL 2: Draw 1 card. NL 3: Gain 2 #yStrengths. NL 4: Upgrade all the cards in your hand."
+	    	"DESCRIPTION":"1: Reduce this card's cost by #b1. NL 2: Draw #b1 card. NL 3: Gain #b2 #yStrength. NL 4: #yUpgrade all the cards in your hand."
 	 },
 	 {
 		"NAMES": [
@@ -93,21 +103,21 @@
 	      		"Fuumajin",
 	     	 	"fuumajin"
 	    	],
-	    	"DESCRIPTION":"Gain 2 Blocks at the end of each turn. #yEvoke after 2 turns. NL #yEvoke: Gain 1 #ymagatama."
+	    	"DESCRIPTION":"Gain #b2 #yBlock at the end of each turn. #yEvoke after #b2 turns. NL #yEvoke: Gain #b1 #ymagatama."
 	 },
 	 {
 		"NAMES": [
 	      		"Staircase",
 	     	 	"staircase"
 	    	],
-	    	"DESCRIPTION":"Attack - Cost 0 NL Deal 1 damage 4 times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn. NL #yExhaust"
+	    	"DESCRIPTION":"#yAttack - Cost 0 NL Deal #b1 damage #b4 times. NL Add #b1 #yCrusade #ySeraphim or #yAgito to your hand, it costs #b0 this turn. NL #yExhaust"
 	 },
 	 {
 		"NAMES": [
 	      		"Sweep",
 	     	 	"sweep"
 	    	],
-	    	"DESCRIPTION":"Attack - Cost 1 NL Deal 8 damage. NL Ender: Inflict 1 #yWeak."
+	    	"DESCRIPTION":"#yAttack - Cost #b1 NL Deal #b8 damage. NL #yEnder: Inflict 1 #yWeak."
 
 	 },
 	 {
@@ -118,7 +128,25 @@
 			"Clash_Assault",			
 			"clash_assault"
 	    	],
-	    	"DESCRIPTION":"Attack - Cost 1 NL Deal 4 damage twice. NL Ender: Inflict 2 #yVulnerable."
+	    	"DESCRIPTION":"#yAttack - Cost #b1 NL Deal #b4 damage twice. NL #yEnder: Inflict 2 #yVulnerable."
+
+	 },
+	 {
+		"PROPER_NAME": "Instant Block",
+	    	"NAMES": [
+	      		"Instant Block",
+			"instant block",
+			"Instant_Block",			
+			"instant_block"
+	    	],
+	    	"DESCRIPTION":"#ySkill - Cost #b1 NL Gain #b5 #yBlock. NL Gain #b #b1 #yMagatama."
+	 },
+{
+		"NAMES": [
+	      		"Barrier",
+			"barrier"
+	    	],
+	    	"DESCRIPTION":"#ySkill - Cost #b1 NL Gain #b5 #yBlock for every enemy."
 
 	 },
 	 {
@@ -126,7 +154,7 @@
 	      		"Enma",
 			"enma"
 	    	],
-	    	"DESCRIPTION":"Attack - Cost 1 NL #ySpecial: 1 NL Deal 7 damage. NL Gain 7 #yBlock."
+	    	"DESCRIPTION":"#yAttack - Cost #b1 NL #ySpecial: 1 NL Deal #b7 damage. NL Gain 7 #yBlock."
 
 	 },
 	 {
@@ -134,20 +162,20 @@
 	      		"Renka",
 			"renka"
 	    	],
-	    	"DESCRIPTION":"Attack - Cost 1 NL #ySpecial: 2 NL Deal 7 damage twice. NL Draw 1 card."
+	    	"DESCRIPTION":"#yAttack - Cost #b1 NL #ySpecial: 2 NL Deal #b7 damage twice. NL Draw 1 card."
 	 },
 	 {
 		"NAMES": [
 	      		"Zantetsu",
 			"zantetsu"
 	    	],
-	    	"DESCRIPTION":"Attack - Cost 1 NL #ySpecial: 3 NL Deal 18 damage. NL Gain 1 #yEnergy."
+	    	"DESCRIPTION":"#yAttack - Cost #b1 NL #ySpecial: 3 NL Deal #b18 damage. NL Gain 1 #yEnergy."
 	 },
 	 {
 		"NAMES": [
 	      		"Timekiller",
 			"timekiller"
 	    	],
-	    	"DESCRIPTION":"Lose #b999 HP when it reaches #b0. Decrease total amount by #b1 at the end of each turn."
+	    	"DESCRIPTION":"Lose #b999HP when it reaches #b0. Decrease amount by #b1 at the end of each turn."
 	 }
 ]

@@ -1,7 +1,5 @@
 package Hakumod.cards.Hakumen;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,14 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.NegateAction;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
-import basemod.helpers.CardTags;
 
 public class Haku_2D extends CustomCard{
 	public static final String ID = "Haku_2D";
@@ -35,8 +30,8 @@ public class Haku_2D extends CustomCard{
 	private static final int ATTACK_DMG = 5;
 	private static final int UPGRADE_PLUS_DMG = 2;
 	
-	private static int BUFF = 5;
-	private static int UPGRADE_BUFF = 2;
+	/*private static int BUFF = 5;
+	private static int UPGRADE_BUFF = 2;*/
 	 
 	
 	public Haku_2D() {

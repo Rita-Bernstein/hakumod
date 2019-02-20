@@ -1,16 +1,12 @@
 package Hakumod.cards.Hakumen;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,16 +15,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Hakumod.action.ChooseCardAction;
-import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
-//import basemod.helpers.BaseModTags;
-//import basemod.helpers.CardTags;
-import basemod.helpers.ModalChoice;
-import basemod.helpers.ModalChoiceBuilder;
-import basemod.helpers.TooltipInfo;
 
 
 public class Haku_Staircase  extends CustomCard

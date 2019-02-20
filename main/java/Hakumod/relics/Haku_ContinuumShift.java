@@ -2,22 +2,12 @@ package Hakumod.relics;
 
 import java.util.ArrayList;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import Hakumod.HakuInit;
-import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomRelic;
-import basemod.helpers.CardTags;
 
 public class Haku_ContinuumShift extends CustomRelic{
     public static final String RELIC_ID = "Haku_ContinuumShift";

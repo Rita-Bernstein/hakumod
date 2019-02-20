@@ -18,9 +18,6 @@ import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
-//import basemod.helpers.BaseModTags;
-//import basemod.helpers.CardTags;
-import basemod.helpers.CardTags;
 
 
 public class Haku_6B extends CustomCard{

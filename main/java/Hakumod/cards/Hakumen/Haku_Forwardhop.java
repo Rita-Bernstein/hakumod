@@ -1,17 +1,10 @@
 package Hakumod.cards.Hakumen;
 
-import java.util.ArrayList;
-
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,18 +12,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.AddToHandAction;
-import Hakumod.action.ChooseCardAction;
-import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_MagatamaPower;
 import Hakumod.powers.Haku_OffensePower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
-//import basemod.helpers.BaseModTags;
-//import basemod.helpers.CardTags;
-import basemod.helpers.CardTags;
 
 
 public class Haku_Forwardhop extends CustomCard{

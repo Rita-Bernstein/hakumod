@@ -7,20 +7,16 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.BufferPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import com.megacrit.cardcrawl.core.Settings;
-
 import Hakumod.powers.Haku_DefensePower;
-import Hakumod.powers.Haku_MagatamaPower;
 import Hakumod.powers.Haku_UnlimitedDriveBossPower;
 
 public class Nu13 extends AbstractMonster{
@@ -77,7 +73,7 @@ public class Nu13 extends AbstractMonster{
     private static final float DIALOG_X = (-40.0F * Settings.scale);
     private static final float DIALOG_Y = (120.0F * Settings.scale);
     
-    private static final int BLOCK = 20; 
+    private static final int BLOCK = 15; 
     private static final int ARTIFACT = 1;
     private static final int ARTIFACT_BLOCK = 8;
     
@@ -93,7 +89,16 @@ public class Nu13 extends AbstractMonster{
 	private int hpPrecharge = 0;
 	private int hpPostcharge = 0;
 	
+	private int hpPreAttack = 0;
+	private int hpPostAttack = 0;
+	
+	private int hpPreStatus = 0;
+	private int hpPostStatus = 0;
+	
+	private int[] ATTACK_THRESHOLD = {10, 20};
+	private int[] STATUS_THRESHOLD = {5, 10};
 	private int INTERRUPTION = 20;
+	private int choice = 0;
 	//private boolean ERROR_DETECTED = false;
 	
     public Nu13(float offsetX, float offsetY) {
@@ -143,8 +148,8 @@ public class Nu13 extends AbstractMonster{
 	@Override
 	protected void getMove(int arg0) {
 		// TODO Auto-generated method stub
-		int choice = this.currentHealth % 3;
 		
+		//Pattern: NUKE -> LOAD -> (ATTACK/MULTI_HIT -> BUFF/DEBUFF/BLOCK)*2 -> CHARGE -> NUKE -> ... 
 		boolean lastMoveWasNormalAttack = (this.lastMove(Pattern.ATTACK) || this.lastMove(Pattern.ATTACK_DEF) || this.lastMove(Pattern.MULTIHIT)); 
 		boolean lastMoveWasNormalStatus = (this.lastMove(Pattern.BUFF) || this.lastMove(Pattern.DEBUFF) || this.lastMove(Pattern.BLOCK) );
 				
@@ -164,25 +169,38 @@ public class Nu13 extends AbstractMonster{
 		}
 		else if (this.lastMove(Pattern.NUKE)) {
 			setMove(MOVES[1], Pattern.LOAD, Intent.DEFEND_BUFF);
+			this.hpPreStatus = this.currentHealth;		
 		}
+		
 		else if (COND_ATTACK) {
 			this.hasAttackedOnce = !this.hasAttackedOnce;
+			this.hpPostStatus = this.currentHealth;
+			this.hpPreAttack = AbstractDungeon.player.currentHealth;
 			
-			switch(choice) {
+			setAttackChoice();
+			//The more damage the character received, the stronger the pattern.
+			switch(this.choice) {
 				case 0:
-					setMove(MOVES[2], Pattern.ATTACK, Intent.ATTACK,(this.damage.get(Attacks.ATTACK)).base,amountOfAttacks, isMultiDamage);
+					setMove(MOVES[2], Pattern.MULTIHIT, Intent.ATTACK,(this.damage.get(Attacks.MULTIHIT)).base,amountOfAttacks+MULTI_ATTACKS_AMOUNT, true);
 					break;
 				case 1:
-					setMove(MOVES[3], Pattern.MULTIHIT, Intent.ATTACK,(this.damage.get(Attacks.MULTIHIT)).base,amountOfAttacks+MULTI_ATTACKS_AMOUNT, true);
+					setMove(MOVES[3], Pattern.ATTACK, Intent.ATTACK,(this.damage.get(Attacks.ATTACK)).base,amountOfAttacks, isMultiDamage);
 					break;
 				case 2:
 					setMove(MOVES[4], Pattern.ATTACK_DEF, Intent.ATTACK_DEFEND,(this.damage.get(Attacks.ATTACK_DEF)).base,amountOfAttacks, isMultiDamage);
 					break;
+				default:
+					setMove(MOVES[2], Pattern.MULTIHIT, Intent.ATTACK,(this.damage.get(Attacks.MULTIHIT)).base,amountOfAttacks+MULTI_ATTACKS_AMOUNT, true);
+					break;
 			}
 		}
 		else if (COND_STATUS) {
+			this.hpPostAttack = AbstractDungeon.player.currentHealth;
+			this.hpPreStatus = this.currentHealth;
 			
-			switch(choice) {
+			setStatusChoice();
+			//The more damage the character dealt, the weaker the pattern.
+			switch(this.choice) {
 				case 0:
 					setMove(MOVES[5], Pattern.BLOCK, Intent.DEFEND);
 					break;
@@ -190,6 +208,9 @@ public class Nu13 extends AbstractMonster{
 					setMove(MOVES[6], Pattern.BUFF, Intent.BUFF);
 					break;
 				case 2:
+					setMove(MOVES[7], Pattern.DEBUFF, Intent.DEBUFF);
+					break;
+				default: 
 					setMove(MOVES[7], Pattern.DEBUFF, Intent.DEBUFF);
 					break;
 			}
@@ -201,6 +222,33 @@ public class Nu13 extends AbstractMonster{
 				setMove(Pattern.CHARGE, Intent.UNKNOWN);
 		}
 	}
+	
+	private void setAttackChoice() {
+		// TODO Auto-generated method stub
+		int choice = 0;
+		int damageReceived = this.hpPreStatus - this.hpPostStatus; 
+		while (damageReceived<ATTACK_THRESHOLD[choice]) {
+			choice++;
+			if (choice==this.ATTACK_THRESHOLD.length) {
+				break;
+			}
+		}
+		this.choice = choice;
+	}
+	
+	private void setStatusChoice() {
+		// TODO Auto-generated method stub
+		int choice = 0;
+		int damageDealt = this.hpPreAttack - this.hpPostAttack; 
+		while (damageDealt<STATUS_THRESHOLD[choice]) {
+			choice++;
+			if (choice==this.STATUS_THRESHOLD.length) {
+				break;
+			}
+		}
+		this.choice = choice;
+	}
+
 
 	@Override
 	public void takeTurn() {
@@ -311,6 +359,16 @@ public class Nu13 extends AbstractMonster{
 				if (this.hpPrecharge - this.hpPostcharge > INTERRUPTION) {
 					AbstractDungeon.actionManager.addToBottom(
 							new TalkAction(this, DIALOG[1], 1.0F, 2.0F));	
+					
+					AbstractDungeon.actionManager.addToBottom(
+							new ApplyPowerAction(
+									this, this, 
+									new FrailPower(
+											this, 
+											WEAK_AMOUNT, true), 
+									WEAK_AMOUNT)
+					);
+							
 					AbstractDungeon.actionManager.addToBottom(
 						new ApplyPowerAction(
 								this, this, 

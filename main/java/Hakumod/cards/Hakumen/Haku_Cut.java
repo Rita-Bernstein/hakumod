@@ -1,12 +1,10 @@
 package Hakumod.cards.Hakumen;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,13 +12,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.ComboAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_ActiveFlowPower;
-import Hakumod.powers.Haku_ScienceFictionPower;
 import Hakumod.powers.Haku_CutPower;
-import Hakumod.powers.Haku_OverdrivePower;
-import Hakumod.powers.Haku_EmptySkyPower;
 //import Hakumod.powers.MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
