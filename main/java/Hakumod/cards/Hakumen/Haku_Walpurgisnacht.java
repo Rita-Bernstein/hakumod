@@ -65,7 +65,8 @@ public class Haku_Walpurgisnacht extends CustomCard{
 		}
 	}
 	
-	/*@Override
+	//Display damage when the card is in the hand.
+	@Override
 	public void applyPowers() {
 		int amountOfMagatama = 0;
 		if (AbstractDungeon.player.hasPower(Haku_MagatamaPower.POWER_ID)) 
@@ -73,7 +74,8 @@ public class Haku_Walpurgisnacht extends CustomCard{
 			amountOfMagatama = AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).amount;
 		}
 		this.damage = amountOfMagatama * this.magicNumber + this.baseDamage;
-	 }*/
+		if (this.damage > 0) {this.isDamageModified = true;}
+	 }
 	
 	/* (non-Javadoc)
 	 * @see com.megacrit.cardcrawl.cards.AbstractCard#calculateDamageDisplay(com.megacrit.cardcrawl.monsters.AbstractMonster)
@@ -87,6 +89,7 @@ public class Haku_Walpurgisnacht extends CustomCard{
     /* (non-Javadoc)
 	 * @see com.megacrit.cardcrawl.cards.AbstractCard#calculateCardDamage(com.megacrit.cardcrawl.monsters.AbstractMonster)
 	 */
+	//Display damage when the card is selected.
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
 		// TODO Auto-generated method stub
@@ -97,6 +100,7 @@ public class Haku_Walpurgisnacht extends CustomCard{
 			amountOfMagatama = AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).amount;
 		}
 		this.damage = amountOfMagatama * this.magicNumber + this.baseDamage;
+		if (this.damage > 0) {this.isDamageModified = true;}
 	}
 
 	@Override

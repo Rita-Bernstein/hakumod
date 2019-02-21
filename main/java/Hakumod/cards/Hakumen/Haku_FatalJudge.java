@@ -1,16 +1,18 @@
 package Hakumod.cards.Hakumen;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import Hakumod.action.FatalJudgeAction;
 import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
 
@@ -57,15 +59,10 @@ public class Haku_FatalJudge extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	//AbstractDungeon.actionManager.addToTop(new DrawCardAction(p, this.magicNumber));
-		p.draw(this.magicNumber);
-		//AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));	
-     	
-    	for (AbstractCard cardInHand: p.hand.group) {
-			if (cardInHand.hasTag(CustomTags.COMBO) || cardInHand.hasTag(CustomTags.ENDER) || cardInHand.hasTag(CustomTags.STARTER)) {
-				cardInHand.setCostForTurn(0);
-				//AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(uuid, baseBlock));	
-			}
-		}
+		//p.draw(this.magicNumber);
+		AbstractDungeon.actionManager.addToTop(new DrawCardAction(p, this.magicNumber));	
+		AbstractDungeon.actionManager.addToBottom(new FatalJudgeAction(p, 0));	
+		
     }
 	
 	public AbstractCard makeCopy() {

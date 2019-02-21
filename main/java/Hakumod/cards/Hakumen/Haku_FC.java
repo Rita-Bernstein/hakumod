@@ -1,14 +1,16 @@
 package Hakumod.cards.Hakumen;
 
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import Hakumod.action.UpgradeHandAction;
 import Hakumod.patches.AbstractCardEnum;
 //import Hakumod.powers.MagatamaPower;
 import basemod.abstracts.CustomCard;
@@ -57,13 +59,10 @@ public class Haku_FC extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
     	
     	if (this.upgraded) {
-    		//AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
-    		p.draw();
+    		AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
     	}
-    	
-		for (AbstractCard cardInHand: p.hand.group) {
-			cardInHand.upgrade();
-		}
+		AbstractDungeon.actionManager.addToBottom(new UpgradeHandAction(AbstractDungeon.player));		
+		
     }
 	
 	public AbstractCard makeCopy() {

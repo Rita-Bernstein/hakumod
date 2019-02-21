@@ -5,7 +5,7 @@
 	"description": "Adds Haku-men from Blazblue as a new playable character. \n \n This mod currently includes 75 cards, 7 relics and 3 potions. \n \n For the latest patch notes: https://api.github.com/repos/celebo/hakumod/releases/latest \n \n The starting cards can be selected and custom bosses enabled in the mod's configuration panel. \n Path: Main menu > Mods > Hakumod > Config",
 	"credits": "Special thanks: \n Hexanoid, SaltBadGuy, stevo2402, von_yaourt for testing the mod and providing feedback.",
 	"dependencies": ["basemod"], 
-	"version": "0.1.6",
-	"sts_version": "01-03-2019",
+	"version": "0.1.7",
+	"sts_version": "01-23-2019",
 	"update_json": "https://api.github.com/repos/celebo/hakumod/releases/latest"
 }
