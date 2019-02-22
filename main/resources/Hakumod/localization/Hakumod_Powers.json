@@ -69,7 +69,7 @@
   },
   "Haku_TimekillerPower": {
     "NAME": "Time Killer",
-    "DESCRIPTIONS": ["Lose #b999 HP in #b", " turns."]
+    "DESCRIPTIONS": [" At the end of the turn, lose #b1HP for every #yExhausted card."]
   },
   "Haku_UnlimitedDriveBossPower": {
     "NAME": "Unlimited Drive",

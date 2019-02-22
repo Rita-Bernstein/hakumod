@@ -352,7 +352,7 @@
 	},
 	"Haku_Timekiller":{
 		"NAME": "Time Killer",
-		"DESCRIPTION": "Apply !M! Timekiller, if Timekiller is already applied, remove 2 Timekiller."
+		"DESCRIPTION": "Deal !D! Damage. NL Inflict !M! Timekiller."
 	},
 	"Haku_ChildishMemories":{
 		"NAME": "Childish Memories",

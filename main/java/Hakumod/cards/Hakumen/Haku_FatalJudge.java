@@ -29,7 +29,7 @@ public class Haku_FatalJudge extends CustomCard{
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_FatalJudge.png";
 	private static final int COST = 2;
 	//private static final int UPGRADED_COST = 2;
-	private static int BUFF = 3;
+	private static int BUFF = 2;
 	private static int UPGRADE_BUFF = 1;
 	    
 	public Haku_FatalJudge() {

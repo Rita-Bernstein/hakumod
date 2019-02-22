@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
 
 
 
@@ -35,39 +33,26 @@ public class Haku_TimekillerPower extends AbstractPower {
 
 
 	public void updateDescription() {
-		this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
+		this.description = (DESCRIPTIONS[0]);
 	}
 	
 	public void atEndOfRound()
 	{
+		int exhaustedCard = AbstractDungeon.player.exhaustPile.size();
+		AbstractDungeon.actionManager.addToBottom(
+				new com.megacrit.cardcrawl.actions.common.DamageAction(
+						owner,
+						new DamageInfo(owner, 
+								exhaustedCard,
+								DamageType.HP_LOSS),
+						AbstractGameAction.AttackEffect.FIRE));
+		
 		if (this.amount <= 1 ) {
 			AbstractDungeon.actionManager.addToBottom(
 					new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(
 							this.owner,
 							this.owner,
 							Haku_TimekillerPower.POWER_ID));
-			
-			//For Nemesis on Act 3.
-			if (this.owner.hasPower(IntangiblePower.POWER_ID)) {   
-	            AbstractDungeon.actionManager.addToBottom(
-	            		new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, IntangiblePower.POWER_ID)
-	            );
-			}
-			
-			//For the other cases of Intangible
-			if (this.owner.hasPower(IntangiblePlayerPower.POWER_ID)) {
-	            AbstractDungeon.actionManager.addToBottom(
-	            		new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, IntangiblePlayerPower.POWER_ID)
-	            );
-			}
-			
-			AbstractDungeon.actionManager.addToBottom(
-					new com.megacrit.cardcrawl.actions.common.DamageAction(
-							owner,
-							new DamageInfo(owner, 
-									OMAE_WA_MOU_SHINDEIRU,
-									DamageType.HP_LOSS),
-							AbstractGameAction.AttackEffect.FIRE));
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(
 					this.owner, 
