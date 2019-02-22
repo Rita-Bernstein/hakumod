@@ -33,7 +33,7 @@ public class Haku_HighJump extends CustomCard{
 	//private static final int ATTACK_DMG = 3;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	private static int BUFF = 1;
-	//private static int UPGRADE_BUFF = 1;
+	private static int UPGRADE_BUFF = 1;
 	    
 	public Haku_HighJump() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -55,7 +55,7 @@ public class Haku_HighJump extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			//upgradeDamage(UPGRADE_PLUS_DMG);
-			//upgradeMagicNumber(UPGRADE_BUFF);
+			upgradeMagicNumber(UPGRADE_BUFF);
 			//this.exhaust = false;
 			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();

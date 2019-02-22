@@ -35,7 +35,7 @@ public class Haku_6C extends CustomCard{
 	private static final int ATTACK_DMG = 10;
 	private static final int UPGRADE_PLUS_DMG = 3;
 	
-	private static int BUFF = 2;
+	private static int BUFF = 1;
 	//private static int UPGRADE_DEBUFF = 1;
 	
 	public Haku_6C() {

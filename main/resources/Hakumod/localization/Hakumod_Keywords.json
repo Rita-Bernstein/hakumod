@@ -89,7 +89,7 @@
 	      		"6C",
 			"6c"
 	    	],
-	    	"DESCRIPTION":"1: Reduce this card's cost by #b1. NL 2: Draw #b1 card. NL 3: Gain #b2 #yStrength. NL 4: #yUpgrade all the cards in your hand."
+	    	"DESCRIPTION":"1: Reduce this card's cost by #b1. NL 2: Draw #b1 card. NL 3: Gain #b1 #yStrength. NL 4: #yUpgrade all the cards in your hand."
 	 },
 	 {
 		"NAMES": [

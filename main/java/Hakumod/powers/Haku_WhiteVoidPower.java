@@ -44,7 +44,7 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 	
 	private static final int DRAW_BUFF = 1;
 	private static final int ENERGY_BUFF = 1;
-	private static final int YOU_ARE_BROKEN = 99;
+	private static final int YOU_ARE_BROKEN = 10;
 	
 	private String[] DIALOG = 
 		{

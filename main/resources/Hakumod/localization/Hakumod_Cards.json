@@ -206,7 +206,7 @@
 	},
 	"Haku_RC": {
 		"NAME": "Rapid Cancel",
-		"DESCRIPTION": "Special: 4 NL Draw !M! card. NL Gain [G] [G]. NL Exhaust",
+		"DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [G] [G]. NL Exhaust",
 		"UPGRADE_DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [G] [G]"
 	},
 	"Haku_Mugen": {
@@ -346,8 +346,8 @@
 	},
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
-		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile.",
-		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile."
+		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile. NL Ethereal",
+		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile. NL Ethereal"
 
 	},
 	"Haku_Timekiller":{

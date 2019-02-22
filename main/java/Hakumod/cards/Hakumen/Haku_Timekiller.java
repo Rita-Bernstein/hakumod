@@ -31,7 +31,7 @@ public class Haku_Timekiller extends CustomCard{
 	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Timekiller.png";
-	private static final int COST = 2;
+	private static final int COST = 3;
 	//private static final int ATTACK_DMG = 3;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	private static int DEBUFF = 5;

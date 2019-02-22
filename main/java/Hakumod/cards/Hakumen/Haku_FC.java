@@ -26,7 +26,7 @@ public class Haku_FC extends CustomCard{
 	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_FC.png";
-	private static final int COST = 0;
+	private static final int COST = 1;
 	//private static final int UPGRADED_COST = 0;
 	//private static int DEBUFF = 1;
 	//private static int UPGRADE_DEBUFF = 1;

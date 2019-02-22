@@ -57,7 +57,7 @@
     "NAME": "Continuum Shift",
     "FLAVOR": "5C > 623AA > J.2C > 2C > 9jc > J.2A > IAD > J.2A > J.C",
     "DESCRIPTIONS": [
-      "Every time you #ySmith, upgrade an additional random card."
+      "Whenever you enter a #yRest #ySite, upgrade a random card."
     ]
   }, "Haku_CalamityTrigger": {
     "NAME": "Calamity Trigger",
