@@ -1,17 +1,16 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.action.ParryAction;
+import Hakumod.action.UsingSpecialAction;
+import Hakumod.action.UtilsApplyEffect;
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import Hakumod.action.ParryAction;
-import Hakumod.action.UsingSpecialAction;
-import Hakumod.action.UtilsApplyEffect;
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
 
 public class Haku_Yukikaze extends Haku_Special{
 	public static final String ID = "Haku_Yukikaze";
@@ -25,7 +24,7 @@ public class Haku_Yukikaze extends Haku_Special{
 	
 	private static final int COST = 1;
 	
-	private static final int ATTACK_DMG = 25;
+	private static final int ATTACK_DMG = 20;
 	private static final int UPGRADE_PLUS_DMG = 5;
 	
 	private static final int BLOCK = 12;

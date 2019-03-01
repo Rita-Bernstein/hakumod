@@ -1,13 +1,12 @@
 package Hakumod.relics;
 
+import Hakumod.cards.Hakumen.Haku_Burst;
+import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-import Hakumod.cards.Hakumen.Haku_Burst;
-import basemod.abstracts.CustomRelic;
 
 public class Haku_BurstIcon extends CustomRelic{
     public static final String RELIC_ID = "Haku_BurstIcon";

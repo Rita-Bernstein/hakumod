@@ -1,22 +1,24 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.orbs.Haku_VoidOrb;
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.powers.Haku_AwakeningPower;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_AwakeningPower;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.powers.MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
 //import basemod.helpers.BaseModTags;
 //import basemod.helpers.CardTags;
 
@@ -32,10 +34,12 @@ public class Haku_Awakening extends CustomCard{
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Awakening.png";
 	private static final int COST = 1;
-	//private static final int UPGRADED_COST = 1;
+	private static final int STACK = 2;
 	
 	private static int MAGNITUDE = 1;
-    
+	private static int UPGRADED_MAGNITUDE = 1;
+
+
 	public Haku_Awakening() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.POWER,
@@ -53,17 +57,21 @@ public class Haku_Awakening extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			//upgradeBaseCost(UPGRADED_COST);
-			this.isInnate = true;
-			//upgradeMagicNumber(UPGRADED_MAGNITUDE);
-			this.rawDescription = UPG_DESCRIPTION;
+			//this.isInnate = true;
+			upgradeMagicNumber(UPGRADED_MAGNITUDE);
+			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
 	}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_AwakeningPower(p, this.magicNumber), this.magicNumber));
-    }
+    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_AwakeningPower(p, STACK), STACK));
+
+		for (int i=0;i<this.magicNumber;i++) {
+			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
+		}
+	}
 	
 	public AbstractCard makeCopy() {
 		return new Haku_Awakening();

@@ -1,5 +1,7 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.patches.AbstractCardEnum;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,16 +12,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 
-import Hakumod.patches.AbstractCardEnum;
-import basemod.abstracts.CustomCard;
-
 public class Haku_OS extends CustomCard{
 	public static final String ID = "Haku_OS";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_OS.png";
 	
@@ -58,9 +57,9 @@ public class Haku_OS extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeBlock(UPGRADE_PLUS_BLOCK);
-			this.rawDescription = UPG_DESCRIPTION;
+			//this.rawDescription = UPG_DESCRIPTION;
 			//upgradeMagicNumber(UPGRADE_BUFF);
-			this.exhaust = false;
+			//this.exhaust = false;
 			initializeDescription();
 		}
 	}

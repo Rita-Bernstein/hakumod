@@ -1,21 +1,11 @@
 package Hakumod.action;
 
-import java.util.ArrayList;
-
+import Hakumod.cards.Hakumen.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 
-import Hakumod.cards.Hakumen.Haku_2D;
-import Hakumod.cards.Hakumen.Haku_5D;
-import Hakumod.cards.Hakumen.Haku_6D;
-import Hakumod.cards.Hakumen.Haku_Akumetsu;
-import Hakumod.cards.Hakumen.Haku_CA;
-import Hakumod.cards.Hakumen.Haku_GCOD;
-import Hakumod.cards.Hakumen.Haku_Hotaru;
-import Hakumod.cards.Hakumen.Haku_JD;
-import Hakumod.cards.Hakumen.Haku_Yanagi;
-import Hakumod.cards.Hakumen.Haku_Yukikaze;
+import java.util.ArrayList;
 
 
 public class GetRandomCardAction extends AbstractGameAction{

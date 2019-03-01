@@ -1,19 +1,19 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.patches.AbstractCardEnum;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-import Hakumod.patches.AbstractCardEnum;
-import basemod.abstracts.CustomCard;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class Haku_Taunt extends CustomCard{
 
@@ -34,7 +34,7 @@ public class Haku_Taunt extends CustomCard{
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardRarity.COMMON,
 				AbstractCard.CardTarget.ALL_ENEMY);
 		// TODO Auto-generated constructor stub
 		this.magicNumber = DEBUFF;

@@ -1,5 +1,7 @@
 package Hakumod.orbs;
 
+import Hakumod.powers.Haku_MagatamaPower;
+import basemod.abstracts.CustomOrb;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
@@ -8,13 +10,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
-import Hakumod.powers.Haku_MagatamaPower;
-import basemod.abstracts.CustomOrb;
-
 public class Haku_VoidOrb extends CustomOrb{
 	public static final String ID = "Haku_VoidOrb";
-	private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ID);;
-	private static final int basePassiveAmount = 2;
+	private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ID);
+    private static final int basePassiveAmount = 2;
 	private static final int baseEvokeAmount = 1;
 	
 	private static final String NAME = orbStrings.NAME;

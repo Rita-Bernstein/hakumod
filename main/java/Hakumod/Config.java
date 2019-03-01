@@ -1,27 +1,7 @@
 package Hakumod;
 
+import Hakumod.cards.Hakumen.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-
-import Hakumod.cards.Hakumen.Haku_2A;
-import Hakumod.cards.Hakumen.Haku_2B;
-import Hakumod.cards.Hakumen.Haku_2D;
-import Hakumod.cards.Hakumen.Haku_3C;
-import Hakumod.cards.Hakumen.Haku_5C;
-import Hakumod.cards.Hakumen.Haku_6A;
-import Hakumod.cards.Hakumen.Haku_6B;
-import Hakumod.cards.Hakumen.Haku_6C;
-import Hakumod.cards.Hakumen.Haku_ActiveFlow;
-import Hakumod.cards.Hakumen.Haku_EA;
-import Hakumod.cards.Hakumen.Haku_Enma;
-import Hakumod.cards.Hakumen.Haku_FC;
-import Hakumod.cards.Hakumen.Haku_Guren;
-import Hakumod.cards.Hakumen.Haku_J2A;
-import Hakumod.cards.Hakumen.Haku_JD;
-import Hakumod.cards.Hakumen.Haku_Kishuu;
-import Hakumod.cards.Hakumen.Haku_Renka;
-import Hakumod.cards.Hakumen.Haku_Void;
-import Hakumod.cards.Hakumen.Haku_Yomotsuhirasaka;
-import Hakumod.cards.Hakumen.Haku_Zantetsu;
 
 public class Config
 {

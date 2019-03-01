@@ -1,24 +1,24 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.powers.Haku_MagatamaPower;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_MagatamaPower;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.powers.MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
 //import basemod.helpers.BaseModTags;
 //import basemod.helpers.CardTags;
 
@@ -65,15 +65,18 @@ public class Haku_Walpurgisnacht extends CustomCard{
 		}
 	}
 	
-	//Display damage when the card is in the hand.
-	@Override
-	public void applyPowers() {
-		int amountOfMagatama = 0;
+    public int getDamage() {
+    	int amountOfMagatama = 0;
 		if (AbstractDungeon.player.hasPower(Haku_MagatamaPower.POWER_ID)) 
 		{
 			amountOfMagatama = AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).amount;
 		}
-		this.damage = amountOfMagatama * this.magicNumber + this.baseDamage;
+		return amountOfMagatama * this.magicNumber + this.baseDamage;
+    }
+	//Display damage when the card is in the hand.
+	@Override
+	public void applyPowers() {
+		this.damage = getDamage();
 		if (this.damage > 0) {this.isDamageModified = true;}
 	 }
 	
@@ -92,14 +95,7 @@ public class Haku_Walpurgisnacht extends CustomCard{
 	//Display damage when the card is selected.
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
-		// TODO Auto-generated method stub
-		int amountOfMagatama = 0;
-
-		if (AbstractDungeon.player.hasPower(Haku_MagatamaPower.POWER_ID)) 
-		{
-			amountOfMagatama = AbstractDungeon.player.getPower(Haku_MagatamaPower.POWER_ID).amount;
-		}
-		this.damage = amountOfMagatama * this.magicNumber + this.baseDamage;
+		this.damage = getDamage();
 		if (this.damage > 0) {this.isDamageModified = true;}
 	}
 

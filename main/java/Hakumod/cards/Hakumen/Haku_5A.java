@@ -1,21 +1,21 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.patches.AbstractCardEnum;
+import basemod.BaseMod;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.patches.AbstractCardEnum;
-import basemod.BaseMod;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
 //import basemod.helpers.BaseModTags;
 //import basemod.helpers.CardTags;
 

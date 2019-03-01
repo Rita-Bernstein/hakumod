@@ -48,14 +48,14 @@
 	      		"Defense",
 	     	 	"defense"
 	    	],
-	    	"DESCRIPTION": "Creatures with #yDefense receive #b15% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied."
+	    	"DESCRIPTION": "Creatures with #yDefense receive #b20% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied."
 	 },
 	 {
 	    	"NAMES": [
 	      		"Offense",
 	     	 	"offense"
 	    	],
-	    	"DESCRIPTION":"Creatures with #yOffense deal #b25% more damage with #yAttacks #b1 turn. NL Remove it if #yDefense is applied."
+	    	"DESCRIPTION":"Creatures with #yOffense deal #b25% more damage with #yAttacks for #b1 turn. NL Remove it if #yDefense is applied."
 	 },
 	 {
 	    	"NAMES": [

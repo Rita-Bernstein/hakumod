@@ -1,5 +1,7 @@
 package Hakumod.powers;
 
+import Hakumod.cards.Hakumen.Haku_4C;
+import Hakumod.orbs.Haku_VoidOrb;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,9 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import Hakumod.cards.Hakumen.Haku_4C;
-import Hakumod.orbs.Haku_VoidOrb;
 
 
 public class Haku_CutPower extends AbstractPower {

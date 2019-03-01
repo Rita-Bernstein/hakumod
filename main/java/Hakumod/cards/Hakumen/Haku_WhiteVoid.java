@@ -1,20 +1,20 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.powers.Haku_WhiteVoidPower;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_WhiteVoidPower;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
 
 
 public class Haku_WhiteVoid extends CustomCard{
@@ -62,11 +62,11 @@ public class Haku_WhiteVoid extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_WhiteVoidPower(p, this.magicNumber), this.magicNumber));
-    	AbstractCard copy = new Haku_WhiteVoid();
+    	/*AbstractCard copy = new Haku_WhiteVoid();
     	if (this.upgraded) {
     		copy.upgrade();
     	}
-    	p.drawPile.addToTop(copy);
+    	p.drawPile.addToTop(copy);*/
     }
 	
 	public AbstractCard makeCopy() {

@@ -1,13 +1,10 @@
 package Hakumod.action;
 
-import java.util.ArrayList;
-
+import Hakumod.orbs.Haku_VoidOrb;
+import Hakumod.patches.CustomTags;
+import Hakumod.powers.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,27 +12,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.BufferPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.EnergizedBluePower;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
-import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.*;
 
-import Hakumod.orbs.Haku_VoidOrb;
-import Hakumod.patches.CustomTags;
-import Hakumod.powers.Haku_DefensePower;
-import Hakumod.powers.Haku_MagatamaPower;
-import Hakumod.powers.Haku_NeutralPower;
-import Hakumod.powers.Haku_OffensePower;
-import Hakumod.powers.Haku_OverdrivePower;
+import java.util.ArrayList;
 
 public class UtilsApplyEffect {
 
@@ -53,6 +32,7 @@ public class UtilsApplyEffect {
 	public static final String BLOCK = "block";
 	public static final String NEXT_TURN_BLOCK = "next_block";
 	public static final String DRAW = "draw";
+	public static final String NEXT_TURN_DRAW = "next_draw";
 	public static final String OFFENSE = "offense";
 	public static final String NEUTRAL = "neutral";
 	public static final String DEFENSE = "defense";
@@ -128,7 +108,11 @@ public class UtilsApplyEffect {
 			//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.player, this.magnitude));
 			break;
-			
+		case NEXT_TURN_DRAW:
+			//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+				new DrawCardNextTurnPower(this.player, this.magnitude), this.magnitude));
+			break;
 		case OFFENSE:
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
 					new Haku_OffensePower(this.player, this.magnitude, false), this.magnitude));
@@ -152,7 +136,7 @@ public class UtilsApplyEffect {
 			ArrayList<AbstractPower> listDebuffs = new ArrayList<AbstractPower>();
 
 			for (AbstractPower pow : this.player.powers) {
-				if (pow.type == AbstractPower.PowerType.DEBUFF) {
+				if (pow.type == AbstractPower.PowerType.DEBUFF && (pow.ID != GainStrengthPower.POWER_ID) ) {
 					listDebuffs.add(pow);
 				}
 			}

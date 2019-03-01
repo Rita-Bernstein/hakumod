@@ -1,20 +1,16 @@
 package Hakumod.powers;
 
+import Hakumod.cards.Hakumen.Haku_WhiteVoid;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.BerserkPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.DrawPower;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;;
+import com.megacrit.cardcrawl.powers.*;
 
 public class Haku_WhiteVoidPower extends AbstractPower {
 	public static final String POWER_ID = "Haku_WhiteVoidPower";
@@ -22,7 +18,7 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 	
-
+	private boolean playedThisTurn = false;
 	//private int[] arrayBonusThreshold = { 2, 4, 6, 8 };
 	private String[] arrayBonus = 
 		{ 	
@@ -77,9 +73,30 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 					new DexterityPower(AbstractDungeon.player, DEXTERITY_BUFF), DEXTERITY_BUFF));
 			
 		}
+		
+		this.playedThisTurn = true;
+	}
+	
+	
+
+	/* (non-Javadoc)
+	 * @see com.megacrit.cardcrawl.powers.AbstractPower#atEndOfRound()
+	 */
+	@Override
+	public void atEndOfRound() {
+		// TODO Auto-generated method stub
+		if (this.playedThisTurn && this.amount < 8) {
+			AbstractDungeon.actionManager.addToBottom(
+					new MakeTempCardInDrawPileAction(new Haku_WhiteVoid(), 1, false, true, false)
+			);
+			this.playedThisTurn = false;
+		}
 	}
 
+
+
 	public void stackPower(int stackAmount) {
+		this.playedThisTurn = true;
 		this.amount += stackAmount;
 		//AbstractDungeon.player.dialogX = (10.0F * Settings.scale); 
 		//AbstractDungeon.player.dialogY = (-27.0F * Settings.scale);
@@ -133,7 +150,7 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
 						new BerserkPower("White void", this.owner, ENERGY_BUFF), ENERGY_BUFF));
 				break;
-			default:
+			case 8:
 				//GG well played, thanks for the matches.
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
 						new StrengthPower(AbstractDungeon.player, YOU_ARE_BROKEN), YOU_ARE_BROKEN));
@@ -141,8 +158,8 @@ public class Haku_WhiteVoidPower extends AbstractPower {
 						new DexterityPower(AbstractDungeon.player, YOU_ARE_BROKEN), YOU_ARE_BROKEN));
 				   
 				break;	
-			/*default:
-				break;*/
+			default:
+				break;
 		}
 	}
 

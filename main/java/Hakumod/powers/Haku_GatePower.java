@@ -1,10 +1,8 @@
 package Hakumod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -50,17 +48,17 @@ public class Haku_GatePower extends AbstractPower {
 	 * @see com.megacrit.cardcrawl.powers.AbstractPower#atEndOfTurn(boolean)
 	 */
 	@Override
-	public void atEndOfTurn(boolean isPlayer) {
+	/*public void atEndOfTurn(boolean isPlayer) {
 		// TODO Auto-generated method stub
 		super.atEndOfTurn(isPlayer);
 		int amountBlocked = this.amount * AbstractDungeon.player.hand.size();
 		AbstractDungeon.actionManager.addToBottom(
 				new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amountBlocked));
-	}
+	}*/
 
 
 	public void updateDescription() {
-		this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
+		this.description = (DESCRIPTIONS[0] + (this.amount+1) + DESCRIPTIONS[1]);
 	}
 	
 }

@@ -1,9 +1,13 @@
 package Hakumod.powers;
 
+import Hakumod.orbs.Haku_VoidOrb;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 
@@ -21,6 +25,20 @@ public class Haku_AwakeningPower extends AbstractPower {
 			this.isTurnBased = true;
 			this.img = new Texture("Hakumod/img/powers/awakening.png");
 			updateDescription();
+	}
+
+	/* (non-Javadoc)
+	 * @see com.megacrit.cardcrawl.powers.AbstractPower#onChannel(com.megacrit.cardcrawl.orbs.AbstractOrb)
+	 */
+	@Override
+	public void onChannel(AbstractOrb orb) {
+		// TODO Auto-generated method stub
+		super.onChannel(orb);
+
+		if (orb.ID == Haku_VoidOrb.ID){
+			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, this.amount));
+		}
+
 	}
 	
 	public void updateDescription() {

@@ -1,4 +1,7 @@
 package Hakumod.monsters;
+
+import Hakumod.powers.Haku_DefensePower;
+import Hakumod.powers.Haku_UnlimitedDriveBossPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,9 +18,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-
-import Hakumod.powers.Haku_DefensePower;
-import Hakumod.powers.Haku_UnlimitedDriveBossPower;
 
 public class Nu13 extends AbstractMonster{
 
@@ -162,7 +162,7 @@ public class Nu13 extends AbstractMonster{
 		
 		getAmountOfAttacks();
 		
-		boolean isMultiDamage = (this.amountOfAttacks > 1) ? true : false;
+		boolean isMultiDamage = this.amountOfAttacks > 1;
 		if (this.startOfBattle || this.lastMove(Pattern.CHARGE)) {
 			setMove(MOVES[0], Pattern.NUKE, Intent.ATTACK_BUFF,(this.damage.get(Attacks.NUKE)).base,amountOfAttacks, isMultiDamage);
 			this.startOfBattle = false;

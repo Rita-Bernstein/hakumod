@@ -1,23 +1,23 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.action.StarterAction;
+import Hakumod.action.UtilsApplyEffect;
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.patches.CustomTags;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.StarterAction;
-import Hakumod.action.UtilsApplyEffect;
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
 
 
 public class Haku_Airgrab extends CustomCard{
@@ -32,9 +32,9 @@ public class Haku_Airgrab extends CustomCard{
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Airthrow.png";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int UPGRADE_PLUS_DMG = 3;
 	private static int BUFF = 1;
-	private static int UPGRADE_BUFF = 1;
+	//private static int UPGRADE_BUFF = 1;
 	    
 	public Haku_Airgrab() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -55,8 +55,8 @@ public class Haku_Airgrab extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			upgradeMagicNumber(UPGRADE_BUFF);
-			this.rawDescription = UPG_DESCRIPTION;
+			//upgradeMagicNumber(UPGRADE_BUFF);
+			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
 	}

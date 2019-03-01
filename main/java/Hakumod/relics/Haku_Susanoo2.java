@@ -1,12 +1,11 @@
 package Hakumod.relics;
 
+import Hakumod.powers.Haku_MagatamaPower;
+import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-import Hakumod.powers.Haku_MagatamaPower;
-import basemod.abstracts.CustomRelic;
 
 public class Haku_Susanoo2 extends CustomRelic{
     public static final String RELIC_ID = "Haku_Susanoo2";

@@ -1,10 +1,9 @@
 package Hakumod.action;
 
+import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-
-import Hakumod.patches.CustomTags;
 
 public class FatalJudgeAction extends AbstractGameAction{
 	

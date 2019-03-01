@@ -1,11 +1,10 @@
 package Hakumod.relics;
 
+import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-import basemod.abstracts.CustomRelic;
 
 public class Haku_BarrierGauge extends CustomRelic{
     public static final String RELIC_ID = "BurstIcon";

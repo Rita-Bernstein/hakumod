@@ -1,11 +1,10 @@
 package Hakumod.action;
 
+import Hakumod.powers.Haku_ScienceFictionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import Hakumod.powers.Haku_ScienceFictionPower;
 
 
 public class OkizemeAction extends AbstractGameAction{

@@ -1,20 +1,20 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.action.UsingSpecialAction;
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.action.UsingSpecialAction;
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.CustomTags;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 
 
 public class Haku_Tsubaki extends Haku_Special{
@@ -29,7 +29,7 @@ public class Haku_Tsubaki extends Haku_Special{
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Tsubaki.png";
 	private static final int COST = 0;
 	private static final int ATTACK_DMG = 20;
-	private static final int UPGRADE_PLUS_DMG = 3;
+	private static final int UPGRADE_PLUS_DMG = 4;
 	private static int MAGATAMA_COST = 3;
 	
 	public Haku_Tsubaki() {

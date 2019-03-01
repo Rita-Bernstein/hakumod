@@ -1,13 +1,12 @@
 package Hakumod.relics;
 
-import java.util.ArrayList;
-
+import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import basemod.abstracts.CustomRelic;
+import java.util.ArrayList;
 
 public class Haku_ContinuumShift extends CustomRelic{
     public static final String RELIC_ID = "Haku_ContinuumShift";

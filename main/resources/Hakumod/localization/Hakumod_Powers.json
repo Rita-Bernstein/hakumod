@@ -9,7 +9,7 @@
   }, 
   "Haku_DefensePower": {
     "NAME": "Defense",
-    "DESCRIPTIONS": ["Receive #b15% less damage from #yAttacks for ", " turns. This buff is removed when #yOffense is applied." ]
+    "DESCRIPTIONS": ["Receive #b20% less damage from #yAttacks for ", " turns. This buff is removed when #yOffense is applied." ]
   },
   "Haku_OffensePower": {
     "NAME": "Offense",
@@ -37,7 +37,7 @@
   },
   "Haku_AwakeningPower": {
     "NAME": "Awakening The Chaos",
-    "DESCRIPTIONS": ["#yParry always activate. Increase damage and Blocks from #yParry by #b", "."]
+    "DESCRIPTIONS": ["#yEverytime you channel a #yFuumajin, gain #b", " Blocks."]
   },
   "Haku_ScienceFictionPower": {
     "NAME": "Science Fiction",
@@ -61,7 +61,7 @@
   },
   "Haku_GatePower": {
     "NAME": "Gate",
-    "DESCRIPTIONS": ["At the end of your turn, gain #b", " #yBlocks for every card in your hand."]
+    "DESCRIPTIONS": ["Parry always activate.  Damage from #yParry are multiplied by #b", "."]
   },
   "Haku_SwordOfDoomPower": {
     "NAME": "Sword of Doom",

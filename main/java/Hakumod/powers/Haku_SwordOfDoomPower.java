@@ -1,14 +1,10 @@
 package Hakumod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import Hakumod.action.GetRandomCardAction;
 
 
 public class Haku_SwordOfDoomPower extends AbstractPower {
@@ -32,7 +28,7 @@ public class Haku_SwordOfDoomPower extends AbstractPower {
 	/* (non-Javadoc)
 	 * @see com.megacrit.cardcrawl.powers.AbstractPower#atStartOfTurn()
 	 */
-	@Override
+	/*@Override
 	public void atStartOfTurn() {
 		// TODO Auto-generated method stub
 		super.atStartOfTurn();
@@ -48,7 +44,7 @@ public class Haku_SwordOfDoomPower extends AbstractPower {
 			
 			AbstractDungeon.player.hand.addToHand(randomCard);
 		}
-	}
+	}*/
 
 
 

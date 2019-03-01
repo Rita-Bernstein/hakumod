@@ -1,113 +1,6 @@
 package Hakumod;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Properties;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
-//import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.google.gson.Gson;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.Exordium;
-//import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.localization.PotionStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-
-import Hakumod.cards.Hakumen.Haku_2A;
-import Hakumod.cards.Hakumen.Haku_2B;
-import Hakumod.cards.Hakumen.Haku_2C;
-import Hakumod.cards.Hakumen.Haku_2D;
-import Hakumod.cards.Hakumen.Haku_3C;
-import Hakumod.cards.Hakumen.Haku_4C;
-import Hakumod.cards.Hakumen.Haku_5A;
-import Hakumod.cards.Hakumen.Haku_5B;
-import Hakumod.cards.Hakumen.Haku_5C;
-import Hakumod.cards.Hakumen.Haku_5D;
-import Hakumod.cards.Hakumen.Haku_6A;
-import Hakumod.cards.Hakumen.Haku_6B;
-import Hakumod.cards.Hakumen.Haku_6C;
-import Hakumod.cards.Hakumen.Haku_6D;
-import Hakumod.cards.Hakumen.Haku_ActiveFlow;
-import Hakumod.cards.Hakumen.Haku_Agito;
-import Hakumod.cards.Hakumen.Haku_Airdash;
-import Hakumod.cards.Hakumen.Haku_Airgrab;
-import Hakumod.cards.Hakumen.Haku_Akumetsu;
-import Hakumod.cards.Hakumen.Haku_Awakening;
-import Hakumod.cards.Hakumen.Haku_Backhop;
-import Hakumod.cards.Hakumen.Haku_Barrier;
-import Hakumod.cards.Hakumen.Haku_BlackAndWhite;
-import Hakumod.cards.Hakumen.Haku_Blocking;
-import Hakumod.cards.Hakumen.Haku_CA;
-import Hakumod.cards.Hakumen.Haku_CT;
-import Hakumod.cards.Hakumen.Haku_ChildishMemories;
-import Hakumod.cards.Hakumen.Haku_EA;
-import Hakumod.cards.Hakumen.Haku_EmptySky;
-import Hakumod.cards.Hakumen.Haku_Enma;
-import Hakumod.cards.Hakumen.Haku_FC;
-import Hakumod.cards.Hakumen.Haku_FatalJudge;
-import Hakumod.cards.Hakumen.Haku_Forwardhop;
-import Hakumod.cards.Hakumen.Haku_Fuzzy;
-import Hakumod.cards.Hakumen.Haku_GCOD;
-import Hakumod.cards.Hakumen.Haku_Gate;
-import Hakumod.cards.Hakumen.Haku_GodOfWar;
-import Hakumod.cards.Hakumen.Haku_Grab;
-import Hakumod.cards.Hakumen.Haku_Guren;
-import Hakumod.cards.Hakumen.Haku_HighJump;
-import Hakumod.cards.Hakumen.Haku_Hotaru;
-import Hakumod.cards.Hakumen.Haku_IB;
-import Hakumod.cards.Hakumen.Haku_InJustice;
-import Hakumod.cards.Hakumen.Haku_InstantBarrier;
-import Hakumod.cards.Hakumen.Haku_J2A;
-import Hakumod.cards.Hakumen.Haku_J2C;
-import Hakumod.cards.Hakumen.Haku_JA;
-import Hakumod.cards.Hakumen.Haku_JB;
-import Hakumod.cards.Hakumen.Haku_JC;
-import Hakumod.cards.Hakumen.Haku_JD;
-import Hakumod.cards.Hakumen.Haku_Kishuu;
-import Hakumod.cards.Hakumen.Haku_Mugen;
-import Hakumod.cards.Hakumen.Haku_ODC;
-import Hakumod.cards.Hakumen.Haku_OS;
-import Hakumod.cards.Hakumen.Haku_Overdrive;
-import Hakumod.cards.Hakumen.Haku_PassiveMeter;
-import Hakumod.cards.Hakumen.Haku_QueenOfRose;
-import Hakumod.cards.Hakumen.Haku_RC;
-import Hakumod.cards.Hakumen.Haku_Renka;
-import Hakumod.cards.Hakumen.Haku_ScienceFiction;
-import Hakumod.cards.Hakumen.Haku_Shippu;
-import Hakumod.cards.Hakumen.Haku_SixHeroes;
-import Hakumod.cards.Hakumen.Haku_Spellbook;
-import Hakumod.cards.Hakumen.Haku_SwordOfDoom;
-import Hakumod.cards.Hakumen.Haku_Taunt;
-import Hakumod.cards.Hakumen.Haku_TheTyrant;
-import Hakumod.cards.Hakumen.Haku_Timekiller;
-import Hakumod.cards.Hakumen.Haku_Tsubaki;
-import Hakumod.cards.Hakumen.Haku_Void;
-import Hakumod.cards.Hakumen.Haku_Walpurgisnacht;
-import Hakumod.cards.Hakumen.Haku_WhiteVoid;
-import Hakumod.cards.Hakumen.Haku_Yanagi;
-import Hakumod.cards.Hakumen.Haku_Yomotsuhirasaka;
-import Hakumod.cards.Hakumen.Haku_Yukikaze;
-import Hakumod.cards.Hakumen.Haku_Zantetsu;
+import Hakumod.cards.Hakumen.*;
 import Hakumod.characters.Hakumen;
 import Hakumod.monsters.Nu13;
 import Hakumod.patches.AbstractCardEnum;
@@ -116,30 +9,39 @@ import Hakumod.potions.Haku_FullPowerPotion;
 import Hakumod.potions.Haku_HalfPowerPotion;
 import Hakumod.potions.Haku_QuarterPowerPotion;
 import Hakumod.powers.Haku_MagatamaPower;
-import Hakumod.relics.Haku_BurstIcon;
-import Hakumod.relics.Haku_CalamityTrigger;
-import Hakumod.relics.Haku_CentralFiction;
-import Hakumod.relics.Haku_ChronoPhantasma;
-import Hakumod.relics.Haku_ContinuumShift;
-import Hakumod.relics.Haku_Susanoo;
-import Hakumod.relics.Haku_Susanoo2;
+import Hakumod.relics.*;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.OnCardUseSubscriber;
-import basemod.interfaces.OnPowersModifiedSubscriber;
-import basemod.interfaces.OnStartBattleSubscriber;
-import basemod.interfaces.PostBattleSubscriber;
-import basemod.interfaces.PostDrawSubscriber;
-import basemod.interfaces.PostDungeonInitializeSubscriber;
-import basemod.interfaces.PostExhaustSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Properties;
+
+//import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+//import com.megacrit.cardcrawl.core.Settings;
 
 @SpireInitializer
 public class HakuInit implements PostExhaustSubscriber,
@@ -382,10 +284,10 @@ public void receiveEditCards() {
 	BaseMod.addCard(new Haku_Airdash());
 	UnlockTracker.unlockCard(Haku_Airdash.ID);
 	
-	BaseMod.addCard(new Haku_GCOD());
-	UnlockTracker.unlockCard(Haku_GCOD.ID);
-	BaseMod.addCard(new Haku_ODC());
-	UnlockTracker.unlockCard(Haku_ODC.ID);
+	/*BaseMod.addCard(new Haku_GCOD());
+	UnlockTracker.unlockCard(Haku_GCOD.ID);*/
+	/*BaseMod.addCard(new Haku_ODC());
+	UnlockTracker.unlockCard(Haku_ODC.ID);*/
 	BaseMod.addCard(new Haku_InstantBarrier());
 	UnlockTracker.unlockCard(Haku_InstantBarrier.ID);
 	//BaseMod.addCard(new Haku_Round2());
@@ -398,10 +300,10 @@ public void receiveEditCards() {
 	BaseMod.addCard(new Haku_Pinkgrab());
 	UnlockTracker.unlockCard("Haku_Pinkgrab");*/
 	
-	BaseMod.addCard(new Haku_Backhop());
-	UnlockTracker.unlockCard(Haku_Backhop.ID);
-	BaseMod.addCard(new Haku_Forwardhop());
-	UnlockTracker.unlockCard(Haku_Forwardhop.ID);
+	/*BaseMod.addCard(new Haku_Backhop());
+	UnlockTracker.unlockCard(Haku_Backhop.ID);*/
+	/*BaseMod.addCard(new Haku_Forwardhop());
+	UnlockTracker.unlockCard(Haku_Forwardhop.ID);*/
 	
 	/*BaseMod.addCard(new Haku_Clash());
 	UnlockTracker.unlockCard("Haku_Clash");
@@ -439,8 +341,15 @@ public void receiveEditCards() {
 	
 	BaseMod.addCard(new Haku_QueenOfRose());
 	UnlockTracker.unlockCard(Haku_QueenOfRose.ID);
-	
 
+	BaseMod.addCard(new Haku_PandoraTears());
+	UnlockTracker.unlockCard(Haku_PandoraTears.ID);
+	BaseMod.addCard(new Haku_EndGazer());
+	UnlockTracker.unlockCard(Haku_EndGazer.ID);
+	BaseMod.addCard(new Haku_Thin());
+	UnlockTracker.unlockCard(Haku_Thin.ID);
+	BaseMod.addCard(new Haku_Xmatic());
+	UnlockTracker.unlockCard(Haku_Xmatic.ID);
 }
 
 public void receiveEditPotions() {
@@ -514,9 +423,9 @@ public void receiveEditKeywords() {
         }
 }
     
-};
+}
 
-@Override
+	@Override
 public void receivePowersModified() {
 	// TODO Auto-generated method stub
 	

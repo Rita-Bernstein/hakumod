@@ -1,5 +1,6 @@
 package Hakumod.powers;
 
+import Hakumod.patches.CustomTags;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,8 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import Hakumod.patches.CustomTags;
 
 
 public class Haku_EmptySkyPower extends AbstractPower {

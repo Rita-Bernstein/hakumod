@@ -1,8 +1,8 @@
 package Hakumod.powers;
 
+import Hakumod.orbs.Haku_VoidOrb;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-//import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import Hakumod.orbs.Haku_VoidOrb;
+//import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 
 public class Haku_YomotsuhirasakaPower extends AbstractPower {

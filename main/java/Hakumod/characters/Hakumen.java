@@ -1,12 +1,12 @@
 package Hakumod.characters;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Properties;
-
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
-
+import Hakumod.Config;
+import Hakumod.cards.Hakumen.Haku_4C;
+import Hakumod.cards.Hakumen.Haku_Blocking;
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.patches.HakuEnum;
+import Hakumod.relics.Haku_Susanoo;
+import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -23,21 +23,20 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-import Hakumod.Config;
-import Hakumod.cards.Hakumen.Haku_4C;
-import Hakumod.cards.Hakumen.Haku_Blocking;
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.patches.HakuEnum;
-import Hakumod.relics.Haku_Susanoo;
-import basemod.abstracts.CustomPlayer;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Properties;
+
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 
 public class Hakumen extends CustomPlayer {
 	
 	public static final String TITLE = "The White Void";
 	public static final String FLAVOR = "One of the \"Six Heroes\" who defeated the Black Beast. NL What could his goal possibly be?";
 	
-    public static final int STARTING_HP = 72;
-    public static final int MAX_HP = 72;
+    public static final int STARTING_HP = 76;
+    public static final int MAX_HP = 76;
     public static final int MAX_HP_LOSS = 4;
     public static final int STARTING_GOLD = 99;
     public static final int HAND_SIZE = 5;

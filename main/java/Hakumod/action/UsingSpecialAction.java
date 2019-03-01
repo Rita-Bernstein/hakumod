@@ -1,17 +1,16 @@
 package Hakumod.action;
 
+import Hakumod.cards.Hakumen.Haku_InJustice;
+import Hakumod.characters.Hakumen;
+import Hakumod.powers.Haku_MagatamaPower;
+import Hakumod.powers.Haku_MugenPower;
+import Hakumod.relics.Haku_ContinuumShift;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import Hakumod.cards.Hakumen.Haku_InJustice;
-import Hakumod.characters.Hakumen;
-import Hakumod.powers.Haku_MagatamaPower;
-import Hakumod.powers.Haku_MugenPower;
-import Hakumod.relics.Haku_ContinuumShift;
 
 public class UsingSpecialAction extends AbstractGameAction{
 	
@@ -47,7 +46,7 @@ public class UsingSpecialAction extends AbstractGameAction{
 		// TODO Auto-generated method stub
 		if (this.canUseSpecialAction())
 		{
-			if (!this.source.hasPower(Haku_MugenPower.POWER_ID)) {
+			if (!this.source.hasPower(Haku_MugenPower.POWER_ID) && (AbstractDungeon.player instanceof Hakumen)) {
 				this.source.getPower(Haku_MagatamaPower.POWER_ID).reducePower(this.cost);
 				this.source.getPower(Haku_MagatamaPower.POWER_ID).updateDescription();
 				if (this.source.getPower(Haku_MagatamaPower.POWER_ID).amount == 0) 

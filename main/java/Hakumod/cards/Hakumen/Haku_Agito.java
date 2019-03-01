@@ -1,23 +1,23 @@
 package Hakumod.cards.Hakumen;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import Hakumod.action.OkizemeAction;
 import Hakumod.action.StarterAction;
 import Hakumod.action.UsingSpecialAction;
 import Hakumod.action.UtilsApplyEffect;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 
 
 public class Haku_Agito extends Haku_Special{
@@ -33,8 +33,8 @@ public class Haku_Agito extends Haku_Special{
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 8;
 	private static final int UPGRADE_PLUS_DMG = 2;
-	private static int BUFF = 2;
-	//private static int UPGRADE_BUFF = 1;
+	private static int BUFF = 1;
+	private static int UPGRADE_BUFF = 1;
 	
 	public static final int MAGATAMA_COST = 1;
 	
@@ -42,15 +42,17 @@ public class Haku_Agito extends Haku_Special{
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardRarity.COMMON,
 				AbstractCard.CardTarget.ENEMY,
 				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = BUFF;
 		//this.baseMagicNumber = DEBUFF;
-		this.tags.add(CustomTags.AIR);
+
 		this.tags.add(CustomTags.SPECIAL);
+		this.tags.add(CustomTags.STARTER);
+		this.tags.add(CustomTags.ENDER);
 		//this.exhaust = true;
 	}
 
@@ -60,7 +62,7 @@ public class Haku_Agito extends Haku_Special{
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			//upgradeMagicNumber(UPGRADE_BUFF);
+			upgradeMagicNumber(UPGRADE_BUFF);
 			//this.rawDescription = UPG_DESCRIPTION;
 			//initializeDescription();
 		}

@@ -1,13 +1,13 @@
 package Hakumod.action;
 
-import java.util.Arrays;
-
+import Hakumod.powers.Haku_AwakeningPower;
+import Hakumod.powers.Haku_GatePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.powers.Haku_AwakeningPower;
+import java.util.Arrays;
 
 public class ParryAction extends AbstractGameAction{
 	
@@ -34,9 +34,11 @@ public class ParryAction extends AbstractGameAction{
 	{
 		AbstractMonster.Intent[] arrayAttackIntents = {AbstractMonster.Intent.ATTACK, AbstractMonster.Intent.ATTACK_BUFF, AbstractMonster.Intent.ATTACK_DEBUFF, AbstractMonster.Intent.ATTACK_DEFEND};
 		
-		if (Arrays.asList(arrayAttackIntents).contains(this.target.intent) || player.hasPower(Haku_AwakeningPower.POWER_ID)){
+		if (Arrays.asList(arrayAttackIntents).contains(this.target.intent) || player.hasPower(Haku_GatePower.POWER_ID)){
 			int bonus = 0;
-			if (player.hasPower(Haku_AwakeningPower.POWER_ID) && (this.effect == "attack" || this.effect == "block") ) {bonus = player.getPower(Haku_AwakeningPower.POWER_ID).amount;}
+			if (player.hasPower(Haku_AwakeningPower.POWER_ID) && (this.effect == UtilsApplyEffect.ATTACK || this.effect == UtilsApplyEffect.ATTACK_ALL) ) {
+				bonus = (player.getPower(Haku_GatePower.POWER_ID).amount)*this.magnitude;
+			}
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude+bonus);
 			
 			/*if (this.player.hasRelic("SixHeroes")){

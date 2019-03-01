@@ -1,24 +1,24 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.orbs.Haku_VoidOrb;
+import Hakumod.patches.AbstractCardEnum;
+import Hakumod.powers.Haku_YomotsuhirasakaPower;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.orbs.Haku_VoidOrb;
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_YomotsuhirasakaPower;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.powers.MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
 //import basemod.helpers.BaseModTags;
 //import basemod.helpers.CardTags;
 
@@ -68,7 +68,7 @@ public class Haku_Yomotsuhirasaka extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new Haku_YomotsuhirasakaPower(p, STACK), STACK));
-		
+
 		for (int i=0;i<this.magicNumber;i++) {
 			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
 		}

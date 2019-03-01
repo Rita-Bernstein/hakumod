@@ -1,22 +1,23 @@
 package Hakumod.cards.Hakumen;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-//import com.megacrit.cardcrawl.actions.common.DamageAction;
+import Hakumod.orbs.Haku_VoidOrb;
+import Hakumod.patches.AbstractCardEnum;
+import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-//import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Hakumod.patches.AbstractCardEnum;
-import Hakumod.powers.Haku_SwordOfDoomPower;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+//import com.megacrit.cardcrawl.actions.common.DamageAction;
+//import com.megacrit.cardcrawl.localization.CardStrings;
+//import Hakumod.powers.Haku_SwordOfDoomPower;
 //import Hakumod.powers.MagatamaPower;
 //import Hakumod.powers.MagatamaPower;
-import basemod.abstracts.CustomCard;
 //import basemod.helpers.BaseModTags;
 //import basemod.helpers.CardTags;
 
@@ -31,16 +32,19 @@ public class Haku_SwordOfDoom extends CustomCard{
 	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_SwordOfDoom.png";
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int UPGRADED_COST = 1;
 
+	private static final int NEW_MAX_ORBS = 4;
+
 	private static int MAGNITUDE = 1;
+	private static int UPGRADED_MAGNITUDE = 1;
     
 	public Haku_SwordOfDoom() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.POWER,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.RARE,
+				AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.SELF);
 		// TODO Auto-generated constructor stub
 		
@@ -53,7 +57,7 @@ public class Haku_SwordOfDoom extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeBaseCost(UPGRADED_COST);
-			//upgradeMagicNumber(UPGRADED_MAGNITUDE);
+			upgradeMagicNumber(UPGRADED_MAGNITUDE);
 			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
@@ -61,7 +65,13 @@ public class Haku_SwordOfDoom extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_SwordOfDoomPower(p, this.magicNumber), this.magicNumber));
+    	/*AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_SwordOfDoomPower(p, this.magicNumber), this.magicNumber));*/
+    	int increaseOrbs = NEW_MAX_ORBS - p.maxOrbs;
+    	AbstractDungeon.player.increaseMaxOrbSlots(increaseOrbs, false);
+    	
+		for (int i=0;i<this.magicNumber;i++) {
+			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
+		}
     }
 	
 	public AbstractCard makeCopy() {

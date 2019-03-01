@@ -47,8 +47,8 @@
 	},
 	"Haku_Zantetsu": {
 		"NAME": "Zantetsu",
-		"DESCRIPTION": "Special: 3 NL Deal !D! damage. NL Gain [G].",
-		"UPGRADE_DESCRIPTION": "Special: 3  NL Deal !D! damage. NL Gain [G] [G]."
+		"DESCRIPTION": "Special: 3 NL Deal !D! damage. NL Gain [R].",
+		"UPGRADE_DESCRIPTION": "Special: 3  NL Deal !D! damage. NL Gain [R] [R]."
 		
 	},
 	"Haku_5D": {
@@ -114,7 +114,7 @@
 	},
 	"Haku_Staircase": {
 		"NAME": "Staircase",
-		"DESCRIPTION": "Deal !D! damage 4 times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn.. NL Exhaust",
+		"DESCRIPTION": "Deal !D! damage !M! times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn.. NL Exhaust",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage 4 times. NL Add 1 upgraded Crusade Seraphim or Agito to your hand, it costs 0 this turn.. NL Exhaust"
 	},
 	"Haku_JC": {
@@ -154,7 +154,7 @@
 	},
 	"Haku_Grab": {
 		"NAME": "Grab",
-		"DESCRIPTION": "Deal !D! damage. NL The target loses !M! Strength. NL Exhaust"
+		"DESCRIPTION": "Remove all Block from the enemy. Deal !D! damage. "
 	},
 	"Haku_Backgrab": {
 		"NAME": "Back grab",
@@ -162,8 +162,8 @@
 	},
 	"Haku_Airgrab": {
 		"NAME": "Air grab",
-		"DESCRIPTION": "Deal !D! damage. Starter: Gain [G] next turn.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. Starter: Gain [G] [G] next turn."
+		"DESCRIPTION": "Deal !D! damage. Starter: Gain [R] next turn.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. Starter: Gain [R] [R] next turn."
 	},
 	"Haku_Pinkgrab": {
 		"NAME": "Pink grab",
@@ -184,7 +184,7 @@
 	},
 	"Haku_Barrier": {
 		"NAME": "Barrier",
-		"DESCRIPTION": "Gain !B! Block for every enemy."
+		"DESCRIPTION": "Gain Block equal to the amount of cards play this turn + !M! (Total: !B!)."
 	},
 	"Haku_Fuzzy": {
 		"NAME": "Fuzzy jump",
@@ -206,8 +206,8 @@
 	},
 	"Haku_RC": {
 		"NAME": "Rapid Cancel",
-		"DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [G] [G]. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [G] [G]"
+		"DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [R] [R]. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [R] [R]"
 	},
 	"Haku_Mugen": {
 		"NAME": "Mugen",
@@ -239,8 +239,8 @@
 	},
 	"Haku_Awakening": {
 		"NAME": "Awakening The Chaos",
-		"DESCRIPTION": "Parry always activate. NL Increase damage and Block from Parry by 1.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Parry always activate. NL Increase damage and Block from Parry by 1."
+		"DESCRIPTION": "Everytime you channel a Fuumajin, gain 2 Blocks. NL Channel !M! Fuumajin.",
+		"UPGRADE_DESCRIPTION": "Everytime you channel a Fuumajin, gain 2 Blocks. NL Channel !M! Fuumajin."
 	},
 	"Haku_ScienceFiction": {
 		"NAME": "Science Fiction",
@@ -252,7 +252,8 @@
 	},
 	"Haku_TheTyrant": {
 		"NAME": "The Tyrant",
-		"DESCRIPTION": "Everytime you play a Gatling, inflict 1 Vulnerable. NL Everytime you play a Ender, inflict 1 Weak."
+		"DESCRIPTION": "Everytime you play a Gatling, inflict 1 Vulnerable. NL Everytime you play a Ender, inflict 1 Weak.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Everytime you play a Gatling, inflict 1 Vulnerable. NL Everytime you play a Ender, inflict 1 Weak."
 	},
 	"Haku_EmptySky": {
 		"NAME": "Empty Sky",
@@ -346,23 +347,24 @@
 	},
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
-		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile. NL Ethereal",
-		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. NL Add a copy of this card on top of the draw pile. NL Ethereal"
+		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn. NL Ethereal",
+		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn. NL Ethereal"
 
 	},
 	"Haku_Timekiller":{
 		"NAME": "Time Killer",
-		"DESCRIPTION": "Deal !D! Damage. NL Inflict !M! Timekiller."
+		"DESCRIPTION": "Deal damage equal to your deck size (Total: !D!). NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Deal damage equal to your deck size (Total: !D!)."
 	},
 	"Haku_ChildishMemories":{
 		"NAME": "Childish Memories",
-		"DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust"
+		"DESCRIPTION": "Lose 2 Magatama. NL Heal !M! HP. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Lose 2 Magatama. NL Heal !M! HP. NL Exhaust"
 	},
 	"Haku_SixHeroes":{
-		"NAME": "SIX HEROES",
-		"DESCRIPTION": "Draw !M! card NL Gain [G] NL Gain 1 Artifact NL Gain 1 Strength NL Gain 1 Dexterity NL Gain !B! Block.",
-		"UPGRADE_DESCRIPTION": "Draw !M! card NL Gain [G] NL Gain 1 Artifact NL Gain 1 Strength NL Gain 1 Dexterity NL Gain !B! Block."
+		"NAME": "SIX-HEROES",
+		"DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 1 Dexterity NL Gain 2 Thorns NL Gain !M! Magatama.",
+		"UPGRADE_DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 1 Dexterity NL Gain 2 Thorns NL Gain !M! Magatama."
 	},
 	"Haku_Spellbook":{
 		"NAME": "Stand Unrivaled",
@@ -375,15 +377,27 @@
 		"UPGRADE_DESCRIPTION": " Deal !D! damage. NL Change the cost of all Specials in your hand to 0 this turn."
 
 	},
-	"Haku_Brother":{
-		"NAME": "Brother...",
-		"DESCRIPTION": "Exhaust your entire hand. NL Add 1 random Attack, Skill and Power to your hand, they cost 0 this turn. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Exhaust your entire hand. NL Add 1 random upgraded Attack, Skill and Power to your hand, they cost 0 this turn. NL Exhaust"
+	"Haku_PandoraTears":{
+		"NAME": "Pandora Tears",
+		"DESCRIPTION": "Discard your entire hand, gain !B! Blocks for each card discarded."
+	},
+	"Haku_EndGazer":{
+		"NAME": "End Gazer",
+		"DESCRIPTION": "Gain !B! Blocks. NL Ender: Draw !M! cards next turn."
+	},
+	"Haku_Thin":{
+		"NAME": "Thin Red Line",
+		"DESCRIPTION": "Deal 1 damage for every card in your discard pile and !M! damage for every card in your exhaust pile. (Total: !D!)"
+	},
+	"Haku_Xmatic":{
+		"NAME": "X-matic",
+		"DESCRIPTION": "Gain X Dexterity. NL Gain X Magatama.",
+		"UPGRADE_DESCRIPTION": "Gain X+1 Dexterity. NL Gain X+1 Magatama."
 	},
 	"Haku_Gate":{
 		"NAME": "The Gate",
-		"DESCRIPTION": "At the end of your turn, gain !M! Blocks for every card in your hand.",
-		"UPGRADE_DESCRIPTION": "At the end of your turn, gain !M! Blocks for every card in your hand."
+		"DESCRIPTION": "Parry always activate. NL Parry deals double damage.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Parry always activate. NL Parry deals double damage."
 	},
 	"Haku_InJustice":{
 		"NAME": "IN Justice",
@@ -397,7 +411,7 @@
 	},
 	"Haku_SwordOfDoom":{
 		"NAME": "Sword of Doom",
-		"DESCRIPTION": "At the start of your turn add one Parry into your hand and give it Exhaust and Ethereal."
+		"DESCRIPTION": "Gain Orb slots until you have 4. NL Channel !M! Fuumajin."
 	},
 	"Haku_QueenOfRose":{
 		"NAME": "Queen of Rose",
