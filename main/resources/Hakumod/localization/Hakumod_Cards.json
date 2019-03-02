@@ -353,8 +353,8 @@
 	},
 	"Haku_Timekiller":{
 		"NAME": "Time Killer",
-		"DESCRIPTION": "Deal damage equal to your deck size (Total: !D!). NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Deal damage equal to your deck size (Total: !D!)."
+		"DESCRIPTION": "Deal damage equal to your deck size (Total: !D!).",
+		"UPGRADE_DESCRIPTION": "Deal damage equal to your deck size + 3 (Total: !D!)."
 	},
 	"Haku_ChildishMemories":{
 		"NAME": "Childish Memories",
@@ -387,7 +387,7 @@
 	},
 	"Haku_Thin":{
 		"NAME": "Thin Red Line",
-		"DESCRIPTION": "Deal 1 damage for every card in your discard pile and !M! damage for every card in your exhaust pile. (Total: !D!)"
+		"DESCRIPTION": "Deal 5 damage. NL Deal 1 more damage for every card in your discard pile and !M! damage for every card in your exhaust pile. (Total: !D!)"
 	},
 	"Haku_Xmatic":{
 		"NAME": "X-matic",
@@ -396,8 +396,8 @@
 	},
 	"Haku_Gate":{
 		"NAME": "The Gate",
-		"DESCRIPTION": "Parry always activate. NL Parry deals double damage.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Parry always activate. NL Parry deals double damage."
+		"DESCRIPTION": "Parry always activate. NL Parry cards deal double damage.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Parry always activate. NL Parry cards deals double damage."
 	},
 	"Haku_InJustice":{
 		"NAME": "IN Justice",

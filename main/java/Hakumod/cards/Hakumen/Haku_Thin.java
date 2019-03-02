@@ -33,10 +33,10 @@ public class Haku_Thin extends CustomCard{
     public static final String IMG_PATH = "Hakumod/img/cards/Haku_Thin.png";
     private static final int COST = 2;
     //private static final int UPGRADED_COST = 2;
-    private static final int ATTACK_DMG = 0;
+    private static final int ATTACK_DMG = 5;
     
     private static int BONUS_DISCARD = 1;
-    private static int BONUS_EXHAUSTED = 1;
+    private static int BONUS_EXHAUSTED = 2;
     private static int UPG_BONUS_EXHAUSTED = 1;
     
     //private static int UPGRADED_BUFF = 1;

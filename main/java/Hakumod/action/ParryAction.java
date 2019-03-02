@@ -1,5 +1,6 @@
 package Hakumod.action;
 
+import Hakumod.cards.Hakumen.Haku_Awakening;
 import Hakumod.powers.Haku_AwakeningPower;
 import Hakumod.powers.Haku_GatePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -36,7 +37,7 @@ public class ParryAction extends AbstractGameAction{
 		
 		if (Arrays.asList(arrayAttackIntents).contains(this.target.intent) || player.hasPower(Haku_GatePower.POWER_ID)){
 			int bonus = 0;
-			if (player.hasPower(Haku_AwakeningPower.POWER_ID) && (this.effect == UtilsApplyEffect.ATTACK || this.effect == UtilsApplyEffect.ATTACK_ALL) ) {
+			if (player.hasPower(Haku_GatePower.POWER_ID) && (this.effect == UtilsApplyEffect.ATTACK || this.effect == UtilsApplyEffect.ATTACK_ALL) ) {
 				bonus = (player.getPower(Haku_GatePower.POWER_ID).amount)*this.magnitude;
 			}
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude+bonus);

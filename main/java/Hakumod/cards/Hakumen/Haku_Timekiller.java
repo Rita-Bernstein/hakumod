@@ -26,7 +26,7 @@ public class Haku_Timekiller extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Timekiller.png";
 	private static final int COST = 1;
@@ -56,11 +56,11 @@ public class Haku_Timekiller extends CustomCard{
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			//upgradeDamage(UPGRADE_PLUS_DMG);
-			this.exhaust = false;
+			upgradeDamage(UPGRADE_PLUS_DMG);
+			//this.exhaust = false;
 			//upgradeMagicNumber(UPGRADE_DEBUFF);
-			//this.rawDescription = UPG_DESCRIPTION;
-			//initializeDescription();
+			this.rawDescription = UPG_DESCRIPTION;
+			initializeDescription();
 		}
 	}
 
