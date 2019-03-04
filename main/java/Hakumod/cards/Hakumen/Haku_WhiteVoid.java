@@ -41,7 +41,7 @@ public class Haku_WhiteVoid extends CustomCard{
 				AbstractCard.CardTarget.SELF);
 		// TODO Auto-generated constructor stub
 		this.magicNumber = this.baseMagicNumber = COUNTER;
-		this.isEthereal = true;
+		//this.isEthereal = true;
 		//this.exhaust = true;
 	}
 

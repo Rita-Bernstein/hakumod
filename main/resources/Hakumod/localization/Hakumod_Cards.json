@@ -239,8 +239,8 @@
 	},
 	"Haku_Awakening": {
 		"NAME": "Awakening The Chaos",
-		"DESCRIPTION": "Everytime you channel a Fuumajin, gain 2 Blocks. NL Channel !M! Fuumajin.",
-		"UPGRADE_DESCRIPTION": "Everytime you channel a Fuumajin, gain 2 Blocks. NL Channel !M! Fuumajin."
+		"DESCRIPTION": "Everytime you channel a Fuumajin, gain 3 Blocks. NL Channel !M! Fuumajin.",
+		"UPGRADE_DESCRIPTION": "Everytime you channel a Fuumajin, gain 3 Blocks. NL Channel !M! Fuumajin."
 	},
 	"Haku_ScienceFiction": {
 		"NAME": "Science Fiction",
@@ -347,8 +347,8 @@
 	},
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
-		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn. NL Ethereal",
-		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn. NL Ethereal"
+		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn.",
+		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn."
 
 	},
 	"Haku_Timekiller":{

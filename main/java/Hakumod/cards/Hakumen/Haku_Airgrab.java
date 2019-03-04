@@ -29,7 +29,7 @@ public class Haku_Airgrab extends CustomCard{
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
-	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Airthrow.png";
+	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Airgrab.png";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADE_PLUS_DMG = 3;

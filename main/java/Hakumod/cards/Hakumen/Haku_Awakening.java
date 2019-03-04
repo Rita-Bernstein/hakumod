@@ -34,7 +34,7 @@ public class Haku_Awakening extends CustomCard{
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Awakening.png";
 	private static final int COST = 1;
-	private static final int STACK = 2;
+	private static final int STACK = 3;
 	
 	private static int MAGNITUDE = 1;
 	private static int UPGRADED_MAGNITUDE = 1;

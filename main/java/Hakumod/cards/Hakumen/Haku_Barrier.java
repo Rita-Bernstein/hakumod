@@ -22,7 +22,7 @@ public class Haku_Barrier extends CustomCard{
 	
 	private static final int COST = 1;
 	private static final int BLOCK = 3;
-	private static final int UPGRADE_PLUS_BLOCK = 2;
+	private static final int UPGRADE_PLUS_BLOCK = 3;
 	
 	private static int BUFF = 3;
 	private static int UPGRADE_BUFF = 2;

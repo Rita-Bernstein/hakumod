@@ -33,11 +33,11 @@ public class Haku_SwordOfDoom extends CustomCard{
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_SwordOfDoom.png";
 	private static final int COST = 1;
-	private static final int UPGRADED_COST = 1;
+	//private static final int UPGRADED_COST = 1;
 
 	private static final int NEW_MAX_ORBS = 4;
 
-	private static int MAGNITUDE = 1;
+	private static int MAGNITUDE = 2;
 	private static int UPGRADED_MAGNITUDE = 1;
     
 	public Haku_SwordOfDoom() {
@@ -56,7 +56,7 @@ public class Haku_SwordOfDoom extends CustomCard{
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeBaseCost(UPGRADED_COST);
+			//upgradeBaseCost(UPGRADED_COST);
 			upgradeMagicNumber(UPGRADED_MAGNITUDE);
 			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
