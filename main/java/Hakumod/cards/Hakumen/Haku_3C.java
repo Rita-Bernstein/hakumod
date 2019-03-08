@@ -2,9 +2,9 @@ package Hakumod.cards.Hakumen;
 
 import Hakumod.action.OkizemeAction;
 import Hakumod.action.UtilsApplyEffect;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_3C extends CustomCard{
+public class Haku_3C extends Haku_CustomCard {
 
 	public static final String ID = "Haku_3C";
 	

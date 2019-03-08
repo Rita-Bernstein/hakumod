@@ -1,6 +1,7 @@
 package Hakumod.cards.Hakumen;
 
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.cards.Hakumen.Utils.Haku_Special;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import com.badlogic.gdx.graphics.Color;
@@ -22,7 +23,7 @@ import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.action.ComboAction;
 
-public class Haku_Shippu extends Haku_Special{
+public class Haku_Shippu extends Haku_Special {
 
 	public static final String ID = "Haku_Shippu";
 	
@@ -87,12 +88,7 @@ public class Haku_Shippu extends Haku_Special{
     	boolean hasUsedEffect = false;
     	
 		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-
-			
-			
 			if ((mo != null) && (!mo.isDeadOrEscaped())) {
-				
-					//for (int i=0;i<energyConsumed;i++) {
 					if (!hasUsedEffect) {
 						AbstractDungeon.actionManager.addToBottom(new VFXAction(new WeightyImpactEffect(
 								mo.hb.cX, mo.hb.cY, Color.SKY.cpy())));
@@ -103,7 +99,6 @@ public class Haku_Shippu extends Haku_Special{
     				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(mo,
     						new DamageInfo(p, ShippuDamage, this.damageTypeForTurn),
     						AbstractGameAction.AttackEffect.SLASH_HEAVY));
-				//}	
 			}
 		}
 		

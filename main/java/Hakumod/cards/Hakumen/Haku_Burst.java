@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -21,7 +22,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_Burst extends CustomCard{
+public class Haku_Burst extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Burst";
 	

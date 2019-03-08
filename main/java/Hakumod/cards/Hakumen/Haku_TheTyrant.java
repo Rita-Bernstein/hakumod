@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_TheTyrantPower;
 import basemod.abstracts.CustomCard;
@@ -21,7 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_TheTyrant extends CustomCard{
+public class Haku_TheTyrant extends Haku_CustomCard {
 
 	public static final String ID = "Haku_TheTyrant";
 	

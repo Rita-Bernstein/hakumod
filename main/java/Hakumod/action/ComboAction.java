@@ -74,6 +74,11 @@ public class ComboAction extends AbstractGameAction{
 		if (!boolHasInHand) {
 			if (this.p.cardInUse!=null){
 				if (this.p.cardInUse.upgraded){c.upgrade();}}
+
+			//Test
+			c.exhaustOnUseOnce = true;
+			c.isEthereal = true;
+
 			AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c, false));
 			
 			if (p.hasPower(ArtifactPower.POWER_ID) && (p.getPower(ArtifactPower.POWER_ID).amount >= 2)) {

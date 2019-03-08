@@ -1,6 +1,7 @@
 package Hakumod.cards.Hakumen;
 
 import Hakumod.action.FatalJudgeAction;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_FatalJudge extends CustomCard{
+public class Haku_FatalJudge extends Haku_CustomCard {
 
 	public static final String ID = "Haku_FatalJudge";
 	

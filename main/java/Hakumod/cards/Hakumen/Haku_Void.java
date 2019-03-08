@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Haku_Void extends CustomCard{
+public class Haku_Void extends Haku_CustomCard {
 	public static final String ID = "Haku_Void";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

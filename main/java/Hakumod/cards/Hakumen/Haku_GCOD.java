@@ -6,6 +6,7 @@ package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ParryAction;
 import Hakumod.action.UtilsApplyEffect;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +23,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_GCOD extends CustomCard{
+public class Haku_GCOD extends Haku_CustomCard {
 
 	public static final String ID = "Haku_GCOD";
 	

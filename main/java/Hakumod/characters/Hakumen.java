@@ -158,7 +158,7 @@ public class Hakumen extends CustomPlayer {
 	@Override
 	public Color getCardTrailColor() {
 		// TODO Auto-generated method stub
-		return Color.BLACK;
+		return Color.BLACK.cpy();
 	}
 
 	@Override
@@ -218,13 +218,13 @@ public class Hakumen extends CustomPlayer {
 	@Override
 	public Color getCardRenderColor() {
 		// TODO Auto-generated method stub
-		return Color.SKY;
+		return Color.SKY.cpy();
 	}
 
 	@Override
 	public Color getSlashAttackColor() {
 		// TODO Auto-generated method stub
-		return Color.CLEAR;
+		return Color.CLEAR.cpy();
 	}
 
 	@Override

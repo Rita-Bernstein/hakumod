@@ -30,8 +30,8 @@
 	},
 	"Haku_6A": {
 		"NAME": "Blitz Attack",
-		"DESCRIPTION": "Deal !D! damage. NL Gatling: Clash_Assault",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gatling: Clash_Assault"
+		"DESCRIPTION": "Deal !D! damage. NL Gatling: Clash Assault",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gatling: Clash Assault"
 	},
 	"Haku_6B": {
 		"NAME": "Clash Assault",
@@ -235,7 +235,7 @@
 	},
 	"Haku_Akumetsu": {
 		"NAME": "Akumetsu",
-		"DESCRIPTION": "Special: 8 NL Parry: Deal !D! damage X times and gain 1 Intangible."
+		"DESCRIPTION": "Special: 8 NL Deal !D! damage X times to ALL enemies and gain 1 Intangible."
 	},
 	"Haku_Awakening": {
 		"NAME": "Awakening The Chaos",
@@ -270,8 +270,8 @@
 	},
 	"Haku_InstantBarrier": {
 		"NAME": "Instant Barrier",
-		"DESCRIPTION": "Gain !B! Block. NL Add 1 Instant_Block to your draw pile, change its cost to 0 and give it Exhaust. ",
-		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add 1 Instant_Block and 1 Barrier to your draw pile, change their cost to 0 and give them Exhaust."
+		"DESCRIPTION": "Gain !B! Block. NL Add 1 Instant Block to your draw pile, change its cost to 0 and give it Exhaust. ",
+		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add 1 Instant Block and 1 Barrier to your draw pile, change their cost to 0 and give them Exhaust."
 	
 	},
 	"Haku_GCOD": {

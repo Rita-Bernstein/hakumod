@@ -4,6 +4,7 @@ import Hakumod.action.OkizemeAction;
 import Hakumod.action.StarterAction;
 import Hakumod.action.UsingSpecialAction;
 import Hakumod.action.UtilsApplyEffect;
+import Hakumod.cards.Hakumen.Utils.Haku_Special;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 
 
-public class Haku_Agito extends Haku_Special{
+public class Haku_Agito extends Haku_Special {
 
 	public static final String ID = "Haku_Agito";
 	

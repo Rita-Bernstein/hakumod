@@ -1,6 +1,7 @@
 package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ChooseCardAction;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import basemod.abstracts.CustomCard;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_J2C extends CustomCard{
+public class Haku_J2C extends Haku_CustomCard {
 
 	public static final String ID = "Haku_J2C";
 	

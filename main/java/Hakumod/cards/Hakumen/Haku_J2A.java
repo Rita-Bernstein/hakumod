@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_J2A extends CustomCard{
+public class Haku_J2A extends Haku_CustomCard {
 
 	public static final String ID = "Haku_J2A";
 	

@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class Haku_Taunt extends CustomCard{
+public class Haku_Taunt extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Taunt";
 	
@@ -56,9 +57,9 @@ public class Haku_Taunt extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+		int playerVulnerable = ((this.upgraded) ? 1 : this.magicNumber);
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-				new VulnerablePower(p, this.magicNumber, false), (this.upgraded) ? 1 : this.magicNumber));
+				new VulnerablePower(p, playerVulnerable, false), playerVulnerable));
     
 		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			if ((mo != null) && (!mo.isDeadOrEscaped())) {

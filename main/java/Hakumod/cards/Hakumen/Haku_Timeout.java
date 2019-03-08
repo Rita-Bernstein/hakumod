@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.powers.FadingPower;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class Haku_Timeout extends CustomCard{
+public class Haku_Timeout extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Timeout";
 	

@@ -2,6 +2,7 @@ package Hakumod.cards.Hakumen;
 
 import Hakumod.action.AddToHandAction;
 import Hakumod.action.ChooseCardAction;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import basemod.abstracts.CustomCard;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_Spellbook extends CustomCard{
+public class Haku_Spellbook extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Spellbook";
 	

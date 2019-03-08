@@ -1,6 +1,7 @@
 package Hakumod.cards.Hakumen;
 
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.cards.Hakumen.Utils.Haku_Special;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class Haku_Enma extends Haku_Special{
+public class Haku_Enma extends Haku_Special {
 
 	public static final String ID = "Haku_Enma";
 	

@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
@@ -19,7 +20,7 @@ import com.megacrit.cardcrawl.relics.ChemicalX;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 //import Hakumod.action.ComboAction;
 
-public class Haku_Xmatic extends CustomCard{
+public class Haku_Xmatic extends Haku_CustomCard {
 
     public static final String ID = "Haku_Xmatic";
 

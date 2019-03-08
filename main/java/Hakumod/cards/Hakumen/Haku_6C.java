@@ -1,5 +1,7 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.action.UpgradeHandAction;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,7 +22,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_6C extends CustomCard{
+public class Haku_6C extends Haku_CustomCard {
 
 	public static final String ID = "Haku_6C";
 	
@@ -89,9 +91,7 @@ public class Haku_6C extends CustomCard{
 		}
 		
 		if (this.timesUpgraded >= 4) {
-			for (AbstractCard cardInHand: p.hand.group) {
-				cardInHand.upgrade();
-			}
+			AbstractDungeon.actionManager.addToBottom(new UpgradeHandAction(AbstractDungeon.player));
 		}
 		
 		/*if (this.timesUpgraded >= 5) {

@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.orbs.Haku_VoidOrb;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_AwakeningPower;
@@ -23,7 +24,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_Awakening extends CustomCard{
+public class Haku_Awakening extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Awakening";
 	

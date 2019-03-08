@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -23,7 +24,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_QueenOfRose extends CustomCard{
+public class Haku_QueenOfRose extends Haku_CustomCard {
 
 	public static final String ID = "Haku_QueenOfRose";
 	

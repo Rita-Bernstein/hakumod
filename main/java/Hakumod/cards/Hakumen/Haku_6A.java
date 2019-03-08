@@ -1,9 +1,9 @@
 package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ComboAction;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_6A extends CustomCard{
+public class Haku_6A extends Haku_CustomCard {
 
 	public static final String ID = "Haku_6A";
 	
@@ -42,7 +42,8 @@ public class Haku_6A extends CustomCard{
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY);
+				AbstractCard.CardTarget.ENEMY,
+				new Haku_6B().makeCopy());
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
 		//this.magicNumber = this.baseMagicNumber = DEBUFF;

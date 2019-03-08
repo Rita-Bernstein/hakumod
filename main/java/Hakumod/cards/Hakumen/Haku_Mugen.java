@@ -1,6 +1,7 @@
 package Hakumod.cards.Hakumen;
 
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.cards.Hakumen.Utils.Haku_Special;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import Hakumod.powers.Haku_MugenPower;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 
 
-public class Haku_Mugen extends Haku_Special{
+public class Haku_Mugen extends Haku_Special {
 
 	public static final String ID = "Haku_Mugen";
 	

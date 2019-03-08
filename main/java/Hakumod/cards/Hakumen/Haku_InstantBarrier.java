@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Haku_InstantBarrier extends CustomCard{
+public class Haku_InstantBarrier extends Haku_CustomCard {
 	public static final String ID = "Haku_InstantBarrier";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -33,7 +34,8 @@ public class Haku_InstantBarrier extends CustomCard{
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.SELF);
+				AbstractCard.CardTarget.SELF,
+				new Haku_IB().makeCopy());
 
 		this.baseBlock = BLOCK;
 		this.magicNumber = this.baseMagicNumber = BUFF;

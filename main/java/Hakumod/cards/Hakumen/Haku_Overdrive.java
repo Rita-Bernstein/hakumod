@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_OverdrivePower;
 import basemod.abstracts.CustomCard;
@@ -22,7 +23,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import basemod.helpers.CardTags;
 
 
-public class Haku_Overdrive extends CustomCard{
+public class Haku_Overdrive extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Overdrive";
 	
@@ -42,7 +43,8 @@ public class Haku_Overdrive extends CustomCard{
 				AbstractCard.CardType.POWER,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.SELF);
+				AbstractCard.CardTarget.SELF,
+				new Haku_EA().makeCopy());
 		// TODO Auto-generated constructor stub
 		
 		this.magicNumber = this.baseMagicNumber = MAGNITUDE;

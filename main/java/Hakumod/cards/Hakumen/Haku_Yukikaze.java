@@ -3,6 +3,7 @@ package Hakumod.cards.Hakumen;
 import Hakumod.action.ParryAction;
 import Hakumod.action.UsingSpecialAction;
 import Hakumod.action.UtilsApplyEffect;
+import Hakumod.cards.Hakumen.Utils.Haku_Special;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Haku_Yukikaze extends Haku_Special{
+public class Haku_Yukikaze extends Haku_Special {
 	public static final String ID = "Haku_Yukikaze";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -19,7 +20,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_Grab extends CustomCard{
+public class Haku_Grab extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Grab";
 	
@@ -74,9 +75,7 @@ public class Haku_Grab extends CustomCard{
     	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
 				new DamageInfo(p, this.damage+damageBoost, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.SMASH));
-    	
-    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber), -this.magicNumber));
-   
+
     }
 	
 	public AbstractCard makeCopy() {

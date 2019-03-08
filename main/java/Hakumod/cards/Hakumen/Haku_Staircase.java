@@ -1,6 +1,7 @@
 package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ChooseCardAction;
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_Staircase  extends CustomCard
+public class Haku_Staircase  extends Haku_CustomCard
 {
 	public static final String ID = "Haku_Staircase";
 	

@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_Backgrab extends CustomCard{
+public class Haku_Backgrab extends Haku_CustomCard {
 
 	public static final String ID = "Haku_Backgrab";
 	

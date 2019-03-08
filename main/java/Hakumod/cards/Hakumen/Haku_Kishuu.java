@@ -2,6 +2,7 @@ package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ComboAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.cards.Hakumen.Utils.Haku_Special;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class Haku_Kishuu extends Haku_Special{
+public class Haku_Kishuu extends Haku_Special {
 
 	public static final String ID = "Haku_Kishuu";
 	
@@ -43,6 +44,7 @@ public class Haku_Kishuu extends Haku_Special{
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.COMMON,
 				AbstractCard.CardTarget.SELF,
+				new Haku_Enma().makeCopy(),
 				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		//this.baseDamage = ATTACK_DMG;

@@ -2,6 +2,8 @@ package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ComboAction;
 import Hakumod.action.UsingSpecialAction;
+import Hakumod.cards.Hakumen.Utils.Haku_Special;
+import Hakumod.cards.Hakumen.Utils.renderMiniCards;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -12,12 +14,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 //import com.megacrit.cardcrawl.actions.common.DamageAction;
 //import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class Haku_Guren extends Haku_Special{
+public class Haku_Guren extends Haku_Special {
 
 	public static final String ID = "Haku_Guren";
 	
@@ -32,13 +35,14 @@ public class Haku_Guren extends Haku_Special{
 	private static final int UPGRADE_PLUS_DMG = 2;
 	
 	public final static int MAGATAMA_COST = 1;
-	    
+
 	public Haku_Guren() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.COMMON,
 				AbstractCard.CardTarget.ENEMY,
+				new Haku_3C().makeCopy(),
 				MAGATAMA_COST);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;

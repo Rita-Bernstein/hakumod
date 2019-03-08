@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_MagatamaPower;
 import basemod.abstracts.CustomCard;
@@ -24,7 +25,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 //import Hakumod.powers.MagatamaPower;
 
 
-public class Haku_SixHeroes extends CustomCard{
+public class Haku_SixHeroes extends Haku_CustomCard {
 
 	public static final String ID = "Haku_SixHeroes";
 	
