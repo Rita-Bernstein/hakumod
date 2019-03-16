@@ -54,6 +54,7 @@ public class Haku_CustomCard extends CustomCard {
 
             this.cardToPreview.current_y = this.current_y + offsetY;
             this.cardToPreview.drawScale = tmpScale;
+            if (this.upgraded) {this.cardToPreview.upgrade();}
             this.cardToPreview.render(sb);
         }
 

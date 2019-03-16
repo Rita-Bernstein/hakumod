@@ -1,5 +1,8 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.action.OkizemeAction;
+import Hakumod.action.StarterAction;
+import Hakumod.action.UtilsApplyEffect;
 import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.powers.Haku_ActiveFlowPower;
@@ -30,9 +33,11 @@ public class Haku_EA extends Haku_CustomCard {
 	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_EA.png";
-	private static final int COST = 1;
-	private static final int ATTACK_DMG = 10;
+	private static final int COST = 0;
+	private static final int ATTACK_DMG = 0;
 	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int BLOCK = 0;
+	private static final int UPGRADE_PLUS_BLOCK = 2;
 	//private static int DEBUFF = 1;
 	//private static int UPGRADE_DEBUFF = 1;
 	    
@@ -44,6 +49,7 @@ public class Haku_EA extends Haku_CustomCard {
 				AbstractCard.CardTarget.ENEMY);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
+		this.baseBlock = BLOCK;
 		//this.magicNumber = this.baseMagicNumber = DEBUFF;
 	}
 
@@ -53,17 +59,50 @@ public class Haku_EA extends Haku_CustomCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			//upgradeMagicNumber(UPGRADE_DEBUFF);
-			//this.rawDescription = UPG_DESCRIPTION;
-			//initializeDescription();
+			upgradeBlock(UPGRADE_PLUS_BLOCK);
 		}
+	}
+
+	public int getBlock(){
+		return AbstractDungeon.player.hand.size() + this.baseBlock;
+	}
+
+	public int getDamage() {
+		return  AbstractDungeon.player.cardsPlayedThisTurn + this.baseDamage;
+	}
+	//Display damage when the card is in the hand.
+	@Override
+	public void applyPowers() {
+		this.damage = getDamage();
+		this.block = getBlock();
+		if (this.damage > 0) {this.isDamageModified = true;}
+		if (this.block > 0) {this.isBlockModified = true;}
+	}
+
+	@Override
+	public void calculateDamageDisplay(AbstractMonster mo) {
+		// TODO Auto-generated method stub
+		calculateCardDamage(mo);
+	}
+
+	//Display damage when the card is selected.
+	@Override
+	public void calculateCardDamage(AbstractMonster mo) {
+		this.damage = getDamage();
+		this.block = getBlock();
+		if (this.damage > 0) {this.isDamageModified = true;}
+		if (this.block > 0) {this.isBlockModified = true;}
 	}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	
-    	//int EAdamage = p.hasPower("ActiveFlowPower") ? this.damage*2 : this.damage ;
-    	if (p.hasPower(Haku_ActiveFlowPower.POWER_ID)) {
+
+		AbstractDungeon.actionManager.addToBottom(new OkizemeAction(p, this, m, UtilsApplyEffect.ATTACK, this.damage));
+		AbstractDungeon.actionManager.addToBottom(new StarterAction(p, this, m, UtilsApplyEffect.BLOCK, this.block));
+
+
+		//int EAdamage = p.hasPower("ActiveFlowPower") ? this.damage*2 : this.damage ;
+    	/*if (p.hasPower(Haku_ActiveFlowPower.POWER_ID)) {
 	    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
 					new DamageInfo(p, this.damage*2, this.damageTypeForTurn),
 					AbstractGameAction.AttackEffect.BLUNT_HEAVY));
@@ -73,7 +112,7 @@ public class Haku_EA extends Haku_CustomCard {
 					new DamageInfo(p, this.damage, this.damageTypeForTurn),
 					AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_ActiveFlowPower(p, 3), 3));
-    	}
+    	}*/
     }
 	
 	public AbstractCard makeCopy() {

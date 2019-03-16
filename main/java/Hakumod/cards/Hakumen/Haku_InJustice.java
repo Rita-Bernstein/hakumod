@@ -30,9 +30,9 @@ public class Haku_InJustice extends Haku_CustomCard {
 	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_InJustice.png";
-	private static final int COST = 8;
-	private static final int UPGRADED_COST = 7;
-	private static final int ATTACK_DMG = 50;
+	private static final int COST = 6;
+	private static final int UPGRADED_COST = 5;
+	private static final int ATTACK_DMG = 40;
 	private static final int UPGRADE_PLUS_DMG = 10;
 	private static int BUFF = 4;
 	//private static int UPGRADE_BUFF = 1;

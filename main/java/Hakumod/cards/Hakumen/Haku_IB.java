@@ -25,7 +25,7 @@ public class Haku_IB extends Haku_CustomCard {
 	
 	private static final int COST = 1;
 	private static final int BLOCK = 5;
-	private static final int UPGRADE_PLUS_BLOCK = 2;
+	private static final int UPGRADE_PLUS_BLOCK = 3;
 	
 	private static int BUFF = 1;
 	private static int UPGRADE_BUFF = 1;

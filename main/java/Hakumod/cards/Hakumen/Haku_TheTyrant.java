@@ -33,7 +33,7 @@ public class Haku_TheTyrant extends Haku_CustomCard {
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_TheTyrant.png";
 	private static final int COST = 2;
-	//private static final int UPGRADED_COST = 2;
+	private static final int UPGRADED_COST = 1;
 
 	private static int BUFF = 1;
 	//private static int UPGRADED_BUFF = 1;
@@ -54,10 +54,10 @@ public class Haku_TheTyrant extends Haku_CustomCard {
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			this.isInnate = true;
+			//this.isInnate = true;
 			//upgradeMagicNumber(UPGRADED_BUFF);
-			//upgradeBaseCost(UPGRADED_COST);
-			this.rawDescription = UPG_DESCRIPTION;
+			upgradeBaseCost(UPGRADED_COST);
+			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
 	}

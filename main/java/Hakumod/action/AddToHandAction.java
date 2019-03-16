@@ -36,6 +36,8 @@ public class AddToHandAction extends AbstractGameAction{
 	
 	
 	public void update(){
+		cardToAdd.unhover();
+
 		if (this.toUpgrade) {
 			cardToAdd.upgrade();
 		}
@@ -49,15 +51,20 @@ public class AddToHandAction extends AbstractGameAction{
 		}
 		
 		if (player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-			player.hand.addToHand(cardToAdd);	
-			cardToAdd.lighten(false);
+			player.hand.addToHand(cardToAdd);
 		}
 		else {
 			player.createHandIsFullDialog();
 			player.discardPile.addToTop(cardToAdd);
 		}
-		if (toRemoveFromGroup) {cardGroup.removeCard(cardToAdd);}
+		if (toRemoveFromGroup) {
+			cardToAdd.lighten(false);
+			cardGroup.removeCard(cardToAdd);
+		}
+
 		player.hand.refreshHandLayout();
+		this.player.hand.applyPowers();
+
 		this.isDone = true;
 		tickDuration();
 	}

@@ -32,12 +32,12 @@ public class Haku_J2C extends Haku_CustomCard {
 	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_J2C.png";
-	private static final int COST = 2;
-	private static final int ATTACK_DMG = 11;
+	private static final int COST = 4;
+	private static final int ATTACK_DMG = 10;
 	private static final int UPGRADE_PLUS_DMG = 3;
 
-	private static int BUFF = 1;
-	private static int UPGRADE_BUFF = 1;
+	//private static int BUFF = 1;
+	//private static int UPGRADE_BUFF = 1;
 	    
 	public Haku_J2C() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -47,7 +47,7 @@ public class Haku_J2C extends Haku_CustomCard {
 				AbstractCard.CardTarget.ENEMY);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
-		this.magicNumber = this.baseMagicNumber = BUFF;
+		//this.magicNumber = this.baseMagicNumber = BUFF;
 		this.tags.add(CustomTags.AIR);
 	}
 
@@ -57,19 +57,34 @@ public class Haku_J2C extends Haku_CustomCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			upgradeMagicNumber(UPGRADE_BUFF);
+			//upgradeMagicNumber(UPGRADE_BUFF);
 			this.rawDescription = UPG_DESCRIPTION;
 			//initializeDescription();
 		}
 	}
+	@Override
+	public void triggerOnCardPlayed(AbstractCard c) {
+		if (c != this) {
+			this.setCostForTurn(this.costForTurn - 1);
+		}
+	}
+
+	/*@Override
+	public void applyPowers() {
+		this.setCostForTurn(this.costForTurn - AbstractDungeon.player.cardsPlayedThisTurn);
+	}*/
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-				new DamageInfo(p, this.damage, this.damageTypeForTurn),
-				AbstractGameAction.AttackEffect.SLASH_HEAVY));
-    	
-    	AbstractCard card5A = new Haku_5A().makeCopy();
+
+		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			if ((mo != null) && (!mo.isDeadOrEscaped())) {
+				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(mo,
+						new DamageInfo(p, this.damage, this.damageTypeForTurn),
+						AbstractGameAction.AttackEffect.SLASH_HEAVY));
+			}
+		}
+    	/*AbstractCard card5A = new Haku_5A().makeCopy();
     	AbstractCard card3C = new Haku_3C().makeCopy();
     	AbstractCard cardAgito = new Haku_Agito().makeCopy();
     
@@ -80,7 +95,7 @@ public class Haku_J2C extends Haku_CustomCard {
     	
 		AbstractDungeon.actionManager.addToBottom(
 				new ChooseCardAction(cardChoice, this.upgraded, true, true, 0, false));
-
+		*/
     
         
     }       

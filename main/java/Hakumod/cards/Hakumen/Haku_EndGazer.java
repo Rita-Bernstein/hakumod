@@ -5,6 +5,7 @@ import Hakumod.action.UtilsApplyEffect;
 import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 public class Haku_EndGazer extends Haku_CustomCard {
 	public static final String ID = "Haku_EndGazer";
@@ -60,8 +62,13 @@ public class Haku_EndGazer extends Haku_CustomCard {
 
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 
-		AbstractDungeon.actionManager.addToTop(
+		/*AbstractDungeon.actionManager.addToTop(
 				new OkizemeAction(p, this, m, UtilsApplyEffect.NEXT_TURN_DRAW, this.magicNumber));
+		*/
+
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+				new DrawCardNextTurnPower(p, this.magicNumber), this.magicNumber));
+
 	}
 	
 	public AbstractCard makeCopy() {

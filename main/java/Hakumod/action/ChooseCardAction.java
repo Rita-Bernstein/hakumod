@@ -19,7 +19,7 @@ public class ChooseCardAction extends AbstractGameAction{
 	private boolean setCost;
 	private int cost;
 	private boolean toRemoveFromDeck;
-	
+
 	public ChooseCardAction(ArrayList<AbstractCard> cards, boolean toUpgrade, boolean toExhaust, boolean setCost, int costForCombat, boolean toRemoveFromDeck){
 		this.player = AbstractDungeon.player;
 		setValues(this.player, AbstractDungeon.player, 1);
@@ -30,7 +30,7 @@ public class ChooseCardAction extends AbstractGameAction{
 		this.toExhaust = toExhaust;
 		this.setCost = setCost;
 		this.cost = costForCombat;
-		this.toRemoveFromDeck = toRemoveFromDeck; 
+		this.toRemoveFromDeck = toRemoveFromDeck;
 	}
 	
 	public ChooseCardAction(ArrayList<AbstractCard> cards, boolean toUpgrade) {
@@ -41,12 +41,14 @@ public class ChooseCardAction extends AbstractGameAction{
 		CardGroup choiceOfCards;
 		if (this.duration == Settings.ACTION_DUR_MED){
 			choiceOfCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-			choiceOfCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 			
 			for (AbstractCard card : cards) {
 				choiceOfCards.addToTop(card);
 			}
-			AbstractDungeon.gridSelectScreen.open(choiceOfCards, 1, "Choose one card", false);
+			if (choiceOfCards.size() > 0){
+				AbstractDungeon.gridSelectScreen.open(choiceOfCards, 1, "Choose one card", false);
+			}
+
 			tickDuration();
 			return;
 		}

@@ -31,7 +31,7 @@ public class Haku_ChildishMemories extends Haku_CustomCard {
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_ChildishMemories.png";
 	private static final int COST = 0;
 
-	private final int MAGATAMA_LOSS = 2;
+	private final int MAGATAMA_LOSS = 1;
 	//private static final int ATTACK_DMG = 4;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	//private static int CARD_TO_DRAW = 3;

@@ -29,23 +29,11 @@ public class OkizemeAction extends AbstractGameAction{
 	@Override
 	public void update() 
 	{
-
-		/*if ( this.player.hand.getAttacks().size() == 0) {
-			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude+this.card.energyOnUse-this.card.costForTurn);
-			
-			if (this.player.hasPower("CameliaPower")) {AbstractDungeon.actionManager.addToTop(
-					new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.block*this.player.getPower("CameliaPower").amount));
-			}
-			//AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.player.energy.energy));
-		}*/
 		if (this.player.hasPower(Haku_ScienceFictionPower.POWER_ID)) {
 			this.magnitude = this.magnitude + this.player.getPower(Haku_ScienceFictionPower.POWER_ID).amount;	
 		}
-		if ( (this.card.energyOnUse - this.card.costForTurn <= 0) ||  this.player.hand.getAttacks().size() == 0 || this.player.hasPower("Haku_ScienceFictionPower")) {
+		if ( (this.card.energyOnUse - this.card.costForTurn <= 0) ||  this.player.hand.getAttacks().size() == 0) {
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude);
-			/*if (this.player.hasPower("CameliaPower")) {AbstractDungeon.actionManager.addToTop(
-					new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.block*this.player.getPower("CameliaPower").amount));
-			}*/
 		}
 		
 	this.isDone = true;

@@ -26,7 +26,7 @@ public class Haku_Barrier extends Haku_CustomCard {
 	private static final int UPGRADE_PLUS_BLOCK = 3;
 	
 	private static int BUFF = 3;
-	private static int UPGRADE_BUFF = 2;
+	private static int UPGRADE_BUFF = 3;
 	 
 	
 	public Haku_Barrier() {

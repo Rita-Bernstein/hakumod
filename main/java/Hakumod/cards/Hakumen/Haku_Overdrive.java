@@ -43,8 +43,7 @@ public class Haku_Overdrive extends Haku_CustomCard {
 				AbstractCard.CardType.POWER,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.SELF,
-				new Haku_EA().makeCopy());
+				AbstractCard.CardTarget.SELF);
 		// TODO Auto-generated constructor stub
 		
 		this.magicNumber = this.baseMagicNumber = MAGNITUDE;
@@ -65,8 +64,8 @@ public class Haku_Overdrive extends Haku_CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_OverdrivePower(p, this.magicNumber), this.magicNumber));
-    	AbstractCard cardEA = new Haku_EA().makeCopy();
-    	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(cardEA, 1, true, false));
+    	//AbstractCard cardEA = new Haku_EA().makeCopy();
+    	//AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(cardEA, 1, true, false));
     }
 	
 	public AbstractCard makeCopy() {

@@ -46,6 +46,7 @@ public class UtilsApplyEffect {
 	public static final String REDUCE_SPECIAL_COST = "5C";
 	public static final String TEMP_DEXTERITY = "blocking";
 	public static final String STRENGTH ="strength";
+	public static final String STRENGTH_FOR_TURN ="strength_turn";
 	public static final String DEXTERITY ="dexterity";
 	public static final String WEAK ="weak";
 	public static final String VULNERABLE ="vulnerable";
@@ -64,147 +65,152 @@ public class UtilsApplyEffect {
 
 		switch (this.effect) {
 		
-		case ARTIFACT:
-			AbstractDungeon.actionManager.addToBottom(
-					new ApplyPowerAction(this.player, this.player, new ArtifactPower(this.player, this.magnitude)));
-			break;
-		case BUFFER:
-			AbstractDungeon.actionManager.addToBottom(
-					new ApplyPowerAction(this.player, this.player, new BufferPower(this.player, this.magnitude)));
-			break;
-		case INTANGIBLE:
-			AbstractDungeon.actionManager.addToBottom(
-					new ApplyPowerAction(this.player, this.player, new IntangiblePlayerPower(this.player, this.magnitude), this.magnitude));
-			break;
-		case ATTACK:
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
-					this.target, new DamageInfo(this.player, this.magnitude, DamageType.HP_LOSS),
-					AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-			break;
-
-		case ATTACK_ALL:
-			for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-    			if ((mo != null) && (!mo.isDeadOrEscaped())) {
-			  
-				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
-						mo, new DamageInfo(this.player, this.magnitude),
-						AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-				
-    			}
-			}
-			break;
-			
-		case BLOCK:
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
-			break;
-		
-		case NEXT_TURN_BLOCK:
-			//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new NextTurnBlockPower(this.player, this.magnitude), this.magnitude));
-			break;
-		
-		case DRAW:
-			//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
-			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.player, this.magnitude));
-			break;
-		case NEXT_TURN_DRAW:
-			//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-				new DrawCardNextTurnPower(this.player, this.magnitude), this.magnitude));
-			break;
-		case OFFENSE:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new Haku_OffensePower(this.player, this.magnitude, false), this.magnitude));
-			break;
-
-		case NEUTRAL:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new Haku_NeutralPower(this.player, this.magnitude, false), this.magnitude));
-			break;
-
-		case DEFENSE:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new Haku_DefensePower(this.player, this.magnitude, false), this.magnitude));
-			break;
-		case OD:
-			AbstractDungeon.actionManager.addToBottom(
-					new ApplyPowerAction(this.player, this.player, new Haku_OverdrivePower(this.player, this.magnitude), this.magnitude));
-			break;
-
-		case CURE_ALL:
-			ArrayList<AbstractPower> listDebuffs = new ArrayList<AbstractPower>();
-
-			for (AbstractPower pow : this.player.powers) {
-				if (pow.type == AbstractPower.PowerType.DEBUFF && (pow.ID != GainStrengthPower.POWER_ID) ) {
-					listDebuffs.add(pow);
-				}
-			}
-			
-			for (AbstractPower debuff : listDebuffs) {
+			case ARTIFACT:
 				AbstractDungeon.actionManager.addToBottom(
-						new RemoveSpecificPowerAction(this.player, this.player, debuff));
-			}
-			break;
+						new ApplyPowerAction(this.player, this.player, new ArtifactPower(this.player, this.magnitude)));
+				break;
+			case BUFFER:
+				AbstractDungeon.actionManager.addToBottom(
+						new ApplyPowerAction(this.player, this.player, new BufferPower(this.player, this.magnitude)));
+				break;
+			case INTANGIBLE:
+				AbstractDungeon.actionManager.addToBottom(
+						new ApplyPowerAction(this.player, this.player, new IntangiblePlayerPower(this.player, this.magnitude), this.magnitude));
+				break;
+			case ATTACK:
+				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
+						this.target, new DamageInfo(this.player, this.magnitude, DamageType.HP_LOSS),
+						AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+				break;
 
-		case PLATED:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new PlatedArmorPower(this.player, this.magnitude), this.magnitude));
-			break;
+			case ATTACK_ALL:
+				for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+					if ((mo != null) && (!mo.isDeadOrEscaped())) {
 
-		case THORN:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new ThornsPower(this.player, this.magnitude), this.magnitude));
-			break;
+					AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
+							mo, new DamageInfo(this.player, this.magnitude),
+							AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-		case MAGATAMA:
-			AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-					new Haku_MagatamaPower(AbstractDungeon.player, this.magnitude), this.magnitude));
-			break;
-
-		case ENERGY:
-			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magnitude));
-			break;
-
-		case NEXT_TURN_ENERGY:
-			AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-					new EnergizedBluePower(AbstractDungeon.player, this.magnitude), this.magnitude));
-			break;
-		
-		case REDUCE_SPECIAL_COST:
-			for (AbstractCard cardIsSpecial: this.player.hand.group) {
-				if (cardIsSpecial.hasTag(CustomTags.SPECIAL)) {
-					cardIsSpecial.setCostForTurn(0);
-					if (!this.card.upgraded) {break;}
+					}
 				}
-			}
-			break;
-		case TEMP_DEXTERITY:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player, new DexterityPower(this.player, this.magnitude), this.magnitude));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player, new LoseDexterityPower(this.player, this.magnitude), this.magnitude));
-			break;
-		
-		case STRENGTH:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new StrengthPower(this.player, this.magnitude), this.magnitude));
-			break;
-		case DEXTERITY:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-					new DexterityPower(this.player, this.magnitude), this.magnitude));
-			break;
-		case WEAK:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.player,
-					new WeakPower(this.target, this.magnitude, false), this.magnitude));
-			break;
-		case VULNERABLE:
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.player,
-					new VulnerablePower(this.target, this.magnitude, false), this.magnitude));
-			break;
-		case FUUMAJIN:
-			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
-			break;
-		default:
-			break;
+				break;
+
+			case BLOCK:
+				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
+				break;
+
+			case NEXT_TURN_BLOCK:
+				//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new NextTurnBlockPower(this.player, this.magnitude), this.magnitude));
+				break;
+
+			case DRAW:
+				//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
+				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.player, this.magnitude));
+				break;
+			case NEXT_TURN_DRAW:
+				//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+					new DrawCardNextTurnPower(this.player, this.magnitude), this.magnitude));
+				break;
+			case OFFENSE:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new Haku_OffensePower(this.player, this.magnitude, false), this.magnitude));
+				break;
+
+			case NEUTRAL:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new Haku_NeutralPower(this.player, this.magnitude, false), this.magnitude));
+				break;
+
+			case DEFENSE:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new Haku_DefensePower(this.player, this.magnitude, false), this.magnitude));
+				break;
+			case OD:
+				AbstractDungeon.actionManager.addToBottom(
+						new ApplyPowerAction(this.player, this.player, new Haku_OverdrivePower(this.player, this.magnitude), this.magnitude));
+				break;
+
+			case CURE_ALL:
+				ArrayList<AbstractPower> listDebuffs = new ArrayList<AbstractPower>();
+
+				for (AbstractPower pow : this.player.powers) {
+					if (pow.type == AbstractPower.PowerType.DEBUFF && (pow.ID != GainStrengthPower.POWER_ID) ) {
+						listDebuffs.add(pow);
+					}
+				}
+
+				for (AbstractPower debuff : listDebuffs) {
+					AbstractDungeon.actionManager.addToBottom(
+							new RemoveSpecificPowerAction(this.player, this.player, debuff));
+				}
+				break;
+
+			case PLATED:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new PlatedArmorPower(this.player, this.magnitude), this.magnitude));
+				break;
+
+			case THORN:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new ThornsPower(this.player, this.magnitude), this.magnitude));
+				break;
+
+			case MAGATAMA:
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+						new Haku_MagatamaPower(AbstractDungeon.player, this.magnitude), this.magnitude));
+				break;
+
+			case ENERGY:
+				AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magnitude));
+				break;
+
+			case NEXT_TURN_ENERGY:
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+						new EnergizedBluePower(AbstractDungeon.player, this.magnitude), this.magnitude));
+				break;
+
+			case REDUCE_SPECIAL_COST:
+				for (AbstractCard cardIsSpecial: this.player.hand.group) {
+					if (cardIsSpecial.hasTag(CustomTags.SPECIAL)) {
+						cardIsSpecial.setCostForTurn(0);
+						if (!this.card.upgraded) {break;}
+					}
+				}
+				break;
+			case TEMP_DEXTERITY:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player, new DexterityPower(this.player, this.magnitude), this.magnitude));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player, new LoseDexterityPower(this.player, this.magnitude), this.magnitude));
+				break;
+
+			case STRENGTH:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new StrengthPower(this.player, this.magnitude), this.magnitude));
+				break;
+
+			case STRENGTH_FOR_TURN:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player, new StrengthPower(this.player, this.magnitude), this.magnitude));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player, new LoseStrengthPower(this.player, this.magnitude), this.magnitude));
+				break;
+			case DEXTERITY:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
+						new DexterityPower(this.player, this.magnitude), this.magnitude));
+				break;
+			case WEAK:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.player,
+						new WeakPower(this.target, this.magnitude, false), this.magnitude));
+				break;
+			case VULNERABLE:
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.player,
+						new VulnerablePower(this.target, this.magnitude, false), this.magnitude));
+				break;
+			case FUUMAJIN:
+				AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
+				break;
+			default:
+				break;
 		}
 	}
 

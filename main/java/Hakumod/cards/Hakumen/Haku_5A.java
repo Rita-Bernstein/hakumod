@@ -42,7 +42,7 @@ public class Haku_5A extends Haku_CustomCard {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.COMMON,
+				AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.ENEMY);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;

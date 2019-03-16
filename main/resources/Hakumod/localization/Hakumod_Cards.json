@@ -81,8 +81,8 @@
 	},
 	"Haku_ActiveFlow": {
 		"NAME": "Active Flow",
-		"DESCRIPTION": "Gain !M! Active_Flow. NL Draw 2 card.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Active_Flow. NL Draw 2 card."	
+		"DESCRIPTION": "If you have played 3 cards this turn, gain [R] and !M! Strength. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "If you have played 3 cards this turn, gain [R] and !M! Strength. NL Exhaust"
 	},
 	"Haku_Burst": {
 		"NAME": "Burst",
@@ -90,8 +90,8 @@
 	},
 	"Haku_Overdrive": {
 		"NAME": "Overdrive",
-		"DESCRIPTION": "Gain !M! Overdrive. NL Shuffle one Exceed_Accel into your draw pile.",
-	"UPGRADE_DESCRIPTION": "Innate NL Gain !M! Overdrive. NL Shuffle one Exceed_Accel into your draw pile."
+		"DESCRIPTION": "Double the amount of Magatama gained for !M! turn.",
+		"UPGRADE_DESCRIPTION": "Innate NL Double the amount of Magatama gained for !M! turn."
 	},
 	"Haku_5A": {
 		"NAME": "God Fist",
@@ -140,8 +140,8 @@
 	},
 	"Haku_J2C": {
 		"NAME": "Heavy Slash",
-		"DESCRIPTION": "Deal !D! damage. NL Choose one card between God Fist, Sweep and Agito, add it to your hand, it costs 0 this turn.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Choose one upgraded card between God Fist, Sweep and Agito, add it to your hand, it costs 0 this turn."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Cost 1 less for each card played this turn.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Cost 1 less for each card played this turn."
 	},
 	"Haku_Hotaru": {
 		"NAME": "Hotaru",
@@ -201,8 +201,8 @@
 	},
 	"Haku_Taunt": {
 		"NAME": "Taunt",
-		"DESCRIPTION": "Gain !M! Vulnerable. NL Inflict !M! Vulnerable on all enemies.",
-		"UPGRADE_DESCRIPTION": "Gain 1 Vulnerable. Inflict !M! Vulnerable on all enemies."
+		"DESCRIPTION": "Gain !M! Vulnerable. NL Inflict !M! Vulnerable on ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Gain 1 Vulnerable. Inflict !M! Vulnerable on ALL enemies."
 	},
 	"Haku_RC": {
 		"NAME": "Rapid Cancel",
@@ -221,7 +221,7 @@
 	},
 	"Haku_6C": {
 		"NAME": "Command Order",
-		"DESCRIPTION": "6C. NL Deal !D! damage. Can be upgraded any number of times. NL Gain additional effects with each upgrade.",
+		"DESCRIPTION": "Charge. NL Deal !D! damage. Can be upgraded any number of times. NL Gain additional effects with each upgrade.",
 		"EXTENDED_DESCRIPTION": 
 			["Deal !D! damage. Can be upgraded any number of times", 
 			"Deal !D! damage. Can be upgraded any number of times. NL Draw 1 card.",
@@ -231,7 +231,8 @@
 	},
 	"Haku_EA": {
 		"NAME": "Exceed Accel",
-		"DESCRIPTION": "Deal !D! damage. NL If Active_Flow is applied, deal double damage, if not Gain 3 Active_Flow."
+		"DESCRIPTION": "Starter: Gain 1 Block for every card in your hand. NL Ender: Deal 1 Damage for every card played this turn. NL (Total: !B! / !D!)",
+		"UPGRADE_DESCRIPTION": "Starter: Gain 1 Block for every card in your hand +2 . NL Ender: Deal 1 Damage for every card played this turn + 2. NL (Total: !B! / !D!)"
 	},
 	"Haku_Akumetsu": {
 		"NAME": "Akumetsu",
@@ -266,7 +267,7 @@
 	},
 	"Haku_Airdash": {
 		"NAME": "Air dash",
-		"DESCRIPTION": "Draw !M! Cards. NL Starter: Draw 1 more card."
+		"DESCRIPTION": "Draw !M! Cards. NL Starter: Gain 2 Strength this turn."
 	},
 	"Haku_InstantBarrier": {
 		"NAME": "Instant Barrier",
@@ -347,19 +348,18 @@
 	},
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
-		"DESCRIPTION": "Speech. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn.",
+		"DESCRIPTION": "SUSANOO. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn.",
 		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn."
 
 	},
 	"Haku_Timekiller":{
 		"NAME": "Time Killer",
-		"DESCRIPTION": "Deal damage equal to your deck size (Total: !D!).",
-		"UPGRADE_DESCRIPTION": "Deal damage equal to your deck size + 3 (Total: !D!)."
+		"DESCRIPTION": "Deal !D! damage. NL Add !M! Exhausted Attack to your hand, change its cost to 0."
 	},
 	"Haku_ChildishMemories":{
 		"NAME": "Childish Memories",
-		"DESCRIPTION": "Lose 2 Magatama. NL Heal !M! HP. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "Lose 2 Magatama. NL Heal !M! HP. NL Exhaust"
+		"DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust"
 	},
 	"Haku_SixHeroes":{
 		"NAME": "SIX-HEROES",
@@ -383,7 +383,7 @@
 	},
 	"Haku_EndGazer":{
 		"NAME": "End Gazer",
-		"DESCRIPTION": "Gain !B! Blocks. NL Ender: Draw !M! cards next turn."
+		"DESCRIPTION": "Gain !B! Block. NL Draw !M! cards next turn."
 	},
 	"Haku_Thin":{
 		"NAME": "Thin Red Line",
@@ -405,8 +405,8 @@
 	},
 	"Haku_BlackAndWhite":{
 		"NAME": "Black And White",
-		"DESCRIPTION": "Deal 6 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile.",
-		"UPGRADE_DESCRIPTION": "Deal 6 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile."
+		"DESCRIPTION": "Deal 4 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)",
+		"UPGRADE_DESCRIPTION": "Deal 4 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)"
 
 	},
 	"Haku_SwordOfDoom":{

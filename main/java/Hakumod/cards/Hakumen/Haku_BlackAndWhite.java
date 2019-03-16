@@ -29,7 +29,7 @@ public class Haku_BlackAndWhite extends Haku_CustomCard {
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_BlackAndWhite.png";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 6;
+	private static final int ATTACK_DMG = 4;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	private static int DAMAGE_BOOST = 2;
 	private static int UPGRADED_DAMAGE_BOOST = 1;
@@ -63,24 +63,40 @@ public class Haku_BlackAndWhite extends Haku_CustomCard {
 		}
 		return 0;
 	}
-	
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-    	
-    	int damageBoost = 0;
 
- 
+	public int getDamage() {
+		int damageBoost = 0;
 		for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-			damageBoost += (isBlackAndWhite(c) * this.magicNumber);	
+			damageBoost += (isBlackAndWhite(c) * this.magicNumber);
 		}
-    	
-    	
 		for (AbstractCard c : AbstractDungeon.player.hand.group) {
 			damageBoost += (isBlackAndWhite(c) * this.magicNumber);
 		}
-    	
+		return this.baseDamage + damageBoost;
+	}
+	//Display damage when the card is in the hand.
+	@Override
+	public void applyPowers() {
+		this.damage = getDamage();
+		if (this.damage > 0) {this.isDamageModified = true;}
+	}
+
+	@Override
+	public void calculateCardDamage(AbstractMonster mo) {
+		this.damage = getDamage();
+		if (this.damage > 0) {this.isDamageModified = true;}
+	}
+
+	@Override
+	public void calculateDamageDisplay(AbstractMonster mo) {
+		// TODO Auto-generated method stub
+		calculateCardDamage(mo);
+	}
+
+	@Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
      	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-				new DamageInfo(p, this.damage + damageBoost, this.damageTypeForTurn),
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 	

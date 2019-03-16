@@ -48,7 +48,7 @@ public class Haku_YomotsuhirasakaPower extends AbstractPower {
     			if ((mo != null) && (!mo.isDeadOrEscaped())) {
 			  
 				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
-						mo, new DamageInfo(AbstractDungeon.player, this.amount),
+						mo, new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.HP_LOSS),
 						AbstractGameAction.AttackEffect.FIRE));
 				
     			}

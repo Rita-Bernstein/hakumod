@@ -1,5 +1,6 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.action.TimekillerAction;
 import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
@@ -27,27 +28,27 @@ public class Haku_Timekiller extends Haku_CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Timekiller.png";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 0;
+	private static final int ATTACK_DMG = 5;
 	private static final int UPGRADE_PLUS_DMG = 3;
-	/*private static int DEBUFF = 2;
-	private static int UPGRADE_DEBUFF = 1;*/
+	private static final int BUFF = 1;
+	//private static final int UPGRADE_BUFF = 1;
 	
 	//private static int REDUCE = 2;
 	
 	
 	public Haku_Timekiller() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
-				AbstractCard.CardType.ATTACK,
+				CardType.ATTACK,
 				AbstractCardEnum.HAKUMEN_COLOR,
 				AbstractCard.CardRarity.RARE,
 				AbstractCard.CardTarget.ENEMY);
 		// TODO Auto-generated constructor stub
 		this.baseDamage = ATTACK_DMG;
-		//this.magicNumber = this.baseMagicNumber = DEBUFF;
+		this.magicNumber = this.baseMagicNumber = BUFF;
 		//this.exhaust = true;
 		
 	}
@@ -59,32 +60,10 @@ public class Haku_Timekiller extends Haku_CustomCard {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
 			//this.exhaust = false;
-			//upgradeMagicNumber(UPGRADE_DEBUFF);
-			this.rawDescription = UPG_DESCRIPTION;
+			//upgradeMagicNumber(UPGRADE_BUFF);
+			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
-	}
-
-	public int getDamage() {
-		return AbstractDungeon.player.masterDeck.size() + this.baseDamage;
-	}
-	//Display damage when the card is in the hand.
-	@Override
-	public void applyPowers() {
-		this.damage = getDamage();
-		if (this.damage > 0) {this.isDamageModified = true;}
-	}
-
-	@Override
-	public void calculateDamageDisplay(AbstractMonster mo) {
-		// TODO Auto-generated method stub
-		calculateCardDamage(mo);
-	}
-
-	@Override
-	public void calculateCardDamage(AbstractMonster mo) {
-		this.damage = getDamage();
-		if (this.damage > 0) {this.isDamageModified = true;}
 	}
 
     @Override
@@ -92,12 +71,9 @@ public class Haku_Timekiller extends Haku_CustomCard {
     	AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
 				new DamageInfo(p, this.damage, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.FIRE));
-   
-    
-    	/*AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
-    				new Haku_TimekillerPower(m, this.magicNumber), this.magicNumber));
-    	*/
-    
+
+    	AbstractDungeon.actionManager.addToBottom(new TimekillerAction(this.magicNumber));
+
     }
 	
 	public AbstractCard makeCopy() {

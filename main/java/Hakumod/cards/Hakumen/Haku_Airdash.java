@@ -37,7 +37,7 @@ public class Haku_Airdash extends Haku_CustomCard {
 	private static int DRAW = 2;
 	private static int UPGRADE_DRAW = 1;
 	
-	private static int STARTER_EFF = 1;
+	private static int STARTER_EFF = 2;
 	
 	public Haku_Airdash() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -71,7 +71,7 @@ public class Haku_Airdash extends Haku_CustomCard {
     	//int cardsToDraw = p.hand.getAttacks().size();
     	AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     	
-    	AbstractDungeon.actionManager.addToBottom(new StarterAction(p, this, m, UtilsApplyEffect.DRAW, STARTER_EFF));
+    	AbstractDungeon.actionManager.addToBottom(new StarterAction(p, this, m, UtilsApplyEffect.STRENGTH_FOR_TURN, STARTER_EFF));
 		
     	/*AbstractCard card = null;
     	for (int i=0; i<this.magicNumber; i++) {

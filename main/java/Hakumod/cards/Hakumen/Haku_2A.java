@@ -4,6 +4,7 @@ import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,7 +28,7 @@ public class Haku_2A extends Haku_CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_2A.png";
 	private static final int COST = 0;
@@ -57,7 +58,7 @@ public class Haku_2A extends Haku_CustomCard {
 			upgradeDamage(UPGRADE_PLUS_DMG);
 			//upgradeBaseCost(UPGRADED_COST);
 			//upgradeMagicNumber(UPGRADE_DEBUFF);
-			this.rawDescription = UPG_DESCRIPTION;
+			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
 	}
@@ -91,10 +92,11 @@ public class Haku_2A extends Haku_CustomCard {
 			}
 		}
     	
-    	if (this.upgraded) {
+    	/*if (this.upgraded) {
     		AbstractCard copy = new Haku_2A().makeCopy();
-    		p.discardPile.addToRandomSpot(copy);
-    	}
+			AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(copy, 1));
+
+		}*/
     }
 	
 	public AbstractCard makeCopy() {

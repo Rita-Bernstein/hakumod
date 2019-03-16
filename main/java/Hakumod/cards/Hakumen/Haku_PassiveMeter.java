@@ -32,7 +32,7 @@ public class Haku_PassiveMeter extends Haku_CustomCard {
 
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_PassiveMeter.png";
 	private static final int COST = 1;
-	// private static final int UPG_COST = 0;
+	private static final int UPG_COST = 0;
 
 	public Haku_PassiveMeter() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, AbstractCard.CardType.POWER, AbstractCardEnum.HAKUMEN_COLOR,
@@ -47,9 +47,9 @@ public class Haku_PassiveMeter extends Haku_CustomCard {
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			// upgradeBaseCost(UPG_COST);
-			this.isInnate = true;
-			this.rawDescription = UPG_DESCRIPTION;
+			upgradeBaseCost(UPG_COST);
+			//this.isInnate = true;
+			//this.rawDescription = UPG_DESCRIPTION;
 			// upgradeMagicNumber(UPGRADED_MAGNITUDE);
 			initializeDescription();
 		}

@@ -1,9 +1,11 @@
 package Hakumod.cards.Hakumen;
 
+import Hakumod.action.GiveCardExhaustAction;
 import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
 import Hakumod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -66,8 +68,9 @@ public class Haku_InstantBarrier extends Haku_CustomCard {
     		//cardToAdd[i].purgeOnUse = true;
     		//cardToAdd[i].exhaustOnUseOnce = true;
     		//cardToAdd[i].exhaustOnFire = true;
-   			//AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(cardToAdd[i], 1, true, false));
-    		p.drawPile.addToRandomSpot(cardToAdd[i]);
+   			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(cardToAdd[i], 1, true, false));
+			AbstractDungeon.actionManager.addToTop(new GiveCardExhaustAction(cardToAdd[i], AbstractDungeon.player.drawPile.group, true, true, false));
+			//p.drawPile.addToRandomSpot(cardToAdd[i]);
     	}
 	}
 	
