@@ -29,7 +29,7 @@ public class Haku_BlackAndWhite extends Haku_CustomCard {
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_BlackAndWhite.png";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 4;
+	private static final int ATTACK_DMG = 5;
 	//private static final int UPGRADE_PLUS_DMG = 2;
 	private static int DAMAGE_BOOST = 2;
 	private static int UPGRADED_DAMAGE_BOOST = 1;

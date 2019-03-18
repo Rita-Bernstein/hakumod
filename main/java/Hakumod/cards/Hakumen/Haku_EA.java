@@ -30,7 +30,7 @@ public class Haku_EA extends Haku_CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String RAW_DESCRIPTION = cardStrings.DESCRIPTION;
-	//public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_EA.png";
 	private static final int COST = 0;
@@ -60,11 +60,13 @@ public class Haku_EA extends Haku_CustomCard {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
 			upgradeBlock(UPGRADE_PLUS_BLOCK);
+			this.rawDescription = UPG_DESCRIPTION;
+			initializeDescription();
 		}
 	}
 
 	public int getBlock(){
-		return AbstractDungeon.player.hand.size() + this.baseBlock;
+		return AbstractDungeon.player.energy.energy + this.baseBlock;
 	}
 
 	public int getDamage() {

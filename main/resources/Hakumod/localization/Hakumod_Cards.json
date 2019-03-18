@@ -211,8 +211,8 @@
 	},
 	"Haku_Mugen": {
 		"NAME": "Mugen",
-		"DESCRIPTION": "Special: 8 NL Discard all non Special cards in your hand. Add the same amount of random Special to your hand. Special cost 0 Energy and Magatama this turn.",
-		"UPGRADE_DESCRIPTION": "Special: 8 NL Discard all non Special cards in your hand. Add the same amount of random Special to your hand + 1. Special cost 0 Energy and Magatama this turn."
+		"DESCRIPTION": "Special: 8 NL Discard all non Special cards and add an equal amount of Special to your hand. Special cost 0 Energy and Magatama this turn.",
+		"UPGRADE_DESCRIPTION": "Special: 8 NL Discard all non Special cards and add an equal amount of Special to your hand + 1. Special cost 0 Energy and Magatama this turn."
 	},
 	"Haku_PassiveMeter": {
 		"NAME": "Passive meter gain",
@@ -231,8 +231,8 @@
 	},
 	"Haku_EA": {
 		"NAME": "Exceed Accel",
-		"DESCRIPTION": "Starter: Gain 1 Block for every card in your hand. NL Ender: Deal 1 Damage for every card played this turn. NL (Total: !B! / !D!)",
-		"UPGRADE_DESCRIPTION": "Starter: Gain 1 Block for every card in your hand +2 . NL Ender: Deal 1 Damage for every card played this turn + 2. NL (Total: !B! / !D!)"
+		"DESCRIPTION": "Starter: Gain Block equal to your current Energy. NL Ender: Deal 1 Damage for every card played this turn. NL (Total: !B! / !D!)",
+		"UPGRADE_DESCRIPTION": "Starter: Gain Block equal to your current Energy+2. NL Ender: Deal 1 Damage for every card played this turn+2. NL (Total: !B! / !D!)"
 	},
 	"Haku_Akumetsu": {
 		"NAME": "Akumetsu",
@@ -349,7 +349,7 @@
 	"Haku_WhiteVoid":{
 		"NAME": "The White Void",
 		"DESCRIPTION": "SUSANOO. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn.",
-		"UPGRADE_DESCRIPTION": "Speech. NL Innate. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn."
+		"UPGRADE_DESCRIPTION": "Innate. NL SUSANOO. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn."
 
 	},
 	"Haku_Timekiller":{
