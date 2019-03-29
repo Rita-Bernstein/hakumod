@@ -37,7 +37,7 @@ public class Haku_ActiveFlow extends Haku_CustomCard {
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_ActiveFlow.png";
 	private static final int COST = 1;
 
-	private static final int ENERGY = 2;
+	private static final int ENERGY = 1;
 	//private static final int UPGRADED_COST = 0;
 
 	private static int MAGNITUDE = 1;

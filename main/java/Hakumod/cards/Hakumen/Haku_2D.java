@@ -2,7 +2,9 @@ package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ParryAction;
 import Hakumod.action.UtilsApplyEffect;
+import Hakumod.action.canUseParry;
 import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
+import Hakumod.cards.Hakumen.Utils.Haku_Parry;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Haku_2D extends Haku_CustomCard {
+public class Haku_2D extends Haku_Parry {
 	public static final String ID = "Haku_2D";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -54,6 +56,8 @@ public class Haku_2D extends Haku_CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.ATTACK, this.damage));
 		AbstractDungeon.actionManager.addToBottom(new ParryAction(p, null, m, UtilsApplyEffect.NEXT_TURN_BLOCK, this.block));
 	}
+
+
 	
 	public AbstractCard makeCopy() {
 		return new Haku_2D();

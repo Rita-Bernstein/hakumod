@@ -2,7 +2,9 @@ package Hakumod.cards.Hakumen;
 
 import Hakumod.action.ParryAction;
 import Hakumod.action.UtilsApplyEffect;
+import Hakumod.action.canUseParry;
 import Hakumod.cards.Hakumen.Utils.Haku_CustomCard;
+import Hakumod.cards.Hakumen.Utils.Haku_Parry;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.CustomTags;
 import basemod.abstracts.CustomCard;
@@ -13,8 +15,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.ChemicalX;
 
-public class Haku_5D extends Haku_CustomCard {
+public class Haku_5D extends Haku_Parry {
 	public static final String ID = "Haku_5D";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -50,8 +53,8 @@ public class Haku_5D extends Haku_CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		
 		int energyConsumed = this.energyOnUse;
-		if (p.hasRelic("Chemical X")) {
-			p.getRelic("Chemical X").flash();
+		if (p.hasRelic(ChemicalX.ID)) {
+			p.getRelic(ChemicalX.ID).flash();
 			energyConsumed += 2;
 		}
 		

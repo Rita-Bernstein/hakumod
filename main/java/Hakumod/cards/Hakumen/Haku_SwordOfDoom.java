@@ -34,12 +34,12 @@ public class Haku_SwordOfDoom extends Haku_CustomCard {
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_SwordOfDoom.png";
 	private static final int COST = 1;
-	//private static final int UPGRADED_COST = 1;
+	private static final int UPGRADED_COST = 0;
 
 	private static final int NEW_MAX_ORBS = 4;
 
-	private static int MAGNITUDE = 2;
-	private static int UPGRADED_MAGNITUDE = 1;
+	private static int MAGNITUDE = 1;
+	//private static int UPGRADED_MAGNITUDE = 1;
     
 	public Haku_SwordOfDoom() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -57,8 +57,8 @@ public class Haku_SwordOfDoom extends Haku_CustomCard {
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
-			//upgradeBaseCost(UPGRADED_COST);
-			upgradeMagicNumber(UPGRADED_MAGNITUDE);
+			upgradeBaseCost(UPGRADED_COST);
+			//upgradeMagicNumber(UPGRADED_MAGNITUDE);
 			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
@@ -66,7 +66,6 @@ public class Haku_SwordOfDoom extends Haku_CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	/*AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_SwordOfDoomPower(p, this.magicNumber), this.magicNumber));*/
     	int increaseOrbs = NEW_MAX_ORBS - p.maxOrbs;
     	AbstractDungeon.player.increaseMaxOrbSlots(increaseOrbs, false);
     	

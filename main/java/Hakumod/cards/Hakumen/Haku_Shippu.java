@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -78,8 +79,8 @@ public class Haku_Shippu extends Haku_Special {
 		AbstractDungeon.actionManager.addToBottom( new UsingSpecialAction(p, MAGATAMA_COST));
 		
 		int energyConsumed = this.energyOnUse;
-		if (p.hasRelic("Chemical X")) {
-			p.getRelic("Chemical X").flash();
+		if (p.hasRelic(ChemicalX.ID)) {
+			p.getRelic(ChemicalX.ID).flash();
 			energyConsumed += 2;
 		}
 		

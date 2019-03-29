@@ -2,19 +2,25 @@ package Hakumod.cards.Hakumen.Utils;
 
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 
-public class Haku_CustomCard extends CustomCard {
+public abstract class Haku_CustomCard extends CustomCard {
 
     private AbstractCard cardToPreview = null;
     private boolean isHovered = false;
-    //private isParry = false;
 
     private static final float CARD_TIP_PAD = 16.0F;
     private static final float RESIZE = 1.5F;
@@ -63,29 +69,6 @@ public class Haku_CustomCard extends CustomCard {
         }
     }
 
-    /*@Override
-    public void renderInLibrary(SpriteBatch sb)
-    {
-        if (!(this.current_y >= -200.0F * Settings.scale) && (this.current_y <= Settings.HEIGHT + 200.0F * Settings.scale)) {
-            return;
-        }
-        if ((this.isSeen) && (!this.isLocked))
-        {
-           // AbstractCard copy = makeStatEquivalentCopy();
-            cardToPreview.current_x = this.current_x;
-            cardToPreview.current_y = this.current_y;
-            cardToPreview.drawScale = this.drawScale;
-            //copy.upgrade();
-            cardToPreview.displayUpgrades();
-            cardToPreview.render(sb);
-        }
-        else
-        {
-            super.renderInLibrary(sb);
-        }
-    }*/
-
-
     public void hover(){
         super.hover();
         this.isHovered = true;
@@ -96,13 +79,21 @@ public class Haku_CustomCard extends CustomCard {
         this.isHovered = false;
     }
 
-    @Override
-    public void upgrade() {
-
+    public void act(AbstractGameAction action){
+        AbstractDungeon.actionManager.addToBottom(action);
     }
 
-    @Override
-    public void use(AbstractPlayer arg0, AbstractMonster arg1) {
-
+    public void damage(AbstractCreature target, AbstractCreature source, int damage, DamageInfo.DamageType damageType, AbstractGameAction.AttackEffect attackEffect){
+        act(new DamageAction(target, new DamageInfo(source, damage, damageType), attackEffect));
     }
+
+    public void block(AbstractCreature target, AbstractCreature source, int block){
+        act(new GainBlockAction(target, source, block));
+    }
+
+    public void power(AbstractCreature target, AbstractCreature source, AbstractPower power, int amount){
+        act(
+                new ApplyPowerAction(target, source, power, amount));
+    }
+
 }

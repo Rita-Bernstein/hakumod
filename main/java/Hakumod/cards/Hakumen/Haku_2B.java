@@ -68,38 +68,6 @@ public class Haku_2B extends Haku_CustomCard {
     	
     	AbstractCard c = new Haku_Renka().makeCopy();
     	AbstractDungeon.actionManager.addToBottom(new ComboAction(c));
-    	
-    	/*ArrayList<AbstractCard> drawPile = p.drawPile.group;
-    	ArrayList<AbstractCard> arraySpecialinDraw = new ArrayList<AbstractCard>();
-    	for (AbstractCard cardInDraw : drawPile) {
-    		if (cardInDraw.hasTag(CustomTags.SPECIAL)) {
-    			arraySpecialinDraw.add(cardInDraw);
-    		}	
-    	}
-    	
-    	if (arraySpecialinDraw.size() > 0) {
-    		if (arraySpecialinDraw.size() == 1) {
-    			AbstractDungeon.actionManager.addToBottom(
-    					new AddToHandAction(p.drawPile, arraySpecialinDraw.get(0), true, false, false, false, 0));
-    		}
-    		else {
-    			AbstractDungeon.actionManager.addToBottom(
-    					new ChooseCardAction(arraySpecialinDraw, false));
-    		}
-    		
-    	}*/
-    	
-    	/*AbstractCard c;
-    	c = new Haku_Guren().makeCopy();
-    	AbstractDungeon.actionManager.addToBottom(new ComboAction(c));*/
-    	
-    	/*if (this.upgraded) {
-    		//AbstractDungeon.actionManager.addToTop(
-    		//		new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new MagatamaPower(AbstractDungeon.player,1),1));
-        	AbstractDungeon.actionManager.addToTop(
-        			new StarterAction(p, this, m, "neutral", this.magicNumber));
-    	}*/
-   
     }
 	
 	public AbstractCard makeCopy() {

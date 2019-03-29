@@ -33,10 +33,10 @@ public class Haku_J2A extends Haku_CustomCard {
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_J2A.png";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 8;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int UPGRADE_PLUS_DMG = 3;
    
 	private static int BUFF = 1;
-	private static int UPGRADE_BUFF = 1;
+	//private static int UPGRADE_BUFF = 1;
 	
 	public Haku_J2A() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
@@ -57,9 +57,9 @@ public class Haku_J2A extends Haku_CustomCard {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
 			//upgradeBlock(UPGRADE_PLUS_BLOCK);
-			upgradeMagicNumber(UPGRADE_BUFF);
+			//upgradeMagicNumber(UPGRADE_BUFF);
 			//this.rawDescription = UPG_DESCRIPTION;
-			//initializeDescription();
+			initializeDescription();
 		}
 	}
 

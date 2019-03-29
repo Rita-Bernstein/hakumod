@@ -37,7 +37,7 @@
   },
   "Haku_AwakeningPower": {
     "NAME": "Awakening The Chaos",
-    "DESCRIPTIONS": ["#yEverytime you channel a #yFuumajin, gain #b", " Blocks."]
+    "DESCRIPTIONS": ["#yEvery 2 turns, gain #b", " #yFuumajin."]
   },
   "Haku_ScienceFictionPower": {
     "NAME": "Science Fiction",

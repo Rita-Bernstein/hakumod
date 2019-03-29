@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Haku_Special extends Haku_CustomCard {
+public abstract class Haku_Special extends Haku_CustomCard {
 	
 	public int MAGATAMA_COST = 2;
 
@@ -29,26 +29,6 @@ public class Haku_Special extends Haku_CustomCard {
 	}
 
 	@Override
-	public void upgrade() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void use(AbstractPlayer arg0, AbstractMonster arg1) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/* (non-Javadoc)
-	 * @see com.megacrit.cardcrawl.cards.AbstractCard#canPlay(com.megacrit.cardcrawl.cards.AbstractCard)
-	 */
-
-
-	/* (non-Javadoc)
-	 * @see com.megacrit.cardcrawl.cards.AbstractCard#canUse(com.megacrit.cardcrawl.characters.AbstractPlayer, com.megacrit.cardcrawl.monsters.AbstractMonster)
-	 */
-	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		// TODO Auto-generated method stub
 		//return super.canUse(p, m);
@@ -60,21 +40,4 @@ public class Haku_Special extends Haku_CustomCard {
 			return true;
 		}
 	}
-
-	/* (non-Javadoc)
-	 * @see com.megacrit.cardcrawl.cards.AbstractCard#cardPlayable(com.megacrit.cardcrawl.monsters.AbstractMonster)
-	 */
-	/*@Override
-	public boolean cardPlayable(AbstractMonster m) {
-		// TODO Auto-generated method stub
-		//return super.cardPlayable(m);
-		if (AbstractDungeon.player instanceof Hakumen) {
-			return new UsingSpecialAction(AbstractDungeon.player, MAGATAMA_COST).canUseSpecialAction();
-		}
-		else {
-			return true;
-		}
-	}*/
-	
-
 }

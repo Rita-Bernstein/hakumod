@@ -42,7 +42,7 @@ public class Haku_Gate extends Haku_CustomCard {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
 				AbstractCard.CardType.POWER,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.RARE,
+				CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.SELF);
 		// TODO Auto-generated constructor stub
 		

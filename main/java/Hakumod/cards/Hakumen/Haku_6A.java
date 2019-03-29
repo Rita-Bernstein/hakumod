@@ -32,7 +32,7 @@ public class Haku_6A extends Haku_CustomCard {
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_6A.png";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 7;
+	private static final int ATTACK_DMG = 6;
 	private static final int UPGRADE_PLUS_DMG = 2;
 	//private static int BUFF = 2;
 	//private static int UPGRADE_DEBUFF = 1;

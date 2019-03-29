@@ -211,8 +211,8 @@
 	},
 	"Haku_Mugen": {
 		"NAME": "Mugen",
-		"DESCRIPTION": "Special: 8 NL Discard all non Special cards and add an equal amount of Special to your hand. Special cost 0 Energy and Magatama this turn.",
-		"UPGRADE_DESCRIPTION": "Special: 8 NL Discard all non Special cards and add an equal amount of Special to your hand + 1. Special cost 0 Energy and Magatama this turn."
+		"DESCRIPTION": "Special: 8 NL Add X Random Special cards to your hand. NL Special cost 0 Energy and Magatama this turn.",
+		"UPGRADE_DESCRIPTION": "Special: 8 NL Add X+1 Random Special cards to your hand. NL Special cost 0 Energy and Magatama this turn."
 	},
 	"Haku_PassiveMeter": {
 		"NAME": "Passive meter gain",
@@ -240,8 +240,7 @@
 	},
 	"Haku_Awakening": {
 		"NAME": "Awakening The Chaos",
-		"DESCRIPTION": "Everytime you channel a Fuumajin, gain 3 Blocks. NL Channel !M! Fuumajin.",
-		"UPGRADE_DESCRIPTION": "Everytime you channel a Fuumajin, gain 3 Blocks. NL Channel !M! Fuumajin."
+		"DESCRIPTION": "Gain !B! Block. NL Channel !M! Fuumajin."
 	},
 	"Haku_ScienceFiction": {
 		"NAME": "Science Fiction",
@@ -331,7 +330,8 @@
 	},
 	"Haku_Void":{
 		"NAME": "Void",
-		"DESCRIPTION": "Channel !M! Fuumajin."
+		"DESCRIPTION": "Channel !M! Fuumajin. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Channel !M! Fuumajin."
 	},
 	"Haku_Clash":{
 		"NAME": "Clash",
@@ -405,8 +405,8 @@
 	},
 	"Haku_BlackAndWhite":{
 		"NAME": "Black And White",
-		"DESCRIPTION": "Deal 4 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)",
-		"UPGRADE_DESCRIPTION": "Deal 4 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)"
+		"DESCRIPTION": "Deal 5 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)",
+		"UPGRADE_DESCRIPTION": "Deal 5 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)"
 
 	},
 	"Haku_SwordOfDoom":{
@@ -416,6 +416,10 @@
 	"Haku_QueenOfRose":{
 		"NAME": "Queen of Rose",
 		"DESCRIPTION": "Lose 1 Strength. NL Gain !M! Strength at the end of the turn."
+	},
+	"Haku_PlasticNight":{
+		"NAME": "Plastic Night",
+		"DESCRIPTION": "Parry: Gain !B! Blocks and deal damage equal to half your current block. NL (Total: !D!)"
 	},
 	"Haku_Pakumen":{
 		"NAME": "Pakumen",

@@ -93,9 +93,6 @@ public static boolean getUseBosses() {
 	return useBosses;
 }
 
-/**
- * @param useMusic the useMusic to set
- */
 public static void setUseBosses(boolean useBosses) {
 	HakuInit.useBosses = useBosses;
 }
@@ -288,8 +285,8 @@ public void receiveEditCards() {
 	UnlockTracker.unlockCard(Haku_GCOD.ID);*/
 	/*BaseMod.addCard(new Haku_ODC());
 	UnlockTracker.unlockCard(Haku_ODC.ID);*/
-	BaseMod.addCard(new Haku_InstantBarrier());
-	UnlockTracker.unlockCard(Haku_InstantBarrier.ID);
+	//BaseMod.addCard(new Haku_InstantBarrier());
+	//UnlockTracker.unlockCard(Haku_InstantBarrier.ID);
 	//BaseMod.addCard(new Haku_Round2());
 	//UnlockTracker.unlockCard("Haku_Round2");
 	
@@ -350,7 +347,11 @@ public void receiveEditCards() {
 	UnlockTracker.unlockCard(Haku_Thin.ID);
 	BaseMod.addCard(new Haku_Xmatic());
 	UnlockTracker.unlockCard(Haku_Xmatic.ID);
-}
+
+	BaseMod.addCard(new Haku_PlasticNight());
+	UnlockTracker.unlockCard(Haku_PlasticNight.ID);
+
+	}
 
 public void receiveEditPotions() {
 	 BaseMod.addPotion(Haku_QuarterPowerPotion.class, Color.BLUE.cpy(), Color.BLUE.cpy(), null, Haku_QuarterPowerPotion.POTION_ID, HakuEnum.HAKUMEN);

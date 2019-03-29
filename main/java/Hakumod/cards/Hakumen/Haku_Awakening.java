@@ -34,21 +34,25 @@ public class Haku_Awakening extends Haku_CustomCard {
 	public static final String UPG_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Awakening.png";
+
+	private static final int BLOCK = 6;
+	private static final int UPGRADED_BLOCK = 3;
+
 	private static final int COST = 1;
-	private static final int STACK = 3;
+	//private static final int UPGRADED_COST = 1;
+	//private static final int STACK = 1;
 	
 	private static int MAGNITUDE = 1;
-	private static int UPGRADED_MAGNITUDE = 1;
 
 
 	public Haku_Awakening() {
 		super(ID, NAME, IMG_PATH, COST, RAW_DESCRIPTION, 
-				AbstractCard.CardType.POWER,
+				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.HAKUMEN_COLOR,
-				AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardRarity.COMMON,
 				AbstractCard.CardTarget.SELF);
 		// TODO Auto-generated constructor stub
-		
+		this.baseBlock = BLOCK;
 		this.magicNumber = this.baseMagicNumber = MAGNITUDE;
 	}
 
@@ -57,9 +61,10 @@ public class Haku_Awakening extends Haku_CustomCard {
 		// TODO Auto-generated method stub
 		if (!this.upgraded) {
 			upgradeName();
+			upgradeBlock(UPGRADED_BLOCK);
 			//upgradeBaseCost(UPGRADED_COST);
 			//this.isInnate = true;
-			upgradeMagicNumber(UPGRADED_MAGNITUDE);
+			//upgradeMagicNumber(UPGRADED_MAGNITUDE);
 			//this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}
@@ -67,11 +72,9 @@ public class Haku_Awakening extends Haku_CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_AwakeningPower(p, STACK), STACK));
-
-		for (int i=0;i<this.magicNumber;i++) {
-			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
-		}
+    	block(p, p, this.block);
+    	act(new ChannelAction(new Haku_VoidOrb()));
+		//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Haku_AwakeningPower(p, STACK), STACK));
 	}
 	
 	public AbstractCard makeCopy() {

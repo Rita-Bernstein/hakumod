@@ -31,7 +31,7 @@ public class Haku_Guren extends Haku_Special {
 	
 	public static final String IMG_PATH = "Hakumod/img/cards/Haku_Guren.png";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 8;
+	private static final int ATTACK_DMG = 9;
 	private static final int UPGRADE_PLUS_DMG = 2;
 	
 	public final static int MAGATAMA_COST = 1;
