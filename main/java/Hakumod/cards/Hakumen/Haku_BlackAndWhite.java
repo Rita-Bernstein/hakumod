@@ -72,7 +72,7 @@ public class Haku_BlackAndWhite extends Haku_CustomCard {
 		for (AbstractCard c : AbstractDungeon.player.hand.group) {
 			damageBoost += (isBlackAndWhite(c) * this.magicNumber);
 		}
-		return this.damage + damageBoost;
+		return this.baseDamage + damageBoost;
 	}
 	//Display damage when the card is in the hand.
 	@Override
@@ -89,7 +89,6 @@ public class Haku_BlackAndWhite extends Haku_CustomCard {
 
 	@Override
 	public void calculateDamageDisplay(AbstractMonster mo) {
-		// TODO Auto-generated method stub
 		calculateCardDamage(mo);
 	}
 
