@@ -1,7 +1,7 @@
 package Hakumod.monsters;
 
-import Hakumod.powers.Haku_DefensePower;
-import Hakumod.powers.Haku_UnlimitedDriveBossPower;
+import Hakumod.powers.enemy.UnlimitedDriveBossPower;
+import Hakumod.powers.player.DefensePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class Nu13 extends AbstractMonster{
 
-	public static final String ID = "Haku_Nu13";
+	public static final String ID = "Haku:Nu13";
 	private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     
     public static final String NAME = monsterStrings.NAME;
@@ -288,7 +288,7 @@ public class Nu13 extends AbstractMonster{
 						new ApplyPowerAction(
 								this,
 								this,
-								new Haku_UnlimitedDriveBossPower(
+								new UnlimitedDriveBossPower(
 										this,1),1));
 			 	
 				break;
@@ -357,7 +357,7 @@ public class Nu13 extends AbstractMonster{
 						new ApplyPowerAction(
 								this, 
 								this,
-								new Haku_DefensePower(this, BUFFER, true),
+								new DefensePower(this, BUFFER, true),
 								BUFFER
 								)
 						);
@@ -413,9 +413,9 @@ public class Nu13 extends AbstractMonster{
 	private void getAmountOfAttacks() {
 		// TODO Auto-generated method stub
 		this.amountOfAttacks = 1;
-		if (this.hasPower(Haku_UnlimitedDriveBossPower.POWER_ID)) 
+		if (this.hasPower(UnlimitedDriveBossPower.POWER_ID))
 		{
-			this.amountOfAttacks = 1 + this.getPower(Haku_UnlimitedDriveBossPower.POWER_ID).amount;
+			this.amountOfAttacks = 1 + this.getPower(UnlimitedDriveBossPower.POWER_ID).amount;
 		}
 	}
 

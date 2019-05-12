@@ -1,6 +1,5 @@
 package Hakumod.action;
 
-import Hakumod.powers.Haku_ScienceFictionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +13,7 @@ public class OkizemeAction extends AbstractGameAction{
 	private AbstractMonster target;
 	private String effect;
 	private int magnitude;
-	//private final int block = 6;
+
 	public OkizemeAction(AbstractPlayer p, AbstractCard c, AbstractMonster target , String effect, int magnitude)
 	{
 		this.player = p;
@@ -29,9 +28,6 @@ public class OkizemeAction extends AbstractGameAction{
 	@Override
 	public void update() 
 	{
-		if (this.player.hasPower(Haku_ScienceFictionPower.POWER_ID)) {
-			this.magnitude = this.magnitude + this.player.getPower(Haku_ScienceFictionPower.POWER_ID).amount;	
-		}
 		if ( (this.card.energyOnUse - this.card.costForTurn <= 0) ||  this.player.hand.getAttacks().size() == 0) {
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude);
 		}

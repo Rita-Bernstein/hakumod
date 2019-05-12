@@ -1,6 +1,6 @@
 [
 	{
-    		"NAMES": [
+			"NAMES": [
       			"Magatama",
       			"magatama"
     		],
@@ -10,106 +10,74 @@
 	    	"NAMES": [
 	      		"Special",
 	     	 	"special",
-			"Specials",
+				"Specials",
 	     	 	"specials"
 	    	],
 	    	"DESCRIPTION": "#ySpecials consume #yMagatama(s) to activate their effect."
-	 },
-	 {
-	    	"NAMES": [
-	      		"Gatling",
-	     	 	"gatling"
-	    	],
-	    	"DESCRIPTION": "- If you have that card in your hand, reduce its cost by #b1 this turn. NL - If you don't, add that card into your hand but lose #b2 #yStrengths until the end of the turn."
-	 },
-	 {
-	    	"NAMES": [
-	      		"Starter",
-	     	 	"starter"
-	    	],
-	    	"DESCRIPTION": "Apply the effect if your Energy is at its maximum."
-	 },
-	 {
-	    	"NAMES": [
-	      		"Ender",
-	     	 	"ender"
-	    	],
-	    	"DESCRIPTION": "Apply the effect if either: NL - You have #b0 Energy after playing that card. NL - You have #b0 #yAttacks left in your hand."
-	 },
-	 {
-	    	"NAMES": [
-	      		"Parry",
-	     	 	"parry"
-	    	],
-	    	"DESCRIPTION": "Apply the effect if the enemy intends to attack."
-	 },
-	 {
-	    	"NAMES": [
-	      		"Defense",
-	     	 	"defense"
-	    	],
-	    	"DESCRIPTION": "Creatures with #yDefense receive #b20% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied."
-	 },
-	 {
-	    	"NAMES": [
-	      		"Offense",
-	     	 	"offense"
-	    	],
-	    	"DESCRIPTION":"Creatures with #yOffense deal #b25% more damage with #yAttacks for #b1 turn. NL Remove it if #yDefense is applied."
-	 },
-	 {
-	    	"NAMES": [
-	      		"Overdrive",
-	     	 	"overdrive"
-	    	],
-	    	"DESCRIPTION":"Double the amount of #yMagatama gained for #b1 turn."
-	 },
-	 {
-		"PROPER_NAME": "Active Flow",
-	    	"NAMES": [
-	      		"Active Flow",
-	     	 	"active flow",
-			"Active_Flow",
-			"active_flow"
-	    	],
-	    	"DESCRIPTION":"Creatures with #yActive #yFlow deal 10% more damage with #yAttacks for #b1 turn. Add one #yOverdrive into your hand once you run out of #yActive #yFlow."
-	 },
-	 {
-		"PROPER_NAME": "Exceed Accel",
-	    	"NAMES": [
-	      		"Exceed Accel",
-	     	 	"exceed accel",
-			"Exceed_Accel",
-			"exceed_accel"
-	    	],
-	    	"DESCRIPTION":"#yAttack - Cost #b1 NL Deal #b10 damage. NL If #yActive #yFlow is applied, deal double damage, if not Gain #b3 #yActive #yFlow."
-	 },
-	 {
+	},
+	{
 		"NAMES": [
-	      		"Charge",
-			"charge"
-	    	],
-	    	"DESCRIPTION":"1: Reduce this card's cost by #b1. NL 2: Draw #b1 card. NL 3: Gain #b1 #yStrength. NL 4: #yUpgrade all the cards in your hand."
-	 },
-	 {
+			"Gatling",
+			"gatling"
+		],
+		"DESCRIPTION": "- If you have that card in your hand, reduce its cost by #b1 this turn. NL - If you don't, add that card into your hand but lose #b2 #yStrengths until the end of the turn."
+	},
+	{
 		"NAMES": [
-	      		"SUSANOO",
-			"susanoo"
-	    	],
-	    	"DESCRIPTION":"1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 2 #yThorns. NL 5: All enemies lose 2 #yStrengths. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???"
-	 },
-	 {
-	    	"NAMES": [
-	      		"Fuumajin",
-	     	 	"fuumajin"
-	    	],
-	    	"DESCRIPTION":"Gain #b2 #yBlock at the end of each turn. #yEvoke after #b2 turns. NL #yEvoke: Gain #b1 #ymagatama."
-	 },
-	 {
+			"Starter",
+			"starter"
+		],
+		"DESCRIPTION": "Apply the effect if your Energy is at its maximum."
+	},
+	{
 		"NAMES": [
-	      		"Timekiller",
-			"timekiller"
-	    	],
-	    	"DESCRIPTION":"At the end of this turn, lose #b1HP for every #yExhausted card."
-	 }
+			"Ender",
+			"ender"
+		],
+		"DESCRIPTION": "Apply the effect if either: NL - You have #b0 Energy after playing that card. NL - You have #b0 #yAttacks left in your hand."
+	},
+	{
+		"NAMES": [
+			"Parry",
+			"parry"
+		],
+		"DESCRIPTION": "Apply the effect if the enemy intends to attack."
+	},
+	{
+		"NAMES": [
+			"Defense",
+			"defense"
+		],
+		"DESCRIPTION": "Creatures with #yDefense receive #b20% less damage from #yAttacks for #b1 turn. NL Remove it if #yOffense is applied."
+	},
+	{
+		"NAMES": [
+			"Offense",
+			"offense"
+		],
+		"DESCRIPTION":"Creatures with #yOffense deal #b25% more damage with #yAttacks for #b1 turn. NL Remove it if #yDefense is applied."
+	},
+	{
+		"PROPER_NAME": "Command Order",
+		"NAMES": [
+			"Command Order",
+			"command_order"
+		],
+			"DESCRIPTION":"1: Reduce this card's cost by #b1. NL 2: Draw #b1 card. NL 3: Gain #b1 #yStrength. NL 4: #yUpgrade all the cards in your hand."
+	},
+	{
+		"PROPER_NAME": "White Void",
+		"NAMES": [
+			"White Void",
+			"white_void"
+		],
+			"DESCRIPTION":"1: Gain 1 #yDexterity. NL 2: Gain 2 #yPlated #yArmor. NL 3: Gain 1 #yStrength. NL 4: Gain 2 #yThorns. NL 5: All enemies lose 2 #yStrengths. NL 6: Draw 1 more card at the start of each turn. NL 7: Gain 1 additional [R] at the start of each turn. NL 8: #y???"
+	},
+	{
+		"NAMES": [
+			"Fuumajin",
+			"fuumajin"
+		],
+		"DESCRIPTION":"Gain #b2 #yBlock at the end of each turn. #yEvoke after #b2 turns. NL #yEvoke: Gain #b1 #ymagatama."
+	}
 ]

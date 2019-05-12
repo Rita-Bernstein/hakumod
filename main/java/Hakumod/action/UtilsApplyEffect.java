@@ -1,8 +1,11 @@
 package Hakumod.action;
 
-import Hakumod.orbs.Haku_VoidOrb;
+import Hakumod.orbs.VoidOrb;
 import Hakumod.patches.CustomTags;
-import Hakumod.powers.*;
+import Hakumod.powers.player.DefensePower;
+import Hakumod.powers.player.MagatamaPower;
+import Hakumod.powers.player.OffensePower;
+import Hakumod.powers.player.OverdrivePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
@@ -34,7 +37,6 @@ public class UtilsApplyEffect {
 	public static final String DRAW = "draw";
 	public static final String NEXT_TURN_DRAW = "next_draw";
 	public static final String OFFENSE = "offense";
-	public static final String NEUTRAL = "neutral";
 	public static final String DEFENSE = "defense";
 	public static final String OD = "od";
 	public static final String CURE_ALL = "cure_all";
@@ -100,37 +102,29 @@ public class UtilsApplyEffect {
 				break;
 
 			case NEXT_TURN_BLOCK:
-				//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
 						new NextTurnBlockPower(this.player, this.magnitude), this.magnitude));
 				break;
 
 			case DRAW:
-				//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
 				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.player, this.magnitude));
 				break;
 			case NEXT_TURN_DRAW:
-				//AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.player, this.player, this.magnitude));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
 					new DrawCardNextTurnPower(this.player, this.magnitude), this.magnitude));
 				break;
 			case OFFENSE:
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-						new Haku_OffensePower(this.player, this.magnitude, false), this.magnitude));
-				break;
-
-			case NEUTRAL:
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-						new Haku_NeutralPower(this.player, this.magnitude, false), this.magnitude));
+						new OffensePower(this.player, this.magnitude, false), this.magnitude));
 				break;
 
 			case DEFENSE:
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.player, this.player,
-						new Haku_DefensePower(this.player, this.magnitude, false), this.magnitude));
+						new DefensePower(this.player, this.magnitude, false), this.magnitude));
 				break;
 			case OD:
 				AbstractDungeon.actionManager.addToBottom(
-						new ApplyPowerAction(this.player, this.player, new Haku_OverdrivePower(this.player, this.magnitude), this.magnitude));
+						new ApplyPowerAction(this.player, this.player, new OverdrivePower(this.player, this.magnitude), this.magnitude));
 				break;
 
 			case CURE_ALL:
@@ -160,7 +154,7 @@ public class UtilsApplyEffect {
 
 			case MAGATAMA:
 				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-						new Haku_MagatamaPower(AbstractDungeon.player, this.magnitude), this.magnitude));
+						new MagatamaPower(AbstractDungeon.player, this.magnitude), this.magnitude));
 				break;
 
 			case ENERGY:
@@ -207,7 +201,7 @@ public class UtilsApplyEffect {
 						new VulnerablePower(this.target, this.magnitude, false), this.magnitude));
 				break;
 			case FUUMAJIN:
-				AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Haku_VoidOrb()));
+				AbstractDungeon.actionManager.addToBottom(new ChannelAction(new VoidOrb()));
 				break;
 			default:
 				break;

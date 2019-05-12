@@ -1,0 +1,20 @@
+{
+  "Haku:AvailableCards": {
+    "TEXT": [
+      "Guren / Sweep (recommended)",
+      "Blitz Attack / Clash Assault",
+      "Smart Steer / Renka",
+      "Divide / Zantetsu",
+      "Kishuu / Enma",
+      "Alpha Counter / Reject Guard",
+      "Claw Grip / Claw Grip",
+      "Exceed Accel / Active Flow",
+      "Command Order / Fatal Counter",
+      "Void / Crystal Wall"
+    ]
+  },
+  "Haku:EnableBosses": {
+    "TEXT": ["Enable custom bosses. (1 boss in progress, need to restart the game to take effect.) "
+    ]
+  }
+}

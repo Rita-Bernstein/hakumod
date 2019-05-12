@@ -6,8 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 public class FatalJudgeAction extends AbstractGameAction{
-	
-	AbstractCard card;
+
 	AbstractPlayer player;
 	int cost;
 	
@@ -27,7 +26,6 @@ public class FatalJudgeAction extends AbstractGameAction{
 		for (AbstractCard cardInHand: this.player.hand.group) {
 			if (cardInHand.hasTag(CustomTags.COMBO) || cardInHand.hasTag(CustomTags.ENDER) || cardInHand.hasTag(CustomTags.STARTER)) {
 				cardInHand.setCostForTurn(0);
-				//AbstractDungeon.actionManager.addToBottom(new FatalJudgeAction(p, cardInHand, 0));	
 			}
 		}
 		this.isDone = true;

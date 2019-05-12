@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ComboAction extends AbstractGameAction{
 	
-	private int STRENGTH_DEBUFF = -2;
+	private static final int STRENGTH_DEBUFF = -2;
 	private AbstractPlayer p;
 	private AbstractCard c;
 	
@@ -31,7 +31,7 @@ public class ComboAction extends AbstractGameAction{
 		boolean boolHasInHand = false;
 		
 		for (AbstractCard cardInHand:p.hand.group) {
-			if (cardInHand.cardID == this.c.cardID){
+			if (cardInHand.cardID.equals(this.c.cardID)){
 				cardInHand.setCostForTurn(0);
 				if (this.p.cardInUse!=null) {if (this.p.cardInUse.upgraded && !cardInHand.upgraded) {cardInHand.upgrade();}}
 				boolHasInHand = true;

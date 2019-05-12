@@ -1,77 +1,49 @@
 {
-  "Haku_MagatamaPower": {
+  "Haku:MagatamaPower": {
     "NAME": "Magatama",
     "DESCRIPTIONS": ["Magatama: #b", " (max: 8). Magatamas are consumed by #ySpecials."]
   },
-  "Haku_WhiteVoidPower": {
+  "Haku:WhiteVoidPower": {
     "NAME": "White Void",
     "DESCRIPTIONS": ["Counter: #b", " Next bonus: "]
   }, 
-  "Haku_DefensePower": {
+  "Haku:DefensePower": {
     "NAME": "Defense",
     "DESCRIPTIONS": ["Receive #b20% less damage from #yAttacks for ", " turns. This buff is removed when #yOffense is applied." ]
   },
-  "Haku_OffensePower": {
+  "Haku:OffensePower": {
     "NAME": "Offense",
     "DESCRIPTIONS": ["Deal #b25% more damage with #yAttacks for ", " turns. This buff is removed when #yDefense is applied."]
   },
-  "Haku_NeutralPower": {
-    "NAME": "Neutral",
-    "DESCRIPTIONS": ["Increase block gained by 25% for ", " turns."]
-  },
-  "Haku_ActiveFlowPower": {
-    "NAME": "Active Flow",
-    "DESCRIPTIONS": ["Deal #b10% more damage with #yAttacks for ", " turns. Once #yActive #yflow ends, add one Overdrive to your hand."]
-  },
-  "Haku_OverdrivePower": {
+  "Haku:OverdrivePower": {
     "NAME": "Overdrive",
     "DESCRIPTIONS": ["Double the amount of #ymagatama gained for #b", " turn(s)."]
   },
-  "Haku_MugenPower": {
+  "Haku:MugenPower": {
     "NAME": "Mugen",
-    "DESCRIPTIONS": ["#ySpecials cost #b0 #yenergy and #b0 #yMagatama this turn."]
+    "DESCRIPTIONS": ["#ySpecials cost #b0 #yenergy and #b0 #yMagatama for #b", " turn(s)."]
   },
-  "Haku_PassiveMeterPower": {
+  "Haku:PassiveMeterPower": {
     "NAME": "Passive Meter",
     "DESCRIPTIONS": ["At the start of each turn, gain #b", " #yMagatama(s)"]
   },
-  "Haku_AwakeningPower": {
-    "NAME": "Awakening The Chaos",
-    "DESCRIPTIONS": ["#yEvery 2 turns, gain #b", " #yFuumajin."]
-  },
-  "Haku_ScienceFictionPower": {
-    "NAME": "Science Fiction",
-    "DESCRIPTIONS": ["#yEnder always activate. Increase the effects from #yEnder by #b", "."]
-  },
-  "Haku_YomotsuhirasakaPower": {
+  "Haku:YomotsuhirasakaPower": {
     "NAME": "Yomotsuhirasaka",
     "DESCRIPTIONS": ["Everytime you channel a #yFuumajin, Deal #b", " damage to ALL enemies"]
   },
-  "Haku_EmptySkyPower": {
+  "Haku:EmptySkyPower": {
     "NAME": "Empty Sky",
     "DESCRIPTIONS": ["Everytime you play a #yStarter, #yGatling, #ySpecial or #yEnder, draw #b", " card(s)."]
   },
-  "Haku_TheTyrantPower":{
-  "NAME": "The Tyrant",
-  "DESCRIPTIONS": ["Everytime you play a #yGatling, inflict #b", " #yVulnerable. Everytime you play a #yEnder, inflict #b", " Weak."]
+  "Haku:TheTyrantPower":{
+    "NAME": "The Tyrant",
+    "DESCRIPTIONS": ["Everytime you play a #yGatling, inflict #b", " #yVulnerable. Everytime you play a #yEnder, inflict #b", " Weak."]
   },
-  "Haku_CutPower": {
-    "NAME": "Cut",
-    "DESCRIPTIONS": ["Every time you play one 4C, channel 1 #yFuumajin."]
-  },
-  "Haku_GatePower": {
+  "Haku:TheGatePower": {
     "NAME": "Gate",
     "DESCRIPTIONS": ["Parry always activate.  Damage from #yParry are multiplied by #b", "."]
   },
-  "Haku_SwordOfDoomPower": {
-    "NAME": "Sword of Doom",
-    "DESCRIPTIONS": ["At the start of your turn add #b", " #yParry into your hand and give it #yExhaust and #yEthereal."]
-  },
-  "Haku_TimekillerPower": {
-    "NAME": "Time Killer",
-    "DESCRIPTIONS": [" At the end of the turn, lose #b1HP for every #yExhausted card."]
-  },
-  "Haku_UnlimitedDriveBossPower": {
+  "Haku:UnlimitedDriveBossPower": {
     "NAME": "Unlimited Drive",
     "DESCRIPTIONS": ["All #yAttacks hit #b", " additional time."]
   }

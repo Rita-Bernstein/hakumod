@@ -2,7 +2,6 @@ package Hakumod.action;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
@@ -33,9 +32,7 @@ public class GiveCardExhaustAction extends AbstractGameAction{
     {
         for (AbstractCard cardInHand: this.cardList) {
             if (cardInHand.cardID == c.cardID){
-                //cardInHand.exhaust = exhaust;
                 cardInHand.exhaustOnUseOnce = exhaust;
-                //cardInHand.exhaustOnFire = exhaust;
                 cardInHand.isEthereal = ethereal;
                 if (!this.allCopy){break;}
             }

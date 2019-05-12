@@ -1,11 +1,11 @@
 package Hakumod.characters;
 
-import Hakumod.Config;
-import Hakumod.cards.Hakumen.Haku_4C;
-import Hakumod.cards.Hakumen.Haku_Blocking;
+import Hakumod.cards.Hakumen.normal.Blocking;
+import Hakumod.cards.Hakumen.normal.Strike;
 import Hakumod.patches.AbstractCardEnum;
 import Hakumod.patches.HakuEnum;
-import Hakumod.relics.Haku_Susanoo;
+import Hakumod.relics.Susanoo;
+import Hakumod.utils.Config;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -27,14 +28,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
 
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
-
 public class Hakumen extends CustomPlayer {
-	
-	public static final String TITLE = "The White Void";
-	public static final String FLAVOR = "One of the \"Six Heroes\" who defeated the Black Beast. NL What could his goal possibly be?";
-	
+
+	private static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString("Hakumen");
+	public static final String TITLE = charStrings.NAMES[0];
+	public static final String FLAVOR = charStrings.TEXT[0];
+
     public static final int STARTING_HP = 76;
     public static final int MAX_HP = 76;
     public static final int MAX_HP_LOSS = 4;
@@ -92,20 +91,14 @@ public class Hakumen extends CustomPlayer {
 		
 		
 		loadAnimation(HAKUMEN_SKELETON_ATLAS, HAKUMEN_SKELETON_JSON, 1.0F); 
-		// if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
 		AnimationState.TrackEntry e = this.state.setAnimation(0, HAKUMEN_ANIMATION, true);
 		e.setTime(e.getEndTime() * MathUtils.random());
 	    e.setTimeScale(0.9F);
 	}
-	
-	/* (non-Javadoc)
-	 * @see com.megacrit.cardcrawl.characters.AbstractPlayer#increaseMaxOrbSlots(int, boolean)
-	 */
-	
+
 	//Originally start with a max of 0 orb, then changed to 2 permanently once 1 is channeled.
 	@Override
 	public void increaseMaxOrbSlots(int arg0, boolean arg1) {
-		// TODO Auto-generated method stub
 		int increaseBy = arg0;
 		if (arg0 == 1 && this.maxOrbs==0 && arg1) {increaseBy = MAX_ORBS_COMBAT; this.masterMaxOrbs = MAX_ORBS_COMBAT;}
 		super.increaseMaxOrbSlots(increaseBy, arg1);
@@ -113,14 +106,14 @@ public class Hakumen extends CustomPlayer {
 
 	public ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add(Haku_4C.ID);
-		retVal.add(Haku_4C.ID);
-		retVal.add(Haku_4C.ID);
-		retVal.add(Haku_4C.ID);
-		retVal.add(Haku_Blocking.ID);
-		retVal.add(Haku_Blocking.ID);
-		retVal.add(Haku_Blocking.ID);
-		retVal.add(Haku_Blocking.ID);
+		retVal.add(Strike.ID);
+		retVal.add(Strike.ID);
+		retVal.add(Strike.ID);
+		retVal.add(Strike.ID);
+		retVal.add(Blocking.ID);
+		retVal.add(Blocking.ID);
+		retVal.add(Blocking.ID);
+		retVal.add(Blocking.ID);
 		
 		retVal.add(Config.LIST_STARTING_CARDS[this.startingCards][0]);
 		retVal.add(Config.LIST_STARTING_CARDS[this.startingCards][1]);
@@ -130,8 +123,8 @@ public class Hakumen extends CustomPlayer {
 	
 	public ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add(Haku_Susanoo.RELIC_ID);
-		UnlockTracker.markRelicAsSeen(Haku_Susanoo.RELIC_ID);
+		retVal.add(Susanoo.RELIC_ID);
+		UnlockTracker.markRelicAsSeen(Susanoo.RELIC_ID);
 		return retVal;
 	}
 	
@@ -142,59 +135,48 @@ public class Hakumen extends CustomPlayer {
 
 	@Override
 	public void doCharSelectScreenSelectEffect() {
-		// TODO Auto-generated method stub
 		CardCrawlGame.sound.playA("ATTACK_HEAVY", MathUtils.random(-0.2f, 0.2f));
-		//CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
-		
 	}
 
 	@Override
 	public int getAscensionMaxHPLoss() {
-		// TODO Auto-generated method stub
 		return MAX_HP_LOSS;
 	}
 
 
 	@Override
 	public Color getCardTrailColor() {
-		// TODO Auto-generated method stub
 		return Color.BLACK.cpy();
 	}
 
 	@Override
 	public String getCustomModeCharacterButtonSoundKey() {
-		// TODO Auto-generated method stub
 		return "ATTACK_MAGIC_BEAM_SHORT";
 	}
 
 	@Override
 	public BitmapFont getEnergyNumFont() {
-		// TODO Auto-generated method stub
 		 return FontHelper.energyNumFontBlue;
 	}
 
 	@Override
 	public String getLocalizedCharacterName() {
-		// TODO Auto-generated method stub
-		return "Hakumen";
+		return TITLE;
 	}
 
 	@Override
 	public AbstractCard getStartCardForEvent() {
-		// TODO Auto-generated method stub
 		AbstractCard startCard = Config.CARDS_COPY[this.startingCards];
 		return startCard;
 	}
 
 	@Override
 	public String getTitle(PlayerClass arg0) {
-		// TODO Auto-generated method stub
-		return "The White Void";
+		return TITLE;
 	}
 
 	@Override
 	public AbstractPlayer newInstance() {
-		// TODO Auto-generated method stub
 		int startingCards = 1;
 		
 		try {
@@ -211,41 +193,32 @@ public class Hakumen extends CustomPlayer {
 
 	@Override
 	public CardColor getCardColor() {
-		// TODO Auto-generated method stub
 		return AbstractCardEnum.HAKUMEN_COLOR;
 	}
 
 	@Override
 	public Color getCardRenderColor() {
-		// TODO Auto-generated method stub
 		return Color.SKY.cpy();
 	}
 
 	@Override
 	public Color getSlashAttackColor() {
-		// TODO Auto-generated method stub
 		return Color.CLEAR.cpy();
 	}
 
 	@Override
 	public AttackEffect[] getSpireHeartSlashEffect() {
-		// TODO Auto-generated method stub
-		AttackEffect[] effect = {AttackEffect.BLUNT_HEAVY, AttackEffect.SMASH}; 
+		AttackEffect[] effect = {AttackEffect.BLUNT_HEAVY, AttackEffect.SMASH};
 		return effect;
 	}
 
 	@Override
 	public String getSpireHeartText() {
-		// TODO Auto-generated method stub
-		return "You ready your blade.";
+		return charStrings.TEXT[1];
 	}
 
 	@Override
 	public String getVampireText() {
-		// TODO Auto-generated method stub
-		return "A group of Rachel players approach you, they want to boast about being S tier and having access to an easy IOH. You can either join them to get a minor buff in the next patch or remind them that they no longer have access to pumpkin to make them go away.";
+		return charStrings.TEXT[2];
 	}
-	
-
-	
 }

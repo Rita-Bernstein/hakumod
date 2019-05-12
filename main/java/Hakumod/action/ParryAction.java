@@ -1,15 +1,10 @@
 package Hakumod.action;
 
-import Hakumod.cards.Hakumen.Haku_Awakening;
-import Hakumod.powers.Haku_AwakeningPower;
-import Hakumod.powers.Haku_GatePower;
+import Hakumod.powers.player.TheGatePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.Arrays;
 
 public class ParryAction extends AbstractGameAction{
 	
@@ -24,7 +19,6 @@ public class ParryAction extends AbstractGameAction{
 		this.player = p;
 		this.card = c;
 		this.target = target;
-		this.target = target;
 		this.effect = effect;
 		this.magnitude = magnitude;
 		this.duration = com.megacrit.cardcrawl.core.Settings.ACTION_DUR_XFAST;
@@ -34,14 +28,13 @@ public class ParryAction extends AbstractGameAction{
 	@Override
 	public void update() 
 	{
-		if (new canUseParry().canUse(this.target)){
+		if (canUseParry.canUse(this.target)){
 			int bonus = 0;
-			if (player.hasPower(Haku_GatePower.POWER_ID) && (this.effect == UtilsApplyEffect.ATTACK || this.effect == UtilsApplyEffect.ATTACK_ALL) ) {
-				bonus = (player.getPower(Haku_GatePower.POWER_ID).amount)*this.magnitude;
+			if (player.hasPower(TheGatePower.POWER_ID) && (this.effect.equals(UtilsApplyEffect.ATTACK) || this.effect.equals(UtilsApplyEffect.ATTACK_ALL)) ) {
+				bonus = (player.getPower(TheGatePower.POWER_ID).amount)*this.magnitude;
 			}
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude+bonus);
 		}
-		
 	this.isDone = true;
 	}
 }

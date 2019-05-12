@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-
 public class StarterAction extends AbstractGameAction{
 	
 	private AbstractPlayer player;
@@ -14,7 +13,6 @@ public class StarterAction extends AbstractGameAction{
 	private AbstractMonster target;
 	private String effect;
 	private int magnitude;
-	public boolean hasPlayedAnAttackThisTurn;
 	
 	public StarterAction(AbstractPlayer p, AbstractCard c, AbstractMonster target , String effect, int magnitude)
 	{
@@ -33,6 +31,6 @@ public class StarterAction extends AbstractGameAction{
 		if (this.card.energyOnUse >= AbstractDungeon.player.energy.energyMaster) {
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude);
 		}
-	this.isDone = true;
+		this.isDone = true;
 	}
 }

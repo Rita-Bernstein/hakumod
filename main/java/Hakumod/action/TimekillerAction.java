@@ -4,11 +4,8 @@ import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import java.util.ArrayList;
 
 
 public class TimekillerAction extends AbstractGameAction{
@@ -20,7 +17,7 @@ public class TimekillerAction extends AbstractGameAction{
         this.cardAmount = cardAmount;
     }
 
-    public void addCardToHand(AbstractCard c){
+    private void addCardToHand(AbstractCard c){
         c.unhover();
 
         if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE){
@@ -53,17 +50,12 @@ public class TimekillerAction extends AbstractGameAction{
                 }
             }
 
-            /*if (choiceOfCards.size() <= this.cardAmount){
-                for (AbstractCard card : choiceOfCards.group){
-                    this.addCardToHand(card);
-                }
-                this.isDone = true;
-                tickDuration();
-                return;
-            }*/
-
-            if (choiceOfCards.size() > 0) {
+            if (choiceOfCards.size() > 1) {
                 AbstractDungeon.gridSelectScreen.open(choiceOfCards, this.cardAmount, "Choose 1 Attack", false);
+            }
+
+            else if (choiceOfCards.size() == 1){
+                this.addCardToHand(choiceOfCards.group.get(0));
             }
 
             tickDuration();

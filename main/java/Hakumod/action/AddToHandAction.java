@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-
 public class AddToHandAction extends AbstractGameAction{
 	private AbstractPlayer player;
 	private CardGroup cardGroup;
@@ -30,6 +29,7 @@ public class AddToHandAction extends AbstractGameAction{
 		this.toUpgrade = toUpgrade;
 		this.toChangeCost = toChangeCost;
 		this.cost = costForCombat;
+		this.toExhaust = toExhaust;
 	}
 	
 	

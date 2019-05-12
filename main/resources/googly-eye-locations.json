@@ -1,6 +1,6 @@
 {
   "cards": {
-    "Haku_3C": [
+    "Haku:Sweep": [
       {
         "x": 347.50003,
         "y": 300.0,
@@ -12,7 +12,7 @@
         "size": 6.708204
       }
     ],
-    "Haku_Xmatic": [
+    "Haku:Xmatic": [
       {
         "x": 470.50003,
         "y": 202.5,
@@ -29,7 +29,7 @@
         "size": 9.486833
       }
     ],
-   "Haku_2A": [
+   "Haku:ClawGrip": [
       {
         "x": 356.50003,
         "y": 213.0,
@@ -41,7 +41,7 @@
         "size": 6.1846585
       }
     ],
-    "Haku_6A": [
+    "Haku:BlitzAttack": [
       {
         "x": 374.50003,
         "y": 292.5,
@@ -53,7 +53,7 @@
         "size": 7.648529
       }
     ],
-    "Haku_6C": [
+    "Haku:CommandOrder": [
       {
         "x": 334.00003,
         "y": 100.5,
@@ -65,7 +65,7 @@
         "size": 10.816654
       }
     ],
-    "Haku_ActiveFlow": [
+    "Haku:ActiveFlow": [
       {
         "x": 215.50003,
         "y": 184.5,
@@ -77,7 +77,7 @@
         "size": 62.15505
       }
     ],
-    "Haku_Airgrab": [
+    "Haku:AirGrab": [
       {
         "x": 349.00003,
         "y": 300.0,
@@ -94,35 +94,35 @@
         "size": 9.486833
       }
     ],
-    "Haku_Awakening": [
+    "Haku:AwakeningTheChaos": [
       {
         "x": 289.00003,
         "y": 258.0,
         "size": 25.0
       }
     ],
-    "Haku_CA": [
+    "Haku:CounterAssault": [
       {
         "x": 371.50003,
         "y": 294.0,
         "size": 7.648529
       }
     ],
-    "Haku_ChildishMemories": [
+    "Haku:ChildishMemories": [
       {
         "x": 179.50003,
         "y": 228.0,
         "size": 7.5
       }
     ],
-    "Haku_EA": [
+    "Haku:ExceedAccel": [
       {
         "x": 356.50003,
         "y": 285.0,
         "size": 5.408327
       }
     ],
-    "Haku_EmptySky": [
+    "Haku:EmptySky": [
       {
         "x": 68.50003,
         "y": 214.5,
@@ -134,14 +134,14 @@
         "size": 8.746428
       }
     ],
-    "Haku_FatalJudge": [
+    "Haku:FatalJudge": [
       {
         "x": 43.00003,
         "y": 256.5,
         "size": 7.5
       }
     ],
-    "Haku_Fuzzy": [
+    "Haku:FuzzyJump": [
       {
         "x": 319.00003,
         "y": 72.0,
@@ -153,7 +153,7 @@
         "size": 7.5
       }
     ],
-    "Haku_Grab": [
+    "Haku:Grab": [
       {
         "x": 352.00003,
         "y": 243.0,
@@ -165,7 +165,7 @@
         "size": 7.5
       }
     ],
-    "Haku_InJustice": [
+    "Haku:InJustice": [
       {
         "x": 427.00003,
         "y": 310.5,
@@ -177,14 +177,14 @@
         "size": 11.423659
       }
     ],
-    "Haku_J2C": [
+    "Haku:HeavySlash": [
       {
         "x": 341.50003,
         "y": 190.5,
         "size": 1.0
       }
     ],
-    "Haku_JA": [
+    "Haku:LightPunch": [
       {
         "x": 313.00003,
         "y": 217.5,
@@ -196,8 +196,8 @@
         "size": 9.604687
       }
     ],
-    "Haku_Kishuu": [],
-    "Haku_QueenOfRose": [
+    "Haku:Kishuu": [],
+    "Haku:QueenOfRose": [
       {
         "x": 388.00003,
         "y": 249.0,
@@ -209,7 +209,7 @@
         "size": 12.816006
       }
     ],
-    "Haku_Renka": [
+    "Haku:Renka": [
       {
         "x": 407.50003,
         "y": 225.0,
@@ -226,7 +226,7 @@
         "size": 7.5
       }
     ],
-    "Haku_ScienceFiction": [
+    "Haku:ScienceFiction": [
       {
         "x": 304.00003,
         "y": 250.5,
@@ -238,7 +238,7 @@
         "size": 9.604687
       }
     ],
-    "Haku_SixHeroes": [
+    "Haku:SixHeroes": [
       {
         "x": 196.00003,
         "y": 268.5,
@@ -255,7 +255,7 @@
         "size": 10.062305
       }
     ],
-    "Haku_Thin": [
+    "Haku:ThinRedLine": [
       {
         "x": 133.00003,
         "y": 309.0,
@@ -267,7 +267,7 @@
         "size": 11.715375
       }
     ],
-    "Haku_Void": [
+    "Haku:Void": [
       {
         "x": 323.50003,
         "y": 190.5,
