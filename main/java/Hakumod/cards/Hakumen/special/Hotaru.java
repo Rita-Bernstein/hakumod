@@ -26,7 +26,7 @@ public class Hotaru extends SpecialCard {
 	private static final int BLOCK = 6;
 	private static final int UPGRADE_PLUS_BLOCK = 2;
 	private static final int BUFF = 1;
-	private static final int UPGRADE_BUFF = 1;
+	//private static final int UPGRADE_BUFF = 1;
 	private static final int MAGATAMA_COST = 2;
 	
 	public Hotaru() {
@@ -47,7 +47,7 @@ public class Hotaru extends SpecialCard {
 			upgradeName();
 			upgradeBlock(UPGRADE_PLUS_BLOCK);
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			upgradeMagicNumber(UPGRADE_BUFF);
+			//upgradeMagicNumber(UPGRADE_BUFF);
 		}
 	}
 

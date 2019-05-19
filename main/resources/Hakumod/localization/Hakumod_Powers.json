@@ -41,7 +41,7 @@
   },
   "Haku:TheGatePower": {
     "NAME": "Gate",
-    "DESCRIPTIONS": ["Parry always activate.  Damage from #yParry are multiplied by #b", "."]
+    "DESCRIPTIONS": ["Parry always activate. #yParry deal #b", " additionnal damage."]
   },
   "Haku:UnlimitedDriveBossPower": {
     "NAME": "Unlimited Drive",

@@ -31,7 +31,7 @@ public class ParryAction extends AbstractGameAction{
 		if (canUseParry.canUse(this.target)){
 			int bonus = 0;
 			if (player.hasPower(TheGatePower.POWER_ID) && (this.effect.equals(UtilsApplyEffect.ATTACK) || this.effect.equals(UtilsApplyEffect.ATTACK_ALL)) ) {
-				bonus = (player.getPower(TheGatePower.POWER_ID).amount)*this.magnitude;
+				bonus = (player.getPower(TheGatePower.POWER_ID).amount);
 			}
 			new UtilsApplyEffect(this.player, this.card, this.target, this.effect, this.magnitude+bonus);
 		}

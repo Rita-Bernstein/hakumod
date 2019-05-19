@@ -23,7 +23,7 @@ public class NegativeEdge extends HakuCustomCard {
 
 	private static final int COST = 2;
 	private static final int ATTACK_DMG = 7;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	//private static final int UPGRADE_PLUS_DMG = 2;
 
 	public NegativeEdge() {
 		super(ID, NAME, COST, RAW_DESCRIPTION,
@@ -39,7 +39,7 @@ public class NegativeEdge extends HakuCustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADE_PLUS_DMG);
+			//upgradeDamage(UPGRADE_PLUS_DMG);
 			this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}

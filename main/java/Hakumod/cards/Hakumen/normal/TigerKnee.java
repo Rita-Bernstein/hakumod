@@ -23,7 +23,7 @@ public class TigerKnee extends HakuCustomCard {
 	
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 5;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	//private static final int UPGRADE_PLUS_DMG = 2;
 
 	public TigerKnee() {
 		super(ID, NAME, COST, RAW_DESCRIPTION,
@@ -39,7 +39,7 @@ public class TigerKnee extends HakuCustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADE_PLUS_DMG);
+			//upgradeDamage(UPGRADE_PLUS_DMG);
 			this.rawDescription = UPG_DESCRIPTION;
 			initializeDescription();
 		}

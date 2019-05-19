@@ -24,9 +24,8 @@ public class CrusadeSeraphim extends HakuCustomCard {
 	private static final int ATTACK_DMG = 8;
 	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int BUFF = 1;
-	private static final int UPGRADE_BUFF = 1;
-	    
-	
+	//private static final int UPGRADE_BUFF = 1;
+
 	public CrusadeSeraphim() {
 		super(ID, NAME, COST, RAW_DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
@@ -44,7 +43,7 @@ public class CrusadeSeraphim extends HakuCustomCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			upgradeMagicNumber(UPGRADE_BUFF);
+			//upgradeMagicNumber(UPGRADE_BUFF);
 		}
 	}
 

@@ -22,7 +22,7 @@ public class Renka extends SpecialCard {
 
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int UPGRADE_PLUS_DMG = 1;
 	public final static int MAGATAMA_COST = 2;
 	private static final int CARD_TO_DRAW = 1;
 	private static final int UPG_CARD_TO_DRAW = 1;

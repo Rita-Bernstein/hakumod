@@ -22,7 +22,7 @@ public class CrushTrigger extends SpecialCard {
 
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 10;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int BUFF = 1;
 	private static int MAGATAMA_COST = 2;
 	

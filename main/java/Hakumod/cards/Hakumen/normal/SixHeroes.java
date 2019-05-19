@@ -10,10 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.*;
 
 public class SixHeroes extends HakuCustomCard {
 
@@ -27,8 +24,8 @@ public class SixHeroes extends HakuCustomCard {
 	private static final int DRAW = 1;
 	private static final int ENERGY = 1;
 	private static final int STRENGTH = 1;
-	private static final int DEXTERITY = 1;
-	private static final int THORNS = 2;
+	private static final int PLATED_ARMOR = 2;
+	private static final int THORNS = 1;
 	private static final int ARTIFACT = 1;
 	private static final int BLOCK = 6;
 	private static final int UPG_BLOCK = 3;
@@ -63,7 +60,7 @@ public class SixHeroes extends HakuCustomCard {
     	power(p, p,
 				new StrengthPower(p, this.magicNumber), this.magicNumber);
     	power(p, p,
-				new DexterityPower(p, DEXTERITY), DEXTERITY);
+				new PlatedArmorPower(p, PLATED_ARMOR), PLATED_ARMOR);
     	power(p, p,
 				new ThornsPower(AbstractDungeon.player, THORNS), THORNS);
 		power(p, p,

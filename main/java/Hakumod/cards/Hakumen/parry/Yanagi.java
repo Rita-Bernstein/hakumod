@@ -27,7 +27,7 @@ public class Yanagi extends SpecialCard {
 	private static final int BLOCK = 5;
 	private static final int UPGRADE_PLUS_BLOCK = 2;
 	private static final int BUFF = 1;
-	private static final int UPGRADE_BUFF = 1;
+	//private static final int UPGRADE_BUFF = 1;
 	public final static int MAGATAMA_COST = 2;
 	
 	public Yanagi() {
@@ -61,7 +61,7 @@ public class Yanagi extends SpecialCard {
 			upgradeName();
 			upgradeBlock(UPGRADE_PLUS_BLOCK);
 			upgradeDamage(UPGRADE_PLUS_DMG);
-			upgradeMagicNumber(UPGRADE_BUFF);
+			//upgradeMagicNumber(UPGRADE_BUFF);
 			initializeDescription();
 		}
 	}

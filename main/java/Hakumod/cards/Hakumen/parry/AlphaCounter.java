@@ -18,9 +18,9 @@ public class AlphaCounter extends ParryCard {
 
 	private static final int COST = 1;
 	private static final int BLOCK = 5;
-	private static final int UPGRADE_PLUS_BLOCK = 2;
+	private static final int UPGRADE_PLUS_BLOCK = 1;
 	private static final int ATTACK_DMG = 5;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int UPGRADE_PLUS_DMG = 1;
 	
 	public AlphaCounter() {
 		super(ID, NAME, COST, RAW_DESCRIPTION, AbstractCard.CardType.SKILL,

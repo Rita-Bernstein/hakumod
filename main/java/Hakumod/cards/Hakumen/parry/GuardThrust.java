@@ -20,7 +20,7 @@ public class GuardThrust extends ParryCard {
 	private static final int BLOCK = 4;
 	private static final int UPGRADE_PLUS_BLOCK = 2;
 	private static final int ATTACK_DMG = 6;
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int UPGRADE_PLUS_DMG = 1;
 	private static final int BUFF = 1;
 	
 	public GuardThrust() {

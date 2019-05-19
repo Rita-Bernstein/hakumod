@@ -19,7 +19,7 @@ public class TheGate extends HakuCustomCard {
 
 	private static final int COST = 2;
 	private static final int UPGRADED_COST = 1;
-	private static final int MAGNITUDE = 1;;
+	private static final int MAGNITUDE = 2;
     
 	public TheGate() {
 		super(ID, NAME, COST, RAW_DESCRIPTION,

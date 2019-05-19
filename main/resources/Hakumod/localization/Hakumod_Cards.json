@@ -296,8 +296,8 @@
 	},
 	"Haku:SixHeroes":{
 		"NAME": "SIX-HEROES",
-		"DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 1 Dexterity NL Gain 2 Thorns NL Gain !M! Magatama.",
-		"UPGRADE_DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 1 Dexterity NL Gain 2 Thorns NL Gain !M! Magatama."
+		"DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 2 Plated Armor NL Gain 1 Thorns NL Gain !M! Magatama.",
+		"UPGRADE_DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 2 Plated Armor NL Gain 1 Thorns NL Gain !M! Magatama."
 	},
 	"Haku:StandUnrivaled":{
 		"NAME": "Stand Unrivaled",
@@ -324,13 +324,13 @@
 	},
 	"Haku:Xmatic":{
 		"NAME": "X-matic",
-		"DESCRIPTION": "Gain X Dexterity. NL Gain X Magatama.",
-		"UPGRADE_DESCRIPTION": "Gain X+1 Dexterity. NL Gain X+1 Magatama."
+		"DESCRIPTION": "Gain X Strength. NL Gain X Magatama.",
+		"UPGRADE_DESCRIPTION": "Gain X+1 Strength. NL Gain X+1 Magatama."
 	},
 	"Haku:TheGate":{
 		"NAME": "The Gate",
-		"DESCRIPTION": "Parry always activate. NL Parry cards deal double damage.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Parry always activate. NL Parry cards deals double damage."
+		"DESCRIPTION": "Parry always activate. NL Parry cards deal !M! additional damage.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Parry always activate. NL Parry cards deal !M! additional damage."
 	},
 	"Haku:InJustice":{
 		"NAME": "IN Justice",

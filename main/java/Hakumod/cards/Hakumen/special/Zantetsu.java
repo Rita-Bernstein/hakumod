@@ -22,7 +22,7 @@ public class Zantetsu extends SpecialCard {
 
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 18;
-	private static final int UPGRADE_PLUS_DMG = 5;
+	private static final int UPGRADE_PLUS_DMG = 4;
 	public final static int MAGATAMA_COST = 3;
 	private static final int ENERGY_BONUS = 1;
 

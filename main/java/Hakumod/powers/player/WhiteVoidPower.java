@@ -18,7 +18,7 @@ public class WhiteVoidPower extends AbstractHakuPower {
 	private boolean playedThisTurn = false;
 	private String[] arrayBonus =
 		{ 	
-				"Gain 1 Dexterity.",
+				"Gain 1 Magatama.",
 				"Gain 2 Plated Armor.", 
 				"Gain 1 Strength.",
 				"Gain 2 Thorns.",
@@ -28,7 +28,7 @@ public class WhiteVoidPower extends AbstractHakuPower {
 				"???", 
 		};
 	
-	private static final int DEXTERITY_BUFF = 1;
+	private static final int MAGATAMA_BUFF = 1;
 	private static final int PLATED_BUFF = 2;
 	private static final int STRENGTH_BUFF = 1;
 	private static final int THORNS_BUFF = 2;
@@ -58,7 +58,7 @@ public class WhiteVoidPower extends AbstractHakuPower {
 			act(new TalkAction(true, DIALOG[0], 1.0F, 2.0F));
 			
 			power(AbstractDungeon.player, AbstractDungeon.player,
-					new DexterityPower(AbstractDungeon.player, DEXTERITY_BUFF), DEXTERITY_BUFF);
+					new MagatamaPower(AbstractDungeon.player, MAGATAMA_BUFF), MAGATAMA_BUFF);
 		}
 		
 		this.playedThisTurn = true;
