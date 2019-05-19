@@ -1,0 +1,50 @@
+{
+  "Haku:MagatamaPower": {
+    "NAME": "勾玉",
+    "DESCRIPTIONS": ["勾玉： #b", " （最多8个） 勾玉用于使用 #y必杀 "]
+  },
+  "Haku:WhiteVoidPower": {
+    "NAME": "白洞",
+    "DESCRIPTIONS": ["当前次数： #b", " 下一次的效果： "]
+  }, 
+  "Haku:DefensePower": {
+    "NAME": "守势",
+    "DESCRIPTIONS": [" #b", " 个回合内，带有 #y守势 的单位减少受到的 #b20% 的 #y攻击 伤害。 NL 获得 #y攻势 时直接移除本效果。" ]
+  },
+  "Haku:OffensePower": {
+    "NAME": "攻势",
+    "DESCRIPTIONS": [" #b", " 个回合内，带有 #y攻势 的单位增加造成的 #b25% 的 #y攻击 伤害。 NL 获得 #y守势 时直接移除本效果。"]
+  },
+  "Haku:OverdrivePower": {
+    "NAME": "能力超载",
+    "DESCRIPTIONS": [" #b", " 个回合内，你的双倍获得 勾玉 。"]
+  },
+  "Haku:MugenPower": {
+    "NAME": "梦幻",
+    "DESCRIPTIONS": [" #b", " 个回合内，#y必杀  #b0 #y费用 #b0 #y勾玉 消耗."]
+  },
+  "Haku:PassiveMeterPower": {
+    "NAME": "消极状态",
+    "DESCRIPTIONS": ["你的回合开始时，获得 #b", " 个 #y勾玉 。"]
+  },
+  "Haku:YomotsuhirasakaPower": {
+    "NAME": "黄泉",
+    "DESCRIPTIONS": ["每当你生成一个 #y封魔阵 ，对所有敌人造成 #b", " 点伤害。"]
+  },
+  "Haku:EmptySkyPower": {
+    "NAME": "广阔天空",
+    "DESCRIPTIONS": ["每当你打出一张 #y起手 ， #y取消 ， #y必杀 或 #y收尾 牌，抽 #b", " 张牌。"]
+  },
+  "Haku:TheTyrantPower":{
+    "NAME": "暴君",
+    "DESCRIPTIONS": ["每当你打出一张 #y取消 ， 给予 #b", " 层 #y易伤 。每当你打出一张 #y收尾 ， 给予 #b", " 层 #y虚弱 。"]
+  },
+  "Haku:TheGatePower": {
+    "NAME": "境界之门",
+    "DESCRIPTIONS": ["#y当身 将 一直触发。 #y当身 牌额外造成 #b", " 点伤害。"]
+  },
+  "Haku:UnlimitedDriveBossPower": {
+    "NAME": "无限超载",
+    "DESCRIPTIONS": ["所有 #y攻击 额外造成 #b", " 次。"]
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"Haku:VoidOrb": {
+		"NAME": "Fuumajin",
+		"DESCRIPTION": [
+			"Gain #b2 #yBlocks at the end of each turn. #yEvoke after #b2 turns.",
+			"Gain #b1 #yMagatama."
+    		]
+  	}
+}

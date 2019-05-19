@@ -1,0 +1,51 @@
+{
+  "Haku:Susanoo": {
+    "NAME": "SUSANO'OH",
+    "FLAVOR": "When this theme was released, 6B was a low.",
+    "DESCRIPTIONS": [
+      "Every time you play #b3 cards, gain #b1 #yMagatama."
+    ]
+  },
+  "Haku:Susanoo2": {
+    "NAME": "SUSANO'OH II",
+    "FLAVOR": "And people though he was gonna be low tier in CP1.0.",
+    "DESCRIPTIONS": [
+      "Gain [R] and lose #b1 #yMagatama at the start of each turn."
+    ]
+  },
+  "Haku:BurstIcon": {
+    "NAME": "Burst icon",
+    "FLAVOR": "Unit cookie dough!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add one #yBurst to your draw pile. NL (Cost #b0 - NL Gain #b1 #yIntangible.)"
+    ]
+  },
+  "Haku:ContinuumShift": {
+    "NAME": "Continuum Shift",
+    "FLAVOR": "5C > 623AA > J.2C > 2C > 9jc > J.2A > IAD > J.2A > J.C",
+    "DESCRIPTIONS": [
+      "Whenever you enter a #yRest #ySite, upgrade a random card."
+    ]
+  },
+  "Haku:CalamityTrigger": {
+    "NAME": "Calamity Trigger",
+    "FLAVOR": "5C > 623AA > J.C > 2C > 9jc > J.2C > IAD > J.2C",
+    "DESCRIPTIONS": [
+      "Every time you play a card whose cost has been modified, gain 4 #yBlocks."
+    ]
+  },
+  "Haku:ChronoPhantasma": {
+    "NAME": "Chrono Phantasma",
+    "FLAVOR": "5C > 623AA > J.2C > 2C > 9jc > J.2A > 9jc > Delay J.2C > 5A > 5B > 9jc > J.B2A > 9jc > J.B2A > J.214A",
+    "DESCRIPTIONS": [
+      "At the start of each battle, gain #yStrength for every #b15HP missing."
+    ]
+  },
+  "Haku:CentralFiction": {
+    "NAME": "Central Fiction",
+    "FLAVOR": "5C > 214A > 2C > 9hjc > J.B2A > 9jc > J.B2A > J.214A",
+    "DESCRIPTIONS": [
+      "Draw #b1 more card at the start of each turn."
+    ]
+  }
+}

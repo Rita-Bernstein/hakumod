@@ -1,0 +1,25 @@
+{
+	"Haku:AbstractMagatamaPotion": {
+		"NAME": "25% Power",
+		"DESCRIPTIONS": [
+      			"获得 #b", " 个 #y勾玉 。"
+    		]	
+	},
+	"Haku:QuarterPowerPotion": {
+		"NAME": "25% Power",
+		"DESCRIPTIONS": [
+    		]	
+	},
+	"Haku:HalfPowerPotion": {
+		"NAME": "50% Power",
+		"DESCRIPTIONS": [
+    		]
+	},
+	"Haku:FullPowerPotion": {
+		"NAME": "Full Power",
+		"DESCRIPTIONS": [
+    		]
+	}
+}
+
+

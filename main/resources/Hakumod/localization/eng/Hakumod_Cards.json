@@ -1,0 +1,357 @@
+{
+	"Haku:Strike": {
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Starter: Channel !M! Fuumajin."
+	},
+	"Haku:Blocking": {
+		"NAME": "Blocking",
+		"DESCRIPTION": "Gain !B! Block.",
+		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Starter: Gain !M! Dexterity this turn."
+	},
+	"Haku:Guren": {
+		"NAME": "Guren",
+		"DESCRIPTION": "Special: 1  NL Deal !D! damage. NL Gatling: Sweep",
+		"UPGRADE_DESCRIPTION": "Special: 1  NL Deal !D! damage. NL Gatling: Sweep"
+	},
+	"Haku:Sweep": {
+		"NAME": "Sweep",
+		"DESCRIPTION": "Deal !D! damage. NL Ender: Apply !M! Weak."
+	},
+	"Haku:SmartSteer": {
+		"NAME": "Smart Steer",
+		"DESCRIPTION": "Deal !D! damage. NL Gatling: Renka.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add one special from your draw pile to your hand."
+	},
+	"Haku:Divide": {
+		"NAME": "Divide",
+		"DESCRIPTION": "Deal !D! damage. NL Gatling: Zantetsu",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. Starter: Set the cost of all specials in your hand to 0 this turn."
+	},
+	"Haku:BlitzAttack": {
+		"NAME": "Blitz Attack",
+		"DESCRIPTION": "Deal !D! damage. NL Gatling: Clash Assault",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gatling: Clash Assault"
+	},
+	"Haku:ClashAssault": {
+		"NAME": "Clash Assault",
+		"DESCRIPTION": "Deal !D! damage twice. Ender: Apply !M! Vulnerable."
+	},
+	"Haku:Enma": {
+		"NAME": "Enma",
+		"DESCRIPTION": "Special: !M! NL Deal !D! damage. NL Gain !B! Block."
+	},
+	"Haku:Renka": {
+		"NAME": "Renka",
+		"DESCRIPTION": "Special: 2 NL Deal !D! damage twice. NL Draw !M! card."
+	},
+	"Haku:Zantetsu": {
+		"NAME": "Zantetsu",
+		"DESCRIPTION": "Special: 3 NL Deal !D! damage. NL Gain [R].",
+		"UPGRADE_DESCRIPTION": "Special: 3  NL Deal !D! damage. NL Gain [R] [R]."
+	},
+	"Haku:DeadAngle": {
+		"NAME": "Dead Angle",
+		"DESCRIPTION": "Parry: Gain !B! Block and deal !D! damage times X."
+	},
+	"Haku:AlphaCounter": {
+		"NAME": "Alpha Counter",
+		"DESCRIPTION": "Parry: Gain !B! Block, gain !B! Block next turn, deal !D! damage."
+	},
+	"Haku:GuardThrust": {
+		"NAME": "Guard Thrust",
+		"DESCRIPTION": "Parry: Gain !B! Block, gain 1 Magatama, deal !D! damage."
+	},
+	"Haku:RejectGuard": {
+		"NAME": "Reject Guard",
+		"DESCRIPTION": "Parry: Gain !B! Block, draw 1 card, deal !D! damage."
+	},
+	"Haku:Yanagi": {
+		"NAME": "Yanagi",
+		"DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Parry: Gain !B! Block and !M! Thorns"
+	},
+	"Haku:Yukikaze": {
+		"NAME": "Yukikaze",
+		"DESCRIPTION": "Special: 4 NL Parry: Deal !D! damage and gain !M! Buffer."
+	},
+	"Haku:Shippu": {
+		"NAME": "Shippu",
+		"DESCRIPTION": "Special: 4 NL Deal !D! damage times X to ALL enemies. NL Retain"
+	},
+	"Haku:ActiveFlow": {
+		"NAME": "Active Flow",
+		"DESCRIPTION": "If you have played 3 cards this turn, gain [R] and !M! Strength. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "If you have played 3 cards this turn, gain [R] and !M! Strength. NL Exhaust"
+	},
+	"Haku:Burst": {
+		"NAME": "Burst",
+		"DESCRIPTION": "Gain 1 Intangible."
+	},
+	"Haku:Overdrive": {
+		"NAME": "Overdrive",
+		"DESCRIPTION": "Double the amount of Magatama gained for !M! turn.",
+		"UPGRADE_DESCRIPTION": "Innate NL Double the amount of Magatama gained for !M! turn."
+	},
+	"Haku:GodFist": {
+		"NAME": "God Fist",
+		"DESCRIPTION": "Deal !D! damage. NL Add the bottom card from your discard pile to you hand. NL Exhaust"
+	},
+	"Haku:TigerKnee": {
+		"NAME": "Tiger Knee",
+		"DESCRIPTION": "Deal !D! damage. If you have played 3 or more cards this turn, Add one Staircase to your hand.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. If you have played 3 cards this turn, Add one upgraded Staircase to your hand."
+	},
+	"Haku:ClawGrip": {
+		"NAME": "Claw Grip",
+		"DESCRIPTION": "Deal !D! damage. NL Add 1 Claw Grip from your draw pile to your hand.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 Claw Grip from your draw pile to your hand, then add 1 Claw Grip into your discard pile."
+	},
+	"Haku:NegativeEdge": {
+		"NAME": "Negative Edge",
+		"DESCRIPTION": "Deal !D! damage. NL Add one Staircase to your hand.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add one upgraded Staircase to your hand."
+	},
+	"Haku:Staircase": {
+		"NAME": "Staircase",
+		"DESCRIPTION": "Deal !D! damage !M! times. NL Add 1 Crusade Seraphim or Agito to your hand, it costs 0 this turn.. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage 4 times. NL Add 1 upgraded Crusade Seraphim or Agito to your hand, it costs 0 this turn.. NL Exhaust"
+	},
+	"Haku:CrusadeSeraphim": {
+		"NAME": "Crusade Seraphim",
+		"DESCRIPTION": "Deal !D! damage. NL Starter and Ender: Gain !M! Defense."
+	},
+	"Haku:Agito": {
+		"NAME": "Agito",
+		"DESCRIPTION": "Special: 1 NL Deal !D! damage. NL Starter and Ender: Gain !M! Offense."
+	},
+	"Haku:LightPunch": {
+		"NAME": "Light Punch",
+		"DESCRIPTION": "Deal !D! damage. NL Copy a random 0 cost card in your hand. NL Exhaust"
+	},
+	"Haku:CrossUp": {
+		"NAME": "Cross-up",
+		"DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Starter: Deal !D! damage to ALL enemies."
+	},
+	"Haku:CrystalWall": {
+		"NAME": "Crystal Wall",
+		"DESCRIPTION": "Deal !D! damage. NL Channel !M! Fuumajin."
+	},
+	"Haku:HeavySlash": {
+		"NAME": "Heavy Slash",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Cost 1 less for each card played this turn.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Cost 1 less for each card played this turn."
+	},
+	"Haku:Hotaru": {
+		"NAME": "Hotaru",
+		"DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Parry: Gain !B! Block and !M! Plated Armor."
+	},
+	"Haku:Tsubaki": {
+		"NAME": "Tsubaki",
+		"DESCRIPTION": "Special: 3 NL Deal !D! damage. NL Add one Tsubaki on top of your draw pile. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Special: 3 NL Deal !D! damage. NL Add one upgraded Tsubaki on top of your draw pile. NL Exhaust"
+	},
+	"Haku:Grab": {
+		"NAME": "Grab",
+		"DESCRIPTION": "Remove all Block from the enemy. Deal !D! damage. "
+	},
+	"Haku:AirGrab": {
+		"NAME": "Air Grab",
+		"DESCRIPTION": "Deal !D! damage. Starter: Gain [R] next turn.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. Starter: Gain [R] [R] next turn."
+	},
+	"Haku:Kishuu": {
+		"NAME": "Kishuu",
+		"DESCRIPTION": "Special: 1 NL Gain !B! Block. NL Gatling: Enma"
+	},
+	"Haku:CrushTrigger": {
+		"NAME": "Crush Trigger",
+		"DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Gain !M! Artifact. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Special: 2 NL Deal !D! damage. NL Gain !M! Artifact." 
+	},
+	"Haku:InstantBlock": {
+		"NAME": "Instant Block",
+		"DESCRIPTION": "Gain !B! Block. NL Gain 1 Magatama."
+	},
+	"Haku:Barrier": {
+		"NAME": "Barrier",
+		"DESCRIPTION": "Gain Block equal to the amount of cards play this turn + !M! (Total: !B!)."
+	},
+	"Haku:FuzzyJump": {
+		"NAME": "Fuzzy jump",
+		"DESCRIPTION": "Gain !B! Block. NL Target one enemy, it loses !M! Strength this turn."
+	},
+	"Haku:OptionSelect": {
+		"NAME": "Option Select",
+		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact."
+	},
+	"Haku:CounterAssault": {
+		"NAME": "Counter Assault",
+		"DESCRIPTION": "Special: 4 NL Parry: Gain !B! Block. NL Remove all debuffs. NL Exhaust"
+	},
+	"Haku:Taunt": {
+		"NAME": "Taunt",
+		"DESCRIPTION": "Gain !M! Vulnerable. NL Apply !M! Vulnerable on ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Gain 1 Vulnerable. Apply !M! Vulnerable on ALL enemies."
+	},
+	"Haku:RapidCancel": {
+		"NAME": "Rapid Cancel",
+		"DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [R] [R]. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Special: 4 NL Draw !M! cards. NL Gain [R] [R]"
+	},
+	"Haku:Mugen": {
+		"NAME": "Mugen",
+		"DESCRIPTION": "Special: 8 NL Add X Random Special cards to your hand. NL Special cost 0 Energy and Magatama this turn.",
+		"UPGRADE_DESCRIPTION": "Special: 8 NL Add X+1 Random Special cards to your hand. NL Special cost 0 Energy and Magatama this turn."
+	},
+	"Haku:PassiveMeter": {
+		"NAME": "Passive meter gain",
+		"DESCRIPTION": "At the start of each turn, gain 1 Magatama.",
+		"UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, gain 1 Magatama."
+	},
+	"Haku:CommandOrder": {
+		"NAME": "Command Order",
+		"DESCRIPTION": "Deal !D! damage. NL Can be upgraded any number of times. NL Gain additional effects with each upgrade. NL command_order"
+	},
+	"Haku:ExceedAccel": {
+		"NAME": "Exceed Accel",
+		"DESCRIPTION": "Starter: Gain Block equal to your current Energy. NL Ender: Deal 1 Damage for every card played this turn. NL (Total: !B! / !D!)",
+		"UPGRADE_DESCRIPTION": "Starter: Gain Block equal to your current Energy+2. NL Ender: Deal 1 Damage for every card played this turn+2. NL (Total: !B! / !D!)"
+	},
+	"Haku:Akumetsu": {
+		"NAME": "Akumetsu",
+		"DESCRIPTION": "Special: 8 NL Deal !D! damage X times to ALL enemies and gain 1 Intangible."
+	},
+	"Haku:AwakeningTheChaos": {
+		"NAME": "Awakening The Chaos",
+		"DESCRIPTION": "Gain !B! Block. NL Channel !M! Fuumajin."
+	},
+	"Haku:ScienceFiction": {
+		"NAME": "Science Fiction",
+		"DESCRIPTION": "Gain [R] and draw a card for every Fuumajin channeled. NL Exhaust"
+	},
+	"Haku:Yomotsuhirasaka": {
+		"NAME": "Yomotsuhirasaka",
+		"DESCRIPTION": " Everytime you channel a Fuumajin, Deal 5 damage to ALL enemies. NL Channel !M! Fuumajin"
+	},
+	"Haku:TheTyrant": {
+		"NAME": "The Tyrant",
+		"DESCRIPTION": "Everytime you play a Gatling, apply 1 Vulnerable. NL Everytime you play a Ender, apply 1 Weak.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Everytime you play a Gatling, apply 1 Vulnerable. NL Everytime you play a Ender, apply 1 Weak."
+	},
+	"Haku:EmptySky": {
+		"NAME": "Empty Sky",
+		"DESCRIPTION": "Everytime you play a Starter, Gatling, Special or Ender, draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Everytime you play a Starter, Gatling, Special or Ender, draw 1 card." 
+	},
+	"Haku:HighJump": {
+		"NAME": "High jump",
+		"DESCRIPTION": "Draw !M! card. NL Gain 1 Block for every card in your hand."
+	},
+	"Haku:AirDash": {
+		"NAME": "Air Dash",
+		"DESCRIPTION": "Draw !M! Cards. NL Starter: Gain 2 Strength this turn."
+	},
+	"Haku:InstantBarrier": {
+		"NAME": "Instant Barrier",
+		"DESCRIPTION": "Gain !B! Block. NL Add 1 Instant Block to your draw pile, change its cost to 0 and give it Exhaust. ",
+		"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add 1 Instant Block and 1 Barrier to your draw pile, change their cost to 0 and give them Exhaust."
+	
+	},
+	"Haku:FatalCounter":{
+		"NAME": "Fatal Counter",
+		"DESCRIPTION": "Upgrade all the cards in your hand for the rest of the combat. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Draw 1 card then upgrade all the cards in your hand for the rest of the combat. NL Exhaust"
+
+	},
+	"Haku:FatalJudge":{
+		"NAME": "Fatal Judge",
+		"DESCRIPTION": "Draw !M! cards then change the cost of all Starter, Gatling and Ender cards in your hand to 0 this turn. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Draw !M! cards then change the cost of all Starter, Gatling and Ender cards in your hand to 0 this turn."
+	},
+	"Haku:Void":{
+		"NAME": "Void",
+		"DESCRIPTION": "Channel !M! Fuumajin. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Channel !M! Fuumajin."
+	},
+	"Haku:Walpurgisnacht":{
+		"NAME": "Walpurgisnacht",
+		"DESCRIPTION": "Deal damage equal to your Magatama count times !M!. (Total: !D!)"
+	},
+	"Haku:WhiteVoid":{
+		"NAME": "The White Void",
+		"DESCRIPTION": "Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn. white_void",
+		"UPGRADE_DESCRIPTION": "Innate. NL Gain new effects every time it is played. Add a copy of this card on top of the draw pile next turn. white_void"
+
+	},
+	"Haku:Timekiller":{
+		"NAME": "Time Killer",
+		"DESCRIPTION": "Deal !D! damage. NL Add !M! Exhausted Attack to your hand, change its cost to 0."
+	},
+	"Haku:ChildishMemories":{
+		"NAME": "Childish Memories",
+		"DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Lose 1 Magatama. NL Heal !M! HP. NL Exhaust"
+	},
+	"Haku:SixHeroes":{
+		"NAME": "SIX-HEROES",
+		"DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 2 Plated Armor NL Gain 1 Thorns NL Gain !M! Magatama.",
+		"UPGRADE_DESCRIPTION": "Gain [R] NL Gain 1 Artifact NL Gain !M! Strength NL Gain 2 Plated Armor NL Gain 1 Thorns NL Gain !M! Magatama."
+	},
+	"Haku:StandUnrivaled":{
+		"NAME": "Stand Unrivaled",
+		"DESCRIPTION": "Add one Special from your draw pile to your hand. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "Add one Special from your draw pile to your hand."
+	},
+	"Haku:GodOfWar":{
+		"NAME": "God of War",
+		"DESCRIPTION": " Deal !D! damage. NL Change the cost of all Specials in your hand to 0 this turn. NL Exhaust",
+		"UPGRADE_DESCRIPTION": " Deal !D! damage. NL Change the cost of all Specials in your hand to 0 this turn."
+
+	},
+	"Haku:PandoraTears":{
+		"NAME": "Pandora Tears",
+		"DESCRIPTION": "Discard your entire hand, gain !B! Blocks for each card discarded."
+	},
+	"Haku:EndGazer":{
+		"NAME": "End Gazer",
+		"DESCRIPTION": "Gain !B! Block. NL Draw !M! cards next turn."
+	},
+	"Haku:ThinRedLine":{
+		"NAME": "Thin Red Line",
+		"DESCRIPTION": "Deal 5 damage. NL Deal 1 more damage for every card in your discard pile and !M! damage for every card in your exhaust pile. (Total: !D!)"
+	},
+	"Haku:Xmatic":{
+		"NAME": "X-matic",
+		"DESCRIPTION": "Gain X Strength. NL Gain X Magatama.",
+		"UPGRADE_DESCRIPTION": "Gain X+1 Strength. NL Gain X+1 Magatama."
+	},
+	"Haku:TheGate":{
+		"NAME": "The Gate",
+		"DESCRIPTION": "Parry always activate. NL Parry cards deal !M! additional damage.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Parry always activate. NL Parry cards deal !M! additional damage."
+	},
+	"Haku:InJustice":{
+		"NAME": "IN Justice",
+		"DESCRIPTION": "Deal !D! damage. NL Gain 4 Magatama. NL Reduce this card cost by 1 every time you play a Special."
+	},
+	"Haku:BlackAndWhite":{
+		"NAME": "Black And White",
+		"DESCRIPTION": "Deal 5 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)",
+		"UPGRADE_DESCRIPTION": "Deal 5 damage. NL Deals an additional !M! damage for each Parry in your hand and discard pile. NL (Total: !D!)"
+
+	},
+	"Haku:SwordOfDoom":{
+		"NAME": "Sword of Doom",
+		"DESCRIPTION": "Gain Orb slots until you have 4. NL Channel !M! Fuumajin."
+	},
+	"Haku:QueenOfRose":{
+		"NAME": "Queen of Rose",
+		"DESCRIPTION": "Lose 1 Strength. NL Gain !M! Strength at the end of the turn."
+	},
+	"Haku:PlasticNight":{
+		"NAME": "Plastic Night",
+		"DESCRIPTION": "Parry: Gain !B! Blocks and deal damage equal to half your current block. NL (Total: !D!)"
+	}
+}

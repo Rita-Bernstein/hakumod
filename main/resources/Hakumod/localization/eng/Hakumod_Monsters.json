@@ -1,0 +1,20 @@
+{
+	"Haku:Nu13": {
+		"NAME": "Nu-13",		
+		"MOVES": [
+			"Calamity Sword",			
+			"Gravity Seed",			
+			"Supra Rage",			
+			"Crescent Saber",			
+			"Luminous Slave",			
+			"Barrier",
+			"Back dash",
+			"Zoning"
+		],
+		"DIALOG": [
+			"Perish.",
+			"#rWarning: System malfunction.",
+			"Activation of termination protocole."
+		]
+	}
+}

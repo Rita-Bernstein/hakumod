@@ -1,0 +1,50 @@
+{
+  "Haku:MagatamaPower": {
+    "NAME": "Magatama",
+    "DESCRIPTIONS": ["Magatama: #b", " (max: 8). Magatamas are consumed by #ySpecials."]
+  },
+  "Haku:WhiteVoidPower": {
+    "NAME": "White Void",
+    "DESCRIPTIONS": ["Counter: #b", " Next bonus: "]
+  }, 
+  "Haku:DefensePower": {
+    "NAME": "Defense",
+    "DESCRIPTIONS": ["Receive #b20% less damage from #yAttacks for ", " turns. This buff is removed when #yOffense is applied." ]
+  },
+  "Haku:OffensePower": {
+    "NAME": "Offense",
+    "DESCRIPTIONS": ["Deal #b25% more damage with #yAttacks for ", " turns. This buff is removed when #yDefense is applied."]
+  },
+  "Haku:OverdrivePower": {
+    "NAME": "Overdrive",
+    "DESCRIPTIONS": ["Double the amount of #ymagatama gained for #b", " turn(s)."]
+  },
+  "Haku:MugenPower": {
+    "NAME": "Mugen",
+    "DESCRIPTIONS": ["#ySpecials cost #b0 #yenergy and #b0 #yMagatama for #b", " turn(s)."]
+  },
+  "Haku:PassiveMeterPower": {
+    "NAME": "Passive Meter",
+    "DESCRIPTIONS": ["At the start of each turn, gain #b", " #yMagatama(s)"]
+  },
+  "Haku:YomotsuhirasakaPower": {
+    "NAME": "Yomotsuhirasaka",
+    "DESCRIPTIONS": ["Everytime you channel a #yFuumajin, Deal #b", " damage to ALL enemies"]
+  },
+  "Haku:EmptySkyPower": {
+    "NAME": "Empty Sky",
+    "DESCRIPTIONS": ["Everytime you play a #yStarter, #yGatling, #ySpecial or #yEnder, draw #b", " card(s)."]
+  },
+  "Haku:TheTyrantPower":{
+    "NAME": "The Tyrant",
+    "DESCRIPTIONS": ["Everytime you play a #yGatling, inflict #b", " #yVulnerable. Everytime you play a #yEnder, inflict #b", " Weak."]
+  },
+  "Haku:TheGatePower": {
+    "NAME": "Gate",
+    "DESCRIPTIONS": ["Parry always activate. #yParry deal #b", " additionnal damage."]
+  },
+  "Haku:UnlimitedDriveBossPower": {
+    "NAME": "Unlimited Drive",
+    "DESCRIPTIONS": ["All #yAttacks hit #b", " additional time."]
+  }
+}
