@@ -11,11 +11,11 @@
 	},
 	"Haku:Guren": {
 		"NAME": "红莲",
-		"DESCRIPTION": "必杀 ： 1  NL 造成 !D! 点伤害。 NL 取消 ： 下段 。",
-		"UPGRADE_DESCRIPTION": "必杀 ： 1  NL 造成 !D! 点伤害。 NL 取消 ： 下段 。"
+		"DESCRIPTION": "必杀 ： 1  ， NL 造成 !D! 点伤害。 NL 取消 ： 扫地 。",
+		"UPGRADE_DESCRIPTION": "必杀 ： 1  ， NL 造成 !D! 点伤害。 NL 取消 ： 扫地 。"
 	},
 	"Haku:Sweep": {
-		"NAME": "下段",
+		"NAME": "扫地",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 收尾 ：给予 !M! 层 虚弱 。"
 	},
 	"Haku:SmartSteer": {
@@ -25,7 +25,7 @@
 	},
 	"Haku:Divide": {
 		"NAME": "分离",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 取消 ： 残铁 ",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 取消 ： 残铁 。",
 		"UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 起手 ： 在这个回合，你当前手牌中所有 必杀 牌的耗能降低到0。"
 	},
 	"Haku:BlitzAttack": {
@@ -39,20 +39,20 @@
 	},
 	"Haku:Enma": {
 		"NAME": "阎魔",
-		"DESCRIPTION": "必杀 ： !M! NL 造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
+		"DESCRIPTION": "必杀 ： !M! ， NL 造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
 	},
 	"Haku:Renka": {
 		"NAME": "莲华",
-		"DESCRIPTION": "必杀 ： 2 NL 造成 !D! 点伤害两次。 NL 抽 !M! 张牌。"
+		"DESCRIPTION": "必杀 ： 2 ， NL 造成 !D! 点伤害两次。 NL 抽 !M! 张牌。"
 	},
 	"Haku:Zantetsu": {
 		"NAME": "残铁",
-		"DESCRIPTION": "必杀 ： 3 NL 造成 !D! 点伤害。 NL 获得 [R]。",
-		"UPGRADE_DESCRIPTION": "必杀 ： 3  NL 造成 !D! 点伤害。 NL 获得 [R] [R]。"
+		"DESCRIPTION": "必杀 ： 3 ， NL 造成 !D! 点伤害。 NL 获得 [R] 。",
+		"UPGRADE_DESCRIPTION": "必杀 ： 3  ， NL 造成 !D! 点伤害。 NL 获得 [R] [R] 。"
 	},
 	"Haku:DeadAngle": {
 		"NAME": "死亡三角",
-		"DESCRIPTION": "当身 ： 获得 !B! 点 格挡 并 造成 !D! 点伤害 X 次。"
+		"DESCRIPTION": "当身 ： 获得 !B! 点 格挡 并造成 !D! 点伤害 X 次。"
 	},
 	"Haku:AlphaCounter": {
 		"NAME": "回转破招",
@@ -68,20 +68,20 @@
 	},
 	"Haku:Yanagi": {
 		"NAME": "鵺柳",
-		"DESCRIPTION": "必杀 ： 2 NL 造成 !D! 点伤害。 NL 当身 ： 获得 !B! 点 格挡  和 !M! 层 荆棘"
+		"DESCRIPTION": "必杀 ： 2 ， NL 造成 !D! 点伤害。 NL 当身 ： 获得 !B! 点 格挡  和 !M! 层 荆棘 。"
 	},
 	"Haku:Yukikaze": {
 		"NAME": "雪风",
-		"DESCRIPTION": "必杀 ： 4 NL 当身 ： 造成 !D! 点伤害 并 获得 !M! 层增益效果。"
+		"DESCRIPTION": "必杀 ： 4 ， NL 当身 ： 造成 !D! 点伤害 并 获得 !M! 层增益效果。"
 	},
 	"Haku:Shippu": {
 		"NAME": "疾风",
-		"DESCRIPTION": "必杀 ： 4 NL 对所有敌人造成 !D! 点伤害 X 次。 NL 保留 。"
+		"DESCRIPTION": "必杀 ： 4 ， NL 对所有敌人造成 !D! 点伤害 X 次。 NL 保留 。"
 	},
 	"Haku:ActiveFlow": {
 		"NAME": "活性状态",
-		"DESCRIPTION": "如果你本回合已打出3张牌， 获得 [R] 和 !M! 点 力量 。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION": "如果你本回合已打出3张牌， 获得 [R] 和 !M! 点 力量 。 NL 消耗 "
+		"DESCRIPTION": "如果你本回合已打出3张牌， 获得 [R] 和 !M! 点 力量 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "如果你本回合已打出3张牌， 获得 [R] 和 !M! 点 力量 。 NL 消耗 。"
 	},
 	"Haku:Burst": {
 		"NAME": "炙热爆冲",
@@ -94,7 +94,7 @@
 	},
 	"Haku:GodFist": {
 		"NAME": "神拳",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 将你弃牌堆底部的一张牌加入你的手牌。 NL 消耗 "
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 将你弃牌堆底部的一张牌加入你的手牌。 NL 消耗 。"
 	},
 	"Haku:TigerKnee": {
 		"NAME": "虎膝",
@@ -113,8 +113,8 @@
 	},
 	"Haku:Staircase": {
 		"NAME": "空连",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 将一张  圣战天使 或 咢刀 加入你的手牌，这张牌在本回合耗能变为0。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION": "造成 !D! 点伤害 4 次。 NL 将一张已 升级 的 圣战天使 或 咢刀 加入你的手牌，这张牌在本回合耗能变为0。 NL 消耗 "
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 将一张  圣战天使 或 咢刀 加入你的手牌，这张牌在本回合耗能变为0。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "造成 !D! 点伤害 4 次。 NL 将一张已 升级 的 圣战天使 或 咢刀 加入你的手牌，这张牌在本回合耗能变为0。 NL 消耗 。"
 	},
 	"Haku:CrusadeSeraphim": {
 		"NAME": "圣战天使",
@@ -122,7 +122,7 @@
 	},
 	"Haku:Agito": {
 		"NAME": "咢刀",
-		"DESCRIPTION": "必杀 ： 1 NL 造成 !D! 点伤害。 NL 起手 和 收尾 ：： 获得 !M! 层 攻势 。"
+		"DESCRIPTION": "必杀 ： 1 ， NL 造成 !D! 点伤害。 NL 起手 和 收尾 ：： 获得 !M! 层 攻势 。"
 	},
 	"Haku:LightPunch": {
 		"NAME": "轻拳",
@@ -144,12 +144,12 @@
 	},
 	"Haku:Hotaru": {
 		"NAME": "火萤",
-		"DESCRIPTION": "必杀 ： 2 NL 造成 !D! 点伤害。 NL 当身 ： 获得 !B! 点 格挡  和 !M! 层 多层护甲。"
+		"DESCRIPTION": "必杀 ： 2 ， NL 造成 !D! 点伤害。 NL 当身 ： 获得 !B! 点 格挡  和 !M! 层 多层护甲 。"
 	},
 	"Haku:Tsubaki": {
 		"NAME": "椿祈",
-		"DESCRIPTION": "必杀 ： 3 NL 造成 !D! 点伤害。 NL 将一张 椿祈 加入你抽牌堆顶部。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION": "必杀 ： 3 NL 造成 !D! 点伤害。 NL 将一张已 升级 的 椿祈 加入你抽牌堆顶部。 NL 消耗 。"
+		"DESCRIPTION": "必杀 ： 3 ， NL 造成 !D! 点伤害。 NL 将一张 椿祈 加入你抽牌堆顶部。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION": "必杀 ： 3 ， NL 造成 !D! 点伤害。 NL 将一张已 升级 的 椿祈 加入你抽牌堆顶部。 NL 消耗 。"
 	},
 	"Haku:Grab": {
 		"NAME": "普通投",
@@ -162,12 +162,12 @@
 	},
 	"Haku:Kishuu": {
 		"NAME": "鬼蹴",
-		"DESCRIPTION": "必杀 ： 1 NL 获得 !B! 点 格挡 。 NL 取消 ： 阎魔 "
+		"DESCRIPTION": "必杀 ： 1 ， NL 获得 !B! 点 格挡 。 NL 取消 ： 阎魔 "
 	},
 	"Haku:CrushTrigger": {
 		"NAME": "防御崩溃",
-		"DESCRIPTION": "必杀 ： 2 NL 造成 !D! 点伤害。 NL 获得 !M! 层 人工制品 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "必杀 ： 2 NL 造成 !D! 点伤害。 NL 获得 !M! 层 人工制品 。" 
+		"DESCRIPTION": "必杀 ： 2 ， NL 造成 !D! 点伤害。 NL 获得 !M! 层 人工制品 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "必杀 ： 2 ， NL 造成 !D! 点伤害。 NL 获得 !M! 层 人工制品 。" 
 	},
 	"Haku:InstantBlock": {
 		"NAME": "瞬间防御",
@@ -183,12 +183,12 @@
 	},
 	"Haku:OptionSelect": {
 		"NAME": "预测输入",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 层 人工制品 。 NL 消耗 ",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 层 人工制品 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 层 人工制品 。"
 	},
 	"Haku:CounterAssault": {
 		"NAME": "破招突进",
-		"DESCRIPTION": "必杀 ： 4 NL 当身 ： 获得 !B! 点 格挡 。 NL 移除全部的负面效果。 NL 消耗 "
+		"DESCRIPTION": "必杀 ： 4 ，NL 当身 ： 获得 !B! 点 格挡 。 NL 移除全部的负面效果。 NL 消耗 "
 	},
 	"Haku:Taunt": {
 		"NAME": "挑衅",
@@ -197,13 +197,13 @@
 	},
 	"Haku:RapidCancel": {
 		"NAME": "快速取消",
-		"DESCRIPTION": "必杀 ： 4 NL 抽 !M! 张牌s。 NL 获得 [R] [R]。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION": "必杀 ： 4 NL 抽 !M! 张牌s。 NL 获得 [R] [R]"
+		"DESCRIPTION": "必杀 ： 4 ， NL 抽 !M! 张牌s。 NL 获得 [R] [R]。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION": "必杀 ： 4 ， NL 抽 !M! 张牌。 NL 获得 [R] [R] 。"
 	},
 	"Haku:Mugen": {
 		"NAME": "梦幻",
-		"DESCRIPTION": "必杀 ： 8 NL 将X张随机 必杀 牌加入你的手牌。 NL 必杀 本回合0费0勾玉消耗。",
-		"UPGRADE_DESCRIPTION": "必杀 ： 8 NL 将X+1张随机 必杀 牌加入你的手牌。 NL 必杀 本回合0能耗且0勾玉消耗。"
+		"DESCRIPTION": "必杀 ： 8 ， NL 将X张随机 必杀 牌加入你的手牌。 NL 必杀 本回合0费0勾玉消耗。",
+		"UPGRADE_DESCRIPTION": "必杀 ： 8 ， NL 将X+1张随机 必杀 牌加入你的手牌。 NL 必杀 本回合0能耗且0勾玉消耗。"
 	},
 	"Haku:PassiveMeter": {
 		"NAME": "消极状态",
@@ -212,23 +212,23 @@
 	},
 	"Haku:CommandOrder": {
 		"NAME": "指令顺序",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 能被 升级 任意次。 NL 每次升级获得额外的效果。 NL 指令循序 "
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 能被 升级 任意次。 NL 每次升级获得额外的效果。 NL 指令顺序"
 	},
 	"Haku:ExceedAccel": {
 		"NAME": "上限突破",
-		"DESCRIPTION": "起手 ： 获得等于你目前能量的 格挡 。 NL  收尾 ： 本回合你每打出一张牌，造成1点伤害 NL （总共： !B! / !D! ）",	
-		"UPGRADE_DESCRIPTION": "起手 ： 获得等于你目前能量+2的 格挡 。 NL  收尾 ： 本回合你每打出一张牌，造成1点伤害+2 NL （总共： !B! / !D! ）"
+		"DESCRIPTION": "起手 ： 获得等于你目前能量的 格挡 。 NL  收尾 ： 本回合你每打出一张牌，造成1点伤害 。 NL （总共： !B! / !D! ）",	
+		"UPGRADE_DESCRIPTION": "起手 ： 获得等于你目前能量+2的 格挡 。 NL  收尾 ： 本回合你每打出一张牌，造成1点伤害+2 。 NL （总共： !B! / !D! ）"
 	},
 	"Haku:Akumetsu": {
 		"NAME": "恶灭",
-		"DESCRIPTION": "必杀 ： 8 NL 对所有敌人造成 !D! 点伤害 X 次 并 获得 1 层 无实体 。"
+		"DESCRIPTION": "必杀 ： 8 ， NL 对所有敌人造成 !D! 点伤害 X 次 并 获得 1 层 无实体 。"
 	},
 	"Haku:AwakeningTheChaos": {
 		"NAME": "混沌觉醒",
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 生成 !M! 个 封魔阵 。"
 	},
 	"Haku:ScienceFiction": {
-		"NAME": "科幻",
+		"NAME": "科幻小说",
 		"DESCRIPTION": "获得 [R] ，你每有一个 封魔阵 ，抽一张牌。 NL 消耗 。"
 	},
 	"Haku:Yomotsuhirasaka": {
@@ -267,8 +267,8 @@
 	},
 	"Haku:FatalJudge":{
 		"NAME": "致命审判",
-		"DESCRIPTION": "抽 !M! 张牌，本回合你手牌中的全部 起手 ，取消 和 收尾 牌能耗变为 0 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "抽 !M! 张牌，本回合你手牌中的全部 起手 ，取消 和 收尾 牌能耗变为 0 。"
+		"DESCRIPTION": "抽 !M! 张牌，本回合你手牌中的全部 起手 ， 取消 和 收尾 牌能耗变为 0 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽 !M! 张牌，本回合你手牌中的全部 起手 ， 取消 和 收尾 牌能耗变为 0 。"
 	},
 	"Haku:Void":{
 		"NAME": "真空",
@@ -276,13 +276,13 @@
 		"UPGRADE_DESCRIPTION": "生成 !M! 个 封魔阵 。"
 	},
 	"Haku:Walpurgisnacht":{
-		"NAME": "Walpurgisnacht",
+		"NAME": "魔女之夜",
 		"DESCRIPTION": "造成等于你 勾玉 数量 的伤害 !M! 次。 （总共： !D! ）"
 	},
 	"Haku:WhiteVoid":{
-		"NAME": "白洞",
-		"DESCRIPTION": "每次打出后获得新的效果。下一回合，将本牌的一张复制品加入你的抽牌堆顶部。 white_void",
-		"UPGRADE_DESCRIPTION": "固有。 NL 每次打出后获得新的效果。下一回合，将本牌的一张复制品加入你的抽牌堆顶部。 white_void"
+		"NAME": "白色虚空",
+		"DESCRIPTION": "每次打出后获得新的效果。下一回合，将本牌的一张复制品加入你的抽牌堆顶部。 白色虚空",
+		"UPGRADE_DESCRIPTION": "固有。 NL 每次打出后获得新的效果。下一回合，将本牌的一张复制品加入你的抽牌堆顶部。 白色虚空"
 
 	},
 	"Haku:Timekiller":{
@@ -291,8 +291,8 @@
 	},
 	"Haku:ChildishMemories":{
 		"NAME": "童年记忆",
-		"DESCRIPTION": "失去 1 个 勾玉。 NL 回复 !M! 生命。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION": "失去 1 个 勾玉。 NL 回复 !M! 生命。 NL 消耗 "
+		"DESCRIPTION": "失去 1 个 勾玉。 NL 回复 !M! 生命。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "失去 1 个 勾玉。 NL 回复 !M! 生命。 NL 消耗 。"
 	},
 	"Haku:SixHeroes":{
 		"NAME": "六英雄",
@@ -305,7 +305,7 @@
 		"UPGRADE_DESCRIPTION": "将抽牌堆中的一张 必杀 加入你的手牌。"
 	},
 	"Haku:GodOfWar":{
-		"NAME": "魔导大战",
+		"NAME": "战神",
 		"DESCRIPTION": " 造成 !D! 点伤害。 NL 本回合将你所有的 必杀 能耗变为0。 NL 消耗 ",
 		"UPGRADE_DESCRIPTION": " 造成 !D! 点伤害。 NL 本回合将你所有的 必杀 能耗变为0。"
 
@@ -315,15 +315,15 @@
 		"DESCRIPTION": "丢弃你目前的手牌， 每丢弃一张牌，获得 !B! 点 格挡 。"
 	},
 	"Haku:EndGazer":{
-		"NAME": "End Gazer",
+		"NAME": "最终观察者",
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 下一回合抽 !M! 张牌。"
 	},
 	"Haku:ThinRedLine":{
-		"NAME": "红色警戒",
+		"NAME": "细小红线",
 		"DESCRIPTION": "造成 5 点伤害。 NL 你的弃牌堆每有一张牌。造成 1 点伤害 以及你的消耗区每有一张牌，造成 !M! 点伤害。 （总共： !D! ）"
 	},
 	"Haku:Xmatic":{
-		"NAME": "X-matic",
+		"NAME": "X-型",
 		"DESCRIPTION": "获得 X 点 力量 。 NL 获得 X 个 勾玉 。",
 		"UPGRADE_DESCRIPTION": "获得 X+1 点 力量 。 NL 获得 X+1 个 勾玉 。"
 	},
@@ -337,17 +337,17 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 4 个 勾玉 。 NL 你每打出一张 必杀 ，本牌的费用降低 1 。"
 	},
 	"Haku:BlackAndWhite":{
-		"NAME": "黑白",
+		"NAME": "黑与白",
 		"DESCRIPTION": "造成 5 点伤害。 NL 你的手牌和弃牌堆中每有一张 当身 牌，额外造成 !M! 点伤害。 NL （总共： !D! ）",
 		"UPGRADE_DESCRIPTION": "造成 5 点伤害。 NL 你的手牌和弃牌堆中每有一张 当身 牌，额外造成 !M! 点伤害。 NL （总共： !D! ）"
 
 	},
 	"Haku:SwordOfDoom":{
-		"NAME": "斩魔鸣神",
+		"NAME": "毁灭之剑",
 		"DESCRIPTION": "获得 充能球栏位直到你有4个。 NL 生成 !M! 个 封魔阵 。"
 	},
 	"Haku:QueenOfRose":{
-		"NAME": "玫瑰女王",
+		"NAME": "玫瑰皇后",
 		"DESCRIPTION": "失去 1 点 力量 。 NL 回合结束时，获得 !M! 点 力量 。"
 	},
 	"Haku:PlasticNight":{

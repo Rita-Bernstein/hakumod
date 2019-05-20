@@ -1,7 +1,12 @@
 {
+  "Haku:ConfigTitle": {
+    "TEXT": [
+	   "选择2张初始牌："
+    ]
+  },
   "Haku:AvailableCards": {
     "TEXT": [
-      "红莲 / 下段 （推荐）",
+      "红莲 / 扫地 （推荐）",
       "突袭 / 践踏",
       "下踢 / 莲华",
       "分离 / 残铁",
@@ -14,7 +19,7 @@
     ]
   },
   "Haku:EnableBosses": {
-    "TEXT": ["开启自定义boss。（一个还在做的boss，需要重启游戏以生效） "
+    "TEXT": ["开启自定义boss（一个还在做的boss，重启游戏以生效） "
     ]
   }
 }

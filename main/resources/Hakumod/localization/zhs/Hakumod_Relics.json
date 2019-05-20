@@ -1,23 +1,23 @@
 {
   "Haku:Susanoo": {
-    "NAME": "SUSANO'OH",
-    "FLAVOR": "When this theme was released, 6B was a low.",
+    "NAME": "素盞嗚尊",
+    "FLAVOR": "这个主题曲发布时，6b还只是个下段。",
     "DESCRIPTIONS": [
       "每当你打出 #b3 张牌，获得 #b1 个 #y勾玉 。"
     ]
   },
   "Haku:Susanoo2": {
-    "NAME": "SUSANO'OH II",
-    "FLAVOR": "And people though he was gonna be low tier in CP1.0.",
+    "NAME": "素盞嗚尊 II",
+    "FLAVOR": "大家都觉得他会在 CP1.0 的时候削弱的.",
     "DESCRIPTIONS": [
       "每回合开始时，获得 [R] 并 失去  #b1 个 #y勾玉 。"
     ]
   },
   "Haku:BurstIcon": {
     "NAME": "爆冲图标",
-    "FLAVOR": "Unit cookie dough!",
+    "FLAVOR": "就是一块饼干环！",
     "DESCRIPTIONS": [
-      "每场战斗开始时，将一张 #yBurst 加入你的抽牌堆。 NL （ #b0 费 - NL 获得 #b1 层 #y无实体 。）"
+      "每场战斗开始时，将一张 #y炙热爆冲 加入你的抽牌堆。 NL （ #b0 费 - NL 获得 #b1 层 #y无实体 。）"
     ]
   },
   "Haku:ContinuumShift": {

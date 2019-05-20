@@ -1,4 +1,9 @@
 {
+  "Haku:ConfigTitle": {
+    "TEXT": [
+	   "Select your 2 starting cards:"
+    ]
+  },
   "Haku:AvailableCards": {
     "TEXT": [
       "Guren / Sweep (recommended)",
