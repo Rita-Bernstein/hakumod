@@ -24,6 +24,8 @@ import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -141,7 +143,7 @@ OnCardUseSubscriber, EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDra
 	public void receivePostInitialize() {
 		ModPanel settingsPanel = new ModPanel();
 
-		final ModLabel labelStartingCards = new ModLabel("Select your 2 starting cards:", Config.LABEL_START_X, Config.LABEL_START_Y, settingsPanel, (me) -> {});
+		final ModLabel labelStartingCards = new ModLabel(CardCrawlGame.languagePack.getUIString(AssetsPath.makeID("ConfigTitle")).TEXT[0], Config.LABEL_START_X, Config.LABEL_START_Y, settingsPanel, (me) -> {});
 		settingsPanel.addUIElement(labelStartingCards);
 
 		for (int i=0;i<Config.LIST_STARTING_CARDS.length;i++) {
